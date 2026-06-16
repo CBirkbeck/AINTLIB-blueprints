@@ -1,3 +1,40 @@
-<!doctype html><meta charset="utf-8"><title>AINTLIB blueprints</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AINTLIB blueprints</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         max-width: 46rem; margin: 3rem auto; padding: 0 1.25rem; }
+  h1 { font-size: 1.7rem; margin-bottom: .25rem; }
+  p.lead { color: #666; margin-top: 0; }
+  ul { list-style: none; padding: 0; }
+  li { margin: 1rem 0; padding: 1rem 1.1rem; border: 1px solid #8883; border-radius: 10px; }
+  li a { font-size: 1.15rem; font-weight: 600; text-decoration: none; }
+  li a:hover { text-decoration: underline; }
+  li .desc { display: block; color: #777; font-size: .95rem; margin-top: .2rem; }
+  footer { margin-top: 2.5rem; color: #999; font-size: .85rem; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
 <h1>AINTLIB blueprints</h1>
-<ul><li><a href="./padic/">p-adic L-functions</a></li></ul>
+<p class="lead">Verso blueprints for the projects in AINTLIB, an AI-reviewed number-theory library.</p>
+<ul>
+  <li>
+    <a href="./padic/">p-adic L-functions</a>
+    <span class="desc">Formalisation of Rodrigues Jacinto–Williams, <em>An introduction to p-adic L-functions</em>: measures on Z<sub>p</sub>, the Kubota–Leopoldt p-adic L-function, and Iwasawa theory.</span>
+  </li>
+  <li>
+    <a href="./leanmodularforms/">Modular forms — the valence formula</a>
+    <span class="desc">The complex-analytic toolkit behind the valence formula: generalised winding numbers, the multi-point Cauchy principal value, and the Hungerbühler–Wasem generalised residue theorem.</span>
+  </li>
+</ul>
+<footer>
+  Built with <a href="https://github.com/leanprover/verso-blueprint">Verso</a>.
+  Source: <a href="https://github.com/CBirkbeck/AINTLIB">CBirkbeck/AINTLIB</a>.
+</footer>
+</body>
+</html>

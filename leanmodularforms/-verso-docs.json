@@ -1,0 +1,309 @@
+{"99": "<code>HungerbuhlerWasem.PolarPartDecomposition f S U</code>",
+ "98":
+ "<code>HungerbuhlerWasem.residueTheorem_crossing_compositional {x : ℂ} {U : Set ℂ} (hU_open : IsOpen U) (hU_ne : U.Nonempty)\n  (S : Finset ℂ) (hS_in_U : ↑S ⊆ U) (f : ℂ → ℂ) (_hf : DifferentiableOn ℂ f (U \\ ↑S)) (γ : ClosedPwC1Immersion x)\n  (h_null : IsNullHomologous γ.toPwC1Immersion U) (decomp : HungerbuhlerWasem.PolarPartDecomposition f S U)\n  (h_polar_cpv :\n    ∀ s ∈ S,\n      HasCauchyPVOn S (decomp.polarPart s) γ.toPwC1Immersion.toPiecewiseC1Path\n        (2 * ↑Real.pi * Complex.I * generalizedWindingNumber γ.toPwC1Immersion.toPiecewiseC1Path s * residue f s)) :\n  HasCauchyPVOn S f γ.toPwC1Immersion.toPiecewiseC1Path\n    (∑ s ∈ S, 2 * ↑Real.pi * Complex.I * generalizedWindingNumber γ.toPwC1Immersion.toPiecewiseC1Path s * residue f s)</code><span class=\"sep\"></span><code class=\"docstring\">**Hungerbühler–Wasem Theorem 3.3 — compositional crossing form.**\n\nFor `f` with a `PolarPartDecomposition` over `S ⊆ U` and a closed γ\nnull-homologous in `U` (which may cross poles of any order), the multi-point\nCauchy principal value of `∮f` along `γ` equals\n`∑ s ∈ S, 2πi · w(γ, s) · residue f s`.\n\nPer-pole CPV witnesses for each polar part — typically obtained from\n`cpv_polarPart_at_pole_under_conditions` (T-GL-01) — are supplied as data.\nThe analytic-remainder CPV and integrability are derived internally from\n`analyticRemainder_hasCauchyPVOn_zero` and\n`cpvIntegrandOn_diff_intervalIntegrable`. The avoidance form\n`residueTheorem_avoidance` is the special case where the per-pole witnesses\ncome from `hasCauchyPVOn_of_avoids`.\n\nThis is the *compositional* form: it consumes a `PolarPartDecomposition` and\nper-pole CPV witnesses as data. </code>",
+ "97":
+ "<code>residue (f : ℂ → ℂ) (z₀ : ℂ) : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The residue of `f` at `z₀`, defined as the limit of normalized circle integrals:\n`Res(f, z₀) = lim_{r→0⁺} (2πi)⁻¹ ∮_{|z-z₀|=r} f(z) dz`. </code>",
+ "96":
+ "<code>Complex.I : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The imaginary unit. </code>",
+ "95": "<code>x ∉ ↑S</code>",
+ "94":
+ "<code>HungerbuhlerWasem.PolarPartDecomposition.order {f : ℂ → ℂ} {S : Finset ℂ} {U : Set ℂ}\n  (self : HungerbuhlerWasem.PolarPartDecomposition f S U) : ℂ → ℕ</code><span class=\"sep\"></span><code class=\"docstring\">Order of the polar part at each pole. </code>",
+ "93":
+ "<code>HungerbuhlerWasem.PolarPartDecomposition.ofMeromorphicWithCondB {x : ℂ} {U : Set ℂ} (hU_open : IsOpen U) {S : Finset ℂ}\n  (_hS_in_U : ↑S ⊆ U) {f : ℂ → ℂ} (hf : DifferentiableOn ℂ f (U \\ ↑S)) {γ : PwC1Immersion x x}\n  (hMero : ∀ s ∈ S, MeromorphicAt f s) (_hCondB : SatisfiesConditionB γ f S) :\n  HungerbuhlerWasem.PolarPartDecomposition f S U</code><span class=\"sep\"></span><code class=\"docstring\">**The constructor: `PolarPartDecomposition.ofMeromorphicWithCondB`.**\n\nGiven:\n- `U` open in `ℂ`, `S ⊆ U` finite,\n- `f : ℂ → ℂ` differentiable on `U \\ S`,\n- `hMero : ∀ s ∈ S, MeromorphicAt f s` — meromorphicity at each pole,\n- A piecewise-`C¹` immersion `γ` with `SatisfiesConditionB γ f S`,\n\nwe build a `PolarPartDecomposition f S U`. This constructor handles **both\ncrossed and uncrossed** poles uniformly (no `hAllCrossed` hypothesis), since\nfor each pole `s` we extract Laurent data from the `MeromorphicAt` hypothesis\ndirectly via `meromorphicOrderAt_ne_top_iff`.\n\nThe `hCondB` parameter is kept in the signature for use downstream (e.g. by\nper-pole CPV dischargers that need the angle compatibility data); it is not\nrequired by this constructor's body. </code>",
+ "92":
+ "<code>SatisfiesConditionA' γ.toPwC1Immersion f S fun s ↦\n  (HungerbuhlerWasem.PolarPartDecomposition.ofMeromorphicWithCondB hU_open hS_in_U hf hMero hCondB).order s</code>",
+ "91": "<code>SatisfiesConditionB γ.toPwC1Immersion f S</code>",
+ "90":
+ "<code>MeromorphicAt.{u_1, u_3} {𝕜 : Type u_1} [NontriviallyNormedField 𝕜] {E : Type u_3} [NormedAddCommGroup E]\n  [NormedSpace 𝕜 E] (f : 𝕜 → E) (x : 𝕜) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Meromorphy of `f` at `x` (more precisely, on a punctured neighbourhood of `x`; the value at\n`x` itself is irrelevant). </code>",
+ "9":
+ "<code>PiecewiseC1PathOn.partition.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E] {a b : ℝ} {hab : a &lt; b}\n  {x y : E} (self : PiecewiseC1PathOn a b hab x y) : Finset ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Finite set of breakpoints in the open interval `(a, b)`. </code>",
+ "89": "<code>∀ s ∈ S, MeromorphicAt f s</code>",
+ "88":
+ "<code>ClosedPwC1Immersion.toPwC1Immersion.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E] {x : E}\n  (γ : ClosedPwC1Immersion x) : PwC1Immersion x x</code><span class=\"sep\"></span><code class=\"docstring\">A `ClosedPwC1Immersion` produces a legacy `PwC1Immersion`. </code>",
+ "87": "<code>IsNullHomologous γ.toPwC1Immersion U</code>",
+ "86":
+ "<code>SDiff.sdiff.{u} {α : Type u} [self : SDiff α] : α → α → α</code><span class=\"sep\"></span><code class=\"docstring\">`a \\ b` is the set difference of `a` and `b`,\nconsisting of all elements in `a` that are not in `b`.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `\\` in identifiers is `sdiff`.</code>",
+ "85":
+ "<code>DifferentiableOn.{u_1, u_2, u_3} (𝕜 : Type u_1) [NontriviallyNormedField 𝕜] {E : Type u_2} [AddCommGroup E] [Module 𝕜 E]\n  [TopologicalSpace E] {F : Type u_3} [AddCommGroup F] [Module 𝕜 F] [TopologicalSpace F] (f : E → F) (s : Set E) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`DifferentiableOn 𝕜 f s` means that `f` is differentiable within `s` at any point of `s`. </code>",
+ "84": "<code>DifferentiableOn ℂ f (U \\ ↑S)</code>",
+ "83": "<code>↑S ⊆ U</code>",
+ "82":
+ "<code>Set.Nonempty.{u} {α : Type u} (s : Set α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The property `s.Nonempty` expresses the fact that the set `s` is not empty. It should be used\nin theorem assumptions instead of `∃ x, x ∈ s` or `s ≠ ∅` as it gives access to a nice API thanks\nto the dot notation. </code>",
+ "81": "<code>U.Nonempty</code>",
+ "80":
+ "<code>IsOpen.{u} {X : Type u} [TopologicalSpace X] : Set X → Prop</code><span class=\"sep\"></span><code class=\"docstring\">`IsOpen s` means that `s` is open in the ambient topological space on `X` </code>",
+ "8":
+ "<code>Finset.{u_4} (α : Type u_4) : Type u_4</code><span class=\"sep\"></span><code class=\"docstring\">`Finset α` is the type of finite sets of elements of `α`. It is implemented\nas a multiset (a list up to permutation) which has no duplicate elements. </code>",
+ "79": "<code>IsOpen U</code>",
+ "78":
+ "<code>HungerbuhlerWasem.residueTheorem_crossing_paper_faithful_clean {x : ℂ} {U : Set ℂ} (hU_open : IsOpen U)\n  (hU_ne : U.Nonempty) {S : Finset ℂ} (hS_in_U : ↑S ⊆ U) {f : ℂ → ℂ} (hf : DifferentiableOn ℂ f (U \\ ↑S))\n  (γ : ClosedPwC1Immersion x) (h_null : IsNullHomologous γ.toPwC1Immersion U) (hMero : ∀ s ∈ S, MeromorphicAt f s)\n  (hCondB : SatisfiesConditionB γ.toPwC1Immersion f S)\n  (hCondA :\n    SatisfiesConditionA' γ.toPwC1Immersion f S fun s ↦\n      (HungerbuhlerWasem.PolarPartDecomposition.ofMeromorphicWithCondB hU_open hS_in_U hf hMero hCondB).order s)\n  (hx_notin_S : x ∉ ↑S) :\n  HasCauchyPVOn S f γ.toPwC1Immersion.toPiecewiseC1Path\n    (∑ s ∈ S, 2 * ↑Real.pi * Complex.I * generalizedWindingNumber γ.toPwC1Immersion.toPiecewiseC1Path s * residue f s)</code><span class=\"sep\"></span><code class=\"docstring\">**HW3.3 — Corner-friendly clean spec form (T-BR-Y11c).**\n\nThe clean version of `residueTheorem_crossing_paper_faithful` admitting\nBOTH multi-crossings AND corner crossings, with the eight paper spec\nhypotheses plus a basepoint-off residual `hx_notin_S`. The per-pole\nsimple-pole CPV existence hypothesis is auto-discharged internally via\n`hasCauchyPV_inv_sub_multiCrossing_corner`. </code>",
+ "77":
+ "<code>SatisfiesConditionB {x y : ℂ} (γ : PwC1Immersion x y) (f : ℂ → ℂ) (S0 : Finset ℂ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Condition (B)** from Hungerbuhler-Wasem (Theorem 3.3): at each crossing point,\nthe angle `α` is a rational multiple of `π`, and the Laurent coefficients of `f` satisfy\nangle compatibility.\n\nFor simple poles, this is vacuously satisfied for the Laurent part. </code>",
+ "76": "<code>ℤ</code>",
+ "75":
+ "<code>GE.ge.{u} {α : Type u} [LE α] (a b : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`a ≥ b` is an abbreviation for `b ≤ a`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≥` in identifiers is `ge`.</code>",
+ "74":
+ "<code>Fin (n : ℕ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">Natural numbers less than some upper bound.\n\nIn particular, a `Fin n` is a natural number `i` with the constraint that `i &lt; n`. It is the\ncanonical type with `n` elements.\n</code>",
+ "73":
+ "<code>HPow.hPow.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HPow α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a ^ b` computes `a` to the power of `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `^` in identifiers is `pow`.</code>",
+ "72":
+ "<code>HSub.hSub.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HSub α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a - b` computes the difference of `a` and `b`.\nThe meaning of this notation is type-dependent.\n* For natural numbers, this operator saturates at 0: `a - b = 0` when `a ≤ b`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `-` in identifiers is `sub` (when used as a binary operator).</code>",
+ "71": "<code>Fin N</code>",
+ "70":
+ "<code>HAdd.hAdd.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HAdd α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a + b` computes the sum of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `+` in identifiers is `add`.</code>",
+ "7":
+ "<code>Set.Icc.{u_1} {α : Type u_1} [Preorder α] (a b : α) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">`Icc a b` is the left-closed right-closed interval $[a, b]$. </code>",
+ "69":
+ "<code>Compl.compl.{u_1} {α : Type u_1} [self : Compl α] : α → α</code><span class=\"sep\"></span><code class=\"docstring\">Set / lattice complement \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `ᶜ` in identifiers is `compl`.</code>",
+ "68":
+ "<code>Singleton.singleton.{u, v} {α : outParam (Type u)} {β : Type v} [self : Singleton α β] : α → β</code><span class=\"sep\"></span><code class=\"docstring\">`singleton x` is a collection with the single element `x` (notation: `{x}`). \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `{x}` in identifiers is `singleton`.</code>",
+ "67":
+ "<code>nhdsWithin.{u_1} {X : Type u_1} [TopologicalSpace X] (x : X) (s : Set X) : Filter X</code><span class=\"sep\"></span><code class=\"docstring\">The \"neighborhood within\" filter. Elements of `𝓝[s] x` are sets containing the\nintersection of `s` and a neighborhood of `x`. </code>",
+ "66":
+ "<code>Filter.Eventually.{u_1} {α : Type u_1} (p : α → Prop) (f : Filter α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`f.Eventually p` or `∀ᶠ x in f, p x` mean that `{x | p x} ∈ f`. E.g., `∀ᶠ x in atTop, p x`\nmeans that `p` holds true for sufficiently large `x`. </code>",
+ "65":
+ "<code>AnalyticAt.{u_1, u_2, u_3} (𝕜 : Type u_1) {E : Type u_2} {F : Type u_3} [NontriviallyNormedField 𝕜]\n  [NormedAddCommGroup E] [NormedSpace 𝕜 E] [NormedAddCommGroup F] [NormedSpace 𝕜 F] (f : E → F) (x : E) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Given a function `f : E → F`, we say that `f` is analytic at `x` if it admits a convergent power\nseries expansion around `x`. </code>",
+ "64": "<code>Fin N → ℂ</code>",
+ "63":
+ "<code>∀ s ∈ S0,\n  ∀ t₀ ∈ Set.Icc 0 1,\n    γ.extendedPath t₀ = s →\n      ∀ (ht₀ : t₀ ∈ Set.Ioo 0 1),\n        ∃ N a g,\n          AnalyticAt ℂ g s ∧\n            (∀ᶠ (z : ℂ) in nhdsWithin s {s}ᶜ, f z = g z + ∑ k, a k / (z - s) ^ (↑k + 1)) ∧\n              ∀ (k : Fin N), a k ≠ 0 → ↑k ≥ 1 → ∃ m, ↑↑k * angleAtCrossing γ t₀ ht₀ = ↑m * (2 * Real.pi)</code><span class=\"sep\"></span><code class=\"docstring\">Laurent coefficient compatibility: there is a Laurent decomposition\n`f(z) = g(z) + Σ_k a_k / (z - s)^(k+1)` where `g` is analytic, and each\nnonzero coefficient `a_k` with `k ≥ 1` satisfies `k · α ∈ 2πℤ`. </code>",
+ "62":
+ "<code>HDiv.hDiv.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HDiv α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a / b` computes the result of dividing `a` by `b`.\nThe meaning of this notation is type-dependent.\n* For most types like `Nat`, `Int`, `Rat`, `Real`, `a / 0` is defined to be `0`.\n* For `Nat`, `a / b` rounds downwards.\n* For `Int`, `a / b` rounds downwards if `b` is positive or upwards if `b` is negative.\n  It is implemented as `Int.ediv`, the unique function satisfying\n  `a % b + b * (a / b) = a` and `0 ≤ a % b &lt; natAbs b` for `b ≠ 0`.\n  Other rounding conventions are available using the functions\n  `Int.fdiv` (floor rounding) and `Int.tdiv` (truncation rounding).\n* For `Float`, `a / 0` follows the IEEE 754 semantics for division,\n  usually resulting in `inf` or `nan`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `/` in identifiers is `div`.</code>",
+ "61":
+ "<code>Real.pi : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The number π = 3.14159265... Defined here using choice as twice a zero of cos in [1,2],\nfrom which one can derive all its properties. For explicit bounds on π,\nsee `Mathlib/Analysis/Real/Pi/Bounds.lean`.\n\nDenoted `π`, once the `Real` namespace is opened. </code>",
+ "60":
+ "<code>HMul.hMul.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HMul α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a * b` computes the product of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `*` in identifiers is `mul`.</code>",
+ "6":
+ "<code>ContinuousOn.{u_1, u_2} {X : Type u_1} {Y : Type u_2} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y)\n  (s : Set X) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function between topological spaces is continuous on a subset `s`\nwhen it's continuous at every point of `s` within `s`. </code>",
+ "59":
+ "<code>angleAtCrossing {x y : ℂ} (γ : PwC1Immersion x y) (t₀ : ℝ) (_ht₀ : t₀ ∈ Set.Ioo 0 1) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The signed angle at a crossing point where a piecewise C¹ immersion passes through `z₀`.\n\nAt a smooth point (not in the partition), the tangent direction is continuous across the\ncrossing, and the angle between outgoing and negated incoming directions is `π`.\n\nAt a corner point (in the partition), the angle is `arg(L_right) - arg(-L_left)` where\n`L_left` and `L_right` are the one-sided derivative limits. </code>",
+ "58":
+ "<code>Nat.Coprime (m n : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`m` and `n` are coprime, or relatively prime, if their `gcd` is 1. </code>",
+ "57":
+ "<code>And (a b : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`And a b`, or `a ∧ b`, is the conjunction of propositions. It can be\nconstructed and destructed like a pair: if `ha : a` and `hb : b` then\n`⟨ha, hb⟩ : a ∧ b`, and if `h : a ∧ b` then `h.left : a` and `h.right : b`.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∧` in identifiers is `and`.</code>",
+ "56": "<code>ℕ</code>",
+ "55": "<code>t₀ ∈ Set.Ioo 0 1</code>",
+ "54":
+ "<code>∀ s ∈ S0,\n  ∀ t₀ ∈ Set.Icc 0 1,\n    γ.extendedPath t₀ = s →\n      ∀ (ht₀ : t₀ ∈ Set.Ioo 0 1), ∃ p q, q ≠ 0 ∧ p.Coprime q ∧ angleAtCrossing γ t₀ ht₀ = ↑p * Real.pi / ↑q</code><span class=\"sep\"></span><code class=\"docstring\">The angle at each crossing is a rational multiple of `π`. </code>",
+ "53":
+ "<code>Nat : Type</code><span class=\"sep\"></span><code class=\"docstring\">The natural numbers, starting at zero.\n\nThis type is special-cased by both the kernel and the compiler, and overridden with an efficient\nimplementation. Both use a fast arbitrary-precision arithmetic library (usually\n[GMP](https://gmplib.org/)); at runtime, `Nat` values that are sufficiently small are unboxed.\n</code>",
+ "52": "<code>ℂ → ℕ</code>",
+ "51": "<code>PwC1Immersion x y</code>",
+ "50":
+ "<code>SatisfiesConditionA' {x y : ℂ} (γ : PwC1Immersion x y) (_f : ℂ → ℂ) (S0 : Finset ℂ) (poleOrder : ℂ → ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Condition (A')** from Hungerbuhler-Wasem: for each singular point `s` in `S₀`\nand each parameter `t₀` where `γ(t₀) = s`, the curve must be flat of order\n`poleOrder s` at `t₀`. </code>",
+ "5": "<code>E</code>",
+ "49":
+ "<code>PiecewiseC1Path.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E] (x y : E) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A piecewise continuously differentiable path from `x` to `y` in a normed space.\n\nThis bundles a free-interval `PiecewiseC1PathOn 0 1 zero_lt_one x y` together with a\nmathlib `Path x y` whose `extend` agrees with the underlying function on `[0, 1]`.\nDifferentiability and continuous-derivative conditions are inherited from the parent. </code>",
+ "48": "<code>PiecewiseC1Path x y</code>",
+ "47": "<code>ℂ → ℂ</code>",
+ "46": "<code>Finset ℂ</code>",
+ "45":
+ "<code>HasCauchyPVOn {x y : ℂ} (S : Finset ℂ) (f : ℂ → ℂ) (γ : PiecewiseC1Path x y) (L : ℂ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The multi-point Cauchy principal value of `∮_γ f(z) dz` exists and equals `L`,\nwhere the integral is computed by excluding ε-neighborhoods of all points in `S`\nand taking the limit as `ε → 0⁺`. </code>",
+ "44":
+ "<code class=\"docstring\">The universe of propositions. `Prop ≡ Sort 0`.\n\nEvery proposition is propositionally equal to either `True` or `False`. </code>",
+ "43":
+ "<code>Set.{u} (α : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A set is a collection of elements of some type `α`.\n\nAlthough `Set` is defined as `α → Prop`, this is an implementation detail which should not be\nrelied on. Instead, `setOf` and membership of a set (`∈`) should be used to convert between sets\nand predicates.\n</code>",
+ "42":
+ "<code>PwC1Immersion.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E] (x y : E) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A piecewise C¹ immersion from `x` to `y` in a normed space.\n\nThis extends `PiecewiseC1Path x y` with the condition that the derivative is nonzero away from\npartition points, and has nonzero one-sided limits at partition points. This ensures the path\nhas a well-defined tangent direction everywhere. </code>",
+ "41":
+ "<code>Complex : Type</code><span class=\"sep\"></span><code class=\"docstring\">Complex numbers consist of two `Real`s: a real part `re` and an imaginary part `im`. </code>",
+ "40":
+ "<code>IsNullHomologous {x : ℂ} (γ : PwC1Immersion x x) (U : Set ℂ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A closed piecewise C^1 immersion `gamma` is null-homologous in an open set `U` if:\n1. Its image lies in `U`.\n2. Its winding number around every point outside `U` is zero.\n\nClosedness is encoded by the type: `PwC1Immersion x x` has the same start and\nend point. </code>",
+ "4":
+ "<code>Eq.{u_1} {α : Sort u_1} : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The equality relation. It has one introduction rule, `Eq.refl`.\nWe use `a = b` as notation for `Eq a b`.\nA fundamental property of equality is that it is an equivalence relation.\n```\nvariable (α : Type) (a b c d : α)\nvariable (hab : a = b) (hcb : c = b) (hcd : c = d)\n\nexample : a = d :=\n  Eq.trans (Eq.trans hab (Eq.symm hcb)) hcd\n```\nEquality is much more than an equivalence relation, however. It has the important property that every assertion\nrespects the equivalence, in the sense that we can substitute equal expressions without changing the truth value.\nThat is, given `h1 : a = b` and `h2 : p a`, we can construct a proof for `p b` using substitution: `Eq.subst h1 h2`.\nExample:\n```\nexample (α : Type) (a b : α) (p : α → Prop)\n        (h1 : a = b) (h2 : p a) : p b :=\n  Eq.subst h1 h2\n\nexample (α : Type) (a b : α) (p : α → Prop)\n    (h1 : a = b) (h2 : p a) : p b :=\n  h1 ▸ h2\n```\nThe triangle in the second presentation is a macro built on top of `Eq.subst` and `Eq.symm`, and you can enter it by typing `\\t`.\nFor more information: [Equality](https://lean-lang.org/theorem_proving_in_lean4/quantifiers_and_equality.html#equality)\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `=` in identifiers is `eq`.</code>",
+ "39":
+ "<code>PwC1Immersion.toPiecewiseC1Path.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E] {x y : E}\n  (self : PwC1Immersion x y) : PiecewiseC1Path x y</code>",
+ "38":
+ "<code>generalizedWindingNumber {x y : ℂ} (γ : PiecewiseC1Path x y) (z₀ : ℂ) : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The generalized winding number of `γ` around `z₀`, defined as\n`(2πi)⁻¹ · PV ∮_γ (z - z₀)⁻¹ dz`. Returns junk when the CPV does not exist. </code>",
+ "37": "<code>ℂ</code>",
+ "36":
+ "<code>∀ z ∉ U, generalizedWindingNumber γ.toPiecewiseC1Path z = 0</code><span class=\"sep\"></span><code class=\"docstring\">The generalized winding number around every point outside `U` is zero. </code>",
+ "35": "<code>Set ℂ</code>",
+ "34":
+ "<code>PiecewiseC1Path.extendedPath.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E] {x y : E}\n  (γ : PiecewiseC1Path x y) : ℝ → E</code><span class=\"sep\"></span><code class=\"docstring\">The underlying function `ℝ → E` obtained by extending the path. </code>",
+ "33": "<code>PwC1Immersion x x</code>",
+ "32":
+ "<code>∀ t ∈ Set.Icc 0 1, γ.extendedPath t ∈ U</code><span class=\"sep\"></span><code class=\"docstring\">The image of `gamma` lies in `U`. </code>",
+ "31":
+ "<code>NormedSpace.{u_6, u_7} (𝕜 : Type u_6) (E : Type u_7) [NormedField 𝕜] [SeminormedAddCommGroup E] : Type (max u_6 u_7)</code><span class=\"sep\"></span><code class=\"docstring\">A normed space over a normed field is a vector space endowed with a norm which satisfies the\nequality `‖c • x‖ = ‖c‖ ‖x‖`. We require only `‖c • x‖ ≤ ‖c‖ ‖x‖` in the definition, then prove\n`‖c • x‖ = ‖c‖ ‖x‖` in `norm_smul`.\n\nNote that since this requires `SeminormedAddCommGroup` and not `NormedAddCommGroup`, this\ntypeclass can be used for \"seminormed spaces\" too, just as `Module` can be used for\n\"semimodules\". </code>",
+ "30":
+ "<code>NormedAddCommGroup.{u_8} (E : Type u_8) : Type u_8</code><span class=\"sep\"></span><code class=\"docstring\">A normed group is an additive group endowed with a norm for which `dist x y = ‖-x + y‖` defines\na metric space structure. </code>",
+ "3":
+ "<code>PiecewiseC1PathOn.toFun.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E] {a b : ℝ} {hab : a &lt; b} {x y : E}\n  (self : PiecewiseC1PathOn a b hab x y) : ℝ → E</code><span class=\"sep\"></span><code class=\"docstring\">The underlying function `ℝ → E`. </code>",
+ "29":
+ "<code class=\"docstring\">A type universe. `Type ≡ Type 0`, `Type u ≡ Sort (u + 1)`. </code>",
+ "28":
+ "<code>ClosedPwC1Immersion.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E] (x : E) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A **closed piecewise `C¹` immersion** in the sense of Hungerbühler–Wasem\n(arXiv:1808.00997v2, page 3): a closed piecewise `C¹` curve whose derivative\nis non-vanishing on every closed sub-interval between consecutive partition\npoints. </code>",
+ "27":
+ "<code>ClosedPwC1Curve.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E] (x : E) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A **closed piecewise `C¹` curve** in the sense of Hungerbühler–Wasem\n(arXiv:1808.00997v2, page 3): a path `[0, 1] → E` returning to its starting point,\ntogether with a partition `0 = a₀ &lt; a₁ &lt; … &lt; aₙ = 1` whose endpoints are included,\nsuch that the path is `C¹` on each *closed* sub-interval `[aₖ, aₖ₊₁]`.\n\nThis extends `PiecewiseC1Path x x`. The inherited `partition` field is the\n*Ioo-style* (open-interior) partition, while `closedPartition` is the Icc-style\npartition with endpoints included. The two are related by\n`closedPartition_eq : closedPartition = insert 0 (insert 1 partition)`. </code>",
+ "26":
+ "<code>Ne.{u} {α : Sort u} (a b : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`a ≠ b`, or `Ne a b` is defined as `¬ (a = b)` or `a = b → False`,\nand asserts that `a` and `b` are not equal.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≠` in identifiers is `ne`.</code>",
+ "25":
+ "<code>derivWithin.{u, v} {𝕜 : Type u} [NontriviallyNormedField 𝕜] {F : Type v} [AddCommGroup F] [Module 𝕜 F]\n  [TopologicalSpace F] (f : 𝕜 → F) (s : Set 𝕜) (x : 𝕜) : F</code><span class=\"sep\"></span><code class=\"docstring\">Derivative of `f` at the point `x` within the set `s`, if it exists.  Zero otherwise.\n\nIf the derivative exists (i.e., `∃ f', HasDerivWithinAt f f' s x`), then\n`f x' = f x + (x' - x) • derivWithin f s x + o(x' - x)` where `x'` converges to `x` inside `s`.\n</code>",
+ "24":
+ "<code>∀ (a b : ℝ),\n  self.closedPartition.IsConsecutive a b → ∀ t ∈ Set.Icc a b, derivWithin (⇑self.toPath.extend) (Set.Icc a b) t ≠ 0</code><span class=\"sep\"></span><code class=\"docstring\">On every closed sub-interval between consecutive closed-partition members, the\n*within*-derivative of the extended path is non-zero — i.e. `Λ̇|_{[aₖ,aₖ₊₁]} ≠ 0`\nin the paper. We use `derivWithin _ (Icc a b)` rather than the global `deriv`\nbecause at corner partition points the global `deriv` is `0` by mathlib\nconvention (the function is not differentiable there), which would falsely\ncontradict non-vanishing. </code>",
+ "23":
+ "<code>ContDiffOn.{u, uE, uF} (𝕜 : Type u) [NontriviallyNormedField 𝕜] {E : Type uE} [NormedAddCommGroup E] [NormedSpace 𝕜 E]\n  {F : Type uF} [NormedAddCommGroup F] [NormedSpace 𝕜 F] (n : WithTop ℕ∞) (f : E → F) (s : Set E) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function is continuously differentiable up to `n` on `s` if, for any point `x` in `s`, it\nadmits continuous derivatives up to order `n` on a neighborhood of `x` in `s`.\nThe parameter `n` belongs to `ℕ∞ω` (accessible in the `ContDiff` scope), i.e. it can be a natural\nnumber, `∞`, or `ω`.\n\nFor `n = ∞`, we only require that this holds up to any finite order (where the neighborhood may\ndepend on the finite order we consider).\nFor `n = ω`, we require the function to be analytic within `s` at every point of `s`. The precise\ndefinition we give (all the derivatives should be analytic) is more involved to work around issues\nwhen the space is not complete, but it is equivalent when the space is complete.\n</code>",
+ "22":
+ "<code>Finset.IsConsecutive (S : Finset ℝ) (a b : ℝ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The pair `(a, b)` are *consecutive* members of `S : Finset ℝ` when both lie\nin `S`, `a &lt; b`, and no element of `S` lies strictly between them. </code>",
+ "21":
+ "<code>Insert.insert.{u, v} {α : outParam (Type u)} {γ : Type v} [self : Insert α γ] : α → γ → γ</code><span class=\"sep\"></span><code class=\"docstring\">`insert x xs` inserts the element `x` into the collection `xs`. </code>",
+ "20":
+ "<code>ClosedPwC1Curve.closedPartition.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E] {x : E}\n  (self : ClosedPwC1Curve x) : Finset ℝ</code><span class=\"sep\"></span><code class=\"docstring\">Closed partition WITH endpoints. Required because the inherited `partition`\nis Ioo-style (interior only). </code>",
+ "2": "<code>ClosedPwC1Immersion x</code>",
+ "19":
+ "<code>Membership.mem.{u, v} {α : outParam (Type u)} {γ : Type v} [self : Membership α γ] : γ → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The membership relation `a ∈ s : Prop` where `a : α`, `s : γ`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∈` in identifiers is `mem`.</code>",
+ "18":
+ "<code>Path.extend.{u_1} {X : Type u_1} [TopologicalSpace X] {x y : X} (γ : Path x y) : C(ℝ, X)</code><span class=\"sep\"></span><code class=\"docstring\">A continuous map extending a path to `ℝ`, constant before `0` and after `1`. </code>",
+ "175":
+ "<code>ordOrbitQ {k : ℤ} (f : ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma 1)) k)\n  (q : NonEllOrbitFM) : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The order of vanishing on non-elliptic orbits, cast to `ℂ`. </code>",
+ "174":
+ "<code>NonEllOrbitFM : Type</code><span class=\"sep\"></span><code class=\"docstring\">A non-elliptic orbit is one distinct from both `oiFM` and `orhoFM`. </code>",
+ "173": "<code>NonEllOrbitFM</code>",
+ "172":
+ "<code>finsum.{u_7, u_8} {M : Type u_7} {α : Sort u_8} [AddCommMonoid M] (f : α → M) : M</code><span class=\"sep\"></span><code class=\"docstring\">Sum of `f x` as `x` ranges over the elements of the support of `f`, if it's finite. Zero\notherwise. </code>",
+ "171": "<code>f ≠ 0</code>",
+ "170":
+ "<code>valence_formula_textbook {k : ℤ}\n  (f : ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma 1)) k) (hf : f ≠ 0) :\n  ↑(orderAtCusp' f) + 1 / 2 * ↑(orderOfVanishingAt' (⇑f) ellipticPointI') +\n        1 / 3 * ↑(orderOfVanishingAt' (⇑f) ellipticPointRho') +\n      ∑ᶠ (q : NonEllOrbitFM), ordOrbitQ f q =\n    ↑k / 12</code><span class=\"sep\"></span><code class=\"docstring\">**The Valence Formula** for weight-`k` modular forms on `SL₂(ℤ)`.\n\nFor any nonzero modular form `f` of weight `k` for `SL₂(ℤ)`:\n\n$$\\operatorname{ord}_\\infty(f) + \\tfrac{1}{2}\\operatorname{ord}_i(f)\n+ \\tfrac{1}{3}\\operatorname{ord}_\\rho(f)\n+ \\sum_{q\\;\\text{non-ell}} \\operatorname{ord}_q(f) = \\frac{k}{12}$$\n\nwhere the sum runs over all non-elliptic `SL₂(ℤ)`-orbits. </code>",
+ "17":
+ "<code>PiecewiseC1Path.toPath.{u_1} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E] {x y : E}\n  (self : PiecewiseC1Path x y) : Path x y</code><span class=\"sep\"></span><code class=\"docstring\">The bundled mathlib `Path x y`. Kept as a field so that `Path.extend`-based\ncall sites can continue to use the `Path` API. </code>",
+ "169":
+ "<code>sLeftVertFM (S : Finset UpperHalfPlane) : Finset UpperHalfPlane</code><span class=\"sep\"></span><code class=\"docstring\">The left-vertical filter of S: points with `re = -1/2` and `‖p‖ &gt; 1`. </code>",
+ "168":
+ "<code>Complex.re (self : ℂ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The real part of a complex number. </code>",
+ "167":
+ "<code>abs.{u_1} {α : Type u_1} [Lattice α] [AddGroup α] (a : α) : α</code><span class=\"sep\"></span><code class=\"docstring\">`abs a`, denoted `|a|`, is the absolute value of `a` </code>",
+ "166":
+ "<code>ellipticPointRhoPlusOne' : UpperHalfPlane</code><span class=\"sep\"></span><code class=\"docstring\">The T-translate `ρ + 1 = e^{πi/3} = 1/2 + (√3/2)i`. </code>",
+ "165":
+ "<code>ellipticPointRho' : UpperHalfPlane</code><span class=\"sep\"></span><code class=\"docstring\">The elliptic point `ρ = e^{2πi/3} = -1/2 + (√3/2)i` as an element of ℍ. </code>",
+ "164":
+ "<code>ellipticPointI' : UpperHalfPlane</code><span class=\"sep\"></span><code class=\"docstring\">The elliptic point `i` as an element of ℍ. </code>",
+ "163":
+ "<code>orderAtCusp' {k : ℤ}\n  (f : ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma 1)) k) : ℤ</code><span class=\"sep\"></span><code class=\"docstring\">The order of vanishing at the cusp (in the q-expansion). </code>",
+ "162":
+ "<code>FDWindingData.boundary {H : ℝ} (self : FDWindingData H) : PiecewiseC1Path (fdStart H) (fdStart H)</code><span class=\"sep\"></span><code class=\"docstring\">The FD boundary as a piecewise C1 closed path. </code>",
+ "161":
+ "<code>Complex.im (self : ℂ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The imaginary part of a complex number. </code>",
+ "160": "<code>FDWindingDataFull H</code>",
+ "16":
+ "<code>Path.{u_1} {X : Type u_1} [TopologicalSpace X] (x y : X) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">Continuous path connecting two points `x` and `y` in a topological space </code>",
+ "159":
+ "<code>∃ H D,\n  (∀ s ∈ S, (↑s).im &lt; H) ∧\n    ∑ s ∈ S, generalizedWindingNumber D.boundary ↑s * ↑(orderOfVanishingAt' (⇑f) s) = -(↑k / 12 - ↑(orderAtCusp' f))</code>",
+ "158":
+ "<code>orderOfVanishingAt' (f : UpperHalfPlane → ℂ) (z : UpperHalfPlane) : ℤ</code><span class=\"sep\"></span><code class=\"docstring\">Order of vanishing of `f` at a point in ℍ. </code>",
+ "157":
+ "<code>∀ p ∈ ModularGroup.fd, orderOfVanishingAt' (⇑f) p ≠ 0 → p ∈ S</code>",
+ "156":
+ "<code>ModularGroup.fd : Set UpperHalfPlane</code><span class=\"sep\"></span><code class=\"docstring\">The standard (closed) fundamental domain of the action of `SL(2,ℤ)` on `ℍ`. </code>",
+ "155": "<code>UpperHalfPlane</code>",
+ "154": "<code>∀ p ∈ S, p ∈ ModularGroup.fd</code>",
+ "153":
+ "<code>UpperHalfPlane : Type</code><span class=\"sep\"></span><code class=\"docstring\">The open upper half plane, denoted as `ℍ` within the `UpperHalfPlane` namespace </code>",
+ "152": "<code>Finset UpperHalfPlane</code>",
+ "151":
+ "<code>CongruenceSubgroup.Gamma (N : ℕ) : Subgroup (Matrix.SpecialLinearGroup (Fin 2) ℤ)</code><span class=\"sep\"></span><code class=\"docstring\">The full level `N` congruence subgroup of `SL(2, ℤ)` of matrices that reduce to the identity\nmodulo `N`. </code>",
+ "150":
+ "<code>Matrix.SpecialLinearGroup.mapGL.{u, v, u_1} {n : Type u} [DecidableEq n] [Fintype n] {R : Type v} [CommRing R]\n  (S : Type u_1) [CommRing S] [Algebra R S] : Matrix.SpecialLinearGroup n R →* GL n S</code><span class=\"sep\"></span><code class=\"docstring\">`mapGL` is the map from the special linear group over `R` to the general linear group over\n`S`, where `S` is an `R`-algebra. </code>",
+ "15":
+ "<code>deriv.{u, v} {𝕜 : Type u} [NontriviallyNormedField 𝕜] {F : Type v} [AddCommGroup F] [Module 𝕜 F] [TopologicalSpace F]\n  (f : 𝕜 → F) (x : 𝕜) : F</code><span class=\"sep\"></span><code class=\"docstring\">Derivative of `f` at the point `x`, if it exists.  Zero otherwise.\n\nIf the derivative exists (i.e., `∃ f', HasDerivAt f f' x`), then\n`f x' = f x + (x' - x) • deriv f x + o(x' - x)` where `x'` converges to `x`.\n</code>",
+ "149":
+ "<code>Subgroup.map.{u_1, u_5} {G : Type u_1} [Group G] {N : Type u_5} [Group N] (f : G →* N) (H : Subgroup G) : Subgroup N</code><span class=\"sep\"></span><code class=\"docstring\">The image of a subgroup along a monoid homomorphism is a subgroup. </code>",
+ "148":
+ "<code>ModularForm (Γ : Subgroup (GL (Fin 2) ℝ)) (k : ℤ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">These are `SlashInvariantForm`'s that are holomorphic and bounded at infinity. </code>",
+ "147":
+ "<code>ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma 1)) k</code>",
+ "146":
+ "<code>Int : Type</code><span class=\"sep\"></span><code class=\"docstring\">The integers.\n\nThis type is special-cased by the compiler and overridden with an efficient implementation. The\nruntime has a special representation for `Int` that stores “small” signed numbers directly, while\nlarger numbers use a fast arbitrary-precision arithmetic library (usually\n[GMP](https://gmplib.org/)). A “small number” is an integer that can be encoded with one fewer bits\nthan the platform's pointer size (i.e. 63 bits on 64-bit architectures and 31 bits on 32-bit\narchitectures).\n</code>",
+ "145":
+ "<code>valence_formula_orbit_sum_of_pvChain {k : ℤ}\n  (f : ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma 1)) k)\n  (S : Finset UpperHalfPlane) (hS : ∀ p ∈ S, p ∈ ModularGroup.fd)\n  (hS_complete : ∀ p ∈ ModularGroup.fd, orderOfVanishingAt' (⇑f) p ≠ 0 → p ∈ S)\n  (h_pvChain :\n    ∃ H D,\n      (∀ s ∈ S, (↑s).im &lt; H) ∧\n        ∑ s ∈ S, generalizedWindingNumber D.boundary ↑s * ↑(orderOfVanishingAt' (⇑f) s) =\n          -(↑k / 12 - ↑(orderAtCusp' f))) :\n  ↑(orderAtCusp' f) + 1 / 2 * ↑(orderOfVanishingAt' (⇑f) ellipticPointI') +\n            1 / 3 * ↑(orderOfVanishingAt' (⇑f) ellipticPointRho') +\n          ∑ s ∈ S with\n            s ≠ ellipticPointI' ∧ s ≠ ellipticPointRho' ∧ s ≠ ellipticPointRhoPlusOne' ∧ ‖↑s‖ &gt; 1 ∧ |(↑s).re| &lt; 1 / 2,\n            ↑(orderOfVanishingAt' (⇑f) s) +\n        ∑ s ∈ sLeftVertFM S, ↑(orderOfVanishingAt' (⇑f) s) +\n      ∑ s ∈ S with s ≠ ellipticPointRho' ∧ ‖↑s‖ = 1 ∧ (↑s).re &lt; 0, ↑(orderOfVanishingAt' (⇑f) s) =\n    ↑k / 12</code><span class=\"sep\"></span><code class=\"docstring\">**OrbitFM-sum valence formula**, conditional on the PV chain identity.\n\nThe hypothesis `h_pvChain` bundles:\n- `FDWindingDataFull H` for some large `H` (with all winding numbers)\n- The PV chain identity: the winding-weighted sum equals `-(k/12 - ord_∞)`\n\nThis is dischargeable from ForMathlib ingredients:\n1. `FDWindingDataFull` from InteriorContourIntegral + CrossingAtI/Rho + BoundaryWinding\n2. The PV chain identity from GeneralizedResidueTheorem + ModularContourIntegral\n\nGiven this, the proof substitutes explicit weights and pairs orbits to obtain\nthe textbook orbit-sum form matching `valence_formula_textbook_orbit_finsum`\nin `ForMathlib/ValenceFormula.lean`. </code>",
+ "144":
+ "<code>ellipticPointRhoPlusOne : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The T-translate `ρ + 1` as a complex number. </code>",
+ "143":
+ "<code>pv_integral_at_rho_plus_one_tendsto (H : ℝ) (hH : √3 / 2 &lt; H) :\n  Filter.Tendsto\n    (fun ε ↦\n      ∫ (t : ℝ) in 0..5,\n        if ‖fdBoundary_H H t - ellipticPointRhoPlusOne‖ &gt; ε then\n          (fdBoundary_H H t - ellipticPointRhoPlusOne)⁻¹ * deriv (fun s ↦ fdBoundary_H H s - ellipticPointRhoPlusOne) t\n        else 0)\n    (nhdsWithin 0 (Set.Ioi 0)) (nhds (-(Complex.I * ↑Real.pi / 3)))</code><span class=\"sep\"></span><code class=\"docstring\">The PV integral of `(γ-ρ')⁻¹ γ'` over `[0,5]` with ε-ball cutoff tends to `-iπ/3`. </code>",
+ "142":
+ "<code>ellipticPointRho : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The elliptic point `ρ` as a complex number. </code>",
+ "141":
+ "<code>Real.sqrt (x : ℝ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The square root of a real number. This returns 0 for negative inputs.\n\nThis has notation `√x`. Note that `√x⁻¹` is parsed as `√(x⁻¹)`. </code>",
+ "140": "<code>√3 / 2 &lt; H</code>",
+ "14":
+ "<code>ContinuousAt.{u_1, u_2} {X : Type u_1} {Y : Type u_2} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) (x : X) :\n  Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function between topological spaces is continuous at a point `x₀`\nif `f x` tends to `f x₀` when `x` tends to `x₀`. </code>",
+ "139":
+ "<code>pv_integral_at_rho_tendsto (H : ℝ) (hH : √3 / 2 &lt; H) :\n  Filter.Tendsto\n    (fun ε ↦\n      ∫ (t : ℝ) in 0..5,\n        if ‖fdBoundary_H H t - ellipticPointRho‖ &gt; ε then\n          (fdBoundary_H H t - ellipticPointRho)⁻¹ * deriv (fun s ↦ fdBoundary_H H s - ellipticPointRho) t\n        else 0)\n    (nhdsWithin 0 (Set.Ioi 0)) (nhds (-(Complex.I * ↑Real.pi / 3)))</code><span class=\"sep\"></span><code class=\"docstring\">The PV integral of `(γ-ρ)⁻¹ γ'` over `[0,5]` with ε-ball cutoff tends to `-iπ/3`. </code>",
+ "138":
+ "<code>GT.gt.{u} {α : Type u} [LT α] (a b : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`a &gt; b` is an abbreviation for `b &lt; a`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `&gt;` in identifiers is `gt`.</code>",
+ "137":
+ "<code>fdBoundary_H (H : ℝ) : ℝ → ℂ</code><span class=\"sep\"></span><code class=\"docstring\">Boundary of the standard fundamental domain at variable height H,\nparameterized over [0, 5]. </code>",
+ "136":
+ "<code>ite.{u} {α : Sort u} (c : Prop) [h : Decidable c] (t e : α) : α</code><span class=\"sep\"></span><code class=\"docstring\">`if c then t else e` is notation for `ite c t e`, \"if-then-else\", which decides to\nreturn `t` or `e` depending on whether `c` is true or false. The explicit argument\n`c : Prop` does not have any actual computational content, but there is an additional\n`[Decidable c]` argument synthesized by typeclass inference which actually\ndetermines how to evaluate `c` to true or false. Write `if h : c then t else e`\ninstead for a \"dependent if-then-else\" `dite`, which allows `t`/`e` to use the fact\nthat `c` is true/false.\n</code>",
+ "135":
+ "<code>intervalIntegral.{u_5} {E : Type u_5} [NormedAddCommGroup E] [NormedSpace ℝ E] (f : ℝ → E) (a b : ℝ)\n  (μ : MeasureTheory.Measure ℝ) : E</code><span class=\"sep\"></span><code class=\"docstring\">The interval integral `∫ x in a..b, f x ∂μ` is defined\nas `∫ x in Ioc a b, f x ∂μ - ∫ x in Ioc b a, f x ∂μ`. If `a ≤ b`, then it equals\n`∫ x in Ioc a b, f x ∂μ`, otherwise it equals `-∫ x in Ioc b a, f x ∂μ`. </code>",
+ "134":
+ "<code>LT.lt.{u} {α : Type u} [self : LT α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The less-than relation: `x &lt; y` \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `&lt;` in identifiers is `lt`.</code>",
+ "133": "<code>1 &lt; H</code>",
+ "132":
+ "<code>pv_integral_at_i_tendsto (H : ℝ) (hH : 1 &lt; H) :\n  Filter.Tendsto\n    (fun ε ↦\n      ∫ (t : ℝ) in 0..5,\n        if ‖fdBoundary_H H t - Complex.I‖ &gt; ε then\n          (fdBoundary_H H t - Complex.I)⁻¹ * deriv (fun s ↦ fdBoundary_H H s - Complex.I) t\n        else 0)\n    (nhdsWithin 0 (Set.Ioi 0)) (nhds (-(Complex.I * ↑Real.pi)))</code><span class=\"sep\"></span><code class=\"docstring\">The PV integral of `(γ-I)⁻¹ γ'` over `[0,5]` with ε-ball cutoff tends to `-iπ`.\n\nProof wires through `pv_tendsto_of_crossing_limit` with:\n- `t₀ = 2` (arc crossing at `i`)\n- `δ(ε) = 12/π · arcsin(ε/2)` (arc-length inverse of the norm formula)\n- `E(ε) = log(g(2-δ)) - log(g(2+δ)) - 2πi` (FTC telescope with branch correction)\n- `h_limit : E(ε) → -(I·π)` (arg computation shows the difference is constantly `-iπ`) </code>",
+ "131":
+ "<code>LeanModularForms.hw_3_3_clean_full_mero {x : ℂ} {U : Set ℂ} (hU_open : IsOpen U) (hU_ne : U.Nonempty) {S : Finset ℂ}\n  (hS_in_U : ↑S ⊆ U) {f : ℂ → ℂ} (hf : DifferentiableOn ℂ f (U \\ ↑S)) (γ : ClosedPwC1Immersion x)\n  (h_null : IsNullHomologous γ.toPwC1Immersion U) (hMero : ∀ s ∈ S, MeromorphicAt f s)\n  (hCondB : SatisfiesConditionB γ.toPwC1Immersion f S)\n  (hCondA :\n    SatisfiesConditionA' γ.toPwC1Immersion f S fun s ↦\n      (HungerbuhlerWasem.PolarPartDecomposition.ofMeromorphicWithCondB hU_open hS_in_U hf hMero hCondB).order s)\n  (hx_notin_S : x ∉ ↑S) :\n  HasCauchyPVOn S f γ.toPwC1Immersion.toPiecewiseC1Path\n    (∑ s ∈ S, 2 * ↑Real.pi * Complex.I * generalizedWindingNumber γ.toPwC1Immersion.toPiecewiseC1Path s * residue f s)</code><span class=\"sep\"></span><code class=\"docstring\">**HW Theorem 3.3 — fully general, multi-crossing, meromorphic, clean form.**\n\nThe maximally general paper-faithful HW 3.3 in the project: `f` may have\n**higher-order** meromorphic poles at each point of `S` and γ may cross\nany subset of `S` at any number of parameters.\n\nHypotheses (8 paper + 1 structural):\n\n* `hU_open, hU_ne, hS_in_U, hf, h_null, hMero, hCondA, hCondB` — the 8 paper\n  hypotheses, exactly matching Hungerbühler–Wasem Theorem 3.3.\n* `hx_notin_S` — basepoint off `S`. The only Lean-formalization residual:\n  `ClosedPwC1Immersion x` carries a typed basepoint, while the paper's \"cycle\"\n  formulation has no basepoint. Every practical caller satisfies it.\n\nAll cancellation, integrability, CPV-existence (at crossings AND at avoided\npoles), multi-pole aggregation, polar-part decomposition, higher-order Laurent\nvanishing under condition (B), and corner-crossing avoidance are discharged\ninternally via `HungerbuhlerWasem.residueTheorem_crossing_paper_faithful_clean`.\n\nThe formal elimination of `hx_notin_S` is provided by the `cyclicShift`\ninfrastructure in `PaperPwC1Immersion.lean`: if `x ∈ S`, pick `τ ∈ Ioo 0 1`\nwith `γ(τ) ∉ S` (exists by `preimage_finite`), apply the theorem to\n`γ.cyclicShift τ` whose basepoint is `γ(τ) ∉ S`, and lift back via\nthe corresponding invariance lemmas. </code>",
+ "130":
+ "<code>Inv.inv.{u} {α : Type u} [self : Inv α] : α → α</code><span class=\"sep\"></span><code class=\"docstring\">`a⁻¹` computes the inverse of `a`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⁻¹` in identifiers is `inv`.</code>",
+ "13":
+ "<code>DifferentiableAt.{u_1, u_2, u_3} (𝕜 : Type u_1) [NontriviallyNormedField 𝕜] {E : Type u_2} [AddCommGroup E] [Module 𝕜 E]\n  [TopologicalSpace E] {F : Type u_3} [AddCommGroup F] [Module 𝕜 F] [TopologicalSpace F] (f : E → F) (x : E) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function `f` is differentiable at a point `x` if it admits a derivative there (possibly\nnon-unique). </code>",
+ "129":
+ "<code>HasCauchyPV {x y : ℂ} (f : ℂ → ℂ) (γ : PiecewiseC1Path x y) (z₀ L : ℂ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The Cauchy principal value of `∮_γ f(z) dz` exists and equals `L`, where the integral\nis computed by excluding ε-neighborhoods of `z₀` and taking the limit as `ε → 0⁺`.\n\nThis is the **primary API predicate** for CPV integrals. </code>",
+ "128":
+ "<code>∃ L, HasCauchyPV (fun z ↦ (z - s)⁻¹) γ.toPwC1Immersion.toPiecewiseC1Path s L</code>",
+ "127":
+ "<code>Neg.neg.{u} {α : Type u} [self : Neg α] : α → α</code><span class=\"sep\"></span><code class=\"docstring\">`-a` computes the negative or opposite of `a`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `-` in identifiers is `neg` (when used as a unary operator).</code>",
+ "126":
+ "<code>Norm.norm.{u_8} {E : Type u_8} [self : Norm E] : E → ℝ</code><span class=\"sep\"></span><code class=\"docstring\">the `ℝ`-valued norm function. </code>",
+ "125":
+ "<code>HungerbuhlerWasem.PolarPartDecomposition.coeff {f : ℂ → ℂ} {S : Finset ℂ} {U : Set ℂ}\n  (self : HungerbuhlerWasem.PolarPartDecomposition f S U) (s : ℂ) : Fin (self.order s) → ℂ</code><span class=\"sep\"></span><code class=\"docstring\">Laurent coefficients of the polar part at each pole. </code>",
+ "124":
+ "<code>LE.le.{u} {α : Type u} [self : LE α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The less-equal relation: `x ≤ y` \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≤` in identifiers is `le`.</code>",
+ "123": "<code>Fin (decomp.order s)</code>",
+ "122":
+ "<code>∀ (k : Fin (decomp.order s)),\n  1 ≤ ↑k → decomp.coeff s k ≠ 0 → ∀ t ∈ crossings, (L_plus t / ↑‖L_plus t‖) ^ ↑k = (-L_minus t / ↑‖L_minus t‖) ^ ↑k</code>",
+ "121":
+ "<code>Set.Iio.{u_1} {α : Type u_1} [Preorder α] (b : α) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">`Iio b` is the left-infinite right-open interval $(-∞, b)$. </code>",
+ "120":
+ "<code>∀ t ∈ crossings, Filter.Tendsto (deriv ⇑γ.toPwC1Immersion.toPath.extend) (nhdsWithin t (Set.Iio t)) (nhds (L_minus t))</code>",
+ "12": "<code>ℝ</code>",
+ "119":
+ "<code>nhds.{u_3} {X : Type u_3} [TopologicalSpace X] (x : X) : Filter X</code><span class=\"sep\"></span><code class=\"docstring\">A set is called a neighborhood of `x` if it contains an open set around `x`. The set of all\nneighborhoods of `x` forms a filter, the neighborhood filter at `x`, is here defined as the\ninfimum over the principal filters of all open sets containing `x`. </code>",
+ "118":
+ "<code>Set.Ioi.{u_1} {α : Type u_1} [Preorder α] (b : α) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">`Ioi a` is the left-open right-infinite interval $(a, ∞)$. </code>",
+ "117":
+ "<code>Filter.Tendsto.{u_1, u_2} {α : Type u_1} {β : Type u_2} (f : α → β) (l₁ : Filter α) (l₂ : Filter β) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Filter.Tendsto` is the generic \"limit of a function\" predicate.\n`Tendsto f l₁ l₂` asserts that for every `l₂` neighborhood `a`,\nthe `f`-preimage of `a` is an `l₁` neighborhood. </code>",
+ "116":
+ "<code>∀ t ∈ crossings, Filter.Tendsto (deriv ⇑γ.toPwC1Immersion.toPath.extend) (nhdsWithin t (Set.Ioi t)) (nhds (L_plus t))</code>",
+ "115": "<code>∀ t ∈ crossings, L_minus t ≠ 0</code>",
+ "114": "<code>∀ t ∈ crossings, L_plus t ≠ 0</code>",
+ "113": "<code>ℝ → ℂ</code>",
+ "112":
+ "<code>IsFlatOfOrder (γ : ℝ → ℂ) (t₀ : ℝ) (n : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A curve `γ` is **flat of order `n`** at parameter `t₀` if:\n- From the right: the deviation from the right tangent is `o(‖γ(t) - γ(t₀)‖ⁿ)`.\n- From the left: the deviation from the left tangent is `o(‖γ(t) - γ(t₀)‖ⁿ)`.\n\nThis captures Definition 3.2 from Hungerbuhler-Wasem. </code>",
+ "111":
+ "<code>∀ t₀ ∈ crossings, IsFlatOfOrder (⇑γ.toPwC1Immersion.toPath.extend) t₀ (decomp.order s)</code>",
+ "110":
+ "<code>∀ t ∈ Set.Icc 0 1, γ.toPwC1Immersion.toPath.extend t = s → t ∈ crossings</code>",
+ "11":
+ "<code>Set.Ioo.{u_1} {α : Type u_1} [Preorder α] (a b : α) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">`Ioo a b` is the left-open right-open interval $(a, b)$. </code>",
+ "109": "<code>∀ t ∈ crossings, γ.toPwC1Immersion.toPath.extend t = s</code>",
+ "108": "<code>∀ t ∈ crossings, t ∈ Set.Ioo 0 1</code>",
+ "107": "<code>Finset ℝ</code>",
+ "106":
+ "<code>HungerbuhlerWasem.cpv_polarPart_at_multiCrossed_pole_under_condB_corner {x : ℂ} {γ : ClosedPwC1Immersion x} {s : ℂ}\n  {S : Finset ℂ} (hs : s ∈ S) {f : ℂ → ℂ} {U : Set ℂ} (decomp : HungerbuhlerWasem.PolarPartDecomposition f S U)\n  {crossings : Finset ℝ} (h_Ioo : ∀ t ∈ crossings, t ∈ Set.Ioo 0 1)\n  (h_at : ∀ t ∈ crossings, γ.toPwC1Immersion.toPath.extend t = s)\n  (h_complete : ∀ t ∈ Set.Icc 0 1, γ.toPwC1Immersion.toPath.extend t = s → t ∈ crossings)\n  (h_flat_at_each : ∀ t₀ ∈ crossings, IsFlatOfOrder (⇑γ.toPwC1Immersion.toPath.extend) t₀ (decomp.order s))\n  (L_plus L_minus : ℝ → ℂ) (hL_plus_ne : ∀ t ∈ crossings, L_plus t ≠ 0) (hL_minus_ne : ∀ t ∈ crossings, L_minus t ≠ 0)\n  (hL_right :\n    ∀ t ∈ crossings,\n      Filter.Tendsto (deriv ⇑γ.toPwC1Immersion.toPath.extend) (nhdsWithin t (Set.Ioi t)) (nhds (L_plus t)))\n  (hL_left :\n    ∀ t ∈ crossings,\n      Filter.Tendsto (deriv ⇑γ.toPwC1Immersion.toPath.extend) (nhdsWithin t (Set.Iio t)) (nhds (L_minus t)))\n  (h_B :\n    ∀ (k : Fin (decomp.order s)),\n      1 ≤ ↑k → decomp.coeff s k ≠ 0 → ∀ t ∈ crossings, (L_plus t / ↑‖L_plus t‖) ^ ↑k = (-L_minus t / ↑‖L_minus t‖) ^ ↑k)\n  (h_simple_cpv : ∃ L, HasCauchyPV (fun z ↦ (z - s)⁻¹) γ.toPwC1Immersion.toPiecewiseC1Path s L) :\n  HasCauchyPVOn {s} (decomp.polarPart s) γ.toPwC1Immersion.toPiecewiseC1Path\n    (2 * ↑Real.pi * Complex.I * generalizedWindingNumber γ.toPwC1Immersion.toPiecewiseC1Path s * residue f s)</code><span class=\"sep\"></span><code class=\"docstring\">**Corner-friendly per-pole polar-part multi-crossing CPV (T-BR-Y11b).**\n\nGeneralises `cpv_polarPart_at_multiCrossed_pole_under_condB` to admit corner\ncrossings (no `h_off` per crossing). Takes the simple-pole CPV existence\n`h_simple_cpv` as a hypothesis (auto-discharged by smooth-only / single-crossing\nmachinery for typical callers). </code>",
+ "105": "<code>∀ t ∈ Set.Icc 0 1, γ.toPwC1Immersion.extendedPath t ≠ s</code>",
+ "104": "<code>s ∈ S</code>",
+ "103":
+ "<code>HungerbuhlerWasem.cpv_polarPart_at_uncrossed_pole {x : ℂ} {U : Set ℂ} (_hU_open : IsOpen U) (_hU_ne : U.Nonempty)\n  {S : Finset ℂ} (hS_in_U : ↑S ⊆ U) {f : ℂ → ℂ} (γ : ClosedPwC1Immersion x)\n  (h_null : IsNullHomologous γ.toPwC1Immersion U) (decomp : HungerbuhlerWasem.PolarPartDecomposition f S U) (s : ℂ)\n  (hs : s ∈ S) (h_avoid : ∀ t ∈ Set.Icc 0 1, γ.toPwC1Immersion.extendedPath t ≠ s) :\n  HasCauchyPVOn S (decomp.polarPart s) γ.toPwC1Immersion.toPiecewiseC1Path\n    (2 * ↑Real.pi * Complex.I * generalizedWindingNumber γ.toPwC1Immersion.toPiecewiseC1Path s * residue f s)</code><span class=\"sep\"></span><code class=\"docstring\">**Per-pole CPV at an uncrossed pole.** When γ avoids the pole `s`, the polar\npart `decomp.polarPart s` is regular along γ, and DCT gives that the multi-point\nCPV equals the contour integral of the polar part along γ. The contour integral\nin turn equals `2πi · w · res f s` by the avoidance computation\n(`residueTheorem_avoidance` per-pole step). </code>",
+ "102":
+ "<code>HungerbuhlerWasem.PolarPartDecomposition.polarPart {f : ℂ → ℂ} {S : Finset ℂ} {U : Set ℂ}\n  (self : HungerbuhlerWasem.PolarPartDecomposition f S U) : ℂ → ℂ → ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The polar part at each pole, viewed as a function of `z`. </code>",
+ "101":
+ "<code>∀ s ∈ S,\n  HasCauchyPVOn S (decomp.polarPart s) γ.toPwC1Immersion.toPiecewiseC1Path\n    (2 * ↑Real.pi * Complex.I * generalizedWindingNumber γ.toPwC1Immersion.toPiecewiseC1Path s * residue f s)</code>",
+ "100":
+ "<code>HungerbuhlerWasem.PolarPartDecomposition (f : ℂ → ℂ) (S : Finset ℂ) (U : Set ℂ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">A **polar-part decomposition** of a meromorphic function `f` on a domain\n`U \\ S`: for each pole `s ∈ S`, an explicit polar part `polarPart s z =\n∑ k, a_{s,k} / (z - s)^(k+1)` such that `f` minus the total polar part extends\nanalytically to all of `U`.\n\nThis bundles the data the residue formula needs without requiring access to\nmathlib's Laurent-extraction API. Each polar part is a finite Laurent\ncombination at its pole; the residue at `s` is the `k = 0` coefficient. </code>",
+ "10":
+ "<code>HasSubset.Subset.{u} {α : Type u} [self : HasSubset α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">Subset relation: `a ⊆ b`  \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⊆` in identifiers is `subset`.</code>",
+ "1": "<code>Type u_1</code>",
+ "0":
+ "<code>Real : Type</code><span class=\"sep\"></span><code class=\"docstring\">The type `ℝ` of real numbers constructed as equivalence classes of Cauchy sequences of rational\nnumbers. </code>"}

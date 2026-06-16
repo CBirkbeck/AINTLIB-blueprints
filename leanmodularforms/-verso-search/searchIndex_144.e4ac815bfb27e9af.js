@@ -1,0 +1,1 @@
+window.docContents[144].resolve({"/Blueprint-Summary/#Modular-Forms-___-Hungerb___hler___Wasem-___-Valence-Formula-in-Lean--Blueprint-Summary":{"contents":"\n\n","context":"Modular Forms — Hungerbühler–Wasem & Valence Formula in Lean","header":"Blueprint Summary","id":"/Blueprint-Summary/#Modular-Forms-___-Hungerb___hler___Wasem-___-Valence-Formula-in-Lean--Blueprint-Summary"}});

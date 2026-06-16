@@ -1,0 +1,1 @@
+window.docContents[16].resolve({"/Progress-summary/#Modular-Forms-___-Hungerb___hler___Wasem-___-Valence-Formula-in-Lean--Progress-summary":{"contents":"","context":"Modular Forms — Hungerbühler–Wasem & Valence Formula in Lean","header":"9. Progress summary","id":"/Progress-summary/#Modular-Forms-___-Hungerb___hler___Wasem-___-Valence-Formula-in-Lean--Progress-summary"}});

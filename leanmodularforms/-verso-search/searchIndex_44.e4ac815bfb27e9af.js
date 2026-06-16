@@ -1,0 +1,1 @@
+window.docContents[44].resolve({"/Dependency-Graph/#Modular-Forms-___-Hungerb___hler___Wasem-___-Valence-Formula-in-Lean--Dependency-Graph":{"contents":"\n\n","context":"Modular Forms — Hungerbühler–Wasem & Valence Formula in Lean","header":"Dependency Graph","id":"/Dependency-Graph/#Modular-Forms-___-Hungerb___hler___Wasem-___-Valence-Formula-in-Lean--Dependency-Graph"}});

@@ -1,0 +1,1 @@
+window.docContents[244].resolve({"/References/#Modular-Forms-___-Hungerb___hler___Wasem-___-Valence-Formula-in-Lean--References":{"contents":"","context":"Modular Forms — Hungerbühler–Wasem & Valence Formula in Lean","header":"10. References","id":"/References/#Modular-Forms-___-Hungerb___hler___Wasem-___-Valence-Formula-in-Lean--References"}});
