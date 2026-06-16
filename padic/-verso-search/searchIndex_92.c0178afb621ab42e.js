@@ -1,0 +1,1 @@
+window.docContents[92].resolve({"/Blueprint-Summary/#An-introduction-to-p-adic-L-functions-___-Lean-blueprint--Blueprint-Summary":{"contents":"\n\n","context":"An introduction to p-adic L-functions — Lean blueprint","header":"Blueprint Summary","id":"/Blueprint-Summary/#An-introduction-to-p-adic-L-functions-___-Lean-blueprint--Blueprint-Summary"}});

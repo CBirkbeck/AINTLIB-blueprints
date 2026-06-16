@@ -1,0 +1,1 @@
+window.docContents[192].resolve({"/References/#An-introduction-to-p-adic-L-functions-___-Lean-blueprint--References":{"contents":"","context":"An introduction to p-adic L-functions — Lean blueprint","header":"17. References","id":"/References/#An-introduction-to-p-adic-L-functions-___-Lean-blueprint--References"}});
