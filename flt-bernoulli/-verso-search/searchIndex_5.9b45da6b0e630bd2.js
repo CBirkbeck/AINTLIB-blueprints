@@ -1,0 +1,1 @@
+window.docContents[5].resolve({"/Blueprint-Summary/#Kummer___s-Criterion-and-Regular-Primes-in-Lean--Blueprint-Summary":{"contents":"\n\n","context":"Kummer's Criterion and Regular Primes in Lean","header":"Blueprint Summary","id":"/Blueprint-Summary/#Kummer___s-Criterion-and-Regular-Primes-in-Lean--Blueprint-Summary"}});

@@ -1,0 +1,1 @@
+window.docContents[105].resolve({"/References/#Kummer___s-Criterion-and-Regular-Primes-in-Lean--References":{"contents":"","context":"Kummer's Criterion and Regular Primes in Lean","header":"3. References","id":"/References/#Kummer___s-Criterion-and-Regular-Primes-in-Lean--References"}});

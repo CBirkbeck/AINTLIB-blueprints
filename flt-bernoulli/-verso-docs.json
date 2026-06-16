@@ -1,0 +1,729 @@
+{"99":
+ "<code>CommRing.{u} (α : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A commutative ring is a ring with commutative multiplication. </code>",
+ "98":
+ "<code>DirichletCharacter.Even.{u_2} {S : Type u_2} [CommRing S] {m : ℕ} (ψ : DirichletCharacter S m) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A Dirichlet character is even if its value at -1 is 1. </code>",
+ "97":
+ "<code>Padic (p : ℕ) [Fact (Nat.Prime p)] : Type</code><span class=\"sep\"></span><code class=\"docstring\">The `p`-adic numbers `ℚ_[p]` are the Cauchy completion of `ℚ` with respect to the `p`-adic norm.\n</code>",
+ "96":
+ "<code>BernoulliRegular.teichmullerCharQp (p : ℕ) [Fact (Nat.Prime p)] : DirichletCharacter ℚ_[p] p</code><span class=\"sep\"></span><code class=\"docstring\">The `ℚ_[p]`-valued Teichmüller character, obtained by post-composing\nthe `ℤ_[p]`-valued Teichmüller character with the natural embedding\n`ℤ_[p] → ℚ_[p]`. </code>",
+ "95":
+ "<code>CommMonoidWithZero.{u_2} (M₀ : Type u_2) : Type u_2</code><span class=\"sep\"></span><code class=\"docstring\">A type `M` is a commutative “monoid with zero” if it is a commutative monoid with zero\nelement, and `0` is left and right absorbing. </code>",
+ "94":
+ "<code>DirichletCharacter.{u_1} (R : Type u_1) [CommMonoidWithZero R] (n : ℕ) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">The type of Dirichlet characters of level `n`. </code>",
+ "93":
+ "<code>ZMod.val {n : ℕ} : ZMod n → ℕ</code><span class=\"sep\"></span><code class=\"docstring\">`val a` is a natural number defined as:\n- for `a : ZMod 0` it is the absolute value of `a`\n- for `a : ZMod n` with `0 &lt; n` it is the least natural number in the equivalence class\n\nSee `ZMod.valMinAbs` for a variant that takes values in the integers.\n</code>",
+ "92":
+ "<code>BernoulliRegular.cyclotomicSigmaOfUnit_apply_zeta.{u_1} (p : ℕ) [Fact (Nat.Prime p)] (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] (a : BernoulliRegular.CyclotomicUnitDelta p) :\n  (BernoulliRegular.cyclotomicSigmaOfUnit p K a) (IsCyclotomicExtension.zeta p ℚ K) =\n    IsCyclotomicExtension.zeta p ℚ K ^ (↑a).val</code>",
+ "91":
+ "<code>BernoulliRegular.cyclotomicGalEquivZMod_sigmaOfUnit.{u_1} (p : ℕ) [Fact (Nat.Prime p)] (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] (a : BernoulliRegular.CyclotomicUnitDelta p) :\n  (BernoulliRegular.cyclotomicGalEquivZMod p K) (BernoulliRegular.cyclotomicSigmaOfUnit p K a) = a</code>",
+ "90": "<code>BernoulliRegular.CyclotomicUnitDelta p</code>",
+ "9":
+ "<code>BernoulliRegular.hPlus.{u_1} (K : Type u_1) [Field K] [NumberField K] [NumberField.IsCMField K] : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The class number of the totally real subfield `K⁺`, written locally as `h⁺`. </code>",
+ "89":
+ "<code>BernoulliRegular.cyclotomicSigmaOfUnit.{u_1} (p : ℕ) [Fact (Nat.Prime p)] (K : Type u_1) [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] (a : BernoulliRegular.CyclotomicUnitDelta p) : Gal(K/ℚ)</code><span class=\"sep\"></span><code class=\"docstring\">The Galois automorphism indexed by `a : (ZMod p)^*`. </code>",
+ "88":
+ "<code>BernoulliRegular.CyclotomicUnitDelta (p : ℕ) [Fact (Nat.Prime p)] : Type</code><span class=\"sep\"></span><code class=\"docstring\">The Galois character group `Δ = (ZMod p)ˣ` indexing unit-quotient\ncomponents. </code>",
+ "87":
+ "<code>MulEquiv.{u_9, u_10} (M : Type u_9) (N : Type u_10) [Mul M] [Mul N] : Type (max u_10 u_9)</code><span class=\"sep\"></span><code class=\"docstring\">`MulEquiv α β` is the type of an equiv `α ≃ β` which preserves multiplication. </code>",
+ "86":
+ "<code>BernoulliRegular.cyclotomicGalEquivZMod.{u_1} (p : ℕ) [Fact (Nat.Prime p)] (K : Type u_1) [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] : Gal(K/ℚ) ≃* BernoulliRegular.CyclotomicUnitDelta p</code><span class=\"sep\"></span><code class=\"docstring\">The standard cyclotomic Galois equivalence\n`Gal(K / Q) ≃ (ZMod p)^*`. </code>",
+ "85":
+ "<code>LT.lt.{u} {α : Type u} [self : LT α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The less-than relation: `x &lt; y` \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `&lt;` in identifiers is `lt`.</code>",
+ "84":
+ "<code>BernoulliRegular.hMinus_pos.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2) (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] : 0 &lt; BernoulliRegular.hMinus K</code><span class=\"sep\"></span><code class=\"docstring\">The relative class number is positive. </code>",
+ "83":
+ "<code>BernoulliRegular.h_eq_hPlus_mul_hMinus.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2) (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] :\n  BernoulliRegular.h K = BernoulliRegular.hPlus K * BernoulliRegular.hMinus K</code>",
+ "82":
+ "<code>BernoulliRegular.hMinus.{u_1} (K : Type u_1) [Field K] [NumberField K] [NumberField.IsCMField K] : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The *relative class number* `h⁻ := h / h⁺`, written locally as `h⁻`. </code>",
+ "81":
+ "<code>Dvd.dvd.{u_1} {α : Type u_1} [self : Dvd α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">Divisibility. `a ∣ b` (typed as `\\|`) means that there is some `c` such that `b = a * c`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∣` in identifiers is `dvd`.</code>",
+ "80":
+ "<code>BernoulliRegular.hPlus_dvd_h.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2) (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] :\n  BernoulliRegular.hPlus K ∣ BernoulliRegular.h K</code><span class=\"sep\"></span><code class=\"docstring\">The class number of `K⁺` divides the class number of `K`. </code>",
+ "8":
+ "<code>Nat : Type</code><span class=\"sep\"></span><code class=\"docstring\">The natural numbers, starting at zero.\n\nThis type is special-cased by both the kernel and the compiler, and overridden with an efficient\nimplementation. Both use a fast arbitrary-precision arithmetic library (usually\n[GMP](https://gmplib.org/)); at runtime, `Nat` values that are sufficiently small are unboxed.\n</code>",
+ "79":
+ "<code>BernoulliRegular.classGroupMap.{u_1} (K : Type u_1) [Field K] [NumberField K] [NumberField.IsCMField K] :\n  ClassGroup (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) →*\n    ClassGroup (NumberField.RingOfIntegers K)</code><span class=\"sep\"></span><code class=\"docstring\">The natural monoid homomorphism `Cl(𝒪_{K⁺}) → Cl(𝒪_K)` induced by the\ninclusion `𝒪_{K⁺} ↪ 𝒪_K`. </code>",
+ "78":
+ "<code>Function.Injective.{u_1, u_2} {α : Sort u_1} {β : Sort u_2} (f : α → β) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function `f : α → β` is called injective if `f x = f y` implies `x = y`. </code>",
+ "77":
+ "<code>BernoulliRegular.classGroupMap_injective.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2) (K : Type u_1)\n  [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] :\n  Function.Injective ⇑(BernoulliRegular.classGroupMap K)</code><span class=\"sep\"></span><code class=\"docstring\">**Diekmann Prop 55**, monoid-hom form. The class-group map\n`Cl(𝒪_{K⁺}) → Cl(𝒪_K)` is injective for `K = ℚ(ζ_p)`. </code>",
+ "76":
+ "<code>Submodule.IsPrincipal\n  (Ideal.map\n    (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K)) I)</code>",
+ "75":
+ "<code>BernoulliRegular.isPrincipal_of_isPrincipal_map_Kplus.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2)\n  (K : Type u_1) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K]\n  (I : Ideal (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)))\n  (hI :\n    Submodule.IsPrincipal\n      (Ideal.map\n        (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))\n        I)) :\n  Submodule.IsPrincipal I</code><span class=\"sep\"></span><code class=\"docstring\">**Diekmann Prop. 55** (cf. Washington Thm. 4.14).\n\nIf an ideal of `𝒪_{K⁺}` becomes principal after extension to `𝒪_K`, then it\nwas already principal. </code>",
+ "74":
+ "<code>Set.range.{u, u_1} {α : Type u} {ι : Sort u_1} (f : ι → α) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">Range of a function.\n\nThis function is more flexible than `f '' univ`, as the image requires that the domain is in Type\nand not an arbitrary Sort. </code>",
+ "73":
+ "<code>Membership.mem.{u, v} {α : outParam (Type u)} {γ : Type v} [self : Membership α γ] : γ → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The membership relation `a ∈ s : Prop` where `a : α`, `s : γ`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∈` in identifiers is `mem`.</code>",
+ "72": "<code>(NumberField.IsCMField.ringOfIntegersComplexConj K) b = b</code>",
+ "71":
+ "<code>BernoulliRegular.mem_ringOfIntegers_of_conj_eq_self.{u_1} (K : Type u_1) [Field K] [NumberField K]\n  [NumberField.IsCMField K] (b : NumberField.RingOfIntegers K)\n  (hb : (NumberField.IsCMField.ringOfIntegersComplexConj K) b = b) :\n  b ∈\n    Set.range\n      ⇑(algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))</code><span class=\"sep\"></span><code class=\"docstring\">If `b` is fixed by conjugation, then it comes from `𝒪_{K⁺}`. </code>",
+ "70":
+ "<code>And (a b : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`And a b`, or `a ∧ b`, is the conjunction of propositions. It can be\nconstructed and destructed like a pair: if `ha : a` and `hb : b` then\n`⟨ha, hb⟩ : a ∧ b`, and if `h : a ∧ b` then `h.left : a` and `h.right : b`.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∧` in identifiers is `and`.</code>",
+ "7":
+ "<code>NumberField.{u_1} (K : Type u_1) [Field K] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A number field is a field which has characteristic zero and is finite\ndimensional over ℚ. </code>",
+ "69":
+ "<code>BernoulliRegular.exists_conj_fixed_associate_of_classification.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2)\n  (K : Type u_1) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K]\n  {hζ : IsPrimitiveRoot (IsCyclotomicExtension.zeta p ℚ K) p}\n  (I : Ideal (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))) (a : NumberField.RingOfIntegers K)\n  (u : (NumberField.RingOfIntegers K)ˣ)\n  (hIa :\n    Ideal.map\n        (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))\n        I =\n      Ideal.span {a})\n  (hu : (NumberField.IsCMField.ringOfIntegersComplexConj K) a = ↑u * a) (hclass : ∃ n k, u = (-1) ^ k * ⋯.unit ^ n) :\n  ∃ b, (NumberField.IsCMField.ringOfIntegersComplexConj K) b = b ∧ Ideal.span {b} = Ideal.span {a}</code><span class=\"sep\"></span><code class=\"docstring\">The extra descent input removes the possible `-1` factor. </code>",
+ "68": "<code>∃ n k, u = (-1) ^ k * ⋯.unit ^ n</code>",
+ "67":
+ "<code>BernoulliRegular.generator_unit_eq_zeta_pow.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2) (K : Type u_1)\n  [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K]\n  {hζ : IsPrimitiveRoot (IsCyclotomicExtension.zeta p ℚ K) p}\n  (I : Ideal (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))) (a : NumberField.RingOfIntegers K)\n  (u : (NumberField.RingOfIntegers K)ˣ) (ha : a ≠ 0)\n  (hIa :\n    Ideal.map\n        (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))\n        I =\n      Ideal.span {a})\n  (hu : (NumberField.IsCMField.ringOfIntegersComplexConj K) a = ↑u * a) (hclass : ∃ n k, u = (-1) ^ k * ⋯.unit ^ n) :\n  ∃ n, u = ⋯.unit ^ n</code><span class=\"sep\"></span><code class=\"docstring\">If `u` is classified as a pure `ζ`-power, the possible `-1` factor is absent. </code>",
+ "66":
+ "<code>IsPrimitiveRoot.toInteger.{u} {K : Type u} [Field K] {ζ : K} {k : ℕ} [NeZero k] (hζ : IsPrimitiveRoot ζ k) :\n  NumberField.RingOfIntegers K</code><span class=\"sep\"></span><code class=\"docstring\">Abbreviation to see a primitive root of unity as a member of the ring of integers. </code>",
+ "65":
+ "<code>HSub.hSub.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HSub α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a - b` computes the difference of `a` and `b`.\nThe meaning of this notation is type-dependent.\n* For natural numbers, this operator saturates at 0: `a - b = 0` when `a ≤ b`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `-` in identifiers is `sub` (when used as a binary operator).</code>",
+ "64":
+ "<code>multiplicity.{u_1} {α : Type u_1} [Monoid α] (a b : α) : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">A `ℕ`-valued version of `emultiplicity`, returning `1` instead of `⊤`. </code>",
+ "63":
+ "<code>Even.{u_2} {α : Type u_2} [Add α] (a : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An element `a` of a type `α` with addition satisfies `Even a` if `a = r + r`,\nfor some `r : α`. </code>",
+ "62":
+ "<code>BernoulliRegular.multiplicity_zetaPrime_even_of_map_eq_span.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2)\n  (K : Type u_1) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K]\n  (I : Ideal (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))) (a : NumberField.RingOfIntegers K)\n  (ha : a ≠ 0)\n  (hIa :\n    Ideal.map\n        (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))\n        I =\n      Ideal.span {a}) :\n  Even (multiplicity (⋯.toInteger - 1) a)</code><span class=\"sep\"></span><code class=\"docstring\">If `I · 𝒪_K = (a)` with `a ≠ 0`, then `v_(ζ-1)(a)` is even. </code>",
+ "61":
+ "<code>BernoulliRegular.zetaPrime.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u_1) [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] : Ideal (NumberField.RingOfIntegers K)</code><span class=\"sep\"></span><code class=\"docstring\">The unique prime above `p` in `𝓞 K`, generated by `ζ - 1` for the\ndistinguished primitive `p`-th root of unity `ζ = IsCyclotomicExtension.zeta p ℚ K`.\n\n(Proven prime via `IsPrimitiveRoot.zeta_sub_one_prime'`.) </code>",
+ "60":
+ "<code>Ideal.ramificationIdx.{u, v} {R : Type u} [CommRing R] {S : Type v} [CommRing S] [Algebra R S] (p : Ideal R)\n  (P : Ideal S) : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The ramification index of `P` over `p` is the largest exponent `n` such that\n`p` is contained in `P^n`.\n\nIn particular, if `p` is not contained in `P^n`, then the ramification index is 0.\n\nIf there is no largest such `n` (e.g. because `p = ⊥`), then `ramificationIdx` is\ndefined to be 0.\n\nNote: This definition of ramification index will eventually be replaced by `Ideal.ramificationIdx'`.\n</code>",
+ "6": "<code>Type u_1</code>",
+ "59":
+ "<code>BernoulliRegular.zetaPrimePlus.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u_1) [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] :\n  Ideal (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))</code><span class=\"sep\"></span><code class=\"docstring\">The contraction of `𝔓` to `𝓞_{K⁺}` — the prime of `𝓞_{K⁺}` below `𝔓`. </code>",
+ "58":
+ "<code>BernoulliRegular.ramificationIdx_zetaPrimePlus_eq_two.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2)\n  (K : Type u_1) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] :\n  (BernoulliRegular.zetaPrimePlus p K).ramificationIdx (BernoulliRegular.zetaPrime p K) = 2</code><span class=\"sep\"></span><code class=\"docstring\">The ramification index of `zetaPrime` over `zetaPrimePlus` is `2`. </code>",
+ "57":
+ "<code>IsUnit.unit.{u_1} {M : Type u_1} [Monoid M] {a : M} (h : IsUnit a) : Mˣ</code><span class=\"sep\"></span><code class=\"docstring\">The element of the group of units, corresponding to an element of a monoid which is a unit. When\n`α` is a `DivisionMonoid`, use `IsUnit.unit'` instead. </code>",
+ "56":
+ "<code>HPow.hPow.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HPow α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a ^ b` computes `a` to the power of `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `^` in identifiers is `pow`.</code>",
+ "55": "<code>(NumberField.IsCMField.unitsComplexConj K) u * u = 1</code>",
+ "54":
+ "<code>IsCyclotomicExtension.zeta.{w, z} (n : ℕ) [NeZero n] (A : Type w) (B : Type z) [CommRing A] [CommRing B] [Algebra A B]\n  [IsCyclotomicExtension {n} A B] : B</code><span class=\"sep\"></span><code class=\"docstring\">If `B` is an `n`-th cyclotomic extension of `A`, then `zeta n A B` is a primitive root of\nunity in `B`. </code>",
+ "53":
+ "<code>IsPrimitiveRoot.{u_1} {M : Type u_1} [CommMonoid M] (ζ : M) (k : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An element `ζ` is a primitive `k`-th root of unity if `ζ ^ k = 1`,\nand if `l` satisfies `ζ ^ l = 1` then `k ∣ l`. </code>",
+ "52": "<code>IsPrimitiveRoot (IsCyclotomicExtension.zeta p ℚ K) p</code>",
+ "51":
+ "<code>Rat : Type</code><span class=\"sep\"></span><code class=\"docstring\">Rational numbers, implemented as a pair of integers `num / den` such that the\ndenominator is positive and the numerator and denominator are coprime.\n</code>",
+ "50":
+ "<code>IsCyclotomicExtension.{u, v} (S : Set ℕ) (A : Type u) (B : Type v) [CommRing A] [CommRing B] [Algebra A B] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Given an `A`-algebra `B` and `S : Set ℕ`, we define `IsCyclotomicExtension S A B` requiring\nthat there is an `n`-th primitive root of unity in `B` for all nonzero `n ∈ S` and that\n`B` is generated over `A` by the roots of `X ^ n - 1`. </code>",
+ "5":
+ "<code>BernoulliRegular.h.{u_1} (K : Type u_1) [Field K] [NumberField K] : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The class number of `K`, written locally as `h`. </code>",
+ "49": "<code>p ≠ 2</code>",
+ "48":
+ "<code>Nat.Prime (p : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Nat.Prime p` means that `p` is a prime number, that is, a natural number\nat least 2 whose only divisors are `p` and `1`.\nThe theorem `Nat.prime_def` witnesses this description of a prime number. </code>",
+ "47":
+ "<code>Fact (p : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Wrapper for adding elementary propositions to the type class systems.\nWarning: this can easily be abused. See the rest of this docstring for details.\n\nCertain propositions should not be treated as a class globally,\nbut sometimes it is very convenient to be able to use the type class system\nin specific circumstances.\n\nFor example, `ZMod p` is a field if and only if `p` is a prime number.\nIn order to be able to find this field instance automatically by type class search,\nwe have to turn `p.Prime` into an instance implicit assumption.\n\nOn the other hand, making `Nat.Prime` a class would require a major refactoring of the library,\nand it is questionable whether making `Nat.Prime` a class is desirable at all.\nThe compromise is to add the assumption `[Fact p.Prime]` to `ZMod.instField`.\n\nIn particular, this class is not intended for turning the type class system\ninto an automated theorem prover for first-order logic. </code>",
+ "46": "<code>Fact (Nat.Prime p)</code>",
+ "45": "<code>ℕ</code>",
+ "44":
+ "<code>BernoulliRegular.antisymmetric_unit_eq_neg_one_pow_mul_zeta_pow.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2)\n  (K : Type u_1) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K]\n  {hζ : IsPrimitiveRoot (IsCyclotomicExtension.zeta p ℚ K) p} (u : (NumberField.RingOfIntegers K)ˣ)\n  (hu : (NumberField.IsCMField.unitsComplexConj K) u * u = 1) : ∃ n k, u = (-1) ^ k * ⋯.unit ^ n</code><span class=\"sep\"></span><code class=\"docstring\">An antisymmetric unit has the form `(-1)^k ζ^n`. </code>",
+ "43":
+ "<code>NumberField.IsCMField.unitsComplexConj.{u_1} (K : Type u_1) [Field K] [CharZero K] [NumberField.IsCMField K]\n  [Algebra.IsIntegral ℚ K] : (NumberField.RingOfIntegers K)ˣ ≃* (NumberField.RingOfIntegers K)ˣ</code><span class=\"sep\"></span><code class=\"docstring\">The complex conjugation as an isomorphism of the units of `K`. </code>",
+ "42":
+ "<code>(NumberField.IsCMField.ringOfIntegersComplexConj K) a = ↑u * a</code>",
+ "41":
+ "<code>Units.{u} (α : Type u) [Monoid α] : Type u</code><span class=\"sep\"></span><code class=\"docstring\">Units of a `Monoid`, bundled version. Notation: `αˣ`.\n\nAn element of a `Monoid` is a unit if it has a two-sided inverse.\nThis version bundles the inverse element so that it can be computed.\nFor a predicate see `IsUnit`. </code>",
+ "407":
+ "<code>BernoulliRegular.dvd_h_iff_exists_dvd_bernoulli_of_weakReflection.{u_1} {p : ℕ} [hp : Fact (Nat.Prime p)]\n  (hp_odd : p ≠ 2) {K : Type u_1} [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] :\n  p ∣ BernoulliRegular.h K ↔ ∃ k, 1 ≤ k ∧ 2 * k ≤ p - 3 ∧ ↑p ∣ (bernoulli (2 * k)).num</code><span class=\"sep\"></span><code class=\"docstring\">**T045a/T045b via weak reflection.**\n\nThis is the class-number/Bernoulli bridge using the explicit weak-reflection\ncomponent theorem rather than a prebuilt `ReflectionMinusNontrivialityBridge`.\nThe only reflection input is `weakReflection_componentNontrivial`. </code>",
+ "406":
+ "<code>BernoulliRegular.Thaine.IsThaineAuxiliary (p n ℓ : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**`IsThaineAuxiliary p n ℓ`**: predicate saying that the prime `ℓ` is\nsuitable as a Thaine auxiliary at level `n` for the prime `p`. The\nconditions are:\n\n1. `ℓ ≠ p`.\n2. `p^n ∣ (ℓ - 1)` (i.e., `ℓ ≡ 1 mod p^n`).\n\nThe Frobenius condition (item 3 in the file docstring) is parametric\non the target Galois action and is encoded separately in the\nconstruction sites of `T-THAINE-3`. </code>",
+ "405":
+ "<code>BernoulliRegular.Thaine.infinite_setOf_thaineAuxiliary (p : ℕ) (hp : Nat.Prime p) (n : ℕ) (hn : 1 ≤ n) :\n  {ℓ | Nat.Prime ℓ ∧ BernoulliRegular.Thaine.IsThaineAuxiliary p n ℓ}.Infinite</code><span class=\"sep\"></span><code class=\"docstring\">**Infinitude of Thaine-auxiliary primes** (unconditional). For any\nprime `p` and any `n ≥ 1`, the set of primes ℓ with `IsThaineAuxiliary\np n ℓ` is infinite. Proof: the set of primes ℓ with `(ℓ : ZMod (p^n)) = 1`\nis infinite by Dirichlet density, and removing the (at most one) prime\nequal to `p` (which doesn't satisfy the congruence anyway, by the\nargument in `thaineAuxiliaryExistence_of_prime`) leaves an infinite set. </code>",
+ "404":
+ "<code>BernoulliRegular.Thaine.ThaineAuxiliaryExistence (p n : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Existence (placeholder for Chebotarev)**: for any `p, n`, there\nexists at least one Thaine auxiliary prime. Proved by Chebotarev density,\nwhich guarantees infinitely many such primes. The full proof is deferred\nto a refinement that invokes mathlib's Chebotarev infrastructure; for\nnow we record the existence as the interface contract. </code>",
+ "403": "<code>1 ≤ n</code>",
+ "402":
+ "<code>BernoulliRegular.Thaine.thaineAuxiliaryExistence_of_prime (p : ℕ) (hp : Nat.Prime p) (n : ℕ) (hn : 1 ≤ n) :\n  BernoulliRegular.Thaine.ThaineAuxiliaryExistence p n</code><span class=\"sep\"></span><code class=\"docstring\">**Generic Thaine-auxiliary existence via Dirichlet density**\n(unconditional). For any prime `p` and any `n ≥ 1`, there exists a\nprime ℓ ≠ p with `p^n ∣ ℓ - 1`. Proof: Dirichlet's theorem (mathlib's\n`Nat.setOf_prime_and_eq_mod_infinite`) says the set of primes ℓ with\n`(ℓ : ZMod (p^n)) = 1` is infinite, hence in particular non-empty;\nmoreover, `ℓ ≠ p` is automatic since `(p : ZMod (p^n)) = 0 ≠ 1` for any\nprime `p` (since `p ∣ p^n` already, so `p ≡ 0` not `1` modulo `p^n`). </code>",
+ "401":
+ "<code>BernoulliRegular.Thaine.circularSubgroupKplus.{u_1} (p : ℕ) [Fact (Nat.Prime p)] (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p) :\n  Subgroup (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ</code><span class=\"sep\"></span><code class=\"docstring\">**Sinnott's circular subgroup `C_S(K⁺)` for prime conductor `p`**.\n\nThe subgroup of `(𝓞 K⁺)ˣ` generated by `-1` and the cyclotomic units\n`realCyclotomicUnitPlusUnit (i+2)` for `i : Fin ((p-3)/2)`.\n\nFor prime conductor `p`, this **coincides** with Washington's `C_cl(K⁺)`\n(see [Wash97 2nd ed §8.2]). The naming `circularSubgroupKplus` (rather\nthan `C_S` or `C_cl`) avoids the distinction in the prime-conductor\ncase, per the reviewer's recommendation. </code>",
+ "400":
+ "<code>BernoulliRegular.Thaine.circularSubgroupKplus_eq_sinnott_eq_washington.{u_1} (p : ℕ) [Fact (Nat.Prime p)] (K : Type u_1)\n  [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p) :\n  BernoulliRegular.Thaine.circularSubgroupKplus p K hp_three =\n    BernoulliRegular.Thaine.circularSubgroupKplus p K hp_three</code><span class=\"sep\"></span><code class=\"docstring\">**Marker theorem: for prime conductor, `circularSubgroupKplus` serves\nas both Sinnott's `C_S(K⁺)` and Washington's `C_cl(K⁺)`**.\n\nThe two are definitionally the same group when the conductor is prime\n([Wash97 §8.2] / [Sinnott 1980]). The naming `circularSubgroupKplus`\navoids the distinction. </code>",
+ "40":
+ "<code>BernoulliRegular.conj_unit_mul_eq_one.{u_1} (K : Type u_1) [Field K] [NumberField K] [NumberField.IsCMField K]\n  (a : NumberField.RingOfIntegers K) (ha : a ≠ 0) (u : (NumberField.RingOfIntegers K)ˣ)\n  (hu : (NumberField.IsCMField.ringOfIntegersComplexConj K) a = ↑u * a) :\n  (NumberField.IsCMField.unitsComplexConj K) u * u = 1</code><span class=\"sep\"></span><code class=\"docstring\">If `c(a) = u a` with `a ≠ 0`, then `c(u) u = 1`. </code>",
+ "4":
+ "<code>Subfield.{u} (K : Type u) [DivisionRing K] : Type u</code><span class=\"sep\"></span><code class=\"docstring\">`Subfield R` is the type of subfields of `R`. A subfield of `R` is a subset `s` that is a\nmultiplicative submonoid and an additive subgroup. Note in particular that it shares the\nsame 0 and 1 as R. </code>",
+ "399":
+ "<code>∀ ⦃a b c : ℤ⦄,\n  a ^ 37 + b ^ 37 = c ^ 37 → ¬37 ∣ b → ¬37 ∣ c → BernoulliRegular.FLT37.MirimanoffBernoulliConclusion 37 a b</code>",
+ "398":
+ "<code>BernoulliRegular.FLT37.fermatLastTheoremFor_thirtyseven_of_conclusion_and_vandiverLemma1\n  (h_conclusion :\n    ∀ ⦃a b c : ℤ⦄,\n      a ^ 37 + b ^ 37 = c ^ 37 → ¬37 ∣ b → ¬37 ∣ c → BernoulliRegular.FLT37.MirimanoffBernoulliConclusion 37 a b)\n  (h_caseII : BernoulliRegular.FLT37.VandiverLemma1Thirtyseven) : FermatLastTheoremFor 37</code><span class=\"sep\"></span><code class=\"docstring\">**ℓ = 37 final assembly via 37-specific predicates.** Uses the 37-specific\ncase II predicate `VandiverLemma1Thirtyseven` (instead of the universal\n`VandiverIIICaseII`), giving a tighter conditional statement. </code>",
+ "397":
+ "<code>id.{u} {α : Sort u} (a : α) : α</code><span class=\"sep\"></span><code class=\"docstring\">The identity function. `id` takes an implicit argument `α : Sort u`\n(a type in any universe), and an argument `a : α`, and returns `a`.\n\nAlthough this may look like a useless function, one application of the identity\nfunction is to explicitly put a type on an expression. If `e` has type `T`,\nand `T'` is definitionally equal to `T`, then `@id T' e` typechecks, and Lean\nknows that this expression has type `T'` rather than `T`. This can make a\ndifference for typeclass inference, since `T` and `T'` may have different\ntypeclass instances on them. `show T' from e` is sugar for an `@id T' e`\nexpression.\n</code>",
+ "396":
+ "<code>Finset.gcd.{u_2, u_3} {α : Type u_2} {β : Type u_3} [CommMonoidWithZero α] [NormalizedGCDMonoid α] (s : Finset β)\n  (f : β → α) : α</code><span class=\"sep\"></span><code class=\"docstring\">Greatest common divisor of a finite set </code>",
+ "395":
+ "<code>Insert.insert.{u, v} {α : outParam (Type u)} {γ : Type v} [self : Insert α γ] : α → γ → γ</code><span class=\"sep\"></span><code class=\"docstring\">`insert x xs` inserts the element `x` into the collection `xs`. </code>",
+ "394": "<code>BernoulliRegular.FLT37.VandiverLemma1Thirtyseven</code>",
+ "393":
+ "<code>BernoulliRegular.FLT37.caseII_thirtyseven_of_vandiverLemma1 (h : BernoulliRegular.FLT37.VandiverLemma1Thirtyseven)\n  ⦃a b c : ℤ⦄ : a * b * c ≠ 0 → {a, b, c}.gcd id = 1 → 37 ∣ a * b * c → a ^ 37 + b ^ 37 ≠ c ^ 37</code><span class=\"sep\"></span><code class=\"docstring\">**caseII for ℓ = 37 from VandiverLemma1Thirtyseven.** The conditional\ntheorem: given the 37-specific Vandiver Lemma 1 predicate (which encodes\nthe case II descent for irregular 37 under the parity hypothesis), case II\nfor 37 follows. </code>",
+ "392":
+ "<code>BernoulliRegular.FLT37.VandiverLemma1Thirtyseven : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Vandiver Lemma 1 predicate, ℓ = 37 specialization.** Captures the\nregularity-free structural input needed for case II at ℓ = 37: under the\nparity hypothesis plus `37 ∤ h⁺`, the ideals arising in the case II\ndecomposition are principal even without the regular-prime hypothesis.\nThe reflection theorem T044 (already established in `Reflection/Final.lean`)\nis one of the inputs to discharging this predicate. </code>",
+ "391":
+ "<code>False : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`False` is the empty proposition. Thus, it has no introduction rules.\nIt represents a contradiction. `False` elimination rule, `False.rec`,\nexpresses the fact that anything follows from a contradiction.\nThis rule is sometimes called ex falso (short for ex falso sequitur quodlibet),\nor the principle of explosion.\nFor more information: [Propositional Logic](https://lean-lang.org/theorem_proving_in_lean4/propositions_and_proofs.html#propositional-logic)\n</code>",
+ "390":
+ "<code>BernoulliRegular.FLT37.MirimanoffBernoulliConclusion 37 a b</code>",
+ "39":
+ "<code>HMul.hMul.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HMul α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a * b` computes the product of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `*` in identifiers is `mul`.</code>",
+ "389": "<code>¬37 ∣ b</code>",
+ "388": "<code>¬37 ∣ c</code>",
+ "387": "<code>a ^ 37 + b ^ 37 = c ^ 37</code>",
+ "386":
+ "<code>BernoulliRegular.FLT37.caseI_thirtyseven_of_bernoulli_conclusion {a b c : ℤ} (heq : a ^ 37 + b ^ 37 = c ^ 37)\n  (hc : ¬37 ∣ c) (hb : ¬37 ∣ b) (hMC : BernoulliRegular.FLT37.MirimanoffBernoulliConclusion 37 a b) : False</code><span class=\"sep\"></span><code class=\"docstring\">**ℓ = 37 conditional case I via `MirimanoffBernoulliConclusion`.**\nTakes the higher-level Bernoulli-divisibility predicate directly. </code>",
+ "385":
+ "<code>BernoulliRegular.FLT37.MirimanoffBernoulliConclusion (p : ℕ) [Fact (Nat.Prime p)] (a b : ℤ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Direct Bernoulli divisibility predicate.** A higher-level alternative to\nthe conjunction `MirimanoffPolynomialVanishing ∧ MirimanoffBernoulliIdentity`:\ndirectly state the conclusion that under FLT case I, for every `n` in the\nrange `2 ≤ n ≤ p - 3` such that `t^n ≠ 1` in `ZMod p`, the prime `p` divides\nthe numerator of the Bernoulli number `B_{p - n}`.\n\nThis predicate is implied by the conjunction (via\n`bernoulli_dvd_of_mirimanoff_polynomial_vanishing`), and is easier to consume\ndownstream. </code>",
+ "384":
+ "<code>BernoulliRegular.FLT37.MirimanoffBernoulliIdentity (p : ℕ) [Fact (Nat.Prime p)] (a b : ℤ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Mirimanoff-Bernoulli identity predicate** (classical Mirimanoff theorem,\nRibenboim, *13 Lectures on Fermat's Last Theorem*, Lecture VIII Theorem 1B).\n\nFor an FLT case I solution `(a, b, c)` at `p` and `t = -a · b⁻¹ ∈ ZMod p`,\nthe classical Mirimanoff theorem gives the **product congruence**\n\n`φ_n(t) · B_{p-n} ≡ 0 (mod p)`\n\nfor every odd `n` with `2 ≤ n ≤ p - 3`. (Equivalently, with `2s = p - n`\nranging over even values in `[2, p-3]`, the congruence reads\n`φ_{p-2s}(t) · B_{2s} ≡ 0 (mod p)` for `s ∈ [1, (p-3)/2]`.)\n\nCombined with the parity hypothesis (every irregular Bernoulli index\nof `p` has even `k`) and `p ≡ 1 (mod 4)`, the congruence at indices\n`n ≡ 3 (mod 4)` forces `B_{p-n} ≢ 0 (mod p)` (parity rules out the\nodd `k = (p-n)/2`), so the product factors give the polynomial vanishing\n`φ_n(t) ≡ 0 (mod p)` — see\n`mirimanoffPolynomial_eval_eq_zero_of_mbi_and_parity` for the bridge.\n\nThe previous formulation `(p-1)·φ_n(t) ≡ -n·B_{p-n}·(1-t^n) (mod p)` was\nincorrect (numerical refutation at `p = 5, n = 3, t = 2`: LHS = 4, RHS = 1)\nand has been replaced by the classical product form. </code>",
+ "383":
+ "<code>BernoulliRegular.FLT37.MirimanoffPolynomialVanishing (p : ℕ) [Fact (Nat.Prime p)] (a b : ℤ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Mirimanoff polynomial vanishing predicate.** The classical conclusion\nof Mirimanoff's theorem: under FLT case I + regularity, the Mirimanoff\npolynomial `φ_n` vanishes at `t = -a · b⁻¹ (mod p)` for all `n` in the\nrange `2 ≤ n ≤ p - 3`. The Mirimanoff polynomial here is from\n`Mirimanoff.lean`. </code>",
+ "382":
+ "<code>FermatLastTheoremFor (n : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Statement of Fermat's Last Theorem over the naturals for a given exponent. </code>",
+ "381":
+ "<code>BernoulliRegular.FLT37.fermatLastTheoremFor_thirtyseven_of_caseI_caseII (hI : BernoulliRegular.FLT37.VandiverIIICaseI)\n  (hII : BernoulliRegular.FLT37.VandiverIIICaseII) : FermatLastTheoremFor 37</code><span class=\"sep\"></span><code class=\"docstring\">**Direct conditional FLT for 37.** Assuming `VandiverIIICaseI` and\n`VandiverIIICaseII`, `FermatLastTheoremFor 37` follows. This composes\nthe Case-decomposition (`vandiverIII_of_caseI_caseII`) with the\nspecialisation to `ℓ = 37` (`fermatLastTheoremFor_thirtyseven_of_vandiverIII`),\nmaking the remaining mathematical content (FLT37e, FLT37f) the only\noutstanding work. </code>",
+ "380": "<code>BernoulliRegular.FLT37.VandiverIIICaseII</code>",
+ "38": "<code>(NumberField.RingOfIntegers K)ˣ</code>",
+ "379": "<code>BernoulliRegular.FLT37.VandiverIIICaseI</code>",
+ "378":
+ "<code>BernoulliRegular.FLT37.vandiverIII_of_caseI_caseII (hI : BernoulliRegular.FLT37.VandiverIIICaseI)\n  (hII : BernoulliRegular.FLT37.VandiverIIICaseII) : BernoulliRegular.FLT37.VandiverIII</code><span class=\"sep\"></span><code class=\"docstring\">**Vandiver III decomposition (FLT37g).**\n\nThe two halves combine into `VandiverIII` exactly as\n`flt-regular`'s `flt_regular` combines `caseI` and `caseII`:\n\n* reduce to integers via `fermatLastTheoremFor_iff_int`,\n* coprimify via `MayAssume.coprime`,\n* split on `ℓ ∣ a*b*c`. </code>",
+ "377":
+ "<code>BernoulliRegular.FLT37.VandiverIIICaseII : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The second-case half of Vandiver Theorem III: the parity hypothesis\nimplies Case II of FLT for `ℓ`. The hypothesis package mirrors\n`flt-regular`'s `caseII` after the `MayAssume.coprime` reduction. </code>",
+ "376":
+ "<code>BernoulliRegular.FLT37.VandiverIIICaseI : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The first-case half of Vandiver Theorem III: the parity hypothesis on\nirregular indices implies Case I of FLT for `ℓ`. Used in the planned\ndecomposition `VandiverIIICaseI ∧ VandiverIIICaseII → VandiverIII`\n(ticket FLT37g). </code>",
+ "375":
+ "<code>BernoulliRegular.FLT37.VandiverIII : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Vandiver's Theorem III as a quantified statement. Once tickets FLT37b–g\ndischarge this, the unconditional `FermatLastTheoremFor 37` is immediate. </code>",
+ "374":
+ "<code>BernoulliRegular.FLT37.vandiverIIIHypothesis_thirtyseven : BernoulliRegular.FLT37.VandiverIIIHypothesis 37</code><span class=\"sep\"></span><code class=\"docstring\">The hypothesis is verified for `ℓ = 37`. The two conjuncts come from a\ntrivial `decide` and `irregular_index_even_thirtyseven` (FLT37a). </code>",
+ "373":
+ "<code>BernoulliRegular.FLT37.VandiverIIIHypothesis (ℓ : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The hypothesis package used by Vandiver's Theorem III: the prime is\n`≡ 1 (mod 4)` and every irregular Bernoulli index in the relevant range has\neven `k`. </code>",
+ "372":
+ "<code>BernoulliRegular.FLT37.IsIrregularIndex (ℓ k : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An **irregular index** of `ℓ` is a positive integer `k` with\n`2k ≤ ℓ - 3` and `ℓ ∣ num(B_{2k})`. </code>",
+ "371":
+ "<code>BernoulliRegular.Furtwaengler.pthSymbolAtInt_canonical.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] (α : NumberField.RingOfIntegers K) (a : ℤ) : ZMod p</code><span class=\"sep\"></span><code class=\"docstring\">The canonical residue symbol with rational-integer denominator. </code>",
+ "370":
+ "<code>BernoulliRegular.Furtwaengler.IsCoprimeToPAndAlphaInt.{u_1} {p : ℕ} {K : Type u_1} [Field K] (a : ℤ)\n  (α : NumberField.RingOfIntegers K) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Coprimality hypotheses for rational-integer Eisenstein reciprocity. </code>",
+ "37":
+ "<code>Ideal.map (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))\n    I =\n  Ideal.span {(NumberField.IsCMField.ringOfIntegersComplexConj K) a}</code>",
+ "369":
+ "<code>BernoulliRegular.Furtwaengler.IsCoprimeToPAndAlphaInt a α</code>",
+ "368":
+ "<code>BernoulliRegular.Furtwaengler.IsPrimeToP.{u_1} {p : ℕ} {K : Type u_1} [Field K] (α : NumberField.RingOfIntegers K) :\n  Prop</code><span class=\"sep\"></span><code class=\"docstring\">`α` is prime to the rational prime `p`. </code>",
+ "367": "<code>BernoulliRegular.Furtwaengler.IsPrimeToP α</code>",
+ "366":
+ "<code>BernoulliRegular.FLT37.IsPrimary.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] {K : Type u_1} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] (α : NumberField.RingOfIntegers K) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An element `α ∈ 𝒪_K` is **primary** when it is congruent to some rational\ninteger modulo `(ζ - 1)^{2p}`. </code>",
+ "365": "<code>BernoulliRegular.FLT37.IsPrimary p α</code>",
+ "364":
+ "<code>BernoulliRegular.Furtwaengler.IrelandRosen.eisensteinReciprocity_theorem1.{u} (p : ℕ) [Fact (Nat.Prime p)]\n  (hp_odd : Odd p) (K : Type u) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K]\n  {α : NumberField.RingOfIntegers K} (a : ℤ) (hα_primary : BernoulliRegular.FLT37.IsPrimary p α)\n  (hα_prime_to_p : BernoulliRegular.Furtwaengler.IsPrimeToP α)\n  (ha : BernoulliRegular.Furtwaengler.IsCoprimeToPAndAlphaInt a α) :\n  BernoulliRegular.Furtwaengler.pthSymbolAtInt_canonical α a =\n    BernoulliRegular.Furtwaengler.pthSymbolAtIdeal_canonical ((algebraMap ℤ (NumberField.RingOfIntegers K)) a)\n      (Ideal.span {α})</code><span class=\"sep\"></span><code class=\"docstring\">Ireland--Rosen, Chapter 14, Section 2, Theorem 1, in the canonical\nproject residue-symbol notation.\n\nDictionary with the statement in Ireland--Rosen:\n* `p`, `[Fact p.Prime]`, and `hp_odd` are the odd rational prime `p`.\n* `K` with `[IsCyclotomicExtension {p} ℚ K]` is the cyclotomic field\n  containing the `p`-th roots of unity; in Ireland--Rosen this is\n  `ℚ(ζ_p)`.\n* `α : 𝓞 K` is Ireland--Rosen's algebraic integer `α`.\n* `hα_primary` is the primary hypothesis on `α`.\n* `hα_prime_to_p` says `α` is nonzero and prime to the rational prime `p`.\n* `a : ℤ` is Ireland--Rosen's rational integer denominator.\n* `ha` says `a ≠ 0` and the ideal `(a)` is prime both to `(α)` and to `(p)`.\n\nThe conclusion is the equality `(α / a)_p = (a / α)_p`; the right-hand side is\nwritten in project notation as the canonical ideal symbol with numerator\n`a : 𝓞 K` and denominator the principal ideal `(α)`. </code>",
+ "363":
+ "<code>BernoulliRegular.weakReflection_dvd_hMinus_of_dvd_hPlus.{u} (p : ℕ) [Fact (Nat.Prime p)] (hp_odd : p ≠ 2) (K : Type u)\n  [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K]\n  (hplus : p ∣ BernoulliRegular.hPlus K) : p ∣ BernoulliRegular.hMinus K</code><span class=\"sep\"></span><code class=\"docstring\">**Weak reflection, class-number consequence.**\n\nFor the cyclotomic field `K = Q(zeta_p)`, divisibility of the plus relative\nclass number by `p` forces divisibility of the minus relative class number by\n`p`. This is the form consumed by Kummer's criterion.\nThe only reflection input is `weakReflection_componentNontrivial`. </code>",
+ "362":
+ "<code>BernoulliRegular.reflectedComponentIndex (p i : ℕ) : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The reflected index in the usual reflection pairing. </code>",
+ "361":
+ "<code>BernoulliRegular.eigenspaceComponentNontrivial.{u} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] (i : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Eigenspace-based component non-triviality predicate**: the\n`i`-th Δ-character eigenspace of `Additive (ClassGroupModP K p)`\nunder `cyclotomicGalActionInstance` is non-trivial. </code>",
+ "360": "<code>BernoulliRegular.eigenspaceComponentNontrivial p K i</code>",
+ "36":
+ "<code>Ideal.map (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))\n    I =\n  Ideal.span {a}</code>",
+ "359": "<code>Even i</code>",
+ "358":
+ "<code>BernoulliRegular.IsReflectionComponentIndex (p i : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Valid indices for the non-boundary components: `0 &lt; i &lt; p`. </code>",
+ "357": "<code>BernoulliRegular.IsReflectionComponentIndex p i</code>",
+ "356":
+ "<code>BernoulliRegular.weakReflection_componentNontrivial.{u} (p : ℕ) [Fact (Nat.Prime p)] (hp_odd : Odd p) (K : Type u)\n  [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] {i : ℕ}\n  (hi : BernoulliRegular.IsReflectionComponentIndex p i) (hi_even : Even i)\n  (hcomp : BernoulliRegular.eigenspaceComponentNontrivial p K i) :\n  BernoulliRegular.eigenspaceComponentNontrivial p K (BernoulliRegular.reflectedComponentIndex p i)</code><span class=\"sep\"></span><code class=\"docstring\">**Weak reflection, component form.**\n\nFor the cyclotomic field `K = Q(zeta_p)`, if the even `i`-th character\ncomponent of `Cl(O_K) / p` is nontrivial, then the reflected component\n`p - i`, equivalently `1 - i mod p - 1`, is nontrivial.\n\nThe proof uses the primary singular-pair extraction in the interior range and\nthe zero-character contradiction for the endpoint `i = p - 1`.  The only\nremaining hard reciprocity input in this chain is\n`oneSidedKummerPrincipalReciprocity_canonical`, through the WR-05\nnontriviality theorem for the concrete Kummer bad-set character. </code>",
+ "355":
+ "<code>BernoulliRegular.Furtwaengler.pthSymbolAtIdeal_canonical.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] (α : NumberField.RingOfIntegers K)\n  (I : Ideal (NumberField.RingOfIntegers K)) : ZMod p</code><span class=\"sep\"></span><code class=\"docstring\">The canonical `p`-th-power residue symbol `(α/I)_p` extended to integral\nideals by multiplicativity over the prime factorization of `I`. Same shape\nas `pthSymbolAtIdeal`, but with `pthSymbolAtPrime_canonical` (which uses the\ncanonical primitive `p`-th root, eliminating the `Classical.choose`). </code>",
+ "354":
+ "<code>BernoulliRegular.Furtwaengler.IsLambdaLocalPthPower.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] (α : NumberField.RingOfIntegers K) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Exact local `p`-th-power condition in the valued completion of `K` at\n`λ = ζ_p - 1`, for integral elements. </code>",
+ "353": "<code>BernoulliRegular.Furtwaengler.IsLambdaLocalPthPower α</code>",
+ "352": "<code>IsCoprime (Ideal.span {β}) (Ideal.span {↑p})</code>",
+ "351": "<code>IsCoprime (Ideal.span {α}) (Ideal.span {↑p})</code>",
+ "350":
+ "<code>IsCoprime.{u} {R : Type u} [CommSemiring R] (x y : R) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The proposition that `x` and `y` are coprime, defined to be the existence of `a` and `b` such\nthat `a * x + b * y = 1`. Note that elements with no common divisors are not necessarily coprime,\ne.g., the multivariate polynomials `x₁` and `x₂` are not coprime. </code>",
+ "35":
+ "<code>Ne.{u} {α : Sort u} (a b : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`a ≠ b`, or `Ne a b` is defined as `¬ (a = b)` or `a = b → False`,\nand asserts that `a` and `b` are not equal.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≠` in identifiers is `ne`.</code>",
+ "349": "<code>IsCoprime (Ideal.span {α}) (Ideal.span {β})</code>",
+ "348": "<code>β ≠ 0</code>",
+ "347": "<code>α ≠ 0</code>",
+ "346":
+ "<code>Odd.{u_2} {α : Type u_2} [Semiring α] (a : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An element `a` of a semiring is odd if there exists `k` such `a = 2*k + 1`. </code>",
+ "345": "<code>Odd p</code>",
+ "344":
+ "<code>BernoulliRegular.Furtwaengler.oneSidedKummerPrincipalReciprocity_canonical.{u} (p : ℕ) [Fact (Nat.Prime p)]\n  (hp_odd : Odd p) (K : Type u) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K]\n  {α β : NumberField.RingOfIntegers K} (hα_ne : α ≠ 0) (hβ_ne : β ≠ 0)\n  (hcop : IsCoprime (Ideal.span {α}) (Ideal.span {β})) (hα_prime_to_p : IsCoprime (Ideal.span {α}) (Ideal.span {↑p}))\n  (hβ_prime_to_p : IsCoprime (Ideal.span {β}) (Ideal.span {↑p}))\n  (hα_local : BernoulliRegular.Furtwaengler.IsLambdaLocalPthPower α) :\n  BernoulliRegular.Furtwaengler.pthSymbolAtIdeal_canonical α (Ideal.span {β}) =\n    BernoulliRegular.Furtwaengler.pthSymbolAtIdeal_canonical β (Ideal.span {α})</code><span class=\"sep\"></span><code class=\"docstring\">**One-sided Kummer principal reciprocity, canonical additive form.**\n\nLet `K = ℚ(ζ_p)` and `λ = (ζ_p - 1)`.  If `α β : 𝓞 K` are nonzero,\ntheir principal ideals are coprime, both are prime to `p`, and `α` is a\n`p`-th power in the `λ`-adic completion, then\n\n`(α / (β))_p = (β / (α))_p`.\n\nHere both sides are written as the canonical additive `ZMod p` residue\nsymbol `pthSymbolAtIdeal_canonical`. </code>",
+ "343":
+ "<code>Set.Infinite.{u} {α : Type u} (s : Set α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A set is infinite if it is not finite.\n\nThis is protected so that it does not conflict with global `Infinite`. </code>",
+ "342":
+ "<code>setOf.{u} {α : Type u} (p : α → Prop) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">Turn a predicate `p : α → Prop` into a set, also written as `{x | p x}` </code>",
+ "341":
+ "<code>BernoulliRegular.infinite_not_isRegularPrime : {p | ∃ (_ : Nat.Prime p), ¬IsRegularPrime p}.Infinite</code><span class=\"sep\"></span><code class=\"docstring\">Infinitely many primes are not regular, by the Carlitz route. </code>",
+ "340":
+ "<code>BernoulliRegular.exists_not_isRegularPrime_not_mem_carlitz (S : Finset ℕ) :\n  ∃ p, ∃ (_ : Nat.Prime p), ¬IsRegularPrime p ∧ p ∉ S</code><span class=\"sep\"></span><code class=\"docstring\">Carlitz finite-set contradiction. </code>",
+ "34": "<code>a ≠ 0</code>",
+ "339":
+ "<code>BernoulliRegular.exists_numerator_prime_for_carlitz_base (S : Finset ℕ) :\n  ∃ M p, Nat.Prime p ∧ p ≠ 2 ∧ Even M ∧ 0 &lt; M ∧ (∀ q ∈ S, Nat.Prime q → q - 1 ∣ M) ∧ ↑p ∣ (bernoulli M / ↑M).num ∧ p ∉ S</code><span class=\"sep\"></span><code class=\"docstring\">Carlitz-facing wrapper around the constructed large multiple.  It packages\nthe index as a single even positive `M` divisible by `q - 1` for every prime\n`q` in the finite input set. </code>",
+ "338":
+ "<code>Finset.{u_4} (α : Type u_4) : Type u_4</code><span class=\"sep\"></span><code class=\"docstring\">`Finset α` is the type of finite sets of elements of `α`. It is implemented\nas a multiset (a list up to permutation) which has no duplicate elements. </code>",
+ "337": "<code>Finset ℕ</code>",
+ "336":
+ "<code>BernoulliRegular.irregularBase (S : Finset ℕ) : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The explicit even multiplier attached to a finite set of candidate primes. </code>",
+ "335": "<code>q ≠ 2</code>",
+ "334": "<code>Nat.Prime q</code>",
+ "333":
+ "<code>BernoulliRegular.not_isRegularPrime_iff_exists_dvd_bernoulli_div_self_num {q : ℕ} (hq : Nat.Prime q) (hq_odd : q ≠ 2) :\n  ¬IsRegularPrime q ↔ ∃ m, 0 &lt; m ∧ Even m ∧ ↑q ∣ (bernoulli m / ↑m).num</code><span class=\"sep\"></span><code class=\"docstring\">Carlitz divisor criterion from the full Kummer congruence. </code>",
+ "332":
+ "<code>Nat.ModEq (n a b : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Modular equality. `n.ModEq a b`, or `a ≡ b [MOD n]`, means that `a % n = b % n`. </code>",
+ "331": "<code>m ≡ n [MOD p - 1]</code>",
+ "330": "<code>¬p - 1 ∣ n</code>",
+ "33": "<code>NumberField.RingOfIntegers K</code>",
+ "329": "<code>Even n</code>",
+ "328": "<code>Even m</code>",
+ "327": "<code>0 &lt; n</code>",
+ "326": "<code>0 &lt; m</code>",
+ "325":
+ "<code>BernoulliRegular.bernoulli_div_sModEq_of_modEq_full {p m n : ℕ} [Fact (Nat.Prime p)] (hp_odd : p ≠ 2) (hm_pos : 0 &lt; m)\n  (hn_pos : 0 &lt; n) (hm_even : Even m) (hn_even : Even n) (hnot : ¬p - 1 ∣ n) (hmn : m ≡ n [MOD p - 1]) :\n  ∃ z, ↑(bernoulli m / ↑m) - ↑(bernoulli n / ↑n) = ↑p * ↑z</code><span class=\"sep\"></span><code class=\"docstring\">**Standard Kummer congruence for divided Bernoulli numbers.**\n\nThis is the public full congruence used by the Carlitz route.  The odd-prime\ncase reduces to `p ≥ 5`: if `p = 3`, then `p - 1 = 2` divides every even\nnon-boundary exponent, contradicting the hypotheses. </code>",
+ "324":
+ "<code>IsRegularPrime (p : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The definition of regular primes. </code>",
+ "323":
+ "<code>BernoulliRegular.KummerCriterion {p : ℕ} [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2) :\n  IsRegularPrime p ↔ ∀ (k : ℕ), 1 ≤ k → 2 * k ≤ p - 3 → ¬↑p ∣ (bernoulli (2 * k)).num</code><span class=\"sep\"></span><code class=\"docstring\">**Kummer's criterion.**\n\nAn odd prime `p` is regular iff `p` does not divide the numerator of any\nBernoulli number `B_2, B_4, ..., B_{p-3}`. </code>",
+ "322":
+ "<code>BernoulliRegular.dvd_h_iff_exists_dvd_bernoulli_units {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) :\n  p ∣ BernoulliRegular.h K ↔ ∃ k, 1 ≤ k ∧ 2 * k ≤ p - 3 ∧ ↑p ∣ (bernoulli (2 * k)).num</code><span class=\"sep\"></span><code class=\"docstring\">The total class-number divisibility criterion obtained from the\ncyclotomic-unit weak-reflection route. </code>",
+ "321":
+ "<code>p ∣ BernoulliRegular.hPlus K → p ∣ BernoulliRegular.hMinus K</code>",
+ "320":
+ "<code>BernoulliRegular.dvd_h_iff_dvd_hMinus_of_dvd_hPlus_imp.{u_1} {p : ℕ} [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2)\n  {K : Type u_1} [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K]\n  (hplus_to_hminus : p ∣ BernoulliRegular.hPlus K → p ∣ BernoulliRegular.hMinus K) :\n  p ∣ BernoulliRegular.h K ↔ p ∣ BernoulliRegular.hMinus K</code><span class=\"sep\"></span><code class=\"docstring\">If the cyclotomic-unit route proves `p ∣ hPlus K → p ∣ hMinus K`, then\nthe total class-number divisibility condition is equivalent to relative\nclass-number divisibility.\n\nThe canonical class-number API used here is:\n* `h K` from `BernoulliRegular/TotallyRealSubfield/Basic.lean`;\n* `hPlus K` from `BernoulliRegular/TotallyRealSubfield/Basic.lean`;\n* `hMinus K` from `BernoulliRegular/TotallyRealSubfield/ClassGroup.lean`;\n* `h_eq_hPlus_mul_hMinus` from\n  `BernoulliRegular/TotallyRealSubfield/ClassGroup.lean`.\n</code>",
+ "32":
+ "<code>BernoulliRegular.conj_generator_associated.{u_1} (K : Type u_1) [Field K] [NumberField K] [NumberField.IsCMField K]\n  (a : NumberField.RingOfIntegers K) (_ha : a ≠ 0)\n  (I : Ideal (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)))\n  (hIa :\n    Ideal.map\n        (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))\n        I =\n      Ideal.span {a})\n  (hIca :\n    Ideal.map\n        (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))\n        I =\n      Ideal.span {(NumberField.IsCMField.ringOfIntegersComplexConj K) a}) :\n  ∃ u, (NumberField.IsCMField.ringOfIntegersComplexConj K) a = ↑u * a</code><span class=\"sep\"></span><code class=\"docstring\">If `(a) = (c(a))`, then `c(a)` differs from `a` by a unit. </code>",
+ "319": "<code>p ∣ BernoulliRegular.hPlus K</code>",
+ "318":
+ "<code>BernoulliRegular.weakReflection_dvd_hMinus_of_dvd_hPlus_units {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hplus : p ∣ BernoulliRegular.hPlus K) : p ∣ BernoulliRegular.hMinus K</code><span class=\"sep\"></span><code class=\"docstring\">CU-18: weak reflection by contrapositive from the cyclotomic-unit route. </code>",
+ "317":
+ "<code>BernoulliRegular.not_dvd_hPlus_of_not_dvd_hMinus_units {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hminus : ¬p ∣ BernoulliRegular.hMinus K) :\n  ¬p ∣ BernoulliRegular.hPlus K</code><span class=\"sep\"></span><code class=\"docstring\">CU-17: contrapositive weak reflection from the cyclotomic-unit route. </code>",
+ "316": "<code>¬p ∣ BernoulliRegular.hMinus K</code>",
+ "315":
+ "<code>BernoulliRegular.bernoulli_nonzero_of_not_dvd_hMinus.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hminus : ¬p ∣ BernoulliRegular.hMinus K) (k : ℕ) : 1 ≤ k → 2 * k ≤ p - 3 → ¬↑p ∣ (bernoulli (2 * k)).num</code><span class=\"sep\"></span><code class=\"docstring\">Contrapositive form of `p_dvd_hMinus_iff_p_dvd_some_bernoulli`.\n\nFor the concrete model `CyclotomicField p ℚ`, use this theorem with\n`K := CyclotomicField p ℚ` after installing the CM-field instance from\n`isCMField_of_cyclotomic`. The divisibility statements already have the\nneeded casts: `hMinus` uses `(p : ℕ)`, while Bernoulli numerators use\n`(p : ℤ)`.\n</code>",
+ "314":
+ "<code>BernoulliRegular.p_dvd_hMinus_iff_p_dvd_some_bernoulli.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd' : p ≠ 2) :\n  p ∣ BernoulliRegular.hMinus K ↔ ∃ k, 1 ≤ k ∧ 2 * k ≤ p - 3 ∧ ↑p ∣ (bernoulli (2 * k)).num</code><span class=\"sep\"></span><code class=\"docstring\">Diekmann Theorem 42: `p` divides the relative class number iff it divides\nthe numerator of one of the relevant even Bernoulli numbers. </code>",
+ "313":
+ "<code>BernoulliRegular.cyclotomicUnitIndex_primeConductor_pPrimary_of_five_le {p : ℕ} [Fact (Nat.Prime p)] {K : Type}\n  [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_ge_five : 5 ≤ p) :\n  p ∣ (BernoulliRegular.normalizedCPlus ⋯ ⋯).index ↔ p ∣ BernoulliRegular.hPlus K</code>",
+ "312": "<code>p = 3</code>",
+ "311":
+ "<code>BernoulliRegular.cyclotomicUnitIndex_primeConductor_pPrimary_of_eq_three {p : ℕ} [Fact (Nat.Prime p)] {K : Type}\n  [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hp_three : 3 ≤ p) (hp_eq : p = 3) :\n  p ∣ (BernoulliRegular.normalizedCPlus hp_odd hp_three).index ↔ p ∣ BernoulliRegular.hPlus K</code>",
+ "310":
+ "<code>BernoulliRegular.cyclotomicUnitIndex_primeConductor_pPrimary {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) :\n  p ∣ (BernoulliRegular.normalizedCPlus hp_odd ⋯).index ↔ p ∣ BernoulliRegular.hPlus K</code><span class=\"sep\"></span><code class=\"docstring\">CU-06: the prime-conductor cyclotomic-unit index theorem for the TeX\nnormalized subgroup `C⁺ = &lt;-1, ε₂, ..., ε_g&gt;`, in odd-primary form. </code>",
+ "31":
+ "<code>RingEquiv.toRingHom.{u_4, u_5} {R : Type u_4} {S : Type u_5} [NonAssocSemiring R] [NonAssocSemiring S] (e : R ≃+* S) :\n  R →+* S</code><span class=\"sep\"></span><code class=\"docstring\">Reinterpret a ring equivalence as a ring homomorphism. </code>",
+ "309":
+ "<code>BernoulliRegular.cyclotomicUnitIndex_primeConductor_pPrimary_aux {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p)\n  (hp_two : 2 &lt; p) (hp_ge_five : 5 ≤ p) :\n  p ∣ (BernoulliRegular.normalizedCPlus hp_odd hp_three).index ↔ p ∣ BernoulliRegular.hPlus K</code>",
+ "308": "<code>2 &lt; p</code>",
+ "307":
+ "<code>BernoulliRegular.kummerDirichletDeterminant_of_deletedFourier {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p)\n  (hp_two : 2 &lt; p) (hp_ge_five : 5 ≤ p) : BernoulliRegular.FLT37.Sinnott.KummerDirichletDeterminant p K hp_odd hp_three</code>",
+ "306":
+ "<code>BernoulliRegular.prime_dvd_two_pow_mul_iff_dvd {p : ℕ} [Fact (Nat.Prime p)] (hp_odd : p ≠ 2) (r n : ℕ) :\n  p ∣ 2 ^ r * n ↔ p ∣ n</code><span class=\"sep\"></span><code class=\"docstring\">The harmless `2^r` factor in the squared-family normalization has no\neffect on p-primary divisibility for odd `p`. </code>",
+ "305":
+ "<code>Subgroup.closure.{u_1} {G : Type u_1} [Group G] (k : Set G) : Subgroup G</code><span class=\"sep\"></span><code class=\"docstring\">The `Subgroup` generated by a set. </code>",
+ "304":
+ "<code>BernoulliRegular.FLT37.Sinnott.index_eq_twoPow_mul_hPlus_of_sinnottIndexFormula.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)]\n  (K : Type u_1) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hp_three : 3 ≤ p) (h : BernoulliRegular.FLT37.Sinnott.SinnottIndexFormula p K hp_odd hp_three) :\n  (Subgroup.closure (Set.range (BernoulliRegular.FLT37.Sinnott.cyclotomicUnitFamilyKplusFinRank p K hp_odd hp_three)) ⊔\n        NumberField.Units.torsion ↥(NumberField.maximalRealSubfield K)).index =\n    2 ^ ((p - 3) / 2) * BernoulliRegular.hPlus K</code><span class=\"sep\"></span><code class=\"docstring\">**Sinnott formula bridge target**: under `SinnottIndexFormula` (step C/D),\nthe index identity gives `[E⁺ : ⟨family⟩ ⊔ torsion] = 2^((p-3)/2) · h⁺`\ndirectly. The factor `2^((p-3)/2)` reflects the gap between the project's\nsquared cyclotomic family `⟨realCyclotomicUnit_k⟩` and the standard\ncyclotomic units `C⁺`. </code>",
+ "303":
+ "<code>BernoulliRegular.FLT37.Sinnott.SinnottRegulatorIdentity p K hp_odd hp_three</code>",
+ "302":
+ "<code>BernoulliRegular.FLT37.Sinnott.sinnottIndexFormula_of_regulatorIdentity.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)]\n  (K : Type u_1) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hp_three : 3 ≤ p) (h : BernoulliRegular.FLT37.Sinnott.SinnottRegulatorIdentity p K hp_odd hp_three) :\n  BernoulliRegular.FLT37.Sinnott.SinnottIndexFormula p K hp_odd hp_three</code><span class=\"sep\"></span><code class=\"docstring\">**Equivalence of Sinnott formula formulations**: the index version\nfollows from the regulator version (both encode the same content via\n`regOfFamily_div_regulator`). </code>",
+ "301":
+ "<code>BernoulliRegular.FLT37.Sinnott.SinnottRegulatorIdentity.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Sinnott formula in regulator form**: equivalent statement asserting\n`regOfFamily(family) = 2^((p-3)/2) · h⁺ · regulator(K⁺)` directly.\nThe factor `2^((p-3)/2)` reflects the index of the squared cyclotomic\nunit subgroup `⟨realCyclotomicUnit_k⟩` inside the standard cyclotomic\nunits `C⁺`; multiplied by the Sinnott index `[U⁺ : C⁺] = h⁺` gives the\ntotal index. Composes with `regOfFamily_div_regulator` to give the\nindex formula. </code>",
+ "300":
+ "<code>BernoulliRegular.FLT37.Sinnott.sinnottRegulatorIdentity_iff_kummerDirichletDeterminant (p : ℕ) [hp : Fact (Nat.Prime p)]\n  (K : Type) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hp_three : 3 ≤ p) :\n  BernoulliRegular.FLT37.Sinnott.KummerDirichletDeterminant p K hp_odd hp_three ↔\n    BernoulliRegular.FLT37.Sinnott.SinnottRegulatorIdentity p K hp_odd hp_three</code><span class=\"sep\"></span><code class=\"docstring\">**`KummerDirichletDeterminant` = `SinnottRegulatorIdentity`**: as\nformulated, both Props are literally the same equation. </code>",
+ "30":
+ "<code>AlgEquiv.toRingEquiv.{u, v, w} {R : Type u} {A : Type v} {B : Type w} [CommSemiring R] [Semiring A] [Semiring B]\n  [Algebra R A] [Algebra R B] (self : A ≃ₐ[R] B) : A ≃+* B</code>",
+ "3":
+ "<code>Field.{u} (K : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A `Field` is a `CommRing` with multiplicative inverses for nonzero elements.\n\nAn instance of `Field K` includes maps `ratCast : ℚ → K` and `qsmul : ℚ → K → K`.\nThose two fields are needed to implement the `DivisionRing K → Algebra ℚ K` instance since we need\nto control the specific definitions for some special cases of `K` (in particular `K = ℚ` itself).\nSee also note [forgetful inheritance].\n\nIf the field has positive characteristic `p`, our division by zero convention forces\n`ratCast (1 / p) = 1 / 0 = 0`. </code>",
+ "299":
+ "<code>BernoulliRegular.FLT37.Sinnott.KummerDirichletDeterminant (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**`KummerDirichletDeterminant`**: the explicit determinant evaluation.\n\nFor the matrix `M` from `regOfFamily_cyclotomicUnitFamilyKplus_eq_det`,\n`|det M| = 2^((p-3)/2) · (hPlus K : ℝ) · regulator K⁺`.\n\nThe factor `2^((p-3)/2)` is the index `[C⁺ : ⟨squared cyclotomic family⟩]`:\nthe project's family `realCyclotomicUnit_k = c_k · σ(c_k)` is the\nsquare of a \"smaller\" cyclotomic unit (under K-embedding,\n`σ(realCyclotomicUnit_k) = |σ(c_k)|²`), so `⟨family⟩` has index\n`2^((p-3)/2)` in the standard cyclotomic unit subgroup `C⁺`.\nCombined with the Sinnott index identity `[U⁺ : C⁺] = h⁺`, the total\nindex is `2^((p-3)/2) · h⁺`, hence\n`regOfFamily(family) = 2^((p-3)/2) · h⁺ · regulator(K⁺)`.\n\nThis is the cyclotomic case of Sinnott's class number formula. </code>",
+ "298":
+ "<code>BernoulliRegular.FLT37.Sinnott.KummerDirichletDeterminant p K hp_odd hp_three</code>",
+ "297":
+ "<code>BernoulliRegular.cyclotomicUnitIndex_primeConductor_pPrimary_of_kummerDirichletDeterminant {p : ℕ} [Fact (Nat.Prime p)]\n  {K : Type} [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hp_three : 3 ≤ p) (hdet : BernoulliRegular.FLT37.Sinnott.KummerDirichletDeterminant p K hp_odd hp_three) :\n  p ∣ (BernoulliRegular.cyclotomicUnitIndexSubgroup hp_odd hp_three).index ↔ p ∣ BernoulliRegular.hPlus K</code><span class=\"sep\"></span><code class=\"docstring\">P-primary cyclotomic-unit index formula from the named hard analytic input\n`KummerDirichletDeterminant`.\n\nThe determinant input gives the squared-family index\n`2^((p - 3) / 2) * hPlus K`; the final equivalence removes the power of `2`\nusing `p ≠ 2`. </code>",
+ "296":
+ "<code>BernoulliRegular.FLT37.Sinnott.SinnottIndexFormula.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Sinnott's index formula** (Washington Thm 8.2, predicate form):\nthe index of `⟨cyclotomicUnitFamilyKplus⟩ ⊔ torsion` in `(𝓞 K⁺)ˣ`\nequals `h⁺(K) = hPlus K`.\n\nEquivalently (under the natural identifications), `[E⁺ : C⁺] = h⁺`.\n\nThe proof requires:\n1. The regulator-of-cyclotomic-units determinant computation\n   (Kummer 1850, classical): `Reg(C⁺) = (factor) · ∏_{χ even nontrivial} L(1, χ)`.\n2. The analytic CNF for K⁺ (already shipped as `hPlus_formula_of_evenLValues`):\n   `h⁺ · Reg(K⁺) = (same factor) · ∏ L(1, χ)`.\n3. Comparison: `Reg(C⁺) / Reg(K⁺) = h⁺`, which by `regOfFamily_div_regulator`\n   equals `[E⁺ : ⟨family⟩ ⊔ torsion]`.\n\nStep 1 is the substantive deferred content. </code>",
+ "295":
+ "<code>BernoulliRegular.FLT37.Sinnott.SinnottIndexFormula p K hp_odd hp_three</code>",
+ "294":
+ "<code>BernoulliRegular.cyclotomicUnitIndex_primeConductor_pPrimary_of_sinnottIndexFormula {p : ℕ} [Fact (Nat.Prime p)]\n  {K : Type} [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hp_three : 3 ≤ p) (hSinnott : BernoulliRegular.FLT37.Sinnott.SinnottIndexFormula p K hp_odd hp_three) :\n  p ∣ (BernoulliRegular.cyclotomicUnitIndexSubgroup hp_odd hp_three).index ↔ p ∣ BernoulliRegular.hPlus K</code><span class=\"sep\"></span><code class=\"docstring\">P-primary form of the real cyclotomic-unit index formula, conditional on\nthe existing explicit Sinnott index formula. </code>",
+ "293":
+ "<code>BernoulliRegular.cyclotomicUnitIndexSubgroup_le_CPlus {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p) :\n  BernoulliRegular.cyclotomicUnitIndexSubgroup hp_odd hp_three ≤ BernoulliRegular.CPlus hp_three</code>",
+ "292":
+ "<code>BernoulliRegular.CPlus_le_cyclotomicUnitIndexSubgroup {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p) :\n  BernoulliRegular.CPlus hp_three ≤ BernoulliRegular.cyclotomicUnitIndexSubgroup hp_odd hp_three</code>",
+ "291":
+ "<code>NumberField.Units.torsion.{u_1} (K : Type u_1) [Field K] : Subgroup (NumberField.RingOfIntegers K)ˣ</code><span class=\"sep\"></span><code class=\"docstring\">The torsion subgroup of the group of units. </code>",
+ "290":
+ "<code>BernoulliRegular.torsionKplus_le_CPlus {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p) :\n  NumberField.Units.torsion ↥(NumberField.maximalRealSubfield K) ≤ BernoulliRegular.CPlus hp_three</code>",
+ "29":
+ "<code>NumberField.IsCMField.ringOfIntegersComplexConj.{u_1} (K : Type u_1) [Field K] [CharZero K] [NumberField.IsCMField K]\n  [Algebra.IsIntegral ℚ K] :\n  NumberField.RingOfIntegers K ≃ₐ[NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)]\n    NumberField.RingOfIntegers K</code><span class=\"sep\"></span><code class=\"docstring\">A variant of the complex conjugation defined as an `AlgEquiv` on the ring of integers.\n</code>",
+ "289":
+ "<code>BernoulliRegular.FLT37.Sinnott.cyclotomicUnitFamilyKplusFinRank.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u_1)\n  [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (_hp_odd : p ≠ 2)\n  (hp_three : 3 ≤ p) :\n  Fin (NumberField.Units.rank ↥(NumberField.maximalRealSubfield K)) →\n    (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ</code><span class=\"sep\"></span><code class=\"docstring\">The cyclotomic-unit family at the `Fin (Units.rank K⁺)` index expected\nby `regOfFamily_div_regulator`, via the rank identity\n`Units.rank K⁺ = (p-3)/2`. </code>",
+ "288":
+ "<code>BernoulliRegular.range_cyclotomicUnitFamilyKplusFinRank_eq {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p) :\n  Set.range (BernoulliRegular.FLT37.Sinnott.cyclotomicUnitFamilyKplusFinRank p K hp_odd hp_three) =\n    Set.range (BernoulliRegular.FLT37.Sinnott.cyclotomicUnitFamilyKplus p K hp_three)</code>",
+ "287":
+ "<code>BernoulliRegular.FLT37.Sinnott.cyclotomicUnitFamilyKplus.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u_1)\n  [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p)\n  (i : Fin ((p - 3) / 2)) : (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ</code><span class=\"sep\"></span><code class=\"docstring\">**The cyclotomic-unit family for K⁺**, indexed by `Fin ((p-3)/2)`.\n\nFor `i : Fin ((p-3)/2)`, returns `realCyclotomicUnitPlusUnit (i+2)`. </code>",
+ "286":
+ "<code>BernoulliRegular.CPlusGenerator_eq_cyclotomicUnitFamilyKplus {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p) (i : Fin ((p - 3) / 2)) :\n  BernoulliRegular.CPlusGenerator hp_three i = BernoulliRegular.FLT37.Sinnott.cyclotomicUnitFamilyKplus p K hp_three i</code>",
+ "285":
+ "<code>BernoulliRegular.cyclotomicUnitIndexSubgroup_eq_CPlus {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p) :\n  BernoulliRegular.cyclotomicUnitIndexSubgroup hp_odd hp_three = BernoulliRegular.CPlus hp_three</code>",
+ "284":
+ "<code>BernoulliRegular.cyclotomicUnitIndexSubgroup {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p) :\n  Subgroup (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ</code><span class=\"sep\"></span><code class=\"docstring\">The full-rank real cyclotomic-unit subgroup used by the existing Sinnott\nregulator/index infrastructure: the family generated by the squared real\ncyclotomic units, together with torsion in `K⁺`. </code>",
+ "283":
+ "<code>∀ (j : ℕ), 1 ≤ j → 2 * j ≤ p - 3 → ¬↑p ∣ (bernoulli (2 * j)).num</code>",
+ "282":
+ "<code>BernoulliRegular.not_dvd_cyclotomicUnitIndex_of_bernoulli_nonzero {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hB : ∀ (j : ℕ), 1 ≤ j → 2 * j ≤ p - 3 → ¬↑p ∣ (bernoulli (2 * j)).num) : ¬p ∣ (BernoulliRegular.CPlus ⋯).index</code><span class=\"sep\"></span><code class=\"docstring\">CU-16: Bernoulli numerator nonvanishing in the classical range implies\nthat `p` does not divide the real cyclotomic-unit index. </code>",
+ "281":
+ "<code>BernoulliRegular.CyclotomicUnits.CPlusGenerator_exponents_modP_zero_of_kummerLog_det_ne_zero.{u_1} {p : ℕ}\n  [Fact (Nat.Prime p)] {K : Type u_1} [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K]\n  [NumberField.IsCMField K] (hp_three : 3 ≤ p) (hp_five : 5 ≤ p) (s : ℤ)\n  (e : Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p) → ℤ)\n  (hdet : (BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix p K hp_three hp_five).det ≠ 0)\n  (hpow : BernoulliRegular.CPlusExponentProduct hp_three s e ∈ BernoulliRegular.pPowerSubgroup BernoulliRegular.EPlus p)\n  (a : Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p)) : ↑(e a) = 0</code><span class=\"sep\"></span><code class=\"docstring\">CU-14e: determinant nonvanishing forces the generator exponents in a\n`p`th-power relation to vanish modulo `p`. </code>",
+ "280":
+ "<code>((BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix p K hp_three hp_five).mulVec fun a ↦ ↑(e a)) = 0</code>",
+ "28":
+ "<code>BernoulliRegular.ideal_map_conj_eq.{u_1} (K : Type u_1) [Field K] [NumberField K] [NumberField.IsCMField K]\n  (I : Ideal (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))) :\n  Ideal.map (NumberField.IsCMField.ringOfIntegersComplexConj K).toRingEquiv.toRingHom\n      (Ideal.map\n        (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))\n        I) =\n    Ideal.map\n      (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K)) I</code><span class=\"sep\"></span><code class=\"docstring\">Complex conjugation acts trivially on ideals extended from `𝒪_{K⁺}`. </code>",
+ "279":
+ "<code>BernoulliRegular.CyclotomicUnits.exponents_modP_eq_zero_of_kummerLogMatrix_relation.{u_1} (p : ℕ) [Fact (Nat.Prime p)]\n  (K : Type u_1) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p)\n  (hp_five : 5 ≤ p) (e : Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p) → ℤ)\n  (hdet : (BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix p K hp_three hp_five).det ≠ 0)\n  (hrel : ((BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix p K hp_three hp_five).mulVec fun a ↦ ↑(e a)) = 0)\n  (a : Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p)) : ↑(e a) = 0</code><span class=\"sep\"></span><code class=\"docstring\">If the concrete Kummer matrix has nonzero determinant, every vector in its\nright kernel has all coordinates zero. </code>",
+ "278":
+ "<code>Matrix.mulVec.{v, u_2, u_3} {m : Type u_2} {n : Type u_3} {α : Type v} [NonUnitalNonAssocSemiring α] [Fintype n]\n  (M : Matrix m n α) (v : n → α) : m → α</code><span class=\"sep\"></span><code class=\"docstring\">`M *ᵥ v` (notation for `mulVec M v`) is the matrix-vector product of matrix `M` and vector `v`,\nwhere `v` is seen as a column vector.\n\nThe notation has precedence 73, which comes immediately before ` ⬝ᵥ ` for `dotProduct`,\nso that `A *ᵥ v ⬝ᵥ B *ᵥ w` is parsed as `(A *ᵥ v) ⬝ᵥ (B *ᵥ w)`.\n</code>",
+ "277":
+ "<code>BernoulliRegular.CyclotomicUnits.concreteKummerLogVector.{u_1} (p : ℕ) [Fact (Nat.Prime p)] (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p) :\n  BernoulliRegular.CyclotomicUnits.KummerLogVector p K</code><span class=\"sep\"></span><code class=\"docstring\">The concrete logarithm vector produced from the selected real cyclotomic\nunits by the same-prime finite logarithm construction in the Dwork completion. </code>",
+ "276":
+ "<code>∃ y, p • y = ∑ a, e a • BernoulliRegular.CyclotomicUnits.concreteKummerLogVector p K hp_three a</code>",
+ "275":
+ "<code>BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix_mulVec_exponents_eq_zero.{u_1} {p : ℕ} [Fact (Nat.Prime p)]\n  {K : Type u_1} [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p)\n  (hp_five : 5 ≤ p) (e : Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p) → ℤ)\n  (hlog : ∃ y, p • y = ∑ a, e a • BernoulliRegular.CyclotomicUnits.concreteKummerLogVector p K hp_three a) :\n  ((BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix p K hp_three hp_five).mulVec fun a ↦ ↑(e a)) = 0</code><span class=\"sep\"></span><code class=\"docstring\">CU-14c: extracting Kummer coordinates from a `p`-divisible completed-log\nrelation gives the concrete Kummer matrix kernel equation over `ZMod p`. </code>",
+ "274":
+ "<code>BernoulliRegular.CyclotomicUnits.kummerLogFixedColumn.{u_1} (p : ℕ) [Fact (Nat.Prime p)] (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p)\n  (a : Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p)) :\n  ↥(BernoulliRegular.CyclotomicUnits.PadicLogSetup.DworkParameter.dworkFixedSubalgebra p K)</code><span class=\"sep\"></span><code class=\"docstring\">The completed logarithm column as an element of the conjugation-fixed\nDwork subalgebra. </code>",
+ "273":
+ "<code>HSMul.hSMul.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HSMul α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a • b` computes the product of `a` and `b`.\nThe meaning of this notation is type-dependent, but it is intended to be used for left actions. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `•` in identifiers is `smul`.</code>",
+ "272":
+ "<code>↥(BernoulliRegular.CyclotomicUnits.PadicLogSetup.DworkParameter.dworkFixedSubalgebra p K)</code>",
+ "271":
+ "<code>BernoulliRegular.CPlusExponentProduct hp_three s e ∈ BernoulliRegular.pPowerSubgroup BernoulliRegular.EPlus p</code>",
+ "270":
+ "<code>Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p) → ℤ</code>",
+ "27":
+ "<code>Submodule.IsPrincipal.{u_1, u_4} {R : Type u_1} {M : Type u_4} [Semiring R] [AddCommMonoid M] [Module R M]\n  (S : Submodule R M) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An `R`-submodule of `M` is principal if it is generated by one element. </code>",
+ "269":
+ "<code>BernoulliRegular.CyclotomicUnits.completedLog_relation_of_CPlus_product_mem_powers.{u_1} {p : ℕ} [Fact (Nat.Prime p)]\n  {K : Type u_1} [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hp_three : 3 ≤ p) (s : ℤ) (e : Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p) → ℤ)\n  (hpow :\n    BernoulliRegular.CPlusExponentProduct hp_three s e ∈ BernoulliRegular.pPowerSubgroup BernoulliRegular.EPlus p) :\n  ∃ y, p • y = ∑ a, e a • BernoulliRegular.CyclotomicUnits.kummerLogFixedColumn p K hp_three a</code><span class=\"sep\"></span><code class=\"docstring\">CU-14b3: a `CPlus` exponent product that is a `p`th power in `EPlus`\ngives a `p`-divisible completed logarithm relation in the fixed Dwork\nsubalgebra. </code>",
+ "268":
+ "<code>(BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix p K hp_three hp_five).det ≠ 0</code>",
+ "267":
+ "<code>BernoulliRegular.CyclotomicUnits.cyclotomicUnits_pSaturated_of_kummerLog_det_ne_zero.{u_1} {p : ℕ} [Fact (Nat.Prime p)]\n  {K : Type u_1} [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p)\n  (hp_five : 5 ≤ p) (hdet : (BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix p K hp_three hp_five).det ≠ 0) :\n  BernoulliRegular.pSaturated (BernoulliRegular.CPlus hp_three) BernoulliRegular.EPlus p</code><span class=\"sep\"></span><code class=\"docstring\">CU-14f: Kummer matrix determinant nonvanishing gives exact `p`-saturation\nof the real cyclotomic-unit subgroup in the full real-unit group. </code>",
+ "266":
+ "<code>BernoulliRegular.CyclotomicUnits.vandermonde_teichmuller_even_sub_one_det_ne_zero (p : ℕ) [Fact (Nat.Prime p)]\n  (hp_three : 3 ≤ p) : (BernoulliRegular.CyclotomicUnits.vandermondeTeichmullerEvenSubOneMatrix p hp_three).det ≠ 0</code>",
+ "265": "<code>2 * j ≤ p - 3</code>",
+ "264": "<code>1 ≤ j</code>",
+ "263":
+ "<code>BernoulliRegular.CyclotomicUnits.bernoulliFactor_ne_zero_iff_not_dvd_bernoulli_num (p : ℕ) [Fact (Nat.Prime p)] {j : ℕ}\n  (hj : 1 ≤ j) (hjp : 2 * j ≤ p - 3) :\n  BernoulliRegular.CyclotomicUnits.bernoulliFactor p j ≠ 0 ↔ ¬↑p ∣ (bernoulli (2 * j)).num</code><span class=\"sep\"></span><code class=\"docstring\">In the Kummer range, reducing `B_(2j)/(2j)` modulo `p` is nonzero\nexactly when the numerator of `B_(2j)` is not divisible by `p`. </code>",
+ "262":
+ "<code>BernoulliRegular.CyclotomicUnits.kummerLogRowIndex (p : ℕ)\n  (j : Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p)) : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">Matrix row `j` corresponds to the mathematical index `j + 1`. </code>",
+ "261":
+ "<code>BernoulliRegular.CyclotomicUnits.bernoulliFactor (p j : ℕ) [Fact (Nat.Prime p)] : ZMod p</code><span class=\"sep\"></span><code class=\"docstring\">The Bernoulli factor in the final formal congruence, namely the reduction\nof `B_(2*j)/(2*j)` modulo `p`. </code>",
+ "260":
+ "<code>BernoulliRegular.CyclotomicUnits.kummerLogRank (p : ℕ) : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The row/column size `r = (p - 3) / 2`. </code>",
+ "26":
+ "<code>Singleton.singleton.{u, v} {α : outParam (Type u)} {β : Type v} [self : Singleton α β] : α → β</code><span class=\"sep\"></span><code class=\"docstring\">`singleton x` is a collection with the single element `x` (notation: `{x}`). \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `{x}` in identifiers is `singleton`.</code>",
+ "259": "<code>Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p)</code>",
+ "258":
+ "<code>BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix_det_ne_zero_iff_forall_bernoulliFactor_ne_zero.{u_1} (p : ℕ)\n  [Fact (Nat.Prime p)] (K : Type u_1) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K]\n  [NumberField.IsCMField K] (hp_three : 3 ≤ p) (hp_five : 5 ≤ p) :\n  (BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix p K hp_three hp_five).det ≠ 0 ↔\n    ∀ (j : Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p)),\n      BernoulliRegular.CyclotomicUnits.bernoulliFactor p (BernoulliRegular.CyclotomicUnits.kummerLogRowIndex p j) ≠ 0</code><span class=\"sep\"></span><code class=\"docstring\">Kummer determinant nonvanishing reduced to the Bernoulli factors in each\nmatrix row. </code>",
+ "257":
+ "<code>BernoulliRegular.CyclotomicUnits.vandermondeTeichmullerEvenSubOneMatrix (p : ℕ) [Fact (Nat.Prime p)]\n  (hp_three : 3 ≤ p) :\n  Matrix (Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p))\n    (Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p)) (ZMod p)</code><span class=\"sep\"></span><code class=\"docstring\">The Kummer/Vandermonde matrix\n`V_{j,a} = omega(a)^(2*(j+1)) - 1` over `ZMod p`. </code>",
+ "256":
+ "<code>BernoulliRegular.CyclotomicUnits.kummerLogDetRowFactor (p : ℕ) [Fact (Nat.Prime p)]\n  (j : Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p)) : ZMod p</code><span class=\"sep\"></span><code class=\"docstring\">The row scalar multiplying the finite-field Vandermonde matrix in the\nconcrete Kummer logarithm matrix. </code>",
+ "255":
+ "<code>Matrix.diagonal.{v, u_3} {n : Type u_3} {α : Type v} [DecidableEq n] [Zero α] (d : n → α) : Matrix n n α</code><span class=\"sep\"></span><code class=\"docstring\">`diagonal d` is the square matrix such that `(diagonal d) i i = d i` and `(diagonal d) i j = 0`\nif `i ≠ j`.\n\nNote that bundled versions exist as:\n* `Matrix.diagonalAddMonoidHom`\n* `Matrix.diagonalLinearMap`\n* `Matrix.diagonalRingHom`\n* `Matrix.diagonalAlgHom`\n</code>",
+ "254":
+ "<code>BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix_eq_diagonal_mul_vandermonde.{u_1} (p : ℕ) [Fact (Nat.Prime p)]\n  (K : Type u_1) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p)\n  (hp_five : 5 ≤ p) :\n  BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix p K hp_three hp_five =\n    Matrix.diagonal (BernoulliRegular.CyclotomicUnits.kummerLogDetRowFactor p) *\n      BernoulliRegular.CyclotomicUnits.vandermondeTeichmullerEvenSubOneMatrix p hp_three</code><span class=\"sep\"></span><code class=\"docstring\">The concrete Kummer logarithm matrix factors as a diagonal matrix of row\nBernoulli factors times the finite-field Vandermonde matrix from CU-12. </code>",
+ "253":
+ "<code>Rat.num (self : ℚ) : ℤ</code><span class=\"sep\"></span><code class=\"docstring\">The numerator of the rational number is an integer. </code>",
+ "252":
+ "<code>Matrix.det.{v, u_2} {n : Type u_2} [DecidableEq n] [Fintype n] {R : Type v} [CommRing R] (M : Matrix n n R) : R</code><span class=\"sep\"></span><code class=\"docstring\">The determinant of a matrix given by the Leibniz formula. </code>",
+ "251":
+ "<code>BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix.{u_1} (p : ℕ) [Fact (Nat.Prime p)] (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p) (hp_five : 5 ≤ p) :\n  Matrix (Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p))\n    (Fin (BernoulliRegular.CyclotomicUnits.kummerLogRank p)) (ZMod p)</code><span class=\"sep\"></span><code class=\"docstring\">The concrete coefficient matrix obtained from the completed logarithm\ncolumns. </code>",
+ "250": "<code>5 ≤ p</code>",
+ "25":
+ "<code>Ideal.span.{u} {α : Type u} [Semiring α] (s : Set α) : Ideal α</code><span class=\"sep\"></span><code class=\"docstring\">The ideal generated by a subset of a ring </code>",
+ "249":
+ "<code>BernoulliRegular.CyclotomicUnits.kummerLogMatrix_det_ne_zero_iff_bernoulli_nonzero.{u_1} (p : ℕ) [Fact (Nat.Prime p)]\n  (K : Type u_1) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p)\n  (hp_five : 5 ≤ p) :\n  (BernoulliRegular.CyclotomicUnits.concreteKummerLogMatrix p K hp_three hp_five).det ≠ 0 ↔\n    ∀ (j : ℕ), 1 ≤ j → 2 * j ≤ p - 3 → ¬↑p ∣ (bernoulli (2 * j)).num</code><span class=\"sep\"></span><code class=\"docstring\">CU-13: Kummer's logarithm determinant is nonzero exactly when all\nBernoulli numerators in the classical even range are prime to `p`. </code>",
+ "248":
+ "<code>BernoulliRegular.CPlus_index_ne_zero {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p) :\n  (BernoulliRegular.CPlus hp_three).index ≠ 0</code><span class=\"sep\"></span><code class=\"docstring\">The real cyclotomic-unit subgroup has finite index in the full plus-side\nunit group for prime conductor. </code>",
+ "247": "<code>G</code>",
+ "246": "<code>∀ (g : G), g ^ p = 1 → g ∈ H</code>",
+ "245":
+ "<code>Top.top.{u_1} {α : Type u_1} [self : Top α] : α</code><span class=\"sep\"></span><code class=\"docstring\">The top (`⊤`, `\\top`) element \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⊤` in identifiers is `top`.</code>",
+ "244": "<code>BernoulliRegular.pSaturated H ⊤ p</code>",
+ "243":
+ "<code>Subgroup.FiniteIndex.{u_1} {G : Type u_1} [Group G] (H : Subgroup G) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Typeclass for finite index subgroups. </code>",
+ "242":
+ "<code>BernoulliRegular.subgroup_not_dvd_index_of_pSaturated_top_of_pow_eq_one_mem.{u_1} {p : ℕ} [Fact (Nat.Prime p)]\n  {G : Type u_1} [CommGroup G] {H : Subgroup G} [H.FiniteIndex] (hsat : BernoulliRegular.pSaturated H ⊤ p)\n  (htorsion : ∀ (g : G), g ^ p = 1 → g ∈ H) : ¬p ∣ H.index</code><span class=\"sep\"></span><code class=\"docstring\">A finite-index subgroup of a commutative group has p-prime-to index if it\nis p-saturated in the whole group and contains every element killed by `p`.\n\nThe proof is Cauchy's theorem on `G / H`: a p-divisor of the index gives a\nnontrivial quotient class with p-th power one.  Saturation lifts the p-th\npower equality into `H`, and the torsion hypothesis forces the representative\nitself back into `H`, contradiction. </code>",
+ "241":
+ "<code>BernoulliRegular.pSaturated (BernoulliRegular.CPlus hp_three) BernoulliRegular.EPlus p</code>",
+ "240": "<code>Type</code>",
+ "24":
+ "<code>Ideal.map (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))\n    I =\n  Ideal.span\n    {(algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K)) b₀}</code>",
+ "239":
+ "<code>BernoulliRegular.not_dvd_index_of_pSaturated {p : ℕ} [Fact (Nat.Prime p)] {K : Type} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p)\n  (hsat : BernoulliRegular.pSaturated (BernoulliRegular.CPlus hp_three) BernoulliRegular.EPlus p) :\n  ¬p ∣ (BernoulliRegular.CPlus hp_three).index</code><span class=\"sep\"></span><code class=\"docstring\">CU-15: p-saturation of the cyclotomic units in the full plus-side unit\ngroup forces p not to divide the cyclotomic-unit index. </code>",
+ "238": "<code>∀ (a : Fin ((p - 3) / 2)), e a = ↑p * k a</code>",
+ "237":
+ "<code>BernoulliRegular.CPlusExponentProduct_pow_of_exponents_eq_mul.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1}\n  [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hp_three : 3 ≤ p) (s : ℤ) (e k : Fin ((p - 3) / 2) → ℤ) (hk : ∀ (a : Fin ((p - 3) / 2)), e a = ↑p * k a) :\n  BernoulliRegular.CPlusExponentProduct hp_three s k ^ p = BernoulliRegular.CPlusExponentProduct hp_three s e</code>",
+ "236":
+ "<code>BernoulliRegular.neg_one_zpow_mem_pPowerSubgroup_CPlus.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p)\n  (s : ℤ) : (-1) ^ s ∈ BernoulliRegular.pPowerSubgroup (BernoulliRegular.CPlus hp_three) p</code>",
+ "235":
+ "<code>BernoulliRegular.CPlusExponentProduct_mem_CPlus.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p) (s : ℤ)\n  (e : Fin ((p - 3) / 2) → ℤ) : BernoulliRegular.CPlusExponentProduct hp_three s e ∈ BernoulliRegular.CPlus hp_three</code>",
+ "234":
+ "<code>BernoulliRegular.EPlus.{u_1} {K : Type u_1} [Field K] :\n  Subgroup (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ</code><span class=\"sep\"></span><code class=\"docstring\">The full real-unit subgroup on the plus side. </code>",
+ "233":
+ "<code>Int : Type</code><span class=\"sep\"></span><code class=\"docstring\">The integers.\n\nThis type is special-cased by the compiler and overridden with an efficient implementation. The\nruntime has a special representation for `Int` that stores “small” signed numbers directly, while\nlarger numbers use a fast arbitrary-precision arithmetic library (usually\n[GMP](https://gmplib.org/)). A “small number” is an integer that can be encoded with one fewer bits\nthan the platform's pointer size (i.e. 63 bits on 64-bit architectures and 31 bits on 32-bit\narchitectures).\n</code>",
+ "232":
+ "<code>∀ (s : ℤ) (e : Fin ((p - 3) / 2) → ℤ),\n  BernoulliRegular.CPlusExponentProduct hp_three s e ∈ BernoulliRegular.pPowerSubgroup BernoulliRegular.EPlus p →\n    ∀ (a : Fin ((p - 3) / 2)), ↑(e a) = 0</code>",
+ "231":
+ "<code>BernoulliRegular.CPlus_pSaturated_of_generator_exponents_modP_zero.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1}\n  [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hp_three : 3 ≤ p)\n  (h :\n    ∀ (s : ℤ) (e : Fin ((p - 3) / 2) → ℤ),\n      BernoulliRegular.CPlusExponentProduct hp_three s e ∈ BernoulliRegular.pPowerSubgroup BernoulliRegular.EPlus p →\n        ∀ (a : Fin ((p - 3) / 2)), ↑(e a) = 0) :\n  BernoulliRegular.pSaturated (BernoulliRegular.CPlus hp_three) BernoulliRegular.EPlus p</code><span class=\"sep\"></span><code class=\"docstring\">Concrete group-theoretic saturation criterion for `CPlus`.  CU-14e is\nintended to provide the exponent-vanishing hypothesis from the logarithm\ndeterminant; this theorem contains no p-adic logarithm input. </code>",
+ "230":
+ "<code>BernoulliRegular.CPlusExponentProduct.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p) (s : ℤ) (e : Fin ((p - 3) / 2) → ℤ) :\n  (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ</code><span class=\"sep\"></span><code class=\"docstring\">Integer-exponent product of the sign and the finite `CPlus` generators. </code>",
+ "23":
+ "<code>NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)</code>",
+ "229": "<code>Fin ((p - 3) / 2) → ℤ</code>",
+ "228": "<code>ℤ</code>",
+ "227": "<code>x ∈ BernoulliRegular.CPlus hp_three</code>",
+ "226":
+ "<code>(NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ</code>",
+ "225":
+ "<code>BernoulliRegular.exists_CPlusExponentProduct_of_mem_CPlus.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p)\n  {x : (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ} (hx : x ∈ BernoulliRegular.CPlus hp_three) :\n  ∃ s e, BernoulliRegular.CPlusExponentProduct hp_three s e = x</code><span class=\"sep\"></span><code class=\"docstring\">Every element of `CPlus` has an integer-exponent expression in the sign and\nthe finite cyclotomic-unit generators. </code>",
+ "224":
+ "<code>BernoulliRegular.pPowerSubgroup.{u_2} {G : Type u_2} [CommGroup G] (H : Subgroup G) (p : ℕ) : Subgroup G</code><span class=\"sep\"></span><code class=\"docstring\">Exact image of the `p`th-power map on a subgroup.  This is not a closure. </code>",
+ "223":
+ "<code>CommGroup.{u} (G : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A commutative group is a group with commutative `(*)`. </code>",
+ "222":
+ "<code>BernoulliRegular.pSaturated.{u_2} {G : Type u_2} [CommGroup G] (H E : Subgroup G) (p : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`H` is `p`-saturated in `E` if an element of `H` that is a `p`th power in\n`E` is already a `p`th power in `H`. </code>",
+ "221":
+ "<code>Subgroup.relIndex.{u_1} {G : Type u_1} [Group G] (H K : Subgroup G) : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">If `H` and `K` are subgroups of a group `G`, then `relIndex H K : ℕ` is the index\nof `H ∩ K` in `K`. The function returns `0` if the index is infinite. </code>",
+ "220": "<code>H.relIndex K ∣ 2 ^ r</code>",
+ "22":
+ "<code>Ideal (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))</code>",
+ "219": "<code>Nat.Prime p</code>",
+ "218": "<code>H ≤ K</code>",
+ "217": "<code>Subgroup G</code>",
+ "216":
+ "<code>Group.{u} (G : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A `Group` is a `Monoid` with an operation `⁻¹` satisfying `a⁻¹ * a = 1`.\n\nThere is also a division operation `/` such that `a / b = a * b⁻¹`,\nwith a default so that `a / b = a * b⁻¹` holds by definition.\n\nUse `Group.ofLeftAxioms` or `Group.ofRightAxioms` to define a group structure\non a type with the minimum proof obligations.\n\n\n[Wikidata Q83478](https://www.wikidata.org/wiki/Q83478)</code>",
+ "215":
+ "<code>BernoulliRegular.subgroup_index_prime_dvd_iff_of_relIndex_dvd_two_pow.{u_1} {G : Type u_1} [Group G] {H K : Subgroup G}\n  (hHK : H ≤ K) {p r : ℕ} (hp : Nat.Prime p) (hp_odd : p ≠ 2) (hrel : H.relIndex K ∣ 2 ^ r) : p ∣ H.index ↔ p ∣ K.index</code>",
+ "214":
+ "<code>Iff (a b : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">If and only if, or logical bi-implication. `a ↔ b` means that `a` implies `b` and vice versa.\nBy `propext`, this implies that `a` and `b` are equal and hence any expression involving `a`\nis equivalent to the corresponding expression with `b` instead.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `↔` in identifiers is `iff`.\n\n * The recommended spelling of `&lt;-&gt;` in identifiers is `iff` (prefer `↔` over `&lt;-&gt;`).</code>",
+ "213":
+ "<code>Subgroup.index.{u_1} {G : Type u_1} [Group G] (H : Subgroup G) : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The index of a subgroup as a natural number. Returns `0` if the index is infinite. \n\n[Wikidata Q1464168](https://www.wikidata.org/wiki/Q1464168)</code>",
+ "212":
+ "<code>BernoulliRegular.CPlus_index_prime_dvd_iff_normalizedCPlus_index_prime_dvd.{u_1} {p : ℕ} [Fact (Nat.Prime p)]\n  {K : Type u_1} [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hp_three : 3 ≤ p) :\n  p ∣ (BernoulliRegular.CPlus hp_three).index ↔ p ∣ (BernoulliRegular.normalizedCPlus hp_odd hp_three).index</code>",
+ "211":
+ "<code>BernoulliRegular.CPlusGenerator.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p) (i : Fin ((p - 3) / 2)) :\n  (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ</code><span class=\"sep\"></span><code class=\"docstring\">The finite generator family `a = 2, ..., (p - 1) / 2`, indexed by\n`Fin ((p - 3) / 2)`. </code>",
+ "210":
+ "<code>BernoulliRegular.normalizedCPlusGenerator.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p)\n  (i : Fin ((p - 3) / 2)) : (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ</code><span class=\"sep\"></span><code class=\"docstring\">The normalized real cyclotomic-unit generator indexed by\n`i : Fin ((p - 3) / 2)`, corresponding to `a = i + 2`. </code>",
+ "21":
+ "<code>BernoulliRegular.isPrincipal_of_map_eq_span_singleton_of_mem.{u_1} (K : Type u_1) [Field K] [NumberField K]\n  (I : Ideal (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)))\n  (b₀ : NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))\n  (hb :\n    Ideal.map\n        (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))\n        I =\n      Ideal.span\n        {(algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K)) (NumberField.RingOfIntegers K))\n            b₀}) :\n  Submodule.IsPrincipal I</code><span class=\"sep\"></span><code class=\"docstring\">If `I · 𝒪_K = (b)` with `b` descending from `𝒪_{K⁺}`, then `I` is principal. </code>",
+ "209":
+ "<code>Fin (n : ℕ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">Natural numbers less than some upper bound.\n\nIn particular, a `Fin n` is a natural number `i` with the constraint that `i &lt; n`. It is the\ncanonical type with `n` elements.\n</code>",
+ "208": "<code>Fin ((p - 3) / 2)</code>",
+ "207":
+ "<code>BernoulliRegular.normalizedCPlusGenerator_sq_eq_CPlusGenerator.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1}\n  [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2)\n  (hp_three : 3 ≤ p) (i : Fin ((p - 3) / 2)) :\n  BernoulliRegular.normalizedCPlusGenerator hp_odd hp_three i ^ 2 = BernoulliRegular.CPlusGenerator hp_three i</code>",
+ "206":
+ "<code>BernoulliRegular.normalizedCPlus.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd : p ≠ 2) (hp_three : 3 ≤ p) :\n  Subgroup (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ</code><span class=\"sep\"></span><code class=\"docstring\">The TeX normalized subgroup\n`C⁺ = &lt;-1, ε₂, ..., ε_g&gt; ≤ (𝓞 K⁺)ˣ`. </code>",
+ "205":
+ "<code>Subgroup.{u_3} (G : Type u_3) [Group G] : Type u_3</code><span class=\"sep\"></span><code class=\"docstring\">A subgroup of a group `G` is a subset containing 1, closed under multiplication\nand closed under multiplicative inverse. \n\n[Wikidata Q466109](https://www.wikidata.org/wiki/Q466109)</code>",
+ "204": "<code>3 ≤ p</code>",
+ "203":
+ "<code>BernoulliRegular.CPlus.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_three : 3 ≤ p) :\n  Subgroup (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ</code><span class=\"sep\"></span><code class=\"docstring\">The real cyclotomic-unit subgroup `C⁺`, generated by `-1` and the\nstandard real cyclotomic units. </code>",
+ "202":
+ "<code>BernoulliRegular.realCyclotomicUnit.{u_1} {p : ℕ} [Fact (Nat.Prime p)] {K : Type u_1} [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (a : ℕ) (ha_two : 2 ≤ a) (ha_le : a ≤ (p - 1) / 2) :\n  (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield K))ˣ</code><span class=\"sep\"></span><code class=\"docstring\">The real cyclotomic unit in `𝓞 K⁺` attached to\n`2 ≤ a ≤ (p - 1) / 2`.\n\nThis wraps the existing descended unit\n`FLT37.realCyclotomicUnitPlusUnit p K a`, with the index coprimality proved\nfrom the standard prime-conductor range. </code>",
+ "201":
+ "<code>Nat.Coprime (m n : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`m` and `n` are coprime, or relatively prime, if their `gcd` is 1. </code>",
+ "200": "<code>a ≤ (p - 1) / 2</code>",
+ "20":
+ "<code>Eq.{u_1} {α : Sort u_1} : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The equality relation. It has one introduction rule, `Eq.refl`.\nWe use `a = b` as notation for `Eq a b`.\nA fundamental property of equality is that it is an equivalence relation.\n```\nvariable (α : Type) (a b c d : α)\nvariable (hab : a = b) (hcb : c = b) (hcd : c = d)\n\nexample : a = d :=\n  Eq.trans (Eq.trans hab (Eq.symm hcb)) hcd\n```\nEquality is much more than an equivalence relation, however. It has the important property that every assertion\nrespects the equivalence, in the sense that we can substitute equal expressions without changing the truth value.\nThat is, given `h1 : a = b` and `h2 : p a`, we can construct a proof for `p b` using substitution: `Eq.subst h1 h2`.\nExample:\n```\nexample (α : Type) (a b : α) (p : α → Prop)\n        (h1 : a = b) (h2 : p a) : p b :=\n  Eq.subst h1 h2\n\nexample (α : Type) (a b : α) (p : α → Prop)\n    (h1 : a = b) (h2 : p a) : p b :=\n  h1 ▸ h2\n```\nThe triangle in the second presentation is a macro built on top of `Eq.subst` and `Eq.symm`, and you can enter it by typing `\\t`.\nFor more information: [Equality](https://lean-lang.org/theorem_proving_in_lean4/quantifiers_and_equality.html#equality)\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `=` in identifiers is `eq`.</code>",
+ "2":
+ "<code class=\"docstring\">A type universe. `Type ≡ Type 0`, `Type u ≡ Sort (u + 1)`. </code>",
+ "199":
+ "<code>LE.le.{u} {α : Type u} [self : LE α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The less-equal relation: `x ≤ y` \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≤` in identifiers is `le`.</code>",
+ "198": "<code>2 ≤ a</code>",
+ "197":
+ "<code>BernoulliRegular.realCyclotomicUnit_index_coprime {p : ℕ} [Fact (Nat.Prime p)] {a : ℕ} (ha_two : 2 ≤ a)\n  (ha_le : a ≤ (p - 1) / 2) : a.Coprime p</code><span class=\"sep\"></span><code class=\"docstring\">Indices `2 ≤ a ≤ (p - 1) / 2` are automatically coprime to the prime\nconductor `p`. </code>",
+ "196":
+ "<code>BernoulliRegular.hMinus_formula.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u_1) [Field K] [NumberField K]\n  [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd' : p ≠ 2) :\n  ↑(BernoulliRegular.hMinus K) =\n    2 * ↑p * ∏ χ ∈ BernoulliRegular.oddCharacters p, -(1 / 2) * BernoulliRegular.BernoulliGen χ⁻¹ 1</code><span class=\"sep\"></span><code class=\"docstring\">Diekmann Theorem 43: the relative class number of a cyclotomic field of\nprime conductor is the odd-character Bernoulli product.\n\nThis is the explicit statement ultimately obtained by combining the cyclotomic\nclass-number formula with the odd and even `L(1, χ)` evaluations. </code>",
+ "195":
+ "<code>BernoulliRegular.cyclotomicHGaussGoal_holds.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd' : p ≠ 2) :\n  BernoulliRegular.cyclotomicHGaussGoal p K</code><span class=\"sep\"></span><code class=\"docstring\">**T023d7**: Package the raw odd Gauss-product formula as the exact\ncyclotomic `hgauss` hypothesis consumed by the final `hMinus` assembly\ntheorem. </code>",
+ "194":
+ "<code>Complex.I : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The imaginary unit. </code>",
+ "193":
+ "<code>BernoulliRegular.rawGaussProduct (p : ℕ) [hp : Fact (Nat.Prime p)] (hp_odd' : p ≠ 2) :\n  ∏ χ ∈ BernoulliRegular.oddCharacters p, gaussSum χ ZMod.stdAddChar =\n    Complex.I ^ ((p - 1) / 2) * ↑√(↑p ^ ((p - 1) / 2))</code><span class=\"sep\"></span><code class=\"docstring\">**T023d6**: Merge the two `mod 4` branches into the clean raw odd\nGauss-product formula used downstream. </code>",
+ "192":
+ "<code>BernoulliRegular.cyclotomicHGaussGoal.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u_1) [Field K] [NumberField K] :\n  Prop</code><span class=\"sep\"></span><code class=\"docstring\">The exact cyclotomic Gauss-product statement needed as the `hgauss`\ninput for the final `hMinus` assembly theorem. </code>",
+ "191": "<code>BernoulliRegular.cyclotomicHGaussGoal p K</code>",
+ "190":
+ "<code>BernoulliRegular.cyclotomicHPlusFactor.{u_1} (K : Type u_1) [Field K] [NumberField K] : ℂ</code>",
+ "19":
+ "<code>Ideal.map.{u, v, u_1} {R : Type u} {S : Type v} {F : Type u_1} [Semiring R] [Semiring S] [FunLike F R S] (f : F)\n  (I : Ideal R) : Ideal S</code><span class=\"sep\"></span><code class=\"docstring\">`I.map f` is the span of the image of the ideal `I` under `f`, which may be bigger than\nthe image itself. </code>",
+ "189":
+ "<code>↑(BernoulliRegular.hPlus K) =\n  BernoulliRegular.cyclotomicHPlusFactor K *\n    ∏ χ ∈ BernoulliRegular.evenNontrivialCharacters p, BernoulliRegular.evenLValueRhs p χ</code>",
+ "188":
+ "<code>BernoulliRegular.oddCharacters (p : ℕ) : Finset (DirichletCharacter ℂ p)</code><span class=\"sep\"></span><code class=\"docstring\">The odd Dirichlet characters mod `p`, as a finite set. </code>",
+ "187":
+ "<code>BernoulliRegular.evenLValueRhs (p : ℕ) [hp : Fact (Nat.Prime p)] (χ : DirichletCharacter ℂ p) : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">T022 right-hand side: the value predicted for `L(1, χ)` when `χ` is even\nprimitive modulo `p`. </code>",
+ "186":
+ "<code>BernoulliRegular.evenNontrivialCharacters (p : ℕ) : Finset (DirichletCharacter ℂ p)</code><span class=\"sep\"></span><code class=\"docstring\">The even nontrivial Dirichlet characters mod `p`, as a finite set. </code>",
+ "185":
+ "<code>↑(NumberField.dedekindZeta_residue K) =\n  (∏ χ ∈ BernoulliRegular.evenNontrivialCharacters p, BernoulliRegular.evenLValueRhs p χ) *\n    ∏ χ ∈ BernoulliRegular.oddCharacters p, DirichletCharacter.LFunction χ 1</code>",
+ "184":
+ "<code>BernoulliRegular.hMinus_formula_of_residue_and_hPlus_cyclotomic_and_gauss.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)]\n  (K : Type u_1) [Field K] [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd' : p ≠ 2)\n  (hres :\n    ↑(NumberField.dedekindZeta_residue K) =\n      (∏ χ ∈ BernoulliRegular.evenNontrivialCharacters p, BernoulliRegular.evenLValueRhs p χ) *\n        ∏ χ ∈ BernoulliRegular.oddCharacters p, DirichletCharacter.LFunction χ 1)\n  (hplus :\n    ↑(BernoulliRegular.hPlus K) =\n      BernoulliRegular.cyclotomicHPlusFactor K *\n        ∏ χ ∈ BernoulliRegular.evenNontrivialCharacters p, BernoulliRegular.evenLValueRhs p χ)\n  (hgauss : BernoulliRegular.cyclotomicHGaussGoal p K) :\n  ↑(BernoulliRegular.hMinus K) =\n    2 * ↑p * ∏ χ ∈ BernoulliRegular.oddCharacters p, -(1 / 2) * BernoulliRegular.BernoulliGen χ⁻¹ 1</code>",
+ "183":
+ "<code>NumberField.Units.regulator.{u_1} (K : Type u_1) [Field K] [NumberField K] : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The regulator of a number field `K`. </code>",
+ "182":
+ "<code>NumberField.InfinitePlace.nrComplexPlaces.{u_1} (K : Type u_1) [Field K] [NumberField K] : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The number of infinite complex places of the number field `K`. </code>",
+ "181":
+ "<code>Real.pi : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The number π = 3.14159265... Defined here using choice as twice a zero of cos in [1,2],\nfrom which one can derive all its properties. For explicit bounds on π,\nsee `Mathlib/Analysis/Real/Pi/Bounds.lean`.\n\nDenoted `π`, once the `Real` namespace is opened. </code>",
+ "180":
+ "<code>NumberField.InfinitePlace.nrRealPlaces.{u_1} (K : Type u_1) [Field K] [NumberField K] : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The number of infinite real places of the number field `K`. </code>",
+ "18":
+ "<code>Algebra.algebraMap.{u, v} (R : Type u) (A : Type v) {inst✝ : CommSemiring R} {inst✝¹ : Semiring A}\n  [self : Algebra R A] : R →+* A</code><span class=\"sep\"></span><code class=\"docstring\">Embedding `R →+* A` given by `Algebra` structure. </code>",
+ "179":
+ "<code>NumberField.discr.{u_1} (K : Type u_1) [Field K] [NumberField K] : ℤ</code><span class=\"sep\"></span><code class=\"docstring\">The absolute discriminant of a number field. </code>",
+ "178":
+ "<code>abs.{u_1} {α : Type u_1} [Lattice α] [AddGroup α] (a : α) : α</code><span class=\"sep\"></span><code class=\"docstring\">`abs a`, denoted `|a|`, is the absolute value of `a` </code>",
+ "177":
+ "<code>Real.sqrt (x : ℝ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The square root of a real number. This returns 0 for negative inputs.\n\nThis has notation `√x`. Note that `√x⁻¹` is parsed as `√(x⁻¹)`. </code>",
+ "176":
+ "<code>NumberField.Units.torsionOrder.{u_1} (K : Type u_1) [Field K] [NumberField K] : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The order of the torsion subgroup. </code>",
+ "175":
+ "<code>BernoulliRegular.hMinus_formula_via_residues.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] [NumberField.IsCMField K] (hp_odd' : p ≠ 2) :\n  ↑(BernoulliRegular.hMinus K) =\n    NumberField.dedekindZeta_residue K *\n        (↑(NumberField.Units.torsionOrder K) * √|↑(NumberField.discr K)| /\n          (2 ^ NumberField.InfinitePlace.nrRealPlaces K * (2 * Real.pi) ^ NumberField.InfinitePlace.nrComplexPlaces K *\n            NumberField.Units.regulator K)) /\n      (NumberField.dedekindZeta_residue ↥(NumberField.maximalRealSubfield K) *\n        (↑(NumberField.Units.torsionOrder ↥(NumberField.maximalRealSubfield K)) *\n            √|↑(NumberField.discr ↥(NumberField.maximalRealSubfield K))| /\n          (2 ^ NumberField.InfinitePlace.nrRealPlaces ↥(NumberField.maximalRealSubfield K) *\n              (2 * Real.pi) ^ NumberField.InfinitePlace.nrComplexPlaces ↥(NumberField.maximalRealSubfield K) *\n            NumberField.Units.regulator ↥(NumberField.maximalRealSubfield K))))</code><span class=\"sep\"></span><code class=\"docstring\">Rearranging the analytic class number formulas for `K` and `K⁺` gives a\nrelative residue expression for `h⁻`. This isolates the remaining analytic\ninput needed for Theorem 43 to the identification of the `K⁺`-side residue\nwith the even-character product. </code>",
+ "174":
+ "<code>Complex.re (self : ℂ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The real part of a complex number. </code>",
+ "173":
+ "<code>BernoulliRegular.oddLProduct (p : ℕ) [hp : Fact (Nat.Prime p)] (s : ℂ) : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The odd part of the global `L`-product. </code>",
+ "172":
+ "<code>BernoulliRegular.evenLProduct (p : ℕ) [hp : Fact (Nat.Prime p)] (s : ℂ) : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The even nontrivial part of the global `L`-product. </code>",
+ "171":
+ "<code>NumberField.dedekindZeta_residue.{u_1} (K : Type u_1) [Field K] [NumberField K] : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The value of the residue at `s = 1` of the Dedekind zeta function, see\n`NumberField.tendsto_sub_one_mul_dedekindZeta_nhdsGT`.\n</code>",
+ "170":
+ "<code>BernoulliRegular.residue_ready_factorization_even_odd.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (K : Type u_1) [Field K]\n  [NumberField K] [IsCyclotomicExtension {p} ℚ K] :\n  NumberField.dedekindZeta_residue K = (BernoulliRegular.evenLProduct p 1 * BernoulliRegular.oddLProduct p 1).re</code>",
+ "17":
+ "<code>Ideal.comap.{u, v, u_1} {R : Type u} {S : Type v} {F : Type u_1} [Semiring R] [Semiring S] [FunLike F R S] (f : F)\n  [RingHomClass F R S] (I : Ideal S) : Ideal R</code><span class=\"sep\"></span><code class=\"docstring\">`I.comap f` is the preimage of `I` under `f`. </code>",
+ "169":
+ "<code>BernoulliRegular.odd_LFunction_one_eq_oddLValueRhs (p : ℕ) [hp : Fact (Nat.Prime p)] {χ : DirichletCharacter ℂ p}\n  (hχ_prim : χ.IsPrimitive) (hχ_odd : χ.Odd) (hχ_ne_one : χ ≠ 1) :\n  DirichletCharacter.LFunction χ 1 = BernoulliRegular.oddLValueRhs p χ</code><span class=\"sep\"></span><code class=\"docstring\">**T021 / T021c / T021c1**: `L(1, χ)` for odd primitive characters\nmodulo `p`. Closes the full odd-side formula by applying the functional-equation\nreduction `odd_LFunction_one_eq_oddLValueRhs_of_LFunction_inv_zero` to the\npackaged odd special-value theorem at `χ⁻¹`. </code>",
+ "168":
+ "<code>BernoulliRegular.oddLValueRhs (p : ℕ) [hp : Fact (Nat.Prime p)] (χ : DirichletCharacter ℂ p) : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">T021 right-hand side: the value predicted for `L(1, χ)` when `χ` is odd\nprimitive modulo `p`. </code>",
+ "167":
+ "<code>DirichletCharacter.LFunction χ⁻¹ 0 = -BernoulliRegular.BernoulliGen χ⁻¹ 1</code>",
+ "166":
+ "<code>DirichletCharacter.IsPrimitive.{u_1} {R : Type u_1} [CommMonoidWithZero R] {n : ℕ} (χ : DirichletCharacter R n) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A character is primitive if its level is equal to its conductor. </code>",
+ "165": "<code>χ.IsPrimitive</code>",
+ "164":
+ "<code>BernoulliRegular.odd_LFunction_one_eq_oddLValueRhs_of_LFunction_inv_zero (p : ℕ) [hp : Fact (Nat.Prime p)]\n  {χ : DirichletCharacter ℂ p} (hχ_prim : χ.IsPrimitive) (hχ_odd : χ.Odd)\n  (hχ0 : DirichletCharacter.LFunction χ⁻¹ 0 = -BernoulliRegular.BernoulliGen χ⁻¹ 1) :\n  DirichletCharacter.LFunction χ 1 = BernoulliRegular.oddLValueRhs p χ</code><span class=\"sep\"></span><code class=\"docstring\">Functional-equation reduction of the odd `L(1, χ)` formula to the special\nvalue formula for `L(0, χ⁻¹)`. </code>",
+ "163":
+ "<code>Neg.neg.{u} {α : Type u} [self : Neg α] : α → α</code><span class=\"sep\"></span><code class=\"docstring\">`-a` computes the negative or opposite of `a`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `-` in identifiers is `neg` (when used as a unary operator).</code>",
+ "162":
+ "<code>DirichletCharacter.LFunction {N : ℕ} [NeZero N] (χ : DirichletCharacter ℂ N) (s : ℂ) : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The unique meromorphic function `ℂ → ℂ` which agrees with `∑' n : ℕ, χ n / n ^ s` wherever the\nlatter is convergent. This is constructed as a linear combination of Hurwitz zeta functions.\n\nNote that this is not the same as `LSeries χ`: they agree in the convergence range, but\n`LSeries χ s` is defined to be `0` if `re s ≤ 1`.\n</code>",
+ "161":
+ "<code>DirichletCharacter.Odd.{u_2} {S : Type u_2} [CommRing S] {m : ℕ} (ψ : DirichletCharacter S m) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A Dirichlet character is odd if its value at -1 is -1. </code>",
+ "160": "<code>χ.Odd</code>",
+ "16":
+ "<code>Ideal.{u} (R : Type u) [Semiring R] : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A (left) ideal in a semiring `R` is an additive submonoid `s` such that\n`a * b ∈ s` whenever `b ∈ s`. If `R` is a ring, then `s` is an additive subgroup. </code>",
+ "159":
+ "<code>BernoulliRegular.odd_LFunction_zero_eq_neg_BernoulliGen_one (p : ℕ) [hp : Fact (Nat.Prime p)]\n  {χ : DirichletCharacter ℂ p} (hχ_odd : χ.Odd) (hχ_ne_one : χ ≠ 1) :\n  DirichletCharacter.LFunction χ 0 = -BernoulliRegular.BernoulliGen χ 1</code><span class=\"sep\"></span><code class=\"docstring\">**T021b / T021b1**: Odd special value `L(0, χ) = -BernoulliGen χ 1` for\nodd nontrivial Dirichlet characters modulo `p`, packaged independently of the\nendpoint scaffolding by feeding the endpoint identity\n`sinZeta_toAddCircle_one_eq_boundary` into the generic reduction lemma. </code>",
+ "158":
+ "<code>BernoulliRegular.GeneralizedBernoulliPDivisible (p : ℕ) [hp : Fact (Nat.Prime p)] (χ : MulChar (ZMod p)ˣ ℚ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Divisibility of the generalized Bernoulli number attached to the inverse\ncharacter of a rational unit character. </code>",
+ "157":
+ "<code>BernoulliRegular.OddComponentNontrivial.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (L : Type u_1) [Field L]\n  (C : BernoulliRegular.CyclotomicClassGroupPSylowComponent p L) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The component-level nontriviality hypothesis `A_i ≠ 0`, expressed for the\ncurrent multiplicative subgroup model. </code>",
+ "156": "<code>BernoulliRegular.OddComponentNontrivial p L C</code>",
+ "155":
+ "<code>BernoulliRegular.OddComponentHerbrandBridge.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (L : Type u_1) [Field L]\n  [NumberField L] [IsCyclotomicExtension {p * (p - 1)} ℚ L] (hp_odd : p ≠ 2) (χ : MulChar (ZMod p)ˣ ℚ)\n  (C : BernoulliRegular.CyclotomicClassGroupPSylowComponent p L) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The exact missing Herbrand bridge from the future intrinsic class-group\nmodule action.  Once the project has that action, this structure should be\ninstantiated from the statement that a nonzero `χ`-component cannot be killed by\na `p`-adic unit scalar; with the current data-driven component API, this bridge\nis the honest interface needed to avoid smuggling in an unproved module-action\nclaim. </code>",
+ "154":
+ "<code>BernoulliRegular.OddComponentHerbrandBridge p L hp_odd χ C</code>",
+ "153":
+ "<code>BernoulliRegular.CyclotomicClassGroupPSylowComponent.character.{u_1} {p : ℕ} [hp : Fact (Nat.Prime p)] {L : Type u_1}\n  [Field L] (self : BernoulliRegular.CyclotomicClassGroupPSylowComponent p L) : MulChar (ZMod p)ˣ ℚ</code>",
+ "152": "<code>C.character = χ</code>",
+ "151":
+ "<code>BernoulliRegular.CyclotomicClassGroupPSylowComponent.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (L : Type u_1) [Field L] :\n  Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A character-tagged component of the chosen Sylow subgroup.\n\nThe subgroup is supplied as data because the current project has not yet built\nthe full class-group module action needed to define `ε_χ A` intrinsically. </code>",
+ "150": "<code>BernoulliRegular.CyclotomicClassGroupPSylowComponent p L</code>",
+ "15":
+ "<code>Ideal (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield L))</code>",
+ "149":
+ "<code>BernoulliRegular.IsOddUnitCharacter (p : ℕ) [hp : Fact (Nat.Prime p)] (χ : MulChar (ZMod p)ˣ ℚ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Odd rational unit characters are the rational stand-in for odd\nTeichmüller-indexed eigenspaces in the current `ℚ`-valued idempotent API. </code>",
+ "148": "<code>BernoulliRegular.IsOddUnitCharacter p χ</code>",
+ "147": "<code>MulChar (ZMod p)ˣ ℚ</code>",
+ "146":
+ "<code>BernoulliRegular.generalizedBernoulliPDivisible_of_nontrivial_oddComponent.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)]\n  (L : Type u_1) [Field L] [NumberField L] [IsCyclotomicExtension {p * (p - 1)} ℚ L] (hp_odd : p ≠ 2)\n  {χ : MulChar (ZMod p)ˣ ℚ} (hχ_odd : BernoulliRegular.IsOddUnitCharacter p χ)\n  (C : BernoulliRegular.CyclotomicClassGroupPSylowComponent p L) (hC : C.character = χ)\n  (bridge : BernoulliRegular.OddComponentHerbrandBridge p L hp_odd χ C)\n  (hC_nontrivial : BernoulliRegular.OddComponentNontrivial p L C) : BernoulliRegular.GeneralizedBernoulliPDivisible p χ</code><span class=\"sep\"></span><code class=\"docstring\">`T035a`: for a declared odd component, the Herbrand bridge turns the\n`T034c` Bernoulli annihilation certificate and nontriviality of the component\ninto `p`-adic divisibility of `B_{1,χ⁻¹}`. </code>",
+ "145":
+ "<code>BernoulliRegular.stickelbergerCharacterCoefficientGroupRingTarget.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (L : Type u_1)\n  [Field L] [NumberField L] [IsCyclotomicExtension {p * (p - 1)} ℚ L] (χ : DirichletCharacter ℂ p) :\n  MonoidAlgebra ℤ (ZMod (p - 1))ˣ</code><span class=\"sep\"></span><code class=\"docstring\">The group-ring exponent attached to the arbitrary-character coefficient\ntarget, in the inverse-basis convention used downstream. </code>",
+ "144":
+ "<code>BernoulliRegular.characterSideStickelbergerClassAction.{u_1} (p : ℕ) [hp : Fact (Nat.Prime p)] (L : Type u_1) [Field L]\n  [NumberField L] [IsCyclotomicExtension {p * (p - 1)} ℚ L] (E : MonoidAlgebra ℤ (ZMod (p - 1))ˣ) :\n  ClassGroup (NumberField.RingOfIntegers L)</code><span class=\"sep\"></span><code class=\"docstring\">The class-group action of a nonnegative character-side group-ring exponent\non the distinguished prime class. Coefficients are read in the same inverse\nbasis convention as `characterSideStickelbergerIdealAction`. </code>",
+ "143":
+ "<code>BernoulliRegular.stickelbergerCharacterCoefficientGroupRingTarget_annihilates_primeClass.{u_1} (p : ℕ)\n  [hp : Fact (Nat.Prime p)] (L : Type u_1) [Field L] [NumberField L] [IsCyclotomicExtension {p * (p - 1)} ℚ L]\n  (hp_odd : p ≠ 2) {χ : DirichletCharacter ℂ p} (hχ : χ ≠ 1) :\n  BernoulliRegular.characterSideStickelbergerClassAction p L\n      (BernoulliRegular.stickelbergerCharacterCoefficientGroupRingTarget p L χ) =\n    1</code><span class=\"sep\"></span><code class=\"docstring\">`T032c`: the character-side Stickelberger exponent supplied by the\nGauss-sum factorisation annihilates the distinguished-prime class. </code>",
+ "142":
+ "<code>ZMod : ℕ → Type</code><span class=\"sep\"></span><code class=\"docstring\">The integers modulo `n : ℕ`. </code>",
+ "141":
+ "<code>MonoidAlgebra.{u_8, u_9} (R : Type u_8) (M : Type u_9) [Semiring R] : Type (max u_8 u_9)</code><span class=\"sep\"></span><code class=\"docstring\">The monoid algebra over a semiring `R` generated by the monoid `M`.\n\nIt is the type of finite formal `R`-linear combinations of terms of `M`,\nendowed with the convolution product. </code>",
+ "140":
+ "<code>BernoulliRegular.stickelbergerElement (p : ℕ) [hp : Fact (Nat.Prime p)] : MonoidAlgebra ℚ (ZMod p)ˣ</code><span class=\"sep\"></span><code class=\"docstring\">The Stickelberger element `θ_p ∈ ℚ[(ZMod p)ˣ]`:\n`θ_p := (1/p) · ∑_{a ∈ (ZMod p)ˣ} (a.val : ℚ) • single a⁻¹ 1`. </code>",
+ "14":
+ "<code>BernoulliRegular.map_comap_eq_ringOfIntegers.{u_2} (L : Type u_2) [Field L] [NumberField L]\n  (J : Ideal (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield L))) :\n  Ideal.comap\n      (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield L)) (NumberField.RingOfIntegers L))\n      (Ideal.map\n        (algebraMap (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield L)) (NumberField.RingOfIntegers L))\n        J) =\n    J</code><span class=\"sep\"></span><code class=\"docstring\">Extending and contracting ideals along `𝓞(L⁺) ⊆ 𝓞 L` is the identity. </code>",
+ "139":
+ "<code>ZMod.stdAddChar {N : ℕ} [NeZero N] : AddChar (ZMod N) ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The additive character from `ZMod N` to `ℂ`, sending `j mod N` to `exp (2 * π * I * j / N)`. </code>",
+ "138":
+ "<code>Complex : Type</code><span class=\"sep\"></span><code class=\"docstring\">Complex numbers consist of two `Real`s: a real part `re` and an imaginary part `im`. </code>",
+ "137": "<code>DirichletCharacter ℂ p</code>",
+ "136":
+ "<code>BernoulliRegular.gaussSum_mul_gaussSum_inv_stdAddChar (p : ℕ) [hp : Fact (Nat.Prime p)] {χ : DirichletCharacter ℂ p}\n  (hχ : χ ≠ 1) : gaussSum χ ZMod.stdAddChar * gaussSum χ⁻¹ ZMod.stdAddChar = χ (-1) * ↑p</code><span class=\"sep\"></span><code class=\"docstring\">**T026**: For a non-trivial Dirichlet character `χ` modulo a prime `p`,\n`τ(χ) · τ(χ̄) = χ(-1) · p`, where `τ(χ) = gaussSum χ ZMod.stdAddChar` is\nthe classical Gauss sum. </code>",
+ "135":
+ "<code>AddChar.{u_1, u_2} (A : Type u_1) [AddMonoid A] (M : Type u_2) [Monoid M] : Type (max u_1 u_2)</code><span class=\"sep\"></span><code class=\"docstring\">`AddChar A M` is the type of maps `A → M`, for `A` an additive monoid and `M` a multiplicative\nmonoid, which intertwine addition in `A` with multiplication in `M`.\n\nWe only put the typeclasses needed for the definition, although in practice we are usually\ninterested in much more specific cases (e.g. when `A` is a group and `M` a commutative ring).\n</code>",
+ "134": "<code>AddChar R R'</code>",
+ "133":
+ "<code>MulChar.{u_1, u_2} (R : Type u_1) [CommMonoid R] (R' : Type u_2) [CommMonoidWithZero R'] : Type (max u_1 u_2)</code><span class=\"sep\"></span><code class=\"docstring\">Define a structure for multiplicative characters.\nA multiplicative character from a commutative monoid `R` to a commutative monoid with zero `R'`\nis a homomorphism of (multiplicative) monoids that sends non-units to zero. </code>",
+ "132": "<code>MulChar R R'</code>",
+ "131": "<code>Type v</code>",
+ "130":
+ "<code>Fintype.{u_4} (α : Type u_4) : Type u_4</code><span class=\"sep\"></span><code class=\"docstring\">`Fintype α` means that `α` is finite, i.e. there are only\nfinitely many distinct elements of type `α`. The evidence of this\nis a finset `elems` (a list up to permutation without duplicates),\ntogether with a proof that everything of type `α` is in the list. </code>",
+ "13":
+ "<code>NumberField.RingOfIntegers.{u_1} (K : Type u_1) [Field K] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">The ring of integers (or number ring) corresponding to a number field\nis the integral closure of ℤ in the number field.\n\nThis is defined as its own type, rather than a `Subalgebra`, for performance reasons:\nlooking for instances of the form `SMul (RingOfIntegers _) (RingOfIntegers _)` makes\nmuch more effective use of the discrimination tree than instances of the form\n`SMul (Subtype _) (Subtype _)`.\nThe drawback is we have to copy over instances manually.\n</code>",
+ "129": "<code>Type u</code>",
+ "128":
+ "<code>gaussSum.{u, v} {R : Type u} [CommRing R] [Fintype R] {R' : Type v} [CommRing R'] (χ : MulChar R R')\n  (ψ : AddChar R R') : R'</code><span class=\"sep\"></span><code class=\"docstring\">Definition of the Gauss sum associated to a multiplicative and an additive character. </code>",
+ "127":
+ "<code>BernoulliRegular.bernoulliGen_teichmuller_inverse_eq_p_sub_one_div_p_add_padicInt {p : ℕ} [Fact (Nat.Prime p)]\n  (hp_odd : p ≠ 2) :\n  ∃ z, BernoulliRegular.BernoulliGen (BernoulliRegular.teichmullerCharQp p ^ (p - 2)) 1 = (↑p - 1) / ↑p + ↑z</code><span class=\"sep\"></span><code class=\"docstring\">**Diekmann eq. 29** (T008): for an odd prime `p`, the boundary\ncharacter `ω^{-1}` contributes the exceptional term `(p - 1) / p`, up\nto a `p`-adic integer. We realise `ω^{-1}` as `ω^(p - 2)`. </code>",
+ "126":
+ "<code>Inv.inv.{u} {α : Type u} [self : Inv α] : α → α</code><span class=\"sep\"></span><code class=\"docstring\">`a⁻¹` computes the inverse of `a`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⁻¹` in identifiers is `inv`.</code>",
+ "125":
+ "<code>HAdd.hAdd.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HAdd α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a + b` computes the sum of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `+` in identifiers is `add`.</code>",
+ "124":
+ "<code>BernoulliRegular.bernoulli_pSubOne_add_inv_p_mem_padicInt {p : ℕ} [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2) :\n  ∃ z, ↑(bernoulli (p - 1)) + (↑p)⁻¹ = ↑z</code><span class=\"sep\"></span><code class=\"docstring\">**Von Staudt–Clausen at `n = p-1` (p-local form).**\nFor an odd prime `p`, `bernoulli (p-1) + 1/p` is a `p`-adic integer.\nEquivalently, `p · bernoulli (p-1) ≡ -1 (mod p)` in `ℤ_[p]`.\n\n**Proof sketch.** Specialise `sum_bernoulli` at `n = p`:\n  `∑_{k &lt; p} C(p, k) · bernoulli k = 0`.\nExtract `k = p - 1`: `p · bernoulli (p-1) = -∑_{k &lt; p - 1} C(p, k) · bernoulli k`.\nExpanding: the `k = 0` term is `1`; the `k = 1` term is `-p/2`; odd `k ≥ 3`\nterms vanish; the remaining even `k ∈ [2, p-3]` terms have `C(p, k)` divisible\nby `p` (Nat.Prime.dvd_choose_self) and `bernoulli k` a `p`-adic integer\n(by `bernoulli_mem_padicInt_of_lt_sub_one`). Collecting terms:\n`p · bernoulli (p-1) + 1 = p/2 + (p-divisible stuff)`, hence `/p` lands in\n`ℤ_[p]`. </code>",
+ "123":
+ "<code>Rat.den (self : ℚ) : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The denominator of the rational number is a natural number. </code>",
+ "122":
+ "<code>Not (a : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Not p`, or `¬p`, is the negation of `p`. It is defined to be `p → False`,\nso if your goal is `¬p` you can use `intro h` to turn the goal into\n`h : p ⊢ False`, and if you have `hn : ¬p` and `h : p` then `hn h : False`\nand `(hn h).elim` will prove anything.\nFor more information: [Propositional Logic](https://lean-lang.org/theorem_proving_in_lean4/propositions_and_proofs.html#propositional-logic)\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `¬` in identifiers is `not`.</code>",
+ "121": "<code>n &lt; p - 1</code>",
+ "120":
+ "<code>BernoulliRegular.prime_not_dvd_bernoulli_den_of_lt_sub_one {p n : ℕ} [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2)\n  (hn : n &lt; p - 1) : ¬p ∣ (bernoulli n).den</code><span class=\"sep\"></span><code class=\"docstring\">For indices strictly below the boundary `p - 1`, the denominator of the\nclassical Bernoulli number is prime to `p`.\n\nThis is the denominator form of the p-integrality statement used in the proof\nof Diekmann Theorem 42: if `n &lt; p - 1`, then `p ∤ (bernoulli n).den`. </code>",
+ "12":
+ "<code>Module.FaithfullyFlat.{u, v} (R : Type u) (M : Type v) [CommRing R] [AddCommGroup M] [Module R M] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A module `M` over a commutative ring `R` is *faithfully flat* if it is flat and,\nfor all `R`-linear maps `f : N → N'` such that `id ⊗ f = 0`, we have `f = 0`.\n</code>",
+ "119":
+ "<code>bernoulli (n : ℕ) : ℚ</code><span class=\"sep\"></span><code class=\"docstring\">The Bernoulli numbers are defined to be `bernoulli'` with a parity sign. </code>",
+ "118": "<code>ℤ_[p]</code>",
+ "117": "<code>k &lt; p - 1</code>",
+ "116":
+ "<code>BernoulliRegular.bernoulli_mem_padicInt_of_lt_sub_one {p : ℕ} [hp : Fact (Nat.Prime p)] (hp_odd : p ≠ 2) (k : ℕ)\n  (hk : k &lt; p - 1) : ∃ z, ↑(bernoulli k) = ↑z</code><span class=\"sep\"></span><code class=\"docstring\">Bernoulli numbers below the boundary `p - 1` are `p`-adic integers.\n\nStated as: `(bernoulli k : ℚ_[p])` equals the image of some `z : ℤ_[p]`\nunder the natural coercion `ℤ_[p] → ℚ_[p]`.\n\n**Proof approach:** strong induction on `k`. Base cases `k = 0` (equals `1`)\nand `k = 1` (equals `-1/2`, a `p`-unit in `ℤ_[p]` since `p` is odd) are\ndirect. Odd `k ≥ 3` have `bernoulli k = 0` and are trivial. For even\n`k ≥ 2` with `k &lt; p - 1`, use `sum_bernoulli (k + 1)` to get\n  `(k + 1) · bernoulli k = -∑_{j ∈ range k} C(k + 1, j) · bernoulli j`;\nsince `k + 1 &lt; p`, the scalar is a `p`-unit, and each summand is a\n`p`-adic integer by the induction hypothesis. </code>",
+ "115": "<code>χ.Even</code>",
+ "114": "<code>↑N ≠ 0</code>",
+ "113":
+ "<code>BernoulliRegular.BernoulliGen_one_eq_zero_of_even_ne_one.{u_1} {N : ℕ} {R : Type u_1} [CommRing R] [Algebra ℚ R]\n  [IsDomain R] [NeZero 2] [NeZero N] [Fact (1 &lt; N)] (hN : ↑N ≠ 0) {χ : DirichletCharacter R N} (hχ_ne_one : χ ≠ 1)\n  (hχ_even : χ.Even) : BernoulliRegular.BernoulliGen χ 1 = 0</code><span class=\"sep\"></span><code class=\"docstring\">**Diekmann Lemma 29** (T009): for a non-trivial even Dirichlet character\n`χ` of level `N &gt; 1` over a `ℚ`-algebra domain `R` where `(2 : R) ≠ 0`\nand `(N : R) ≠ 0`, `B_{1, χ} = 0`. </code>",
+ "112":
+ "<code>BernoulliRegular.natCast_mul_BernoulliGen_one_of_ne_one.{u_1} {N : ℕ} {R : Type u_1} [CommRing R] [Algebra ℚ R]\n  [IsDomain R] [NeZero N] {χ : DirichletCharacter R N} (hχ : χ ≠ 1) :\n  ↑N * BernoulliRegular.BernoulliGen χ 1 = ∑ a, χ a * ↑a.val</code><span class=\"sep\"></span><code class=\"docstring\">**Diekmann eq. 24/27** (T006), cleared form: `N · B_{1, χ} = ∑_a χ(a) · a`\nfor non-trivial `χ`. Cleared of denominators so it holds in any commutative\n`ℚ`-algebra. </code>",
+ "111":
+ "<code>HDiv.hDiv.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HDiv α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a / b` computes the result of dividing `a` by `b`.\nThe meaning of this notation is type-dependent.\n* For most types like `Nat`, `Int`, `Rat`, `Real`, `a / 0` is defined to be `0`.\n* For `Nat`, `a / b` rounds downwards.\n* For `Int`, `a / b` rounds downwards if `b` is positive or upwards if `b` is negative.\n  It is implemented as `Int.ediv`, the unique function satisfying\n  `a % b + b * (a / b) = a` and `0 ≤ a % b &lt; natAbs b` for `b ≠ 0`.\n  Other rounding conventions are available using the functions\n  `Int.fdiv` (floor rounding) and `Int.tdiv` (truncation rounding).\n* For `Float`, `a / 0` follows the IEEE 754 semantics for division,\n  usually resulting in `inf` or `nan`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `/` in identifiers is `div`.</code>",
+ "110": "<code>ZMod N</code>",
+ "11":
+ "<code>BernoulliRegular.ringOfIntegers_faithfullyFlat_maximalRealSubfield.{u_2} (L : Type u_2) [Field L] [NumberField L] :\n  Module.FaithfullyFlat (NumberField.RingOfIntegers ↥(NumberField.maximalRealSubfield L)) (NumberField.RingOfIntegers L)</code><span class=\"sep\"></span><code class=\"docstring\">`𝓞 L` is faithfully flat over `𝓞(L⁺)`. </code>",
+ "109":
+ "<code>BernoulliRegular.BernoulliGen_one_of_ne_one.{u_1} {N : ℕ} {R : Type u_1} [CommRing R] [Algebra ℚ R] [IsDomain R]\n  [NeZero N] {χ : DirichletCharacter R N} (hχ : χ ≠ 1) :\n  BernoulliRegular.BernoulliGen χ 1 = ∑ a, χ a * (algebraMap ℚ R) (↑a.val / ↑N)</code><span class=\"sep\"></span><code class=\"docstring\">Intermediate form (T006): for a non-trivial Dirichlet character `χ`,\nthe `1/2` constant term in `B_1(a/N) = a/N - 1/2` does not contribute\nafter summing, because `∑ χ(a) = 0`. </code>",
+ "108": "<code>χ ≠ 1</code>",
+ "107":
+ "<code>IsDomain.{u} (α : Type u) [Semiring α] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A domain is a nontrivial semiring such that multiplication by a nonzero element\nis cancellative on both sides. In other words, a nontrivial semiring `R` satisfying\n`∀ {a b c : R}, a ≠ 0 → a * b = a * c → b = c` and\n`∀ {a b c : R}, b ≠ 0 → a * b = c * b → a = c`.\n\nThis is implemented as a mixin for `Semiring α`.\nTo obtain an integral domain use `[CommRing α] [IsDomain α]`. </code>",
+ "106":
+ "<code>BernoulliRegular.BernoulliGen_zero_of_ne_one.{u_1} {N : ℕ} {R : Type u_1} [CommRing R] [Algebra ℚ R] [IsDomain R]\n  [NeZero N] {χ : DirichletCharacter R N} (hχ : χ ≠ 1) : BernoulliRegular.BernoulliGen χ 0 = 0</code><span class=\"sep\"></span><code class=\"docstring\">For a non-trivial Dirichlet character `χ` over a domain `R`,\n`B_{0, χ} = 0`. Follows from `Polynomial.bernoulli 0 = 1` and the\ncharacter-sum identity (our T004). </code>",
+ "105": "<code>DirichletCharacter R N</code>",
+ "104":
+ "<code>NeZero.{u_1} {R : Type u_1} [Zero R] (n : R) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A type-class version of `n ≠ 0`.  </code>",
+ "103":
+ "<code>Algebra.{u, v} (R : Type u) (A : Type v) [CommSemiring R] [Semiring A] : Type (max u v)</code><span class=\"sep\"></span><code class=\"docstring\">An associative unital `R`-algebra is a semiring `A` equipped with a map into its center `R → A`.\n\nSee the implementation notes in this file for discussion of the details of this definition.\n</code>",
+ "102":
+ "<code>BernoulliRegular.BernoulliGen.{u_1} {N : ℕ} {R : Type u_1} [CommRing R] [Algebra ℚ R] [NeZero N]\n  (χ : DirichletCharacter R N) (n : ℕ) : R</code><span class=\"sep\"></span><code class=\"docstring\">The generalized Bernoulli number `B_{n, χ}`, defined by the explicit\nformula\n  `B_{n, χ} = N^{n-1} · ∑_{a : ZMod N} χ(a) · B_n(a/N)`,\nwhere `B_n` is the `n`-th Bernoulli polynomial over `ℚ`, base-changed\nto `R` via `algebraMap ℚ R`, and `a/N` is evaluated in `ℚ` using\n`ZMod.val a : ℕ`.\n\nFor non-trivial `χ` the `a = 0` summand vanishes because `χ(0) = 0`,\nand `BernoulliGen_zero_of_ne_one` shows the whole sum vanishes when\n`n = 0`. </code>",
+ "101":
+ "<code class=\"docstring\">The universe of propositions. `Prop ≡ Sort 0`.\n\nEvery proposition is propositionally equal to either `True` or `False`. </code>",
+ "100": "<code>DirichletCharacter S m</code>",
+ "10":
+ "<code>NumberField.IsCMField.{u_1} (K : Type u_1) [Field K] [CharZero K] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A field `K` is `CM` if `K` is a totally complex quadratic extension of its maximal\nreal subfield `K⁺`.\n</code>",
+ "1": "<code>Type u_2</code>",
+ "0":
+ "<code>NumberField.maximalRealSubfield.{u_2} (K : Type u_2) [Field K] : Subfield K</code><span class=\"sep\"></span><code class=\"docstring\">The maximal real subfield of `K`. It is totally real,\nsee `NumberField.isTotallyReal_maximalRealSubfield`, and contains all the other totally real\nsubfields of `K`, see `NumberField.IsTotallyReal.le_maximalRealSubfield`.\n</code>"}

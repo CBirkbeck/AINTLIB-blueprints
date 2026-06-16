@@ -1,0 +1,1 @@
+window.docContents[133].resolve({"/Progress-summary/#Kummer___s-Criterion-and-Regular-Primes-in-Lean--Progress-summary":{"contents":"","context":"Kummer's Criterion and Regular Primes in Lean","header":"13. Progress summary","id":"/Progress-summary/#Kummer___s-Criterion-and-Regular-Primes-in-Lean--Progress-summary"}});

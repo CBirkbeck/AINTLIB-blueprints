@@ -1,0 +1,1 @@
+window.docContents[161].resolve({"/Dependency-Graph/#Kummer___s-Criterion-and-Regular-Primes-in-Lean--Dependency-Graph":{"contents":"\n\n","context":"Kummer's Criterion and Regular Primes in Lean","header":"Dependency Graph","id":"/Dependency-Graph/#Kummer___s-Criterion-and-Regular-Primes-in-Lean--Dependency-Graph"}});
