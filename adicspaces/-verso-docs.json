@@ -1,0 +1,111 @@
+{"9":
+ "<code>self.I.FG</code><span class=\"sep\"></span><code class=\"docstring\">`I` is finitely generated. </code>",
+ "8":
+ "<code>IsOpen.{u} {X : Type u} [TopologicalSpace X] : Set X → Prop</code><span class=\"sep\"></span><code class=\"docstring\">`IsOpen s` means that `s` is open in the ambient topological space on `X` </code>",
+ "7":
+ "<code>IsOpen ↑self.A₀</code><span class=\"sep\"></span><code class=\"docstring\">`A₀` is open in `A`. </code>",
+ "6":
+ "<code>PairOfDefinition.A₀.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (self : PairOfDefinition A) : Subring A</code><span class=\"sep\"></span><code class=\"docstring\">The ring of definition `A₀`, an open subring of `A`. </code>",
+ "59":
+ "<code>Fin (n : ℕ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">Natural numbers less than some upper bound.\n\nIn particular, a `Fin n` is a natural number `i` with the constraint that `i &lt; n`. It is the\ncanonical type with `n` elements.\n</code>",
+ "58":
+ "<code>MvPowerSeries.{u_1, u_2} (σ : Type u_1) (R : Type u_2) : Type (max u_2 u_1)</code><span class=\"sep\"></span><code class=\"docstring\">Multivariate formal power series, where `σ` is the index set of the variables\nand `R` is the coefficient ring. </code>",
+ "57":
+ "<code>NonarchimedeanRing.{u_1} (R : Type u_1) [Ring R] [TopologicalSpace R] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological ring is nonarchimedean if its underlying topological additive\ngroup is nonarchimedean. </code>",
+ "56": "<code>Type u</code>",
+ "55":
+ "<code>TateAlgebra.{u} (A : Type u) [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] :\n  Subring (MvPowerSeries (Fin 1) A)</code><span class=\"sep\"></span><code class=\"docstring\">The univariate Tate algebra `A⟨X⟩`, the ring of restricted power series in one variable.\nThis is `restrictedMvPowerSeriesSubring 1 A`, specialized to the univariate case.\nSee Wedhorn, Definition 6.9. </code>",
+ "54":
+ "<code>ValuationSpectrum.PlusSubring.{u_1} (A : Type u_1) [CommRing A] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A commutative ring equipped with a designated subring `A⁺`. </code>",
+ "53":
+ "<code>Subring A</code><span class=\"sep\"></span><code class=\"docstring\">The subring of integral elements `A⁺`. </code>",
+ "52": "<code>Type u_2</code>",
+ "51":
+ "<code>ValuationSpectrum.Spa.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] (Aplus : Subring A) : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">The *adic spectrum* `Spa(A, A⁺)` (Definition 7.23 of Wedhorn). </code>",
+ "50":
+ "<code>ValuationSpectrum.IsRingOfIntegralElements.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (B : Subring A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A ring of integral elements (Definition 7.14(1)): open, integrally closed, and in `A°`.\n\nA `class` (not a bare `structure`) so it can be required as `[IsRingOfIntegralElements (A⁺)]`\non `Spa`-level theorems — the faithful affinoid-ring interface (expert-review 2026-06-18,\nreviewer Q1). The bare `PlusSubring` carrier stays low-level; this records the three\nDefinition-7.14 axioms (open, integrally closed, `⊆ A°`) that make `(A, A⁺)` an affinoid ring. </code>",
+ "5": "<code>PairOfDefinition A</code>",
+ "49":
+ "<code>TopologicalRing.powerBoundedSubring.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] : Set A</code><span class=\"sep\"></span><code class=\"docstring\">The set `A°` of all power-bounded elements. </code>",
+ "48":
+ "<code>HasSubset.Subset.{u} {α : Type u} [self : HasSubset α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">Subset relation: `a ⊆ b`  \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⊆` in identifiers is `subset`.</code>",
+ "47":
+ "<code>↑B ⊆ TopologicalRing.powerBoundedSubring A</code><span class=\"sep\"></span><code class=\"docstring\">`B ⊆ A°`. </code>",
+ "46":
+ "<code>Membership.mem.{u, v} {α : outParam (Type u)} {γ : Type v} [self : Membership α γ] : γ → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The membership relation `a ∈ s : Prop` where `a : α`, `s : γ`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∈` in identifiers is `mem`.</code>",
+ "45":
+ "<code>IsIntegral.{u_1, u_3} (R : Type u_1) {A : Type u_3} [CommRing R] [Ring A] [Algebra R A] (x : A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An element `x` of an algebra `A` over a commutative ring `R` is said to be *integral*,\nif it is a root of some monic polynomial `p : R[X]`.\nEquivalently, the element is integral over `R` with respect to the induced `algebraMap` </code>",
+ "44":
+ "<code>∀ (a : A), IsIntegral (↥B) a → a ∈ B</code><span class=\"sep\"></span><code class=\"docstring\">`B` is integrally closed in `A`. </code>",
+ "43": "<code>Subring A</code>",
+ "42":
+ "<code>IsOpen ↑B</code><span class=\"sep\"></span><code class=\"docstring\">`B` is open in `A`. </code>",
+ "41": "<code>Spv A</code>",
+ "40":
+ "<code>ValuationSpectrum.supp.{u_1} {A : Type u_1} [CommRing A] (v : Spv A) : Ideal A</code><span class=\"sep\"></span><code class=\"docstring\">The support prime ideal `{ a ∈ A | v(a) = 0 }` of a point `v ∈ Spv A`. </code>",
+ "4":
+ "<code>Ideal.{u} (R : Type u) [Semiring R] : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A (left) ideal in a semiring `R` is an additive submonoid `s` such that\n`a * b ∈ s` whenever `b ∈ s`. If `R` is a ring, then `s` is an additive subgroup. </code>",
+ "39":
+ "<code>Set.{u} (α : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A set is a collection of elements of some type `α`.\n\nAlthough `Set` is defined as `α → Prop`, this is an implementation detail which should not be\nrelied on. Instead, `setOf` and membership of a set (`∈`) should be used to convert between sets\nand predicates.\n</code>",
+ "38":
+ "<code>ValuationSpectrum.basicOpen.{u_1} {A : Type u_1} [CommRing A] (f s : A) : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">The basic open subset `Spv(A)(f/s) = { v ∈ Spv A | v(f) ≤ v(s) ∧ v(s) ≠ 0 }`. </code>",
+ "37":
+ "<code>ValuationSpectrum.{u_1} (A : Type u_1) [CommRing A] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">The *valuation spectrum* `Spv A` of a commutative ring `A` (Definition 4.1 of Wedhorn). </code>",
+ "36":
+ "<code>ValuativeRel.{u_1} (R : Type u_1) [Semiring R] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">The class `[ValuativeRel R]` class introduces an operator `x ≤ᵥ y : Prop` for `x y : R`\nwhich is the natural relation arising from (the equivalence class of) a valuation on `R` when `R`\nis a ring. More precisely, if `v` is a valuation on `R` then the associated relation is\n`x ≤ᵥ y ↔ v x ≤ v y`. Use this class to talk about the case where `R` is equipped\nwith an equivalence class of valuations. </code>",
+ "35":
+ "<code>Not (a : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Not p`, or `¬p`, is the negation of `p`. It is defined to be `p → False`,\nso if your goal is `¬p` you can use `intro h` to turn the goal into\n`h : p ⊢ False`, and if you have `hn : ¬p` and `h : p` then `hn h : False`\nand `(hn h).elim` will prove anything.\nFor more information: [Propositional Logic](https://lean-lang.org/theorem_proving_in_lean4/propositions_and_proofs.html#propositional-logic)\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `¬` in identifiers is `not`.</code>",
+ "34":
+ "<code>Or (a b : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Or a b`, or `a ∨ b`, is the disjunction of propositions. There are two\nconstructors for `Or`, called `Or.inl : a → a ∨ b` and `Or.inr : b → a ∨ b`,\nand you can use `match` or `cases` to destruct an `Or` assumption into the\ntwo cases.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∨` in identifiers is `or`.</code>",
+ "33":
+ "<code>ValuativeRel.vle.{u_1} {R : Type u_1} {inst✝ : Semiring R} [self : ValuativeRel R] : R → R → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The valuation less-equal operator arising from `ValuativeRel`. </code>",
+ "32":
+ "<code>IsTateRing.{u_1} (A : Type u_1) [CommRing A] [TopologicalSpace A] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A Huber ring is a **Tate ring** if it contains a topologically nilpotent unit\n(Definition 6.10 of Wedhorn). </code>",
+ "31":
+ "<code>IsTopologicallyNilpotent.{u_1} {R : Type u_1} [MonoidWithZero R] [TopologicalSpace R] (a : R) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An element is topologically nilpotent if its powers converge to `0`. </code>",
+ "30": "<code>Aˣ</code>",
+ "3":
+ "<code>Ideal ↥self.A₀</code><span class=\"sep\"></span><code class=\"docstring\">The ideal of definition `I`, an ideal of `A₀`. </code>",
+ "29":
+ "<code>∃ u, IsTopologicallyNilpotent ↑u</code><span class=\"sep\"></span><code class=\"docstring\">There exists a topologically nilpotent unit. </code>",
+ "28":
+ "<code class=\"docstring\">The universe of propositions. `Prop ≡ Sort 0`.\n\nEvery proposition is propositionally equal to either `True` or `False`. </code>",
+ "27":
+ "<code>IsHuberRing.{u_1} (A : Type u_1) [CommRing A] [TopologicalSpace A] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological ring `A` is a **Huber ring** (or **f-adic ring**) if it admits a\npair of definition (Definition 6.1 of Wedhorn). </code>",
+ "26":
+ "<code>IsTopologicalRing.{u_1} (R : Type u_1) [TopologicalSpace R] [NonUnitalNonAssocRing R] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological ring is a ring `R` where addition, multiplication and negation are continuous.\n\nIf `R` is a (unital) ring, then continuity of negation can be derived from continuity of\nmultiplication as it is multiplication with `-1`. (See `IsTopologicalSemiring.continuousNeg_of_mul`\nand `IsTopologicalSemiring.toIsTopologicalRing`) </code>",
+ "25":
+ "<code>Nonempty.{u} (α : Sort u) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Nonempty α` is a typeclass that says that `α` is not an empty type,\nthat is, there exists an element in the type. It differs from `Inhabited α`\nin that `Nonempty α` is a `Prop`, which means that it does not actually carry\nan element of `α`, only a proof that *there exists* such an element.\nGiven `Nonempty α`, you can construct an element of `α` *nonconstructively*\nusing `Classical.choice`.\n</code>",
+ "24":
+ "<code>Nonempty (PairOfDefinition A)</code><span class=\"sep\"></span><code class=\"docstring\">There exists a pair of definition. </code>",
+ "23":
+ "<code>Neg.neg.{u} {α : Type u} [self : Neg α] : α → α</code><span class=\"sep\"></span><code class=\"docstring\">`-a` computes the negative or opposite of `a`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `-` in identifiers is `neg` (when used as a unary operator).</code>",
+ "22": "<code>A</code>",
+ "21":
+ "<code>HMul.hMul.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HMul α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a * b` computes the product of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `*` in identifiers is `mul`.</code>",
+ "20":
+ "<code>HAdd.hAdd.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HAdd α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a + b` computes the sum of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `+` in identifiers is `add`.</code>",
+ "2": "<code>Type u_1</code>",
+ "19": "<code>A × A</code>",
+ "18":
+ "<code>Continuous.{u, v} {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function between topological spaces is continuous if the preimage\nof every open set is open. Registered as a structure to make sure it is not unfolded by Lean. </code>",
+ "17":
+ "<code>TopologicalSpace.{u} (X : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A topology on `X`. </code>",
+ "16":
+ "<code>CommRing.{u} (α : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A commutative ring is a ring with commutative multiplication. </code>",
+ "15":
+ "<code class=\"docstring\">A type universe. `Type ≡ Type 0`, `Type u ≡ Sort (u + 1)`. </code>",
+ "14":
+ "<code>PairOfDefinition.{u_1} (A : Type u_1) [CommRing A] [TopologicalSpace A] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A **pair of definition** `(A₀, I)` for a topological ring `A` consists of an\nopen subring `A₀ ⊆ A` and a finitely generated ideal `I ⊆ A₀` such that the subspace\ntopology on `A₀` equals the `I`-adic topology (Definition 6.1 of Wedhorn). </code>",
+ "13":
+ "<code>IsAdic.{u_1} {R : Type u_1} [CommRing R] [H : TopologicalSpace R] (J : Ideal R) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Given a topology on a ring `R` and an ideal `J`, `IsAdic J` means the topology is the\n`J`-adic one. </code>",
+ "12":
+ "<code>IsAdic self.I</code><span class=\"sep\"></span><code class=\"docstring\">The subspace topology on `A₀` is the `I`-adic topology. </code>",
+ "11":
+ "<code>Ideal.FG.{u_1} {R : Type u_1} [Semiring R] (I : Ideal R) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An ideal of `R` is finitely generated if it is the span of a finite subset of `R`.\n\nThis is defeq to `Submodule.FG`, but unfolds more nicely. </code>",
+ "10":
+ "<code>PairOfDefinition.I.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (self : PairOfDefinition A) : Ideal ↥self.A₀</code><span class=\"sep\"></span><code class=\"docstring\">The ideal of definition `I`, an ideal of `A₀`. </code>",
+ "1":
+ "<code>Subring.{u} (R : Type u) [NonAssocRing R] : Type u</code><span class=\"sep\"></span><code class=\"docstring\">`Subring R` is the type of subrings of `R`. A subring of `R` is a subset `s` that is a\nmultiplicative submonoid and an additive subgroup. Note in particular that it shares the\nsame 0 and 1 as R. </code>",
+ "0":
+ "<code>Subring A</code><span class=\"sep\"></span><code class=\"docstring\">The ring of definition `A₀`, an open subring of `A`. </code>"}

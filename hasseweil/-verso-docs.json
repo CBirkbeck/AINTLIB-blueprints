@@ -1,0 +1,46 @@
+{"9":
+ "<code>HasseWeil.frobeniusIsog.{u_1} {K : Type u_1} [Field K] [Fintype K] [DecidableEq K] (W : WeierstrassCurve K)\n  [WeierstrassCurve.IsElliptic W.toAffine] : HasseWeil.Isogeny W.toAffine W.toAffine</code><span class=\"sep\"></span><code class=\"docstring\">The `q`-th power Frobenius endomorphism as a `Basic.Isogeny` over `K`.\n\nThe pullback `π* : K(E) →ₐ[K] K(E)` sends `f ↦ f^q` (concrete, from\n`FrobeniusIsogeny.lean`). The group homomorphism on K-rational points is\nthe identity (since `x^q = x` for all `x ∈ K`).\n\nReference: Silverman, Proposition III.4.6. </code>",
+ "8":
+ "<code>Nat : Type</code><span class=\"sep\"></span><code class=\"docstring\">The natural numbers, starting at zero.\n\nThis type is special-cased by both the kernel and the compiler, and overridden with an efficient\nimplementation. Both use a fast arbitrary-precision arithmetic library (usually\n[GMP](https://gmplib.org/)); at runtime, `Nat` values that are sufficiently small are unboxed.\n</code>",
+ "7":
+ "<code>WeierstrassCurve.Affine.Point.{r} {R : Type r} [CommRing R] (W' : WeierstrassCurve.Affine R) : Type r</code><span class=\"sep\"></span><code class=\"docstring\">A nonsingular point on a Weierstrass curve `W` in affine coordinates. This is either the unique\npoint at infinity `WeierstrassCurve.Affine.Point.zero` or a nonsingular affine point\n`WeierstrassCurve.Affine.Point.some (x, y)` satisfying the Weierstrass equation of `W`. </code>",
+ "6":
+ "<code>Fintype.{u_4} (α : Type u_4) : Type u_4</code><span class=\"sep\"></span><code class=\"docstring\">`Fintype α` means that `α` is finite, i.e. there are only\nfinitely many distinct elements of type `α`. The evidence of this\nis a finset `elems` (a list up to permutation without duplicates),\ntogether with a proof that everything of type `α` is in the list. </code>",
+ "5":
+ "<code>WeierstrassCurve.Affine.{r} (R : Type r) : Type r</code><span class=\"sep\"></span><code class=\"docstring\">An abbreviation for a Weierstrass curve in affine coordinates. </code>",
+ "4": "<code>WeierstrassCurve.Affine F</code>",
+ "3":
+ "<code>Field.{u} (K : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A `Field` is a `CommRing` with multiplicative inverses for nonzero elements.\n\nAn instance of `Field K` includes maps `ratCast : ℚ → K` and `qsmul : ℚ → K → K`.\nThose two fields are needed to implement the `DivisionRing K → Algebra ℚ K` instance since we need\nto control the specific definitions for some special cases of `K` (in particular `K = ℚ` itself).\nSee also note [forgetful inheritance].\n\nIf the field has positive characteristic `p`, our division by zero convention forces\n`ratCast (1 / p) = 1 / 0 = 0`. </code>",
+ "24": "<code>2 ≤ Fintype.card K</code>",
+ "23":
+ "<code>HasseWeil.WeilPairing.hasse_bound_unconditional.{u_1} {K : Type u_1} [Field K] [Fintype K] [DecidableEq K]\n  (W : WeierstrassCurve K) [WeierstrassCurve.IsElliptic W.toAffine] [Fintype W.toAffine.Point]\n  (hq : 2 ≤ Fintype.card K) : |↑(HasseWeil.pointCount W.toAffine) - ↑(Fintype.card K) - 1| ≤ 2 * √↑(Fintype.card K)</code><span class=\"sep\"></span><code class=\"docstring\">**The unconditional Hasse bound** (Silverman V.1.1): for an elliptic curve `E` over a finite field\n`𝔽_q`, `|#E(𝔽_q) − q − 1| ≤ 2√q`, with **no hypotheses** beyond `2 ≤ #K`.\n\nAssembled from `hasse_bound_unconditional_of_baseChange_scalings_coprime` (`FrobMatrixData.lean`) with\nthe kernel-cardinality degree function `pencilKerCard` and the three base-change scalings\n`frobeniusScaling_holds`, `oneSubFrobeniusScaling_holds`, `pencilScaling_holds_coprime`.\n\nInstance bookkeeping: `deg` is fixed before `∀ p r`, so it is taken at the canonical `(p₀, n₀)` of\n`FiniteField.card' K`; inside the `hscale` discharge `p = p₀` (`CharP.eq`) and `r = n₀`\n(`Nat.pow_right_injective`) are forced. </code>",
+ "22":
+ "<code>Real.sqrt (x : ℝ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The square root of a real number. This returns 0 for negative inputs.\n\nThis has notation `√x`. Note that `√x⁻¹` is parsed as `√(x⁻¹)`. </code>",
+ "21":
+ "<code>HMul.hMul.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HMul α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a * b` computes the product of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `*` in identifiers is `mul`.</code>",
+ "20":
+ "<code>LE.le.{u} {α : Type u} [self : LE α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The less-equal relation: `x ≤ y` \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≤` in identifiers is `le`.</code>",
+ "2":
+ "<code class=\"docstring\">A type universe. `Type ≡ Type 0`, `Type u ≡ Sort (u + 1)`. </code>",
+ "19":
+ "<code>Fintype.card.{u_4} (α : Type u_4) [Fintype α] : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">`card α` is the number of elements in `α`, defined when `α` is a fintype. </code>",
+ "18":
+ "<code>HSub.hSub.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HSub α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a - b` computes the difference of `a` and `b`.\nThe meaning of this notation is type-dependent.\n* For natural numbers, this operator saturates at 0: `a - b = 0` when `a ≤ b`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `-` in identifiers is `sub` (when used as a binary operator).</code>",
+ "17":
+ "<code>abs.{u_1} {α : Type u_1} [Lattice α] [AddGroup α] (a : α) : α</code><span class=\"sep\"></span><code class=\"docstring\">`abs a`, denoted `|a|`, is the absolute value of `a` </code>",
+ "16":
+ "<code>HasseWeil.WeilPairing.hasse_bound.{u_1} {K : Type u_1} [Field K] [Fintype K] [DecidableEq K] (W : WeierstrassCurve K)\n  [WeierstrassCurve.IsElliptic W.toAffine] [Fintype W.toAffine.Point] :\n  |↑(HasseWeil.pointCount W.toAffine) - ↑(Fintype.card K) - 1| ≤ 2 * √↑(Fintype.card K)</code><span class=\"sep\"></span><code class=\"docstring\">**The Hasse bound, hypothesis-free capstone** (Silverman V.1.1):\n`|#E(𝔽_q) − q − 1| ≤ 2√q` with no explicit cardinality hypothesis — `2 ≤ #K` is\nautomatic for a finite field (`Fintype.one_lt_card`).  This is the hypothesis-free\nform that replaced the retired `hasse_bound_universal` stub\n(`Hasse/OpenLemmaPrimitives.lean`, deleted 2026-06-11). </code>",
+ "15":
+ "<code>HasseWeil.Isogeny.{u_1} {F : Type u_1} [Field F] [DecidableEq F] (W₁ W₂ : WeierstrassCurve.Affine F)\n  [WeierstrassCurve.IsElliptic W₁] [WeierstrassCurve.IsElliptic W₂] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">An isogeny `φ : E₁ → E₂` between elliptic curves over a field `F`.\n\nAn isogeny has two components:\n- The **pullback** `φ* : K(E₂) →ₐ[F] K(E₁)` on function fields.\n- The **group homomorphism** `φ : E₁(F) →+ E₂(F)` on rational points.\n\nInjectivity of the pullback is derived automatically (see `Isogeny.pullback_injective`),\nsince any algebra homomorphism from a field is injective.\n\nThe degree is *computed* from the pullback via `Module.finrank`, not stored.\n\nIn the full algebraic-geometric theory, these two components are derived from\na single morphism of varieties. Here we carry both as data, since constructing\none from the other requires substantial algebraic geometry not yet in mathlib. </code>",
+ "14":
+ "<code>WeierstrassCurve.toAffine.{r} {R : Type r} (W : WeierstrassCurve R) : WeierstrassCurve.Affine R</code><span class=\"sep\"></span><code class=\"docstring\">The conversion from a Weierstrass curve to affine coordinates. </code>",
+ "13":
+ "<code>WeierstrassCurve.IsElliptic.{u} {R : Type u} [CommRing R] (W : WeierstrassCurve R) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`WeierstrassCurve.IsElliptic` is a typeclass which asserts that a Weierstrass curve is an\nelliptic curve: that its discriminant is a unit. Note that this definition is only mathematically\naccurate for certain rings whose Picard group has trivial 12-torsion, such as a field or a PID. </code>",
+ "12":
+ "<code>WeierstrassCurve.{u} (R : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A Weierstrass curve `Y² + a₁XY + a₃Y = X³ + a₂X² + a₄X + a₆` with parameters `aᵢ`. </code>",
+ "11": "<code>WeierstrassCurve K</code>",
+ "10":
+ "<code>DecidableEq.{u} (α : Sort u) : Sort (max 1 u)</code><span class=\"sep\"></span><code class=\"docstring\">Propositional equality is `Decidable` for all elements of a type.\n\nIn other words, an instance of `DecidableEq α` is a means of deciding the proposition `a = b` is\nfor all `a b : α`.\n</code>",
+ "1": "<code>Type u_1</code>",
+ "0":
+ "<code>HasseWeil.pointCount.{u_1} {F : Type u_1} [Field F] (E : WeierstrassCurve.Affine F) [Fintype E.Point] : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The number of rational points on an affine elliptic curve, including O. </code>"}
