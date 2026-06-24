@@ -4499,6 +4499,37 @@ window.onload = () => {
 }
 </script>
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const resolvePrelude = (node) => {
+        const table =
+            window.bpTexPreludeTable && typeof window.bpTexPreludeTable === "object"
+                ? window.bpTexPreludeTable
+                : {};
+        const preludeId = (node.getAttribute("data-bp-tex-prelude-id") || "").trim();
+        if (preludeId && typeof table[preludeId] === "string") {
+            return table[preludeId].trim();
+        }
+        const fallback = (node.getAttribute("data-bp-tex-prelude") || "").trim();
+        return fallback;
+    };
+    const renderMath = (node, displayMode) => {
+        const tex = node.textContent || "";
+        const prelude = resolvePrelude(node);
+        const renderInput = prelude ? `${prelude}\n${tex}` : tex;
+        katex.render(renderInput, node, { throwOnError: false, displayMode });
+        node.setAttribute("data-bp-math-rendered", "1");
+    };
+    for (const m of document.querySelectorAll(".bp_math.inline")) {
+        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
+        renderMath(m, false);
+    }
+    for (const m of document.querySelectorAll(".bp_math.display")) {
+        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
+        renderMath(m, true);
+    }
+});
+</script>
+    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -7264,37 +7295,6 @@ window.onload = () => {
 
 })();</script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-    const resolvePrelude = (node) => {
-        const table =
-            window.bpTexPreludeTable && typeof window.bpTexPreludeTable === "object"
-                ? window.bpTexPreludeTable
-                : {};
-        const preludeId = (node.getAttribute("data-bp-tex-prelude-id") || "").trim();
-        if (preludeId && typeof table[preludeId] === "string") {
-            return table[preludeId].trim();
-        }
-        const fallback = (node.getAttribute("data-bp-tex-prelude") || "").trim();
-        return fallback;
-    };
-    const renderMath = (node, displayMode) => {
-        const tex = node.textContent || "";
-        const prelude = resolvePrelude(node);
-        const renderInput = prelude ? `${prelude}\n${tex}` : tex;
-        katex.render(renderInput, node, { throwOnError: false, displayMode });
-        node.setAttribute("data-bp-math-rendered", "1");
-    };
-    for (const m of document.querySelectorAll(".bp_math.inline")) {
-        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
-        renderMath(m, false);
-    }
-    for (const m of document.querySelectorAll(".bp_math.display")) {
-        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
-        renderMath(m, true);
-    }
-});
-</script>
-    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -8413,6 +8413,8 @@ window.onload = () => {
 })();
 </script>
     <script>
+      window.bpTexPreludeTable = Object.assign({}, window.bpTexPreludeTable || {}, {"default":""});</script>
+    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -8897,8 +8899,6 @@ window.onload = () => {
 })();
 </script>
     <script>
-      window.bpTexPreludeTable = Object.assign({}, window.bpTexPreludeTable || {}, {"default":""});</script>
-    <script>
       (function () {
   const styleStorageKey = "verso-blueprint-style";
   const switcherId = "bp-style-switcher";
@@ -9224,10 +9224,10 @@ window.onload = () => {
             <div class="split-toc book">
               <div class="title">
                 <label for="--verso-manual-toc-----bookRoot" class="toggle-split-toc"><input type="checkbox" class="toggle-split-toc" id="--verso-manual-toc-----bookRoot" checked="checked"></label><span class="">Table of Contents</span></div>
-              <table><tr class="numbered"><td class="num">1.</td><td><a href="Eigenforms-and-the-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--Eigenforms-and-the-old___new-decomposition">Eigenforms and the old/new decomposition</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="Strong-multiplicity-one/#Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one">Strong multiplicity one</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="current numbered"><td class="num">4.</td><td><a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
+              <table><tr class="numbered"><td class="num">1.</td><td><a href="Hecke-operators-and-eigenforms/#Strong-Multiplicity-One-___-Lean-blueprint--Hecke-operators-and-eigenforms">Hecke operators and eigenforms</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="The-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--The-old___new-decomposition">The old/new decomposition</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="Strong-multiplicity-one/#Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one">Strong multiplicity one</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="current numbered"><td class="num">5.</td><td><a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
             <div class="split-toc">
               <div class="title">
-                <span class="no-toggle"></span><span class="number">4.</span> <span class="current"><a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary">Progress summary</a></span></div>
+                <span class="no-toggle"></span><span class="number">5.</span> <span class="current"><a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary">Progress summary</a></span></div>
               </div>
             </div>
           </div>
@@ -9238,7 +9238,7 @@ window.onload = () => {
             <a class="local-button active" href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph" rel="prev" title="Dependency Graph"><span class="arrow">←</span><span class="where">Dependency Graph</span></a><a class="local-button active" href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary" rel="next" title="Blueprint Summary"><span class="where">Blueprint Summary</span><span class="arrow">→</span></a></nav>
           <section>
             <h1>
-              4. Progress summary<span class="permalink-widget inline"><a href="find/?domain=Verso.Genre.Manual.section&amp;name=Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary" title="Permalink">🔗</a></span></h1>
+              5. Progress summary<span class="permalink-widget inline"><a href="find/?domain=Verso.Genre.Manual.section&amp;name=Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary" title="Permalink">🔗</a></span></h1>
             </section>
           <nav class="prev-next-buttons">
             <a class="local-button active" href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph" rel="prev" title="Dependency Graph"><span class="arrow">←</span><span class="where">Dependency Graph</span></a><a class="local-button active" href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary" rel="next" title="Blueprint Summary"><span class="where">Blueprint Summary</span><span class="arrow">→</span></a></nav>

@@ -4499,6 +4499,37 @@ window.onload = () => {
 }
 </script>
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const resolvePrelude = (node) => {
+        const table =
+            window.bpTexPreludeTable && typeof window.bpTexPreludeTable === "object"
+                ? window.bpTexPreludeTable
+                : {};
+        const preludeId = (node.getAttribute("data-bp-tex-prelude-id") || "").trim();
+        if (preludeId && typeof table[preludeId] === "string") {
+            return table[preludeId].trim();
+        }
+        const fallback = (node.getAttribute("data-bp-tex-prelude") || "").trim();
+        return fallback;
+    };
+    const renderMath = (node, displayMode) => {
+        const tex = node.textContent || "";
+        const prelude = resolvePrelude(node);
+        const renderInput = prelude ? `${prelude}\n${tex}` : tex;
+        katex.render(renderInput, node, { throwOnError: false, displayMode });
+        node.setAttribute("data-bp-math-rendered", "1");
+    };
+    for (const m of document.querySelectorAll(".bp_math.inline")) {
+        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
+        renderMath(m, false);
+    }
+    for (const m of document.querySelectorAll(".bp_math.display")) {
+        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
+        renderMath(m, true);
+    }
+});
+</script>
+    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -7264,37 +7295,6 @@ window.onload = () => {
 
 })();</script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-    const resolvePrelude = (node) => {
-        const table =
-            window.bpTexPreludeTable && typeof window.bpTexPreludeTable === "object"
-                ? window.bpTexPreludeTable
-                : {};
-        const preludeId = (node.getAttribute("data-bp-tex-prelude-id") || "").trim();
-        if (preludeId && typeof table[preludeId] === "string") {
-            return table[preludeId].trim();
-        }
-        const fallback = (node.getAttribute("data-bp-tex-prelude") || "").trim();
-        return fallback;
-    };
-    const renderMath = (node, displayMode) => {
-        const tex = node.textContent || "";
-        const prelude = resolvePrelude(node);
-        const renderInput = prelude ? `${prelude}\n${tex}` : tex;
-        katex.render(renderInput, node, { throwOnError: false, displayMode });
-        node.setAttribute("data-bp-math-rendered", "1");
-    };
-    for (const m of document.querySelectorAll(".bp_math.inline")) {
-        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
-        renderMath(m, false);
-    }
-    for (const m of document.querySelectorAll(".bp_math.display")) {
-        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
-        renderMath(m, true);
-    }
-});
-</script>
-    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -8413,6 +8413,8 @@ window.onload = () => {
 })();
 </script>
     <script>
+      window.bpTexPreludeTable = Object.assign({}, window.bpTexPreludeTable || {}, {"default":""});</script>
+    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -8897,8 +8899,6 @@ window.onload = () => {
 })();
 </script>
     <script>
-      window.bpTexPreludeTable = Object.assign({}, window.bpTexPreludeTable || {}, {"default":""});</script>
-    <script>
       (function () {
   const styleStorageKey = "verso-blueprint-style";
   const switcherId = "bp-style-switcher";
@@ -9224,7 +9224,7 @@ window.onload = () => {
             <div class="split-toc book">
               <div class="title">
                 <label for="--verso-manual-toc-----bookRoot" class="toggle-split-toc"><input type="checkbox" class="toggle-split-toc" id="--verso-manual-toc-----bookRoot" checked="checked"></label><span class="">Table of Contents</span></div>
-              <table><tr class="numbered"><td class="num">1.</td><td><a href="Eigenforms-and-the-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--Eigenforms-and-the-old___new-decomposition">Eigenforms and the old/new decomposition</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="Strong-multiplicity-one/#Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one">Strong multiplicity one</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="current unnumbered"><td class="num"><td><a href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
+              <table><tr class="numbered"><td class="num">1.</td><td><a href="Hecke-operators-and-eigenforms/#Strong-Multiplicity-One-___-Lean-blueprint--Hecke-operators-and-eigenforms">Hecke operators and eigenforms</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="The-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--The-old___new-decomposition">The old/new decomposition</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="Strong-multiplicity-one/#Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one">Strong multiplicity one</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="numbered"><td class="num">5.</td><td><a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="current unnumbered"><td class="num"><td><a href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
             <div class="split-toc">
               <div class="title">
                 <span class="no-toggle"></span><span class="unnumbered"></span><span class="current"><a href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></span></div>
@@ -9235,7 +9235,7 @@ window.onload = () => {
         </nav>
       <main><div class="content-wrapper">
           <nav class="prev-next-buttons">
-            <a class="local-button active" href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary" rel="prev" title="4. Progress summary"><span class="arrow">←</span><span class="where">4. Progress summary</span></a><div></div>
+            <a class="local-button active" href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary" rel="prev" title="5. Progress summary"><span class="arrow">←</span><span class="where">5. Progress summary</span></a><div></div>
             </nav>
           <section>
             <h1>
@@ -9247,41 +9247,63 @@ window.onload = () => {
                 <div class="bp_summary_preview_panel_body bp_preview_panel_body"></div>
                 </aside><details class="bp_summary_section" open="open"><summary>Overview</summary><div class="bp_summary_grid">
                   <div class="bp_summary_card">
-                    <span class="bp_summary_label">Total entries</span><span class="bp_summary_value">3</span><span class="bp_summary_status">completed: 3; deps incomplete: 0; sorries: 0; no proof: 0</span></div>
+                    <span class="bp_summary_label">Total entries</span><span class="bp_summary_value">6</span><span class="bp_summary_status">completed: 6; deps incomplete: 0; sorries: 0; no proof: 0</span></div>
                   <div class="bp_summary_card">
                     <span class="bp_summary_label">Ready now</span><span class="bp_summary_value">0</span><span class="bp_summary_status">Entries whose next formalization step is currently unblocked.</span></div>
                   <div class="bp_summary_card">
-                    <span class="bp_summary_label">Fully closed</span><span class="bp_summary_value">3</span><span class="bp_summary_status">Local code and prerequisite closure are both complete.</span></div>
+                    <span class="bp_summary_label">Fully closed</span><span class="bp_summary_value">6</span><span class="bp_summary_status">Local code and prerequisite closure are both complete.</span></div>
                   <div class="bp_summary_card">
                     <span class="bp_summary_label">Actionable priorities</span><span class="bp_summary_value">0</span><span class="bp_summary_status">Entries ready now and already unlocking downstream work.</span></div>
                   </div>
-                </details><details class="bp_summary_section"><summary>Entry index (3)</summary><div class="bp_summary_grid">
+                </details><details class="bp_summary_section"><summary>Entry index (6)</summary><div class="bp_summary_grid">
                   <div class="bp_summary_card">
-                    <span class="bp_summary_label">Definitions</span><span class="bp_summary_value">2</span><span class="bp_summary_status">completed: 2; deps incomplete: 0; sorries: 0; no proof: 0</span></div>
+                    <span class="bp_summary_label">Definitions</span><span class="bp_summary_value">3</span><span class="bp_summary_status">completed: 3; deps incomplete: 0; sorries: 0; no proof: 0</span></div>
                   <div class="bp_summary_card">
-                    <span class="bp_summary_label">Theorems</span><span class="bp_summary_value">1</span><span class="bp_summary_status">completed: 1; deps incomplete: 0; sorries: 0; no proof: 0</span></div>
+                    <span class="bp_summary_label">Theorems</span><span class="bp_summary_value">3</span><span class="bp_summary_status">completed: 3; deps incomplete: 0; sorries: 0; no proof: 0</span></div>
                   </div>
-                <details class="bp_summary_subsection"><summary>Definition Index (2)</summary><ul class="bp_summary_list">
+                <details class="bp_summary_subsection"><summary>Definition Index (3)</summary><ul class="bp_summary_list">
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
-                      <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«hecke-character-space»" data-bp-preview-key="«hecke-character-space»--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_hecke-character-space_FLQQ_--statement"><code>«hecke-character-space»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
-                          <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EmodFormCharSpace" data-bp-preview-title="Lean declaration HeckeRing.GL2.modFormCharSpace" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.modFormCharSpace"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-_FLQQ_hecke-character-space_FLQQ_-HeckeRing___GL2___modFormCharSpace"><code>HeckeRing.GL2.modFormCharSpace</code></a></span></li>
                           </ul>
                         </details></li>
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="eigenform" data-bp-preview-key="eigenform--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-eigenform--statement"><code>eigenform</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
-                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (3)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform"><code>HeckeRing.GL2.Eigenform</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___oldPart"><code>HeckeRing.GL2.oldPart</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="eigenform" data-bp-preview-key="eigenform--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-eigenform--statement"><code>eigenform</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform"><code>HeckeRing.GL2.Eigenform</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform-002Eeigenvalue" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform.eigenvalue" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform.eigenvalue"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform___eigenvalue"><code>HeckeRing.GL2.Eigenform.eigenvalue</code></a></span></li>
                           </ul>
                         </details></li>
                     </ul>
-                  </details><details class="bp_summary_subsection"><summary>Theorem / Proposition / Lemma / Corollary Index (1)</summary><ul class="bp_summary_list">
+                  </details><details class="bp_summary_subsection"><summary>Theorem / Proposition / Lemma / Corollary Index (3)</summary><ul class="bp_summary_list">
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«old-part-vanishing»" data-bp-preview-key="«old-part-vanishing»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_old-part-vanishing_FLQQ_--statement"><code>«old-part-vanishing»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart-005Feq-005Fzero-005Fof-005Fshared-005Feigenvalues" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_old-part-vanishing_FLQQ_-HeckeRing___GL2___oldPart_eq_zero_of_shared_eigenvalues"><code>HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002Enewform-005FnotMem-005FcuspFormsOldExtended" data-bp-preview-title="Lean declaration HeckeRing.GL2.newform_notMem_cuspFormsOldExtended" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.newform_notMem_cuspFormsOldExtended"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_old-part-vanishing_FLQQ_-HeckeRing___GL2___newform_notMem_cuspFormsOldExtended"><code>HeckeRing.GL2.newform_notMem_cuspFormsOldExtended</code></a></span></li>
+                          </ul>
+                        </details></li>
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
                         <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«strong-multiplicity-one»" data-bp-preview-key="«strong-multiplicity-one»--statement"><a href="Strong-multiplicity-one/#--informal-preview-_FLQQ_strong-multiplicity-one_FLQQ_--statement"><code>«strong-multiplicity-one»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
@@ -9292,86 +9314,174 @@ window.onload = () => {
                             <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EstrongMultiplicityOne-005FconstMul" data-bp-preview-title="Lean declaration HeckeRing.GL2.strongMultiplicityOne_constMul" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.strongMultiplicityOne_constMul"><a href="Strong-multiplicity-one/#--informal-external-decl-_FLQQ_strong-multiplicity-one_FLQQ_-HeckeRing___GL2___strongMultiplicityOne_constMul"><code>HeckeRing.GL2.strongMultiplicityOne_constMul</code></a></span></li>
                           </ul>
                         </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«coeff-eigenvalue»" data-bp-preview-key="«coeff-eigenvalue»--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_coeff-eigenvalue_FLQQ_--statement"><code>«coeff-eigenvalue»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform-002Ecoeff-005Feq-005Fcoeff-005Fone-005Fmul-005Feigenvalue" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-_FLQQ_coeff-eigenvalue_FLQQ_-HeckeRing___GL2___Eigenform___coeff_eq_coeff_one_mul_eigenvalue"><code>HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue</code></a></span></li>
+                          </ul>
+                        </details></li>
                     </ul>
                   </details></details><details class="bp_summary_section"><summary>Dependency insights</summary><div class="bp_summary_grid">
                   <div class="bp_summary_card">
-                    <span class="bp_summary_label">Statement-used entries</span><span class="bp_summary_value">2</span><span class="bp_summary_status">Entries reused in statement dependencies.</span></div>
+                    <span class="bp_summary_label">Statement-used entries</span><span class="bp_summary_value">3</span><span class="bp_summary_status">Entries reused in statement dependencies.</span></div>
                   <div class="bp_summary_card">
-                    <span class="bp_summary_label">Proof-used entries</span><span class="bp_summary_value">1</span><span class="bp_summary_status">Entries reused in proof-only dependencies.</span></div>
+                    <span class="bp_summary_label">Proof-used entries</span><span class="bp_summary_value">3</span><span class="bp_summary_status">Entries reused in proof-only dependencies.</span></div>
                   </div>
-                <details class="bp_summary_subsection"><summary>Most used in statements (2)</summary><ul class="bp_summary_list">
+                <details class="bp_summary_subsection"><summary>Most used in statements (3)</summary><ul class="bp_summary_list">
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="eigenform" data-bp-preview-key="eigenform--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-eigenform--statement"><code>eigenform</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="eigenform" data-bp-preview-key="eigenform--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-eigenform--statement"><code>eigenform</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                       <div class="bp_summary_item_body">
                         Reverse dependencies recorded in statement dependencies.</div>
                       <div class="bp_summary_badge_row">
-                        <span class="bp_summary_badge bp_summary_badge_warn">statement uses: 2</span><span class="bp_summary_badge">proof uses: 0</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 2</span></div>
-                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                        <span class="bp_summary_badge bp_summary_badge_warn">statement uses: 3</span><span class="bp_summary_badge">proof uses: 0</span><span class="bp_summary_badge">direct uses: 3</span><span class="bp_summary_badge">downstream unlocks: 4</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform"><code>HeckeRing.GL2.Eigenform</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform"><code>HeckeRing.GL2.Eigenform</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform-002Eeigenvalue" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform.eigenvalue" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform.eigenvalue"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform___eigenvalue"><code>HeckeRing.GL2.Eigenform.eigenvalue</code></a></span></li>
                           </ul>
                         </details></li>
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                       <div class="bp_summary_item_body">
                         Reverse dependencies recorded in statement dependencies.</div>
                       <div class="bp_summary_badge_row">
-                        <span class="bp_summary_badge bp_summary_badge_warn">statement uses: 1</span><span class="bp_summary_badge">proof uses: 1</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
-                      <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                        <span class="bp_summary_badge bp_summary_badge_warn">statement uses: 2</span><span class="bp_summary_badge">proof uses: 1</span><span class="bp_summary_badge">direct uses: 3</span><span class="bp_summary_badge">downstream unlocks: 2</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (3)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___oldPart"><code>HeckeRing.GL2.oldPart</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«hecke-character-space»" data-bp-preview-key="«hecke-character-space»--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_hecke-character-space_FLQQ_--statement"><code>«hecke-character-space»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                      <div class="bp_summary_item_body">
+                        Reverse dependencies recorded in statement dependencies.</div>
+                      <div class="bp_summary_badge_row">
+                        <span class="bp_summary_badge bp_summary_badge_warn">statement uses: 1</span><span class="bp_summary_badge">proof uses: 0</span><span class="bp_summary_badge">direct uses: 1</span><span class="bp_summary_badge">downstream unlocks: 5</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EmodFormCharSpace" data-bp-preview-title="Lean declaration HeckeRing.GL2.modFormCharSpace" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.modFormCharSpace"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-_FLQQ_hecke-character-space_FLQQ_-HeckeRing___GL2___modFormCharSpace"><code>HeckeRing.GL2.modFormCharSpace</code></a></span></li>
                           </ul>
                         </details></li>
                     </ul>
-                  </details><details class="bp_summary_subsection"><summary>Most used in proofs (1)</summary><ul class="bp_summary_list">
+                  </details><details class="bp_summary_subsection"><summary>Most used in proofs (3)</summary><ul class="bp_summary_list">
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                       <div class="bp_summary_item_body">
                         Reverse dependencies recorded in proof dependencies.</div>
                       <div class="bp_summary_badge_row">
-                        <span class="bp_summary_badge bp_summary_badge_warn">proof uses: 1</span><span class="bp_summary_badge">statement uses: 1</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
+                        <span class="bp_summary_badge bp_summary_badge_warn">proof uses: 1</span><span class="bp_summary_badge">statement uses: 2</span><span class="bp_summary_badge">direct uses: 3</span><span class="bp_summary_badge">downstream unlocks: 2</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (3)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___oldPart"><code>HeckeRing.GL2.oldPart</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«coeff-eigenvalue»" data-bp-preview-key="«coeff-eigenvalue»--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_coeff-eigenvalue_FLQQ_--statement"><code>«coeff-eigenvalue»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                      <div class="bp_summary_item_body">
+                        Reverse dependencies recorded in proof dependencies.</div>
+                      <div class="bp_summary_badge_row">
+                        <span class="bp_summary_badge bp_summary_badge_warn">proof uses: 1</span><span class="bp_summary_badge">statement uses: 0</span><span class="bp_summary_badge">direct uses: 1</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform-002Ecoeff-005Feq-005Fcoeff-005Fone-005Fmul-005Feigenvalue" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-_FLQQ_coeff-eigenvalue_FLQQ_-HeckeRing___GL2___Eigenform___coeff_eq_coeff_one_mul_eigenvalue"><code>HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«old-part-vanishing»" data-bp-preview-key="«old-part-vanishing»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_old-part-vanishing_FLQQ_--statement"><code>«old-part-vanishing»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                      <div class="bp_summary_item_body">
+                        Reverse dependencies recorded in proof dependencies.</div>
+                      <div class="bp_summary_badge_row">
+                        <span class="bp_summary_badge bp_summary_badge_warn">proof uses: 1</span><span class="bp_summary_badge">statement uses: 0</span><span class="bp_summary_badge">direct uses: 1</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
                       <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart-005Feq-005Fzero-005Fof-005Fshared-005Feigenvalues" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_old-part-vanishing_FLQQ_-HeckeRing___GL2___oldPart_eq_zero_of_shared_eigenvalues"><code>HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues</code></a></span></li>
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002Enewform-005FnotMem-005FcuspFormsOldExtended" data-bp-preview-title="Lean declaration HeckeRing.GL2.newform_notMem_cuspFormsOldExtended" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.newform_notMem_cuspFormsOldExtended"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_old-part-vanishing_FLQQ_-HeckeRing___GL2___newform_notMem_cuspFormsOldExtended"><code>HeckeRing.GL2.newform_notMem_cuspFormsOldExtended</code></a></span></li>
                           </ul>
                         </details></li>
                     </ul>
                   </details></details><details class="bp_summary_section"><summary>Metadata</summary><details class="bp_summary_subsection bp_summary_subsection_warn"><summary>Metadata audit</summary><div class="bp_summary_grid">
                     <div class="bp_summary_card bp_summary_card_warn">
-                      <span class="bp_summary_label">Missing owner</span><span class="bp_summary_value">3</span></div>
+                      <span class="bp_summary_label">Missing owner</span><span class="bp_summary_value">6</span></div>
                     <div class="bp_summary_card bp_summary_card_warn">
-                      <span class="bp_summary_label">Missing effort</span><span class="bp_summary_value">3</span></div>
+                      <span class="bp_summary_label">Missing effort</span><span class="bp_summary_value">6</span></div>
                     <div class="bp_summary_card bp_summary_card_warn">
-                      <span class="bp_summary_label">Untagged</span><span class="bp_summary_value">3</span></div>
+                      <span class="bp_summary_label">Untagged</span><span class="bp_summary_value">6</span></div>
                     </div>
-                  <details class="bp_summary_nested"><summary>Missing owner (3)</summary><ul class="bp_summary_list">
+                  <details class="bp_summary_nested"><summary>Missing owner (6)</summary><ul class="bp_summary_list">
                       <li class="bp_summary_item">
                         <div class="bp_summary_item_top">
-                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="eigenform" data-bp-preview-key="eigenform--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-eigenform--statement"><code>eigenform</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
-                        <div class="bp_summary_item_body">
-                          Missing owner metadata.</div>
-                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
-                            <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform"><code>HeckeRing.GL2.Eigenform</code></a></span></li>
-                            </ul>
-                          </details></li>
-                      <li class="bp_summary_item">
-                        <div class="bp_summary_item_top">
-                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="eigenform" data-bp-preview-key="eigenform--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-eigenform--statement"><code>eigenform</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                         <div class="bp_summary_item_body">
                           Missing owner metadata.</div>
                         <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
                             <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform"><code>HeckeRing.GL2.Eigenform</code></a></span></li>
                             <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform-002Eeigenvalue" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform.eigenvalue" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform.eigenvalue"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform___eigenvalue"><code>HeckeRing.GL2.Eigenform.eigenvalue</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«coeff-eigenvalue»" data-bp-preview-key="«coeff-eigenvalue»--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_coeff-eigenvalue_FLQQ_--statement"><code>«coeff-eigenvalue»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing owner metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform-002Ecoeff-005Feq-005Fcoeff-005Fone-005Fmul-005Feigenvalue" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-_FLQQ_coeff-eigenvalue_FLQQ_-HeckeRing___GL2___Eigenform___coeff_eq_coeff_one_mul_eigenvalue"><code>HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing owner metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (3)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___oldPart"><code>HeckeRing.GL2.oldPart</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«hecke-character-space»" data-bp-preview-key="«hecke-character-space»--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_hecke-character-space_FLQQ_--statement"><code>«hecke-character-space»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing owner metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EmodFormCharSpace" data-bp-preview-title="Lean declaration HeckeRing.GL2.modFormCharSpace" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.modFormCharSpace"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-_FLQQ_hecke-character-space_FLQQ_-HeckeRing___GL2___modFormCharSpace"><code>HeckeRing.GL2.modFormCharSpace</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«old-part-vanishing»" data-bp-preview-key="«old-part-vanishing»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_old-part-vanishing_FLQQ_--statement"><code>«old-part-vanishing»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing owner metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart-005Feq-005Fzero-005Fof-005Fshared-005Feigenvalues" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_old-part-vanishing_FLQQ_-HeckeRing___GL2___oldPart_eq_zero_of_shared_eigenvalues"><code>HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues</code></a></span></li>
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002Enewform-005FnotMem-005FcuspFormsOldExtended" data-bp-preview-title="Lean declaration HeckeRing.GL2.newform_notMem_cuspFormsOldExtended" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.newform_notMem_cuspFormsOldExtended"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_old-part-vanishing_FLQQ_-HeckeRing___GL2___newform_notMem_cuspFormsOldExtended"><code>HeckeRing.GL2.newform_notMem_cuspFormsOldExtended</code></a></span></li>
                             </ul>
                           </details></li>
                       <li class="bp_summary_item">
@@ -9387,27 +9497,63 @@ window.onload = () => {
                             </ul>
                           </details></li>
                       </ul>
-                    </details><details class="bp_summary_nested"><summary>Missing effort (3)</summary><ul class="bp_summary_list">
+                    </details><details class="bp_summary_nested"><summary>Missing effort (6)</summary><ul class="bp_summary_list">
                       <li class="bp_summary_item">
                         <div class="bp_summary_item_top">
-                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="eigenform" data-bp-preview-key="eigenform--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-eigenform--statement"><code>eigenform</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
-                        <div class="bp_summary_item_body">
-                          Missing effort metadata.</div>
-                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
-                            <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform"><code>HeckeRing.GL2.Eigenform</code></a></span></li>
-                            </ul>
-                          </details></li>
-                      <li class="bp_summary_item">
-                        <div class="bp_summary_item_top">
-                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="eigenform" data-bp-preview-key="eigenform--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-eigenform--statement"><code>eigenform</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                         <div class="bp_summary_item_body">
                           Missing effort metadata.</div>
                         <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
                             <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform"><code>HeckeRing.GL2.Eigenform</code></a></span></li>
                             <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform-002Eeigenvalue" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform.eigenvalue" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform.eigenvalue"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform___eigenvalue"><code>HeckeRing.GL2.Eigenform.eigenvalue</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«coeff-eigenvalue»" data-bp-preview-key="«coeff-eigenvalue»--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_coeff-eigenvalue_FLQQ_--statement"><code>«coeff-eigenvalue»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing effort metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform-002Ecoeff-005Feq-005Fcoeff-005Fone-005Fmul-005Feigenvalue" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-_FLQQ_coeff-eigenvalue_FLQQ_-HeckeRing___GL2___Eigenform___coeff_eq_coeff_one_mul_eigenvalue"><code>HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing effort metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (3)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___oldPart"><code>HeckeRing.GL2.oldPart</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«hecke-character-space»" data-bp-preview-key="«hecke-character-space»--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_hecke-character-space_FLQQ_--statement"><code>«hecke-character-space»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing effort metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EmodFormCharSpace" data-bp-preview-title="Lean declaration HeckeRing.GL2.modFormCharSpace" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.modFormCharSpace"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-_FLQQ_hecke-character-space_FLQQ_-HeckeRing___GL2___modFormCharSpace"><code>HeckeRing.GL2.modFormCharSpace</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«old-part-vanishing»" data-bp-preview-key="«old-part-vanishing»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_old-part-vanishing_FLQQ_--statement"><code>«old-part-vanishing»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing effort metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart-005Feq-005Fzero-005Fof-005Fshared-005Feigenvalues" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_old-part-vanishing_FLQQ_-HeckeRing___GL2___oldPart_eq_zero_of_shared_eigenvalues"><code>HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues</code></a></span></li>
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002Enewform-005FnotMem-005FcuspFormsOldExtended" data-bp-preview-title="Lean declaration HeckeRing.GL2.newform_notMem_cuspFormsOldExtended" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.newform_notMem_cuspFormsOldExtended"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_old-part-vanishing_FLQQ_-HeckeRing___GL2___newform_notMem_cuspFormsOldExtended"><code>HeckeRing.GL2.newform_notMem_cuspFormsOldExtended</code></a></span></li>
                             </ul>
                           </details></li>
                       <li class="bp_summary_item">
@@ -9423,27 +9569,63 @@ window.onload = () => {
                             </ul>
                           </details></li>
                       </ul>
-                    </details><details class="bp_summary_nested"><summary>Untagged (3)</summary><ul class="bp_summary_list">
+                    </details><details class="bp_summary_nested"><summary>Untagged (6)</summary><ul class="bp_summary_list">
                       <li class="bp_summary_item">
                         <div class="bp_summary_item_top">
-                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="eigenform" data-bp-preview-key="eigenform--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-eigenform--statement"><code>eigenform</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
-                        <div class="bp_summary_item_body">
-                          Missing tag metadata.</div>
-                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
-                            <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform"><code>HeckeRing.GL2.Eigenform</code></a></span></li>
-                            </ul>
-                          </details></li>
-                      <li class="bp_summary_item">
-                        <div class="bp_summary_item_top">
-                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="eigenform" data-bp-preview-key="eigenform--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-eigenform--statement"><code>eigenform</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                         <div class="bp_summary_item_body">
                           Missing tag metadata.</div>
                         <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
                             <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform"><code>HeckeRing.GL2.Eigenform</code></a></span></li>
                             <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform-002Eeigenvalue" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform.eigenvalue" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform.eigenvalue"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform___eigenvalue"><code>HeckeRing.GL2.Eigenform.eigenvalue</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«coeff-eigenvalue»" data-bp-preview-key="«coeff-eigenvalue»--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_coeff-eigenvalue_FLQQ_--statement"><code>«coeff-eigenvalue»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing tag metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform-002Ecoeff-005Feq-005Fcoeff-005Fone-005Fmul-005Feigenvalue" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-_FLQQ_coeff-eigenvalue_FLQQ_-HeckeRing___GL2___Eigenform___coeff_eq_coeff_one_mul_eigenvalue"><code>HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing tag metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (3)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___oldPart"><code>HeckeRing.GL2.oldPart</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«hecke-character-space»" data-bp-preview-key="«hecke-character-space»--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_hecke-character-space_FLQQ_--statement"><code>«hecke-character-space»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing tag metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EmodFormCharSpace" data-bp-preview-title="Lean declaration HeckeRing.GL2.modFormCharSpace" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.modFormCharSpace"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-_FLQQ_hecke-character-space_FLQQ_-HeckeRing___GL2___modFormCharSpace"><code>HeckeRing.GL2.modFormCharSpace</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«old-part-vanishing»" data-bp-preview-key="«old-part-vanishing»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_old-part-vanishing_FLQQ_--statement"><code>«old-part-vanishing»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing tag metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart-005Feq-005Fzero-005Fof-005Fshared-005Feigenvalues" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_old-part-vanishing_FLQQ_-HeckeRing___GL2___oldPart_eq_zero_of_shared_eigenvalues"><code>HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues</code></a></span></li>
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002Enewform-005FnotMem-005FcuspFormsOldExtended" data-bp-preview-title="Lean declaration HeckeRing.GL2.newform_notMem_cuspFormsOldExtended" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.newform_notMem_cuspFormsOldExtended"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_old-part-vanishing_FLQQ_-HeckeRing___GL2___newform_notMem_cuspFormsOldExtended"><code>HeckeRing.GL2.newform_notMem_cuspFormsOldExtended</code></a></span></li>
                             </ul>
                           </details></li>
                       <li class="bp_summary_item">
@@ -9461,16 +9643,16 @@ window.onload = () => {
                       </ul>
                     </details></details></details><details class="bp_summary_section"><summary>Structure and coverage</summary><div class="bp_summary_grid">
                   <div class="bp_summary_card">
-                    <span class="bp_summary_label">Fully closed</span><span class="bp_summary_value">3</span><span class="bp_summary_status">Local code and ancestor closure are both complete.</span></div>
+                    <span class="bp_summary_label">Fully closed</span><span class="bp_summary_value">6</span><span class="bp_summary_status">Local code and ancestor closure are both complete.</span></div>
                   </div>
-                <details class="bp_summary_subsection"><summary>Heaviest prerequisites (2)</summary><ul class="bp_summary_list">
+                <details class="bp_summary_subsection"><summary>Heaviest prerequisites (5)</summary><ul class="bp_summary_list">
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
                         <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«strong-multiplicity-one»" data-bp-preview-key="«strong-multiplicity-one»--statement"><a href="Strong-multiplicity-one/#--informal-preview-_FLQQ_strong-multiplicity-one_FLQQ_--statement"><code>«strong-multiplicity-one»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
                       <div class="bp_summary_item_body">
                         Prerequisite fan-in measured from the current statement/proof dependency graph.</div>
                       <div class="bp_summary_badge_row">
-                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 2</span><span class="bp_summary_badge">statement deps: 2</span><span class="bp_summary_badge">proof deps: 1</span><span class="bp_summary_badge">direct uses: 0</span><span class="bp_summary_badge">downstream unlocks: 0</span></div>
+                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 4</span><span class="bp_summary_badge">statement deps: 2</span><span class="bp_summary_badge">proof deps: 3</span><span class="bp_summary_badge">direct uses: 0</span><span class="bp_summary_badge">downstream unlocks: 0</span></div>
                       <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
                           <li>
                             <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EstrongMultiplicityOne-005Faxiom-005Fclean" data-bp-preview-title="Lean declaration HeckeRing.GL2.strongMultiplicityOne_axiom_clean" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.strongMultiplicityOne_axiom_clean"><a href="Strong-multiplicity-one/#--informal-external-decl-_FLQQ_strong-multiplicity-one_FLQQ_-HeckeRing___GL2___strongMultiplicityOne_axiom_clean"><code>HeckeRing.GL2.strongMultiplicityOne_axiom_clean</code></a></span></li>
@@ -9480,26 +9662,68 @@ window.onload = () => {
                         </details></li>
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="eigenform" data-bp-preview-key="eigenform--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-eigenform--statement"><code>eigenform</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                       <div class="bp_summary_item_body">
                         Prerequisite fan-in measured from the current statement/proof dependency graph.</div>
                       <div class="bp_summary_badge_row">
-                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 1</span><span class="bp_summary_badge">statement deps: 1</span><span class="bp_summary_badge">proof deps: 0</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
+                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 1</span><span class="bp_summary_badge">statement deps: 1</span><span class="bp_summary_badge">proof deps: 0</span><span class="bp_summary_badge">direct uses: 3</span><span class="bp_summary_badge">downstream unlocks: 4</span></div>
                       <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform"><code>HeckeRing.GL2.Eigenform</code></a></span></li>
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform-002Eeigenvalue" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform.eigenvalue" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform.eigenvalue"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform___eigenvalue"><code>HeckeRing.GL2.Eigenform.eigenvalue</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«coeff-eigenvalue»" data-bp-preview-key="«coeff-eigenvalue»--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_coeff-eigenvalue_FLQQ_--statement"><code>«coeff-eigenvalue»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                      <div class="bp_summary_item_body">
+                        Prerequisite fan-in measured from the current statement/proof dependency graph.</div>
+                      <div class="bp_summary_badge_row">
+                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 1</span><span class="bp_summary_badge">statement deps: 1</span><span class="bp_summary_badge">proof deps: 0</span><span class="bp_summary_badge">direct uses: 1</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform-002Ecoeff-005Feq-005Fcoeff-005Fone-005Fmul-005Feigenvalue" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-_FLQQ_coeff-eigenvalue_FLQQ_-HeckeRing___GL2___Eigenform___coeff_eq_coeff_one_mul_eigenvalue"><code>HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«cusp-forms-new-old»" data-bp-preview-key="«cusp-forms-new-old»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"><code>«cusp-forms-new-old»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                      <div class="bp_summary_item_body">
+                        Prerequisite fan-in measured from the current statement/proof dependency graph.</div>
+                      <div class="bp_summary_badge_row">
+                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 1</span><span class="bp_summary_badge">statement deps: 1</span><span class="bp_summary_badge">proof deps: 0</span><span class="bp_summary_badge">direct uses: 3</span><span class="bp_summary_badge">downstream unlocks: 2</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (3)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsOld" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsOld" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsOld"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsOld"><code>HeckeRing.GL2.cuspFormsOld</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EcuspFormsNew" data-bp-preview-title="Lean declaration HeckeRing.GL2.cuspFormsNew" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.cuspFormsNew"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___cuspFormsNew"><code>HeckeRing.GL2.cuspFormsNew</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_cusp-forms-new-old_FLQQ_-HeckeRing___GL2___oldPart"><code>HeckeRing.GL2.oldPart</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«old-part-vanishing»" data-bp-preview-key="«old-part-vanishing»--statement"><a href="The-old___new-decomposition/#--informal-preview-_FLQQ_old-part-vanishing_FLQQ_--statement"><code>«old-part-vanishing»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                      <div class="bp_summary_item_body">
+                        Prerequisite fan-in measured from the current statement/proof dependency graph.</div>
+                      <div class="bp_summary_badge_row">
+                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 1</span><span class="bp_summary_badge">statement deps: 1</span><span class="bp_summary_badge">proof deps: 0</span><span class="bp_summary_badge">direct uses: 1</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EoldPart-005Feq-005Fzero-005Fof-005Fshared-005Feigenvalues" data-bp-preview-title="Lean declaration HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_old-part-vanishing_FLQQ_-HeckeRing___GL2___oldPart_eq_zero_of_shared_eigenvalues"><code>HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002Enewform-005FnotMem-005FcuspFormsOldExtended" data-bp-preview-title="Lean declaration HeckeRing.GL2.newform_notMem_cuspFormsOldExtended" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.newform_notMem_cuspFormsOldExtended"><a href="The-old___new-decomposition/#--informal-external-decl-_FLQQ_old-part-vanishing_FLQQ_-HeckeRing___GL2___newform_notMem_cuspFormsOldExtended"><code>HeckeRing.GL2.newform_notMem_cuspFormsOldExtended</code></a></span></li>
                           </ul>
                         </details></li>
                     </ul>
                   </details><details class="bp_summary_subsection"><summary>No prerequisites (1)</summary><ul class="bp_summary_list">
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="eigenform" data-bp-preview-key="eigenform--statement"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-preview-eigenform--statement"><code>eigenform</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«hecke-character-space»" data-bp-preview-key="«hecke-character-space»--statement"><a href="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_hecke-character-space_FLQQ_--statement"><code>«hecke-character-space»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                       <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EEigenform" data-bp-preview-title="Lean declaration HeckeRing.GL2.Eigenform" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.Eigenform"><a href="Eigenforms-and-the-old___new-decomposition/#--informal-external-decl-eigenform-HeckeRing___GL2___Eigenform"><code>HeckeRing.GL2.Eigenform</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHeckeRing-002EGL2-002EmodFormCharSpace" data-bp-preview-title="Lean declaration HeckeRing.GL2.modFormCharSpace" data-bp-preview-key="Informal.LeanCodePreview.HeckeRing.GL2.modFormCharSpace"><a href="Hecke-operators-and-eigenforms/#--informal-external-decl-_FLQQ_hecke-character-space_FLQQ_-HeckeRing___GL2___modFormCharSpace"><code>HeckeRing.GL2.modFormCharSpace</code></a></span></li>
                           </ul>
                         </details></li>
                     </ul>
@@ -9518,7 +9742,7 @@ window.onload = () => {
                   </details></details></div>
             </section>
           <nav class="prev-next-buttons">
-            <a class="local-button active" href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary" rel="prev" title="4. Progress summary"><span class="arrow">←</span><span class="where">4. Progress summary</span></a><div></div>
+            <a class="local-button active" href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary" rel="prev" title="5. Progress summary"><span class="arrow">←</span><span class="where">5. Progress summary</span></a><div></div>
             </nav>
           </div>
         </main></div>

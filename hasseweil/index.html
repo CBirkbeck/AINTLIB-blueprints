@@ -9224,7 +9224,7 @@ window.onload = () => {
             <div class="split-toc book">
               <div class="title">
                 <label for="--verso-manual-toc-----bookRoot" class="toggle-split-toc"><input type="checkbox" class="toggle-split-toc" id="--verso-manual-toc-----bookRoot" checked="checked"></label><span class="">Table of Contents</span></div>
-              <table><tr class="numbered"><td class="num">1.</td><td><a href="Point-counts-over-finite-fields/#The-Hasse-Bound-___-Lean-blueprint--Point-counts-over-finite-fields">Point counts over finite fields</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="The-Frobenius-endomorphism/#The-Hasse-Bound-___-Lean-blueprint--The-Frobenius-endomorphism">The Frobenius endomorphism</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="The-Hasse-bound/#The-Hasse-Bound-___-Lean-blueprint--The-Hasse-bound">The Hasse bound</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Dependency-graph/#The-Hasse-Bound-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Dependency-Graph/#The-Hasse-Bound-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="numbered"><td class="num">5.</td><td><a href="Progress-summary/#The-Hasse-Bound-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Blueprint-Summary/#The-Hasse-Bound-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
+              <table><tr class="numbered"><td class="num">1.</td><td><a href="Point-counts-and-the-Frobenius-endomorphism/#The-Hasse-Bound-___-Lean-blueprint--Point-counts-and-the-Frobenius-endomorphism">Point counts and the Frobenius endomorphism</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="The-degree-quadratic-form/#The-Hasse-Bound-___-Lean-blueprint--The-degree-quadratic-form">The degree quadratic form</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="The-Hasse-bound/#The-Hasse-Bound-___-Lean-blueprint--The-Hasse-bound">The Hasse bound</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Dependency-graph/#The-Hasse-Bound-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Dependency-Graph/#The-Hasse-Bound-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="numbered"><td class="num">5.</td><td><a href="Progress-summary/#The-Hasse-Bound-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Blueprint-Summary/#The-Hasse-Bound-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
             </div>
           </div>
         <div class="last"></div>
@@ -9232,38 +9232,45 @@ window.onload = () => {
       <main><div class="content-wrapper">
           <nav class="prev-next-buttons">
             <div></div>
-            <a class="local-button active" href="Point-counts-over-finite-fields/#The-Hasse-Bound-___-Lean-blueprint--Point-counts-over-finite-fields" rel="next" title="1. Point counts over finite fields"><span class="where">1. Point counts over finite fields</span><span class="arrow">→</span></a></nav>
+            <a class="local-button active" href="Point-counts-and-the-Frobenius-endomorphism/#The-Hasse-Bound-___-Lean-blueprint--Point-counts-and-the-Frobenius-endomorphism" rel="next" title="1. Point counts and the Frobenius endomorphism"><span class="where">1. Point counts and the Frobenius endomorphism</span><span class="arrow">→</span></a></nav>
           <section>
             <div class="titlepage">
               <h1>
                  The Hasse Bound — Lean blueprint<span class="permalink-widget inline"><a href="find/?domain=Verso.Genre.Manual.section&amp;name=The-Hasse-Bound-___-Lean-blueprint" title="Permalink">🔗</a></span></h1>
 <div class="bp_build_metadata" aria-label="Build metadata">
-  <span class="bp_build_metadata_item"><span class="bp_build_metadata_label">Compiled</span><span class="bp_build_metadata_value">2026-06-24T17:22:03Z</span></span><span class="bp_build_metadata_item"><a class="bp_build_metadata_label bp_build_metadata_link" href="https://github.com/CBirkbeck/AINTLIB">Project</a><a class="bp_build_metadata_commit_link" href="https://github.com/CBirkbeck/AINTLIB/commit/b20eb42c0588f3e20a1aa166101293140b4b7048"><code class="bp_build_metadata_commit">b20eb42c</code></a><span class="bp_build_metadata_subject">feat(TateModule): E[N] ≅ (ZMod N)² for general N via CRT (T-TATE-GENN, mathlib #2549)</span></span><span class="bp_build_metadata_item"><span class="bp_build_metadata_label">Lean</span><span class="bp_build_metadata_value">leanprover/lean4:v4.31.0-rc2</span></span><span class="bp_build_metadata_item"><a class="bp_build_metadata_label bp_build_metadata_link" href="https://github.com/leanprover/verso-blueprint">VersoBlueprint</a><a class="bp_build_metadata_commit_link" href="https://github.com/leanprover/verso-blueprint/commit/10305089592c51c8c3d7a8a15da48c77a533e8c7"><code class="bp_build_metadata_commit">v4.30.0@10305089592c</code></a></span><span class="bp_build_metadata_item"><a class="bp_build_metadata_label bp_build_metadata_link" href="https://github.com/leanprover-community/mathlib4">Mathlib</a><a class="bp_build_metadata_commit_link" href="https://github.com/leanprover-community/mathlib4/commit/d90090f647cae4f4ad4da99c0ac8bab2ca8c34ab"><code class="bp_build_metadata_commit">d90090f647ca</code></a></span></div>
+  <span class="bp_build_metadata_item"><span class="bp_build_metadata_label">Compiled</span><span class="bp_build_metadata_value">2026-06-24T20:51:29Z</span></span><span class="bp_build_metadata_item"><a class="bp_build_metadata_label bp_build_metadata_link" href="https://github.com/CBirkbeck/AINTLIB">Project</a><a class="bp_build_metadata_commit_link" href="https://github.com/CBirkbeck/AINTLIB/commit/06b1c64f1e7ffbe47064b48a8e018234f3d51d3b"><code class="bp_build_metadata_commit">06b1c64f</code></a><span class="bp_build_metadata_subject">HasseWeil: add Verso blueprint side-build (projects/HasseWeil/_blueprint)</span></span><span class="bp_build_metadata_item"><span class="bp_build_metadata_label">Lean</span><span class="bp_build_metadata_value">leanprover/lean4:v4.31.0-rc2</span></span><span class="bp_build_metadata_item"><a class="bp_build_metadata_label bp_build_metadata_link" href="https://github.com/leanprover/verso-blueprint">VersoBlueprint</a><a class="bp_build_metadata_commit_link" href="https://github.com/leanprover/verso-blueprint/commit/10305089592c51c8c3d7a8a15da48c77a533e8c7"><code class="bp_build_metadata_commit">v4.30.0@10305089592c</code></a></span><span class="bp_build_metadata_item"><a class="bp_build_metadata_label bp_build_metadata_link" href="https://github.com/leanprover-community/mathlib4">Mathlib</a><a class="bp_build_metadata_commit_link" href="https://github.com/leanprover-community/mathlib4/commit/d90090f647cae4f4ad4da99c0ac8bab2ca8c34ab"><code class="bp_build_metadata_commit">d90090f647ca</code></a></span></div>
 
               <div class="authors"></div>
               <p>
                 This is the blueprint for the <a href="https://github.com/CBirkbeck/Hasse-Weil"><code>Hasse-Weil</code></a>
-formalisation of <strong>Hasse's theorem</strong> for elliptic curves over a finite field: the
-unconditional bound
+formalisation of <em>Hasse's theorem</em> for an elliptic curve <code class="bp_math inline">E</code> over a finite field
+<code class="bp_math inline">\mathbb{F}_q</code>: the unconditional bound
 <code class="bp_math display">\bigl|\,\#E(\mathbb{F}_q) - (q + 1)\,\bigr| \;\le\; 2\sqrt{q}</code>
-on the number of <code class="bp_math inline">\mathbb{F}_q</code>-points of an elliptic curve. The capstone
-<code class="bp_math inline">\texttt{hasse\_bound}</code> is <strong>sorry-free and unconditional</strong>: the earlier
-deferred witnesses (the non-negativity of the degree form on <code class="bp_math inline">\mathrm{End}(E)</code>
-and the point-count identity) are now discharged.</p>
+on the number of <code class="bp_math inline">\mathbb{F}_q</code>-rational points. Equivalently, writing
+<code class="bp_math inline">t = q + 1 - \#E(\mathbb{F}_q)</code> for the <strong>trace of Frobenius</strong>, it is the integer
+inequality <code class="bp_math inline">t^2 \le 4q</code>.</p>
+              <p>
+                The argument is the classical one (Silverman V.1.1): the degree map on the
+endomorphism ring <code class="bp_math inline">\operatorname{End}(E)</code> is a positive-definite quadratic form, and
+applying it to <code class="bp_math inline">r\pi - s</code> (where <code class="bp_math inline">\pi</code> is the <code class="bp_math inline">q</code>-power Frobenius) forces the
+discriminant of a binary quadratic form to be non-positive — which is exactly
+<code class="bp_math inline">t^2 \le 4q</code>. The Lean development isolates a <strong>pure-arithmetic core</strong> (the binary-form
+discriminant bound and the passage to square roots) from the <strong>geometric input</strong> (the
+non-negativity of the degree form), and the capstone <code>hasse_bound</code> is <em>unconditional
+and sorry-free</em>.</p>
               <p>
                 Each node carries a <code>(lean := …)</code> reference to the actual declaration in the
-<code>HasseWeil</code> library, so Verso reads its completion status directly from Lean —
-green once the declaration is fully proved. The dependency graph at the foot of
-the page records which results feed into which.</p>
+<code>HasseWeil</code> library, so Verso reads its completion status directly from Lean. The
+dependency graph at the foot of the page records the logical spine.</p>
               </div>
             <section>
               <h2>
                 Contents</h2>
               <ol class="section-toc">
                 <li>
-                  <a href="Point-counts-over-finite-fields/#The-Hasse-Bound-___-Lean-blueprint--Point-counts-over-finite-fields"><span class="number">1.</span> Point counts over finite fields</a></li>
+                  <a href="Point-counts-and-the-Frobenius-endomorphism/#The-Hasse-Bound-___-Lean-blueprint--Point-counts-and-the-Frobenius-endomorphism"><span class="number">1.</span> Point counts and the Frobenius endomorphism</a></li>
                 <li>
-                  <a href="The-Frobenius-endomorphism/#The-Hasse-Bound-___-Lean-blueprint--The-Frobenius-endomorphism"><span class="number">2.</span> The Frobenius endomorphism</a></li>
+                  <a href="The-degree-quadratic-form/#The-Hasse-Bound-___-Lean-blueprint--The-degree-quadratic-form"><span class="number">2.</span> The degree quadratic form</a></li>
                 <li>
                   <a href="The-Hasse-bound/#The-Hasse-Bound-___-Lean-blueprint--The-Hasse-bound"><span class="number">3.</span> The Hasse bound</a></li>
                 <li>
@@ -9279,7 +9286,7 @@ the page records which results feed into which.</p>
             </section>
           <nav class="prev-next-buttons">
             <div></div>
-            <a class="local-button active" href="Point-counts-over-finite-fields/#The-Hasse-Bound-___-Lean-blueprint--Point-counts-over-finite-fields" rel="next" title="1. Point counts over finite fields"><span class="where">1. Point counts over finite fields</span><span class="arrow">→</span></a></nav>
+            <a class="local-button active" href="Point-counts-and-the-Frobenius-endomorphism/#The-Hasse-Bound-___-Lean-blueprint--Point-counts-and-the-Frobenius-endomorphism" rel="next" title="1. Point counts and the Frobenius endomorphism"><span class="where">1. Point counts and the Frobenius endomorphism</span><span class="arrow">→</span></a></nav>
           </div>
         </main></div>
     </body>

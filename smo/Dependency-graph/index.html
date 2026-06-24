@@ -4499,6 +4499,37 @@ window.onload = () => {
 }
 </script>
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const resolvePrelude = (node) => {
+        const table =
+            window.bpTexPreludeTable && typeof window.bpTexPreludeTable === "object"
+                ? window.bpTexPreludeTable
+                : {};
+        const preludeId = (node.getAttribute("data-bp-tex-prelude-id") || "").trim();
+        if (preludeId && typeof table[preludeId] === "string") {
+            return table[preludeId].trim();
+        }
+        const fallback = (node.getAttribute("data-bp-tex-prelude") || "").trim();
+        return fallback;
+    };
+    const renderMath = (node, displayMode) => {
+        const tex = node.textContent || "";
+        const prelude = resolvePrelude(node);
+        const renderInput = prelude ? `${prelude}\n${tex}` : tex;
+        katex.render(renderInput, node, { throwOnError: false, displayMode });
+        node.setAttribute("data-bp-math-rendered", "1");
+    };
+    for (const m of document.querySelectorAll(".bp_math.inline")) {
+        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
+        renderMath(m, false);
+    }
+    for (const m of document.querySelectorAll(".bp_math.display")) {
+        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
+        renderMath(m, true);
+    }
+});
+</script>
+    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -7264,37 +7295,6 @@ window.onload = () => {
 
 })();</script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-    const resolvePrelude = (node) => {
-        const table =
-            window.bpTexPreludeTable && typeof window.bpTexPreludeTable === "object"
-                ? window.bpTexPreludeTable
-                : {};
-        const preludeId = (node.getAttribute("data-bp-tex-prelude-id") || "").trim();
-        if (preludeId && typeof table[preludeId] === "string") {
-            return table[preludeId].trim();
-        }
-        const fallback = (node.getAttribute("data-bp-tex-prelude") || "").trim();
-        return fallback;
-    };
-    const renderMath = (node, displayMode) => {
-        const tex = node.textContent || "";
-        const prelude = resolvePrelude(node);
-        const renderInput = prelude ? `${prelude}\n${tex}` : tex;
-        katex.render(renderInput, node, { throwOnError: false, displayMode });
-        node.setAttribute("data-bp-math-rendered", "1");
-    };
-    for (const m of document.querySelectorAll(".bp_math.inline")) {
-        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
-        renderMath(m, false);
-    }
-    for (const m of document.querySelectorAll(".bp_math.display")) {
-        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
-        renderMath(m, true);
-    }
-});
-</script>
-    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -8413,6 +8413,8 @@ window.onload = () => {
 })();
 </script>
     <script>
+      window.bpTexPreludeTable = Object.assign({}, window.bpTexPreludeTable || {}, {"default":""});</script>
+    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -8897,8 +8899,6 @@ window.onload = () => {
 })();
 </script>
     <script>
-      window.bpTexPreludeTable = Object.assign({}, window.bpTexPreludeTable || {}, {"default":""});</script>
-    <script>
       (function () {
   const styleStorageKey = "verso-blueprint-style";
   const switcherId = "bp-style-switcher";
@@ -9224,7 +9224,7 @@ window.onload = () => {
             <div class="split-toc book">
               <div class="title">
                 <label for="--verso-manual-toc-----bookRoot" class="toggle-split-toc"><input type="checkbox" class="toggle-split-toc" id="--verso-manual-toc-----bookRoot" checked="checked"></label><span class="">Table of Contents</span></div>
-              <table><tr class="numbered"><td class="num">1.</td><td><a href="Eigenforms-and-the-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--Eigenforms-and-the-old___new-decomposition">Eigenforms and the old/new decomposition</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="Strong-multiplicity-one/#Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one">Strong multiplicity one</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="current unnumbered"><td class="num"><td><a href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
+              <table><tr class="numbered"><td class="num">1.</td><td><a href="Hecke-operators-and-eigenforms/#Strong-Multiplicity-One-___-Lean-blueprint--Hecke-operators-and-eigenforms">Hecke operators and eigenforms</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="The-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--The-old___new-decomposition">The old/new decomposition</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="Strong-multiplicity-one/#Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one">Strong multiplicity one</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="current unnumbered"><td class="num"><td><a href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="numbered"><td class="num">5.</td><td><a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
             <div class="split-toc">
               <div class="title">
                 <span class="no-toggle"></span><span class="unnumbered"></span><span class="current"><a href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></span></div>
@@ -9235,18 +9235,18 @@ window.onload = () => {
         </nav>
       <main><div class="content-wrapper">
           <nav class="prev-next-buttons">
-            <a class="local-button active" href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph" rel="prev" title="3. Dependency graph"><span class="arrow">←</span><span class="where">3. Dependency graph</span></a><a class="local-button active" href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary" rel="next" title="4. Progress summary"><span class="where">4. Progress summary</span><span class="arrow">→</span></a></nav>
+            <a class="local-button active" href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph" rel="prev" title="4. Dependency graph"><span class="arrow">←</span><span class="where">4. Dependency graph</span></a><a class="local-button active" href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary" rel="next" title="5. Progress summary"><span class="where">5. Progress summary</span><span class="arrow">→</span></a></nav>
           <section>
             <h1>
               Dependency Graph<span class="permalink-widget inline"><a href="find/?domain=Verso.Genre.Manual.section&amp;name=Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph" title="Permalink">🔗</a></span></h1>
             <div class="bp_graph_fullwidth">
               <div class="bp_graph_controls">
                 <div class="bp_graph_controls_primary">
-                  <button type="button" class="bp_graph_controls_button bp_graph_legend_button" aria-haspopup="dialog" aria-expanded="false" aria-controls="bp-graph--0023-003C33-003E--legend">Legend</button><label class="bp_graph_controls_label" for="bp-graph--0023-003C33-003E--view">View</label><select id="bp-graph--0023-003C33-003E--view" class="bp_graph_controls_select bp_graph_view_select"><option value="full">Full Graph</option></select></div>
+                  <button type="button" class="bp_graph_controls_button bp_graph_legend_button" aria-haspopup="dialog" aria-expanded="false" aria-controls="bp-graph--0023-003C93-003E--legend">Legend</button><label class="bp_graph_controls_label" for="bp-graph--0023-003C93-003E--view">View</label><select id="bp-graph--0023-003C93-003E--view" class="bp_graph_controls_select bp_graph_view_select"><option value="full">Full Graph</option></select></div>
                 <div class="bp_graph_controls_actions">
-                  <button type="button" class="bp_graph_controls_button bp_graph_options_button" aria-haspopup="dialog" aria-expanded="false" aria-controls="bp-graph--0023-003C33-003E--options">Graph options</button></div>
+                  <button type="button" class="bp_graph_controls_button bp_graph_options_button" aria-haspopup="dialog" aria-expanded="false" aria-controls="bp-graph--0023-003C93-003E--options">Graph options</button></div>
                 </div>
-              <div id="bp-graph--0023-003C33-003E--legend" class="bp_graph_legend_popover" hidden="">
+              <div id="bp-graph--0023-003C93-003E--legend" class="bp_graph_legend_popover" hidden="">
                 <div class="bp_graph_legend_popover_header">
                   <span class="bp_graph_legend_popover_title">Legend</span><button type="button" class="bp_graph_legend_popover_close" aria-label="Close legend">Close</button></div>
                 <div class="bp_graph_legend_popover_body">
@@ -9296,17 +9296,17 @@ window.onload = () => {
                     </div>
                   </div>
                 </div>
-              <div id="bp-graph--0023-003C33-003E--options" class="bp_graph_options_popover" hidden="">
+              <div id="bp-graph--0023-003C93-003E--options" class="bp_graph_options_popover" hidden="">
                 <div class="bp_graph_options_popover_header">
                   <span class="bp_graph_options_popover_title">Graph options</span><button type="button" class="bp_graph_options_popover_close" aria-label="Close graph options">Close</button></div>
                 <div class="bp_graph_options_popover_body">
-                  <label class="bp_graph_controls_label" for="bp-graph--0023-003C33-003E--direction">Direction</label><select id="bp-graph--0023-003C33-003E--direction" class="bp_graph_controls_select bp_graph_direction_select" data-bp-graph-default-direction="TB"><option value="TB" selected="">TB</option><option value="LR">LR</option><option value="RL">RL</option><option value="BT">BT</option></select><label class="bp_graph_option_toggle" for="bp-graph--0023-003C33-003E--pack"><input id="bp-graph--0023-003C33-003E--pack" type="checkbox" class="bp_graph_pack_input" data-bp-graph-default-pack="false"><span>Pack disconnected components</span></label><label class="bp_graph_controls_label" for="bp-graph--0023-003C33-003E--preview-mode">Preview</label><select id="bp-graph--0023-003C33-003E--preview-mode" class="bp_graph_controls_select bp_graph_preview_mode_select" data-bp-graph-default-preview-mode="pinned"><option value="pinned" selected="">Click to pin</option><option value="hover">Hover</option></select><label class="bp_graph_controls_label" for="bp-graph--0023-003C33-003E--preview-placement">Position</label><select id="bp-graph--0023-003C33-003E--preview-placement" class="bp_graph_controls_select bp_graph_preview_placement_select" data-bp-graph-default-preview-placement="docked"><option value="docked" selected="">Docked</option><option value="anchored">Near node</option></select></div>
+                  <label class="bp_graph_controls_label" for="bp-graph--0023-003C93-003E--direction">Direction</label><select id="bp-graph--0023-003C93-003E--direction" class="bp_graph_controls_select bp_graph_direction_select" data-bp-graph-default-direction="TB"><option value="TB" selected="">TB</option><option value="LR">LR</option><option value="RL">RL</option><option value="BT">BT</option></select><label class="bp_graph_option_toggle" for="bp-graph--0023-003C93-003E--pack"><input id="bp-graph--0023-003C93-003E--pack" type="checkbox" class="bp_graph_pack_input" data-bp-graph-default-pack="false"><span>Pack disconnected components</span></label><label class="bp_graph_controls_label" for="bp-graph--0023-003C93-003E--preview-mode">Preview</label><select id="bp-graph--0023-003C93-003E--preview-mode" class="bp_graph_controls_select bp_graph_preview_mode_select" data-bp-graph-default-preview-mode="pinned"><option value="pinned" selected="">Click to pin</option><option value="hover">Hover</option></select><label class="bp_graph_controls_label" for="bp-graph--0023-003C93-003E--preview-placement">Position</label><select id="bp-graph--0023-003C93-003E--preview-placement" class="bp_graph_controls_select bp_graph_preview_placement_select" data-bp-graph-default-preview-placement="docked"><option value="docked" selected="">Docked</option><option value="anchored">Near node</option></select></div>
                 </div>
               <div class="bp_graph_canvas" data-bp-graph-direction="TB" data-bp-graph-pack="false">
                 <script type="application/json" class="bp-graph-data">
-                  {"edges":[{"axes":["statement"],"source":"eigenform","target":"«cusp-forms-new-old»"},{"axes":["statement"],"source":"eigenform","target":"«strong-multiplicity-one»"},{"axes":["statement","proof"],"source":"«cusp-forms-new-old»","target":"«strong-multiplicity-one»"}],"groups":[],"key":"graph:#<33>","nodes":[{"displayLabel":"eigenform","href":"Eigenforms-and-the-old___new-decomposition/#--informal-preview-eigenform--statement","kind":"definition","label":"eigenform","parent":null,"previewKey":"eigenform--statement","proofStatus":"formalizedWithAncestors","proofUses":[],"statementStatus":"formalized","statementUses":[],"title":"Definition 1.1","visual":{"color":"#16a34a","fillcolor":"#166534","fontcolor":"#ffffff","penwidth":"2.2","peripheries":1,"shape":"box","style":"filled","tooltip":"Statement: formalized | Proof: locally formalized + dependencies complete"},"warnings":{"leanOnlyNoStatement":false,"missingExternalDecl":false,"unknownRef":false}},{"displayLabel":"«cusp-forms-new-old»","href":"Eigenforms-and-the-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement","kind":"definition","label":"«cusp-forms-new-old»","parent":null,"previewKey":"«cusp-forms-new-old»--statement","proofStatus":"formalizedWithAncestors","proofUses":[],"statementStatus":"formalized","statementUses":[{"intent":"regular","label":"eigenform","origin":"manual"}],"title":"Definition 1.2","visual":{"color":"#16a34a","fillcolor":"#166534","fontcolor":"#ffffff","penwidth":"2.2","peripheries":1,"shape":"box","style":"filled","tooltip":"Statement: formalized | Proof: locally formalized + dependencies complete"},"warnings":{"leanOnlyNoStatement":false,"missingExternalDecl":false,"unknownRef":false}},{"displayLabel":"«strong-multiplicity-one»","href":"Strong-multiplicity-one/#--informal-preview-_FLQQ_strong-multiplicity-one_FLQQ_--statement","kind":"theorem","label":"«strong-multiplicity-one»","parent":null,"previewKey":"«strong-multiplicity-one»--statement","proofStatus":"formalizedWithAncestors","proofUses":[{"intent":"regular","label":"«cusp-forms-new-old»","origin":"manual"}],"statementStatus":"formalized","statementUses":[{"intent":"regular","label":"eigenform","origin":"manual"},{"intent":"regular","label":"«cusp-forms-new-old»","origin":"manual"}],"title":"Theorem 2.1","visual":{"color":"#16a34a","fillcolor":"#166534","fontcolor":"#ffffff","penwidth":"2.2","peripheries":1,"shape":"ellipse","style":"filled","tooltip":"Statement: formalized | Proof: locally formalized + dependencies complete"},"warnings":{"leanOnlyNoStatement":false,"missingExternalDecl":false,"unknownRef":false}}],"schemaVersion":1}</script>
+                  {"edges":[{"axes":["statement"],"source":"«hecke-character-space»","target":"eigenform"},{"axes":["statement"],"source":"eigenform","target":"«cusp-forms-new-old»"},{"axes":["statement"],"source":"eigenform","target":"«coeff-eigenvalue»"},{"axes":["statement"],"source":"eigenform","target":"«strong-multiplicity-one»"},{"axes":["statement","proof"],"source":"«cusp-forms-new-old»","target":"«strong-multiplicity-one»"},{"axes":["proof"],"source":"«coeff-eigenvalue»","target":"«strong-multiplicity-one»"},{"axes":["proof"],"source":"«old-part-vanishing»","target":"«strong-multiplicity-one»"},{"axes":["statement"],"source":"«cusp-forms-new-old»","target":"«old-part-vanishing»"}],"groups":[],"key":"graph:#<93>","nodes":[{"displayLabel":"eigenform","href":"Hecke-operators-and-eigenforms/#--informal-preview-eigenform--statement","kind":"definition","label":"eigenform","parent":null,"previewKey":"eigenform--statement","proofStatus":"formalizedWithAncestors","proofUses":[],"statementStatus":"formalized","statementUses":[{"intent":"regular","label":"«hecke-character-space»","origin":"manual"}],"title":"Definition 1.2","visual":{"color":"#16a34a","fillcolor":"#166534","fontcolor":"#ffffff","penwidth":"2.2","peripheries":1,"shape":"box","style":"filled","tooltip":"Statement: formalized | Proof: locally formalized + dependencies complete"},"warnings":{"leanOnlyNoStatement":false,"missingExternalDecl":false,"unknownRef":false}},{"displayLabel":"«cusp-forms-new-old»","href":"The-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement","kind":"definition","label":"«cusp-forms-new-old»","parent":null,"previewKey":"«cusp-forms-new-old»--statement","proofStatus":"formalizedWithAncestors","proofUses":[],"statementStatus":"formalized","statementUses":[{"intent":"regular","label":"eigenform","origin":"manual"}],"title":"Definition 2.1","visual":{"color":"#16a34a","fillcolor":"#166534","fontcolor":"#ffffff","penwidth":"2.2","peripheries":1,"shape":"box","style":"filled","tooltip":"Statement: formalized | Proof: locally formalized + dependencies complete"},"warnings":{"leanOnlyNoStatement":false,"missingExternalDecl":false,"unknownRef":false}},{"displayLabel":"«hecke-character-space»","href":"Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_hecke-character-space_FLQQ_--statement","kind":"definition","label":"«hecke-character-space»","parent":null,"previewKey":"«hecke-character-space»--statement","proofStatus":"formalizedWithAncestors","proofUses":[],"statementStatus":"formalized","statementUses":[],"title":"Definition 1.1","visual":{"color":"#16a34a","fillcolor":"#166534","fontcolor":"#ffffff","penwidth":"2.2","peripheries":1,"shape":"box","style":"filled","tooltip":"Statement: formalized | Proof: locally formalized + dependencies complete"},"warnings":{"leanOnlyNoStatement":false,"missingExternalDecl":false,"unknownRef":false}},{"displayLabel":"«coeff-eigenvalue»","href":"Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_coeff-eigenvalue_FLQQ_--statement","kind":"theorem","label":"«coeff-eigenvalue»","parent":null,"previewKey":"«coeff-eigenvalue»--statement","proofStatus":"formalizedWithAncestors","proofUses":[],"statementStatus":"formalized","statementUses":[{"intent":"regular","label":"eigenform","origin":"manual"}],"title":"Theorem 1.3","visual":{"color":"#16a34a","fillcolor":"#166534","fontcolor":"#ffffff","penwidth":"2.2","peripheries":1,"shape":"ellipse","style":"filled","tooltip":"Statement: formalized | Proof: locally formalized + dependencies complete"},"warnings":{"leanOnlyNoStatement":false,"missingExternalDecl":false,"unknownRef":false}},{"displayLabel":"«strong-multiplicity-one»","href":"Strong-multiplicity-one/#--informal-preview-_FLQQ_strong-multiplicity-one_FLQQ_--statement","kind":"theorem","label":"«strong-multiplicity-one»","parent":null,"previewKey":"«strong-multiplicity-one»--statement","proofStatus":"formalizedWithAncestors","proofUses":[{"intent":"regular","label":"«coeff-eigenvalue»","origin":"manual"},{"intent":"regular","label":"«old-part-vanishing»","origin":"manual"},{"intent":"regular","label":"«cusp-forms-new-old»","origin":"manual"}],"statementStatus":"formalized","statementUses":[{"intent":"regular","label":"eigenform","origin":"manual"},{"intent":"regular","label":"«cusp-forms-new-old»","origin":"manual"}],"title":"Theorem 3.1","visual":{"color":"#16a34a","fillcolor":"#166534","fontcolor":"#ffffff","penwidth":"2.2","peripheries":1,"shape":"ellipse","style":"filled","tooltip":"Statement: formalized | Proof: locally formalized + dependencies complete"},"warnings":{"leanOnlyNoStatement":false,"missingExternalDecl":false,"unknownRef":false}},{"displayLabel":"«old-part-vanishing»","href":"The-old___new-decomposition/#--informal-preview-_FLQQ_old-part-vanishing_FLQQ_--statement","kind":"theorem","label":"«old-part-vanishing»","parent":null,"previewKey":"«old-part-vanishing»--statement","proofStatus":"formalizedWithAncestors","proofUses":[],"statementStatus":"formalized","statementUses":[{"intent":"regular","label":"«cusp-forms-new-old»","origin":"manual"}],"title":"Theorem 2.2","visual":{"color":"#16a34a","fillcolor":"#166534","fontcolor":"#ffffff","penwidth":"2.2","peripheries":1,"shape":"ellipse","style":"filled","tooltip":"Statement: formalized | Proof: locally formalized + dependencies complete"},"warnings":{"leanOnlyNoStatement":false,"missingExternalDecl":false,"unknownRef":false}}],"schemaVersion":1}</script>
                 <script type="application/json" class="bp-graph-variants">
-                  [{"dot":"strict digraph \"\" {\n    rankdir=TB;\n    bgcolor=\"white\";\n    pack=false;\n    splines=true;\n    nodesep=0.35;\n    ranksep=0.45;\n    node [shape=box, style=\"rounded,filled\", fontname=\"Helvetica\", fontsize=10, margin=\"0.08,0.04\", color=\"#6b7280\", penwidth=1.8];\n    edge [color=\"#6b7280\", arrowhead=vee, arrowsize=0.6, penwidth=1];\n    graph [fontname=\"Helvetica\"];\n  \n  \"eigenform\" [id=\"bp-node-eigenform\", label=\"eigenform\", shape=\"box\", style=\"filled\", fillcolor=\"#166534\", color=\"#16a34a\", penwidth=\"2.2\", fontcolor=\"#ffffff\", peripheries=1, tooltip=\"Statement: formalized | Proof: locally formalized + dependencies complete\", URL=\"Eigenforms-and-the-old___new-decomposition/#--informal-preview-eigenform--statement\", target=\"_self\"];\n  \"«cusp-forms-new-old»\" [id=\"bp-node--00ABcusp--forms--new--old-00BB\", label=\"«cusp-forms-new-old»\", shape=\"box\", style=\"filled\", fillcolor=\"#166534\", color=\"#16a34a\", penwidth=\"2.2\", fontcolor=\"#ffffff\", peripheries=1, tooltip=\"Statement: formalized | Proof: locally formalized + dependencies complete\", URL=\"Eigenforms-and-the-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement\", target=\"_self\"];\n  \"«strong-multiplicity-one»\" [id=\"bp-node--00ABstrong--multiplicity--one-00BB\", label=\"«strong-multiplicity-one»\", shape=\"ellipse\", style=\"filled\", fillcolor=\"#166534\", color=\"#16a34a\", penwidth=\"2.2\", fontcolor=\"#ffffff\", peripheries=1, tooltip=\"Statement: formalized | Proof: locally formalized + dependencies complete\", URL=\"Strong-multiplicity-one/#--informal-preview-_FLQQ_strong-multiplicity-one_FLQQ_--statement\", target=\"_self\"];\n  \"eigenform\" -> \"«cusp-forms-new-old»\" [style=dashed, penwidth=1.2];\n  \"eigenform\" -> \"«strong-multiplicity-one»\" [style=dashed, penwidth=1.2];\n  \"«cusp-forms-new-old»\" -> \"«strong-multiplicity-one»\" [style=dashed, penwidth=1.7];\n}","hoverOnNodeId":[],"key":"full","label":"Full Graph","options":{"direction":"TB","pack":false},"previewKeyByNodeId":[["bp-node-eigenform","eigenform--statement"],["bp-node--00ABcusp--forms--new--old-00BB","«cusp-forms-new-old»--statement"],["bp-node--00ABstrong--multiplicity--one-00BB","«strong-multiplicity-one»--statement"]],"selectOnNodeId":[]}]</script>
+                  [{"dot":"strict digraph \"\" {\n    rankdir=TB;\n    bgcolor=\"white\";\n    pack=false;\n    splines=true;\n    nodesep=0.35;\n    ranksep=0.45;\n    node [shape=box, style=\"rounded,filled\", fontname=\"Helvetica\", fontsize=10, margin=\"0.08,0.04\", color=\"#6b7280\", penwidth=1.8];\n    edge [color=\"#6b7280\", arrowhead=vee, arrowsize=0.6, penwidth=1];\n    graph [fontname=\"Helvetica\"];\n  \n  \"eigenform\" [id=\"bp-node-eigenform\", label=\"eigenform\", shape=\"box\", style=\"filled\", fillcolor=\"#166534\", color=\"#16a34a\", penwidth=\"2.2\", fontcolor=\"#ffffff\", peripheries=1, tooltip=\"Statement: formalized | Proof: locally formalized + dependencies complete\", URL=\"Hecke-operators-and-eigenforms/#--informal-preview-eigenform--statement\", target=\"_self\"];\n  \"«cusp-forms-new-old»\" [id=\"bp-node--00ABcusp--forms--new--old-00BB\", label=\"«cusp-forms-new-old»\", shape=\"box\", style=\"filled\", fillcolor=\"#166534\", color=\"#16a34a\", penwidth=\"2.2\", fontcolor=\"#ffffff\", peripheries=1, tooltip=\"Statement: formalized | Proof: locally formalized + dependencies complete\", URL=\"The-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement\", target=\"_self\"];\n  \"«hecke-character-space»\" [id=\"bp-node--00ABhecke--character--space-00BB\", label=\"«hecke-character-space»\", shape=\"box\", style=\"filled\", fillcolor=\"#166534\", color=\"#16a34a\", penwidth=\"2.2\", fontcolor=\"#ffffff\", peripheries=1, tooltip=\"Statement: formalized | Proof: locally formalized + dependencies complete\", URL=\"Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_hecke-character-space_FLQQ_--statement\", target=\"_self\"];\n  \"«coeff-eigenvalue»\" [id=\"bp-node--00ABcoeff--eigenvalue-00BB\", label=\"«coeff-eigenvalue»\", shape=\"ellipse\", style=\"filled\", fillcolor=\"#166534\", color=\"#16a34a\", penwidth=\"2.2\", fontcolor=\"#ffffff\", peripheries=1, tooltip=\"Statement: formalized | Proof: locally formalized + dependencies complete\", URL=\"Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_coeff-eigenvalue_FLQQ_--statement\", target=\"_self\"];\n  \"«strong-multiplicity-one»\" [id=\"bp-node--00ABstrong--multiplicity--one-00BB\", label=\"«strong-multiplicity-one»\", shape=\"ellipse\", style=\"filled\", fillcolor=\"#166534\", color=\"#16a34a\", penwidth=\"2.2\", fontcolor=\"#ffffff\", peripheries=1, tooltip=\"Statement: formalized | Proof: locally formalized + dependencies complete\", URL=\"Strong-multiplicity-one/#--informal-preview-_FLQQ_strong-multiplicity-one_FLQQ_--statement\", target=\"_self\"];\n  \"«old-part-vanishing»\" [id=\"bp-node--00ABold--part--vanishing-00BB\", label=\"«old-part-vanishing»\", shape=\"ellipse\", style=\"filled\", fillcolor=\"#166534\", color=\"#16a34a\", penwidth=\"2.2\", fontcolor=\"#ffffff\", peripheries=1, tooltip=\"Statement: formalized | Proof: locally formalized + dependencies complete\", URL=\"The-old___new-decomposition/#--informal-preview-_FLQQ_old-part-vanishing_FLQQ_--statement\", target=\"_self\"];\n  \"«hecke-character-space»\" -> \"eigenform\" [style=dashed, penwidth=1.2];\n  \"eigenform\" -> \"«cusp-forms-new-old»\" [style=dashed, penwidth=1.2];\n  \"eigenform\" -> \"«coeff-eigenvalue»\" [style=dashed, penwidth=1.2];\n  \"eigenform\" -> \"«strong-multiplicity-one»\" [style=dashed, penwidth=1.2];\n  \"«cusp-forms-new-old»\" -> \"«strong-multiplicity-one»\" [style=dashed, penwidth=1.7];\n  \"«coeff-eigenvalue»\" -> \"«strong-multiplicity-one»\" [style=dotted, penwidth=1.2];\n  \"«old-part-vanishing»\" -> \"«strong-multiplicity-one»\" [style=dotted, penwidth=1.2];\n  \"«cusp-forms-new-old»\" -> \"«old-part-vanishing»\" [style=dashed, penwidth=1.2];\n}","hoverOnNodeId":[],"key":"full","label":"Full Graph","options":{"direction":"TB","pack":false},"previewKeyByNodeId":[["bp-node-eigenform","eigenform--statement"],["bp-node--00ABcusp--forms--new--old-00BB","«cusp-forms-new-old»--statement"],["bp-node--00ABhecke--character--space-00BB","«hecke-character-space»--statement"],["bp-node--00ABcoeff--eigenvalue-00BB","«coeff-eigenvalue»--statement"],["bp-node--00ABstrong--multiplicity--one-00BB","«strong-multiplicity-one»--statement"],["bp-node--00ABold--part--vanishing-00BB","«old-part-vanishing»--statement"]],"selectOnNodeId":[]}]</script>
                 <script type="text/plain" class="dot-source">
                   strict digraph "" {
     rankdir=TB;
@@ -9319,12 +9319,20 @@ window.onload = () => {
     edge [color="#6b7280", arrowhead=vee, arrowsize=0.6, penwidth=1];
     graph [fontname="Helvetica"];
   
-  "eigenform" [id="bp-node-eigenform", label="eigenform", shape="box", style="filled", fillcolor="#166534", color="#16a34a", penwidth="2.2", fontcolor="#ffffff", peripheries=1, tooltip="Statement: formalized | Proof: locally formalized + dependencies complete", URL="Eigenforms-and-the-old___new-decomposition/#--informal-preview-eigenform--statement", target="_self"];
-  "«cusp-forms-new-old»" [id="bp-node--00ABcusp--forms--new--old-00BB", label="«cusp-forms-new-old»", shape="box", style="filled", fillcolor="#166534", color="#16a34a", penwidth="2.2", fontcolor="#ffffff", peripheries=1, tooltip="Statement: formalized | Proof: locally formalized + dependencies complete", URL="Eigenforms-and-the-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement", target="_self"];
+  "eigenform" [id="bp-node-eigenform", label="eigenform", shape="box", style="filled", fillcolor="#166534", color="#16a34a", penwidth="2.2", fontcolor="#ffffff", peripheries=1, tooltip="Statement: formalized | Proof: locally formalized + dependencies complete", URL="Hecke-operators-and-eigenforms/#--informal-preview-eigenform--statement", target="_self"];
+  "«cusp-forms-new-old»" [id="bp-node--00ABcusp--forms--new--old-00BB", label="«cusp-forms-new-old»", shape="box", style="filled", fillcolor="#166534", color="#16a34a", penwidth="2.2", fontcolor="#ffffff", peripheries=1, tooltip="Statement: formalized | Proof: locally formalized + dependencies complete", URL="The-old___new-decomposition/#--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement", target="_self"];
+  "«hecke-character-space»" [id="bp-node--00ABhecke--character--space-00BB", label="«hecke-character-space»", shape="box", style="filled", fillcolor="#166534", color="#16a34a", penwidth="2.2", fontcolor="#ffffff", peripheries=1, tooltip="Statement: formalized | Proof: locally formalized + dependencies complete", URL="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_hecke-character-space_FLQQ_--statement", target="_self"];
+  "«coeff-eigenvalue»" [id="bp-node--00ABcoeff--eigenvalue-00BB", label="«coeff-eigenvalue»", shape="ellipse", style="filled", fillcolor="#166534", color="#16a34a", penwidth="2.2", fontcolor="#ffffff", peripheries=1, tooltip="Statement: formalized | Proof: locally formalized + dependencies complete", URL="Hecke-operators-and-eigenforms/#--informal-preview-_FLQQ_coeff-eigenvalue_FLQQ_--statement", target="_self"];
   "«strong-multiplicity-one»" [id="bp-node--00ABstrong--multiplicity--one-00BB", label="«strong-multiplicity-one»", shape="ellipse", style="filled", fillcolor="#166534", color="#16a34a", penwidth="2.2", fontcolor="#ffffff", peripheries=1, tooltip="Statement: formalized | Proof: locally formalized + dependencies complete", URL="Strong-multiplicity-one/#--informal-preview-_FLQQ_strong-multiplicity-one_FLQQ_--statement", target="_self"];
+  "«old-part-vanishing»" [id="bp-node--00ABold--part--vanishing-00BB", label="«old-part-vanishing»", shape="ellipse", style="filled", fillcolor="#166534", color="#16a34a", penwidth="2.2", fontcolor="#ffffff", peripheries=1, tooltip="Statement: formalized | Proof: locally formalized + dependencies complete", URL="The-old___new-decomposition/#--informal-preview-_FLQQ_old-part-vanishing_FLQQ_--statement", target="_self"];
+  "«hecke-character-space»" -> "eigenform" [style=dashed, penwidth=1.2];
   "eigenform" -> "«cusp-forms-new-old»" [style=dashed, penwidth=1.2];
+  "eigenform" -> "«coeff-eigenvalue»" [style=dashed, penwidth=1.2];
   "eigenform" -> "«strong-multiplicity-one»" [style=dashed, penwidth=1.2];
   "«cusp-forms-new-old»" -> "«strong-multiplicity-one»" [style=dashed, penwidth=1.7];
+  "«coeff-eigenvalue»" -> "«strong-multiplicity-one»" [style=dotted, penwidth=1.2];
+  "«old-part-vanishing»" -> "«strong-multiplicity-one»" [style=dotted, penwidth=1.2];
+  "«cusp-forms-new-old»" -> "«old-part-vanishing»" [style=dashed, penwidth=1.2];
 }</script>
                 </div>
               <aside class="bp_graph_preview bp_preview_panel" data-bp-preview-mode="pinned" data-bp-preview-placement="docked" hidden=""><div class="bp_graph_preview_header bp_preview_panel_header">
@@ -9338,7 +9346,7 @@ window.onload = () => {
                 </aside></div>
             </section>
           <nav class="prev-next-buttons">
-            <a class="local-button active" href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph" rel="prev" title="3. Dependency graph"><span class="arrow">←</span><span class="where">3. Dependency graph</span></a><a class="local-button active" href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary" rel="next" title="4. Progress summary"><span class="where">4. Progress summary</span><span class="arrow">→</span></a></nav>
+            <a class="local-button active" href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph" rel="prev" title="4. Dependency graph"><span class="arrow">←</span><span class="where">4. Dependency graph</span></a><a class="local-button active" href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary" rel="next" title="5. Progress summary"><span class="where">5. Progress summary</span><span class="arrow">→</span></a></nav>
           </div>
         </main></div>
     </body>

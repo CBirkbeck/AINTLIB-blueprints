@@ -4498,6 +4498,37 @@ window.onload = () => {
 }
 </script>
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const resolvePrelude = (node) => {
+        const table =
+            window.bpTexPreludeTable && typeof window.bpTexPreludeTable === "object"
+                ? window.bpTexPreludeTable
+                : {};
+        const preludeId = (node.getAttribute("data-bp-tex-prelude-id") || "").trim();
+        if (preludeId && typeof table[preludeId] === "string") {
+            return table[preludeId].trim();
+        }
+        const fallback = (node.getAttribute("data-bp-tex-prelude") || "").trim();
+        return fallback;
+    };
+    const renderMath = (node, displayMode) => {
+        const tex = node.textContent || "";
+        const prelude = resolvePrelude(node);
+        const renderInput = prelude ? `${prelude}\n${tex}` : tex;
+        katex.render(renderInput, node, { throwOnError: false, displayMode });
+        node.setAttribute("data-bp-math-rendered", "1");
+    };
+    for (const m of document.querySelectorAll(".bp_math.inline")) {
+        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
+        renderMath(m, false);
+    }
+    for (const m of document.querySelectorAll(".bp_math.display")) {
+        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
+        renderMath(m, true);
+    }
+});
+</script>
+    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -7263,37 +7294,6 @@ window.onload = () => {
 
 })();</script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-    const resolvePrelude = (node) => {
-        const table =
-            window.bpTexPreludeTable && typeof window.bpTexPreludeTable === "object"
-                ? window.bpTexPreludeTable
-                : {};
-        const preludeId = (node.getAttribute("data-bp-tex-prelude-id") || "").trim();
-        if (preludeId && typeof table[preludeId] === "string") {
-            return table[preludeId].trim();
-        }
-        const fallback = (node.getAttribute("data-bp-tex-prelude") || "").trim();
-        return fallback;
-    };
-    const renderMath = (node, displayMode) => {
-        const tex = node.textContent || "";
-        const prelude = resolvePrelude(node);
-        const renderInput = prelude ? `${prelude}\n${tex}` : tex;
-        katex.render(renderInput, node, { throwOnError: false, displayMode });
-        node.setAttribute("data-bp-math-rendered", "1");
-    };
-    for (const m of document.querySelectorAll(".bp_math.inline")) {
-        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
-        renderMath(m, false);
-    }
-    for (const m of document.querySelectorAll(".bp_math.display")) {
-        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
-        renderMath(m, true);
-    }
-});
-</script>
-    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -8412,6 +8412,8 @@ window.onload = () => {
 })();
 </script>
     <script>
+      window.bpTexPreludeTable = Object.assign({}, window.bpTexPreludeTable || {}, {"default":""});</script>
+    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -8896,9 +8898,7 @@ window.onload = () => {
 })();
 </script>
     <script>
-      window.bpTexPreludeTable = Object.assign({}, window.bpTexPreludeTable || {}, {"default":""});</script>
-    <script>
-      window.xref = {"Verso.Genre.Manual.doc":{"contents":{},"description":"Documentation for Lean constants","title":"Lean constant reference"},"Verso.Genre.Manual.doc.option":{"contents":{},"description":null,"title":"Compiler options"},"Verso.Genre.Manual.doc.suggestion":{"contents":{},"description":"Search suggestions for Lean constants","title":"Lean constant suggestions"},"Verso.Genre.Manual.doc.tactic":{"contents":{},"description":"Detailed descriptions of tactics","title":"Tactic Documentation"},"Verso.Genre.Manual.doc.tactic.conv":{"contents":{},"description":"Tactics for performing targeted rewriting of subterms","title":"Conversion Tactics"},"Verso.Genre.Manual.doc.tech":{"contents":{},"description":"Definitions of technical terms","title":"Terminology"},"Verso.Genre.Manual.section":{"contents":{"Strong-Multiplicity-One-___-Lean-blueprint":[{"address":"/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"}],"searchPriority":50,"sectionNum":"","shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},"id":"Strong-Multiplicity-One-___-Lean-blueprint"}],"Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary":[{"address":"/Blueprint-Summary/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":null,"shortTitle":null,"title":"Blueprint Summary"}],"searchPriority":50,"sectionNum":null,"shortTitle":null,"title":"Blueprint Summary"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary"}],"Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph":[{"address":"/Dependency-Graph/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":null,"shortTitle":null,"title":"Dependency Graph"}],"searchPriority":50,"sectionNum":null,"shortTitle":null,"title":"Dependency Graph"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph"}],"Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph":[{"address":"/Dependency-graph/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":"3","shortTitle":null,"title":"Dependency graph"}],"searchPriority":50,"sectionNum":"3.","shortTitle":null,"title":"Dependency graph"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph"}],"Strong-Multiplicity-One-___-Lean-blueprint--Eigenforms-and-the-old___new-decomposition":[{"address":"/Eigenforms-and-the-old___new-decomposition/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":"1","shortTitle":null,"title":"Eigenforms and the old/new decomposition"}],"searchPriority":50,"sectionNum":"1.","shortTitle":null,"title":"Eigenforms and the old/new decomposition"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--Eigenforms-and-the-old___new-decomposition"}],"Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary":[{"address":"/Progress-summary/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":"4","shortTitle":null,"title":"Progress summary"}],"searchPriority":50,"sectionNum":"4.","shortTitle":null,"title":"Progress summary"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary"}],"Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one":[{"address":"/Strong-multiplicity-one/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":"2","shortTitle":null,"title":"Strong multiplicity one"}],"searchPriority":50,"sectionNum":"2.","shortTitle":null,"title":"Strong multiplicity one"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one"}]},"description":null,"title":"Sections or chapters of the manual"},"«Informal.Block.informal»":{"contents":{"eigenform":[{"address":"/Eigenforms-and-the-old___new-decomposition/","data":{"count":1,"effort":null,"globalCount":1,"kind":{"statement":{"kind":"definition"}},"label":"eigenform","numberingMode":"sub","owner":null,"ownerDisplayName":null,"ownerImageUrl":null,"ownerUrl":null,"parent":null,"partPrefix":"1","prUrl":null,"priority":null,"proofUses":[],"statementUses":[],"subNumberingCounter":"prefix","subNumberingPrefix":"full","tags":[]},"id":"--informal-preview-eigenform--statement"}],"«cusp-forms-new-old»":[{"address":"/Eigenforms-and-the-old___new-decomposition/","data":{"count":2,"effort":null,"globalCount":2,"kind":{"statement":{"kind":"definition"}},"label":"«cusp-forms-new-old»","numberingMode":"sub","owner":null,"ownerDisplayName":null,"ownerImageUrl":null,"ownerUrl":null,"parent":null,"partPrefix":"1","prUrl":null,"priority":null,"proofUses":[],"statementUses":[{"intent":"regular","label":"eigenform","origin":"manual"}],"subNumberingCounter":"prefix","subNumberingPrefix":"full","tags":[]},"id":"--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"}],"«strong-multiplicity-one»":[{"address":"/Strong-multiplicity-one/","data":{"count":1,"effort":null,"globalCount":3,"kind":{"statement":{"kind":"theorem"}},"label":"«strong-multiplicity-one»","numberingMode":"sub","owner":null,"ownerDisplayName":null,"ownerImageUrl":null,"ownerUrl":null,"parent":null,"partPrefix":"2","prUrl":null,"priority":null,"proofUses":[{"intent":"regular","label":"«cusp-forms-new-old»","origin":"manual"}],"statementUses":[{"intent":"regular","label":"eigenform","origin":"manual"},{"intent":"regular","label":"«cusp-forms-new-old»","origin":"manual"}],"subNumberingCounter":"prefix","subNumberingPrefix":"full","tags":[]},"id":"--informal-preview-_FLQQ_strong-multiplicity-one_FLQQ_--statement"}]},"description":null,"title":"«Informal.Block.informal»"}};
+      window.xref = {"Verso.Genre.Manual.doc":{"contents":{},"description":"Documentation for Lean constants","title":"Lean constant reference"},"Verso.Genre.Manual.doc.option":{"contents":{},"description":null,"title":"Compiler options"},"Verso.Genre.Manual.doc.suggestion":{"contents":{},"description":"Search suggestions for Lean constants","title":"Lean constant suggestions"},"Verso.Genre.Manual.doc.tactic":{"contents":{},"description":"Detailed descriptions of tactics","title":"Tactic Documentation"},"Verso.Genre.Manual.doc.tactic.conv":{"contents":{},"description":"Tactics for performing targeted rewriting of subterms","title":"Conversion Tactics"},"Verso.Genre.Manual.doc.tech":{"contents":{},"description":"Definitions of technical terms","title":"Terminology"},"Verso.Genre.Manual.section":{"contents":{"Strong-Multiplicity-One-___-Lean-blueprint":[{"address":"/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"}],"searchPriority":50,"sectionNum":"","shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},"id":"Strong-Multiplicity-One-___-Lean-blueprint"}],"Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary":[{"address":"/Blueprint-Summary/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":null,"shortTitle":null,"title":"Blueprint Summary"}],"searchPriority":50,"sectionNum":null,"shortTitle":null,"title":"Blueprint Summary"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary"}],"Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph":[{"address":"/Dependency-Graph/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":null,"shortTitle":null,"title":"Dependency Graph"}],"searchPriority":50,"sectionNum":null,"shortTitle":null,"title":"Dependency Graph"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph"}],"Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph":[{"address":"/Dependency-graph/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":"4","shortTitle":null,"title":"Dependency graph"}],"searchPriority":50,"sectionNum":"4.","shortTitle":null,"title":"Dependency graph"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph"}],"Strong-Multiplicity-One-___-Lean-blueprint--Hecke-operators-and-eigenforms":[{"address":"/Hecke-operators-and-eigenforms/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":"1","shortTitle":null,"title":"Hecke operators and eigenforms"}],"searchPriority":50,"sectionNum":"1.","shortTitle":null,"title":"Hecke operators and eigenforms"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--Hecke-operators-and-eigenforms"}],"Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary":[{"address":"/Progress-summary/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":"5","shortTitle":null,"title":"Progress summary"}],"searchPriority":50,"sectionNum":"5.","shortTitle":null,"title":"Progress summary"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary"}],"Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one":[{"address":"/Strong-multiplicity-one/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":"3","shortTitle":null,"title":"Strong multiplicity one"}],"searchPriority":50,"sectionNum":"3.","shortTitle":null,"title":"Strong multiplicity one"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one"}],"Strong-Multiplicity-One-___-Lean-blueprint--The-old___new-decomposition":[{"address":"/The-old___new-decomposition/","data":{"context":[{"number":null,"shortTitle":null,"title":"Strong Multiplicity One — Lean blueprint"},{"number":"2","shortTitle":null,"title":"The old/new decomposition"}],"searchPriority":50,"sectionNum":"2.","shortTitle":null,"title":"The old/new decomposition"},"id":"Strong-Multiplicity-One-___-Lean-blueprint--The-old___new-decomposition"}]},"description":null,"title":"Sections or chapters of the manual"},"«Informal.Block.informal»":{"contents":{"eigenform":[{"address":"/Hecke-operators-and-eigenforms/","data":{"count":2,"effort":null,"globalCount":2,"kind":{"statement":{"kind":"definition"}},"label":"eigenform","numberingMode":"sub","owner":null,"ownerDisplayName":null,"ownerImageUrl":null,"ownerUrl":null,"parent":null,"partPrefix":"1","prUrl":null,"priority":null,"proofUses":[],"statementUses":[{"intent":"regular","label":"«hecke-character-space»","origin":"manual"}],"subNumberingCounter":"prefix","subNumberingPrefix":"full","tags":[]},"id":"--informal-preview-eigenform--statement"}],"«coeff-eigenvalue»":[{"address":"/Hecke-operators-and-eigenforms/","data":{"count":3,"effort":null,"globalCount":3,"kind":{"statement":{"kind":"theorem"}},"label":"«coeff-eigenvalue»","numberingMode":"sub","owner":null,"ownerDisplayName":null,"ownerImageUrl":null,"ownerUrl":null,"parent":null,"partPrefix":"1","prUrl":null,"priority":null,"proofUses":[],"statementUses":[{"intent":"regular","label":"eigenform","origin":"manual"}],"subNumberingCounter":"prefix","subNumberingPrefix":"full","tags":[]},"id":"--informal-preview-_FLQQ_coeff-eigenvalue_FLQQ_--statement"}],"«cusp-forms-new-old»":[{"address":"/The-old___new-decomposition/","data":{"count":1,"effort":null,"globalCount":4,"kind":{"statement":{"kind":"definition"}},"label":"«cusp-forms-new-old»","numberingMode":"sub","owner":null,"ownerDisplayName":null,"ownerImageUrl":null,"ownerUrl":null,"parent":null,"partPrefix":"2","prUrl":null,"priority":null,"proofUses":[],"statementUses":[{"intent":"regular","label":"eigenform","origin":"manual"}],"subNumberingCounter":"prefix","subNumberingPrefix":"full","tags":[]},"id":"--informal-preview-_FLQQ_cusp-forms-new-old_FLQQ_--statement"}],"«hecke-character-space»":[{"address":"/Hecke-operators-and-eigenforms/","data":{"count":1,"effort":null,"globalCount":1,"kind":{"statement":{"kind":"definition"}},"label":"«hecke-character-space»","numberingMode":"sub","owner":null,"ownerDisplayName":null,"ownerImageUrl":null,"ownerUrl":null,"parent":null,"partPrefix":"1","prUrl":null,"priority":null,"proofUses":[],"statementUses":[],"subNumberingCounter":"prefix","subNumberingPrefix":"full","tags":[]},"id":"--informal-preview-_FLQQ_hecke-character-space_FLQQ_--statement"}],"«old-part-vanishing»":[{"address":"/The-old___new-decomposition/","data":{"count":2,"effort":null,"globalCount":5,"kind":{"statement":{"kind":"theorem"}},"label":"«old-part-vanishing»","numberingMode":"sub","owner":null,"ownerDisplayName":null,"ownerImageUrl":null,"ownerUrl":null,"parent":null,"partPrefix":"2","prUrl":null,"priority":null,"proofUses":[],"statementUses":[{"intent":"regular","label":"«cusp-forms-new-old»","origin":"manual"}],"subNumberingCounter":"prefix","subNumberingPrefix":"full","tags":[]},"id":"--informal-preview-_FLQQ_old-part-vanishing_FLQQ_--statement"}],"«strong-multiplicity-one»":[{"address":"/Strong-multiplicity-one/","data":{"count":1,"effort":null,"globalCount":6,"kind":{"statement":{"kind":"theorem"}},"label":"«strong-multiplicity-one»","numberingMode":"sub","owner":null,"ownerDisplayName":null,"ownerImageUrl":null,"ownerUrl":null,"parent":null,"partPrefix":"3","prUrl":null,"priority":null,"proofUses":[{"intent":"regular","label":"«coeff-eigenvalue»","origin":"manual"},{"intent":"regular","label":"«old-part-vanishing»","origin":"manual"},{"intent":"regular","label":"«cusp-forms-new-old»","origin":"manual"}],"statementUses":[{"intent":"regular","label":"eigenform","origin":"manual"},{"intent":"regular","label":"«cusp-forms-new-old»","origin":"manual"}],"subNumberingCounter":"prefix","subNumberingPrefix":"full","tags":[]},"id":"--informal-preview-_FLQQ_strong-multiplicity-one_FLQQ_--statement"}]},"description":null,"title":"«Informal.Block.informal»"}};
 /**
  * Copyright (c) 2024 Lean FRO LLC. All rights reserved.
  * Released under Apache 2.0 license as described in the file LICENSE.
@@ -9361,7 +9361,7 @@ if (paramName) {
             <div class="split-toc book">
               <div class="title">
                 <label for="--verso-manual-toc-----bookRoot" class="toggle-split-toc"><input type="checkbox" class="toggle-split-toc" id="--verso-manual-toc-----bookRoot" checked="checked"></label><span class="">Table of Contents</span></div>
-              <table><tr class="numbered"><td class="num">1.</td><td><a href="Eigenforms-and-the-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--Eigenforms-and-the-old___new-decomposition">Eigenforms and the old/new decomposition</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="Strong-multiplicity-one/#Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one">Strong multiplicity one</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
+              <table><tr class="numbered"><td class="num">1.</td><td><a href="Hecke-operators-and-eigenforms/#Strong-Multiplicity-One-___-Lean-blueprint--Hecke-operators-and-eigenforms">Hecke operators and eigenforms</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="The-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--The-old___new-decomposition">The old/new decomposition</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="Strong-multiplicity-one/#Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one">Strong multiplicity one</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="numbered"><td class="num">5.</td><td><a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
             </div>
           </div>
         <div class="last"></div>

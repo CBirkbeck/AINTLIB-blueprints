@@ -4499,6 +4499,37 @@ window.onload = () => {
 }
 </script>
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+    const resolvePrelude = (node) => {
+        const table =
+            window.bpTexPreludeTable && typeof window.bpTexPreludeTable === "object"
+                ? window.bpTexPreludeTable
+                : {};
+        const preludeId = (node.getAttribute("data-bp-tex-prelude-id") || "").trim();
+        if (preludeId && typeof table[preludeId] === "string") {
+            return table[preludeId].trim();
+        }
+        const fallback = (node.getAttribute("data-bp-tex-prelude") || "").trim();
+        return fallback;
+    };
+    const renderMath = (node, displayMode) => {
+        const tex = node.textContent || "";
+        const prelude = resolvePrelude(node);
+        const renderInput = prelude ? `${prelude}\n${tex}` : tex;
+        katex.render(renderInput, node, { throwOnError: false, displayMode });
+        node.setAttribute("data-bp-math-rendered", "1");
+    };
+    for (const m of document.querySelectorAll(".bp_math.inline")) {
+        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
+        renderMath(m, false);
+    }
+    for (const m of document.querySelectorAll(".bp_math.display")) {
+        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
+        renderMath(m, true);
+    }
+});
+</script>
+    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -7264,37 +7295,6 @@ window.onload = () => {
 
 })();</script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-    const resolvePrelude = (node) => {
-        const table =
-            window.bpTexPreludeTable && typeof window.bpTexPreludeTable === "object"
-                ? window.bpTexPreludeTable
-                : {};
-        const preludeId = (node.getAttribute("data-bp-tex-prelude-id") || "").trim();
-        if (preludeId && typeof table[preludeId] === "string") {
-            return table[preludeId].trim();
-        }
-        const fallback = (node.getAttribute("data-bp-tex-prelude") || "").trim();
-        return fallback;
-    };
-    const renderMath = (node, displayMode) => {
-        const tex = node.textContent || "";
-        const prelude = resolvePrelude(node);
-        const renderInput = prelude ? `${prelude}\n${tex}` : tex;
-        katex.render(renderInput, node, { throwOnError: false, displayMode });
-        node.setAttribute("data-bp-math-rendered", "1");
-    };
-    for (const m of document.querySelectorAll(".bp_math.inline")) {
-        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
-        renderMath(m, false);
-    }
-    for (const m of document.querySelectorAll(".bp_math.display")) {
-        if (m.getAttribute("data-bp-math-rendered") === "1") continue;
-        renderMath(m, true);
-    }
-});
-</script>
-    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -8413,6 +8413,8 @@ window.onload = () => {
 })();
 </script>
     <script>
+      window.bpTexPreludeTable = Object.assign({}, window.bpTexPreludeTable || {}, {"default":""});</script>
+    <script>
       (function () {
   const namespace =
     window.VersoBlueprint && typeof window.VersoBlueprint === "object"
@@ -8897,8 +8899,6 @@ window.onload = () => {
 })();
 </script>
     <script>
-      window.bpTexPreludeTable = Object.assign({}, window.bpTexPreludeTable || {}, {"default":""});</script>
-    <script>
       (function () {
   const styleStorageKey = "verso-blueprint-style";
   const switcherId = "bp-style-switcher";
@@ -9224,7 +9224,7 @@ window.onload = () => {
             <div class="split-toc book">
               <div class="title">
                 <label for="--verso-manual-toc-----bookRoot" class="toggle-split-toc"><input type="checkbox" class="toggle-split-toc" id="--verso-manual-toc-----bookRoot" checked="checked"></label><span class="">Table of Contents</span></div>
-              <table><tr class="numbered"><td class="num">1.</td><td><a href="Eigenforms-and-the-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--Eigenforms-and-the-old___new-decomposition">Eigenforms and the old/new decomposition</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="Strong-multiplicity-one/#Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one">Strong multiplicity one</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
+              <table><tr class="numbered"><td class="num">1.</td><td><a href="Hecke-operators-and-eigenforms/#Strong-Multiplicity-One-___-Lean-blueprint--Hecke-operators-and-eigenforms">Hecke operators and eigenforms</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="The-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--The-old___new-decomposition">The old/new decomposition</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="Strong-multiplicity-one/#Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one">Strong multiplicity one</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="numbered"><td class="num">5.</td><td><a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
             </div>
           </div>
         <div class="last"></div>
@@ -9232,40 +9232,43 @@ window.onload = () => {
       <main><div class="content-wrapper">
           <nav class="prev-next-buttons">
             <div></div>
-            <a class="local-button active" href="Eigenforms-and-the-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--Eigenforms-and-the-old___new-decomposition" rel="next" title="1. Eigenforms and the old/new decomposition"><span class="where">1. Eigenforms and the old/new decomposition</span><span class="arrow">→</span></a></nav>
+            <a class="local-button active" href="Hecke-operators-and-eigenforms/#Strong-Multiplicity-One-___-Lean-blueprint--Hecke-operators-and-eigenforms" rel="next" title="1. Hecke operators and eigenforms"><span class="where">1. Hecke operators and eigenforms</span><span class="arrow">→</span></a></nav>
           <section>
             <div class="titlepage">
               <h1>
                  Strong Multiplicity One — Lean blueprint<span class="permalink-widget inline"><a href="find/?domain=Verso.Genre.Manual.section&amp;name=Strong-Multiplicity-One-___-Lean-blueprint" title="Permalink">🔗</a></span></h1>
 <div class="bp_build_metadata" aria-label="Build metadata">
-  <span class="bp_build_metadata_item"><span class="bp_build_metadata_label">Compiled</span><span class="bp_build_metadata_value">2026-06-24T19:42:31Z</span></span><span class="bp_build_metadata_item"><a class="bp_build_metadata_label bp_build_metadata_link" href="https://github.com/CBirkbeck/AINTLIB">Project</a><a class="bp_build_metadata_commit_link" href="https://github.com/CBirkbeck/AINTLIB/commit/2050ff7a361687fc476d0cc60d58cfa71f8bbb94"><code class="bp_build_metadata_commit">2050ff7a</code></a><span class="bp_build_metadata_subject">LeanModularForms: close global Atkin–Lehner Main Lemma (axiom-clean)</span></span><span class="bp_build_metadata_item"><span class="bp_build_metadata_label">Lean</span><span class="bp_build_metadata_value">leanprover/lean4:v4.31.0-rc2</span></span><span class="bp_build_metadata_item"><a class="bp_build_metadata_label bp_build_metadata_link" href="https://github.com/leanprover/verso-blueprint">VersoBlueprint</a><a class="bp_build_metadata_commit_link" href="https://github.com/leanprover/verso-blueprint/commit/10305089592c51c8c3d7a8a15da48c77a533e8c7"><code class="bp_build_metadata_commit">v4.30.0@10305089592c</code></a></span><span class="bp_build_metadata_item"><a class="bp_build_metadata_label bp_build_metadata_link" href="https://github.com/leanprover-community/mathlib4">Mathlib</a><a class="bp_build_metadata_commit_link" href="https://github.com/leanprover-community/mathlib4/commit/d90090f647cae4f4ad4da99c0ac8bab2ca8c34ab"><code class="bp_build_metadata_commit">d90090f647ca</code></a></span></div>
+  <span class="bp_build_metadata_item"><span class="bp_build_metadata_label">Compiled</span><span class="bp_build_metadata_value">2026-06-24T20:53:37Z</span></span><span class="bp_build_metadata_item"><a class="bp_build_metadata_label bp_build_metadata_link" href="https://github.com/CBirkbeck/AINTLIB">Project</a><a class="bp_build_metadata_commit_link" href="https://github.com/CBirkbeck/AINTLIB/commit/3b7fff1ff8ae10b4843607ba2ebafa3e56546d66"><code class="bp_build_metadata_commit">3b7fff1f</code></a><span class="bp_build_metadata_subject">LeanModularForms: add Strong Multiplicity One Verso blueprint side-build</span></span><span class="bp_build_metadata_item"><span class="bp_build_metadata_label">Lean</span><span class="bp_build_metadata_value">leanprover/lean4:v4.31.0-rc2</span></span><span class="bp_build_metadata_item"><a class="bp_build_metadata_label bp_build_metadata_link" href="https://github.com/leanprover/verso-blueprint">VersoBlueprint</a><a class="bp_build_metadata_commit_link" href="https://github.com/leanprover/verso-blueprint/commit/10305089592c51c8c3d7a8a15da48c77a533e8c7"><code class="bp_build_metadata_commit">v4.30.0@10305089592c</code></a></span><span class="bp_build_metadata_item"><a class="bp_build_metadata_label bp_build_metadata_link" href="https://github.com/leanprover-community/mathlib4">Mathlib</a><a class="bp_build_metadata_commit_link" href="https://github.com/leanprover-community/mathlib4/commit/d90090f647cae4f4ad4da99c0ac8bab2ca8c34ab"><code class="bp_build_metadata_commit">d90090f647ca</code></a></span></div>
 
               <div class="authors"></div>
               <p>
                 This is the blueprint for the <a href="https://github.com/CBirkbeck/LeanModularForms"><code>LeanModularForms</code></a>
-formalisation of <strong>strong multiplicity one</strong> for cusp forms (Miyake, <em>Modular Forms</em>,
-Theorems 4.6.8 and 4.6.12), built on the abstract <code>HeckeRing.GL2</code> Hecke-ring /
-newform theory.</p>
+formalisation of <em>strong multiplicity one</em> for cusp forms (Miyake, <em>Modular Forms</em>,
+Theorems 4.6.8 and 4.6.12): a newform is determined by all but finitely many of its
+Hecke eigenvalues. The development is built on an abstract <code class="bp_math inline">\mathrm{GL}_2</code> Hecke-ring
+/ newform theory (<code>HeckeRing.GL2</code>), and the headline
+<code class="bp_math inline">\texttt{strongMultiplicityOne\_axiom\_clean}</code> is sorry-free and axiom-clean.</p>
               <p>
                 Each node carries a <code>(lean := …)</code> reference to the actual declaration in the
-<code>LeanModularForms</code> library, so Verso reads its completion status directly from
-Lean — green once the declaration is fully proved. The dependency graph at the
-foot of the page records which results feed into which.</p>
+<code>LeanModularForms</code> library, so Verso reads its completion status directly from Lean.
+The dependency graph at the foot of the page records the logical spine.</p>
               </div>
             <section>
               <h2>
                 Contents</h2>
               <ol class="section-toc">
                 <li>
-                  <a href="Eigenforms-and-the-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--Eigenforms-and-the-old___new-decomposition"><span class="number">1.</span> Eigenforms and the old/new decomposition</a></li>
+                  <a href="Hecke-operators-and-eigenforms/#Strong-Multiplicity-One-___-Lean-blueprint--Hecke-operators-and-eigenforms"><span class="number">1.</span> Hecke operators and eigenforms</a></li>
                 <li>
-                  <a href="Strong-multiplicity-one/#Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one"><span class="number">2.</span> Strong multiplicity one</a></li>
+                  <a href="The-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--The-old___new-decomposition"><span class="number">2.</span> The old/new decomposition</a></li>
                 <li>
-                  <a href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph"><span class="number">3.</span> Dependency graph</a></li>
+                  <a href="Strong-multiplicity-one/#Strong-Multiplicity-One-___-Lean-blueprint--Strong-multiplicity-one"><span class="number">3.</span> Strong multiplicity one</a></li>
+                <li>
+                  <a href="Dependency-graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-graph"><span class="number">4.</span> Dependency graph</a></li>
                 <li>
                   <a href="Dependency-Graph/#Strong-Multiplicity-One-___-Lean-blueprint--Dependency-Graph"><span class="unnumbered"></span>Dependency Graph</a></li>
                 <li>
-                  <a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary"><span class="number">4.</span> Progress summary</a></li>
+                  <a href="Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary"><span class="number">5.</span> Progress summary</a></li>
                 <li>
                   <a href="Blueprint-Summary/#Strong-Multiplicity-One-___-Lean-blueprint--Blueprint-Summary"><span class="unnumbered"></span>Blueprint Summary</a></li>
                 </ol>
@@ -9273,7 +9276,7 @@ foot of the page records which results feed into which.</p>
             </section>
           <nav class="prev-next-buttons">
             <div></div>
-            <a class="local-button active" href="Eigenforms-and-the-old___new-decomposition/#Strong-Multiplicity-One-___-Lean-blueprint--Eigenforms-and-the-old___new-decomposition" rel="next" title="1. Eigenforms and the old/new decomposition"><span class="where">1. Eigenforms and the old/new decomposition</span><span class="arrow">→</span></a></nav>
+            <a class="local-button active" href="Hecke-operators-and-eigenforms/#Strong-Multiplicity-One-___-Lean-blueprint--Hecke-operators-and-eigenforms" rel="next" title="1. Hecke operators and eigenforms"><span class="where">1. Hecke operators and eigenforms</span><span class="arrow">→</span></a></nav>
           </div>
         </main></div>
     </body>

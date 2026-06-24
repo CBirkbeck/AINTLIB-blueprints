@@ -2,44 +2,73 @@
  "<code>self.I.FG</code><span class=\"sep\"></span><code class=\"docstring\">`I` is finitely generated. </code>",
  "8":
  "<code>IsOpen.{u} {X : Type u} [TopologicalSpace X] : Set X → Prop</code><span class=\"sep\"></span><code class=\"docstring\">`IsOpen s` means that `s` is open in the ambient topological space on `X` </code>",
+ "76":
+ "<code>Fin (n : ℕ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">Natural numbers less than some upper bound.\n\nIn particular, a `Fin n` is a natural number `i` with the constraint that `i &lt; n`. It is the\ncanonical type with `n` elements.\n</code>",
+ "75":
+ "<code>MvPowerSeries.{u_1, u_2} (σ : Type u_1) (R : Type u_2) : Type (max u_2 u_1)</code><span class=\"sep\"></span><code class=\"docstring\">Multivariate formal power series, where `σ` is the index set of the variables\nand `R` is the coefficient ring. </code>",
+ "74":
+ "<code>NonarchimedeanRing.{u_1} (R : Type u_1) [Ring R] [TopologicalSpace R] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological ring is nonarchimedean if its underlying topological additive\ngroup is nonarchimedean. </code>",
+ "73": "<code>Type u</code>",
+ "72":
+ "<code>TateAlgebra.{u} (A : Type u) [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] :\n  Subring (MvPowerSeries (Fin 1) A)</code><span class=\"sep\"></span><code class=\"docstring\">The univariate Tate algebra `A⟨X⟩`, the ring of restricted power series in one variable.\nThis is `restrictedMvPowerSeriesSubring 1 A`, specialized to the univariate case.\nSee Wedhorn, Definition 6.9. </code>",
+ "71":
+ "<code>ValuationSpectrum.IsTateRing.isAnalytic.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] [IsTateRing A]\n  (v : Spv A) : v.IsAnalytic</code><span class=\"sep\"></span><code class=\"docstring\">**Proposition 8.36 of Wedhorn.** If `A` is a Tate ring, every point of `Spv A` is analytic. </code>",
+ "70":
+ "<code>ValuationSpectrum.IsAnalytic.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (v : Spv A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A point `v : Spv A` is *analytic* if its support `supp(v)` is not an open ideal\n(Definition 8.35 of Wedhorn). </code>",
  "7":
  "<code>IsOpen ↑self.A₀</code><span class=\"sep\"></span><code class=\"docstring\">`A₀` is open in `A`. </code>",
+ "69":
+ "<code>Inter.inter.{u} {α : Type u} [self : Inter α] : α → α → α</code><span class=\"sep\"></span><code class=\"docstring\">`a ∩ b` is the intersection of `a` and `b`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∩` in identifiers is `inter`.</code>",
+ "68": "<code>ValuationSpectrum.IsRationalSubset V</code>",
+ "67": "<code>ValuationSpectrum.IsRationalSubset U</code>",
+ "66":
+ "<code>ValuationSpectrum.IsRationalSubset.inter.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] {U V : Set (Spv A)} (hU : ValuationSpectrum.IsRationalSubset U)\n  (hV : ValuationSpectrum.IsRationalSubset V) : ValuationSpectrum.IsRationalSubset (U ∩ V)</code><span class=\"sep\"></span><code class=\"docstring\">The intersection of two rational subsets is rational (Theorem 7.35(2)). </code>",
+ "65": "<code>Set (Spv A)</code>",
+ "64":
+ "<code>ValuationSpectrum.IsRationalSubset.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] (U : Set (Spv A)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A rational subset is one of the form `rationalOpen T s` (Definition 7.29). </code>",
+ "63":
+ "<code>Finset.{u_4} (α : Type u_4) : Type u_4</code><span class=\"sep\"></span><code class=\"docstring\">`Finset α` is the type of finite sets of elements of `α`. It is implemented\nas a multiset (a list up to permutation) which has no duplicate elements. </code>",
+ "62": "<code>Finset A</code>",
+ "61":
+ "<code>ValuationSpectrum.rationalOpen.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] [ValuationSpectrum.PlusSubring A]\n  (T : Finset A) (s : A) : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">A rational subset `R(T/s)` of `Spa(A, A⁺)` (Definition 7.29). </code>",
+ "60":
+ "<code>Subring A</code><span class=\"sep\"></span><code class=\"docstring\">The subring of integral elements `A⁺`. </code>",
  "6":
  "<code>PairOfDefinition.A₀.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (self : PairOfDefinition A) : Subring A</code><span class=\"sep\"></span><code class=\"docstring\">The ring of definition `A₀`, an open subring of `A`. </code>",
  "59":
- "<code>Fin (n : ℕ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">Natural numbers less than some upper bound.\n\nIn particular, a `Fin n` is a natural number `i` with the constraint that `i &lt; n`. It is the\ncanonical type with `n` elements.\n</code>",
- "58":
- "<code>MvPowerSeries.{u_1, u_2} (σ : Type u_1) (R : Type u_2) : Type (max u_2 u_1)</code><span class=\"sep\"></span><code class=\"docstring\">Multivariate formal power series, where `σ` is the index set of the variables\nand `R` is the coefficient ring. </code>",
- "57":
- "<code>NonarchimedeanRing.{u_1} (R : Type u_1) [Ring R] [TopologicalSpace R] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological ring is nonarchimedean if its underlying topological additive\ngroup is nonarchimedean. </code>",
- "56": "<code>Type u</code>",
- "55":
- "<code>TateAlgebra.{u} (A : Type u) [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] :\n  Subring (MvPowerSeries (Fin 1) A)</code><span class=\"sep\"></span><code class=\"docstring\">The univariate Tate algebra `A⟨X⟩`, the ring of restricted power series in one variable.\nThis is `restrictedMvPowerSeriesSubring 1 A`, specialized to the univariate case.\nSee Wedhorn, Definition 6.9. </code>",
- "54":
- "<code>ValuationSpectrum.PlusSubring.{u_1} (A : Type u_1) [CommRing A] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A commutative ring equipped with a designated subring `A⁺`. </code>",
- "53":
- "<code>Subring A</code><span class=\"sep\"></span><code class=\"docstring\">The subring of integral elements `A⁺`. </code>",
- "52": "<code>Type u_2</code>",
- "51":
  "<code>ValuationSpectrum.Spa.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] (Aplus : Subring A) : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">The *adic spectrum* `Spa(A, A⁺)` (Definition 7.23 of Wedhorn). </code>",
- "50":
+ "58":
+ "<code>ValuationSpectrum.PlusSubring.{u_1} (A : Type u_1) [CommRing A] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A commutative ring equipped with a designated subring `A⁺`. </code>",
+ "57":
+ "<code>ValuationSpectrum.IsAffinoidRing.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`(A, A⁺)` is an affinoid ring if `A⁺` is a ring of integral elements (Definition 7.14). </code>",
+ "56":
  "<code>ValuationSpectrum.IsRingOfIntegralElements.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (B : Subring A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A ring of integral elements (Definition 7.14(1)): open, integrally closed, and in `A°`.\n\nA `class` (not a bare `structure`) so it can be required as `[IsRingOfIntegralElements (A⁺)]`\non `Spa`-level theorems — the faithful affinoid-ring interface (expert-review 2026-06-18,\nreviewer Q1). The bare `PlusSubring` carrier stays low-level; this records the three\nDefinition-7.14 axioms (open, integrally closed, `⊆ A°`) that make `(A, A⁺)` an affinoid ring. </code>",
- "5": "<code>PairOfDefinition A</code>",
- "49":
+ "55":
  "<code>TopologicalRing.powerBoundedSubring.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] : Set A</code><span class=\"sep\"></span><code class=\"docstring\">The set `A°` of all power-bounded elements. </code>",
- "48":
+ "54":
  "<code>HasSubset.Subset.{u} {α : Type u} [self : HasSubset α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">Subset relation: `a ⊆ b`  \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⊆` in identifiers is `subset`.</code>",
- "47":
+ "53":
  "<code>↑B ⊆ TopologicalRing.powerBoundedSubring A</code><span class=\"sep\"></span><code class=\"docstring\">`B ⊆ A°`. </code>",
- "46":
+ "52":
  "<code>Membership.mem.{u, v} {α : outParam (Type u)} {γ : Type v} [self : Membership α γ] : γ → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The membership relation `a ∈ s : Prop` where `a : α`, `s : γ`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∈` in identifiers is `mem`.</code>",
- "45":
+ "51":
  "<code>IsIntegral.{u_1, u_3} (R : Type u_1) {A : Type u_3} [CommRing R] [Ring A] [Algebra R A] (x : A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An element `x` of an algebra `A` over a commutative ring `R` is said to be *integral*,\nif it is a root of some monic polynomial `p : R[X]`.\nEquivalently, the element is integral over `R` with respect to the induced `algebraMap` </code>",
- "44":
+ "50":
  "<code>∀ (a : A), IsIntegral (↥B) a → a ∈ B</code><span class=\"sep\"></span><code class=\"docstring\">`B` is integrally closed in `A`. </code>",
- "43": "<code>Subring A</code>",
- "42":
+ "5": "<code>PairOfDefinition A</code>",
+ "49": "<code>Subring A</code>",
+ "48":
  "<code>IsOpen ↑B</code><span class=\"sep\"></span><code class=\"docstring\">`B` is open in `A`. </code>",
+ "47":
+ "<code>ValuationSpectrum.Cont.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">The set `Cont(A)` of continuous valuations in `Spv(A)` (Definition 7.7 of Wedhorn). </code>",
+ "46":
+ "<code>Valuation.{u_3, u_4} (R : Type u_3) (Γ₀ : Type u_4) [LinearOrderedCommMonoidWithZero Γ₀] [Ring R] : Type (max u_3 u_4)</code><span class=\"sep\"></span><code class=\"docstring\">The type of `Γ₀`-valued valuations on `R`.\n\nWhen you extend this structure, make sure to extend `ValuationClass`. </code>",
+ "45": "<code>Valuation A Γ₀</code>",
+ "44":
+ "<code>LinearOrderedCommGroupWithZero.{u_3} (α : Type u_3) : Type u_3</code><span class=\"sep\"></span><code class=\"docstring\">A linearly ordered commutative group with a zero element. </code>",
+ "43": "<code>Type u_2</code>",
+ "42":
+ "<code>Valuation.IsContinuous.{u_1, u_2} {A : Type u_1} [CommRing A] {Γ₀ : Type u_2} [LinearOrderedCommGroupWithZero Γ₀]\n  [TopologicalSpace A] (v : Valuation A Γ₀) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A valuation `v` on a topological ring `A` is *continuous* if `{ a | v(a) &lt; γ }` is open\nfor all `γ` (Definition 7.7 of Wedhorn). </code>",
  "41": "<code>Spv A</code>",
  "40":
  "<code>ValuationSpectrum.supp.{u_1} {A : Type u_1} [CommRing A] (v : Spv A) : Ideal A</code><span class=\"sep\"></span><code class=\"docstring\">The support prime ideal `{ a ∈ A | v(a) = 0 }` of a point `v ∈ Spv A`. </code>",

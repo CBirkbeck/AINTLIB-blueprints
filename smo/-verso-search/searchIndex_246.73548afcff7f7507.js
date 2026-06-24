@@ -1,0 +1,1 @@
+window.docContents[246].resolve({"/Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary":{"contents":"","context":"Strong Multiplicity One — Lean blueprint","header":"5. Progress summary","id":"/Progress-summary/#Strong-Multiplicity-One-___-Lean-blueprint--Progress-summary"}});

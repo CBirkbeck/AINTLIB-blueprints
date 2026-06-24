@@ -9224,7 +9224,7 @@ window.onload = () => {
             <div class="split-toc book">
               <div class="title">
                 <label for="--verso-manual-toc-----bookRoot" class="toggle-split-toc"><input type="checkbox" class="toggle-split-toc" id="--verso-manual-toc-----bookRoot" checked="checked"></label><span class="">Table of Contents</span></div>
-              <table><tr class="numbered"><td class="num">1.</td><td><a href="Point-counts-over-finite-fields/#The-Hasse-Bound-___-Lean-blueprint--Point-counts-over-finite-fields">Point counts over finite fields</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="The-Frobenius-endomorphism/#The-Hasse-Bound-___-Lean-blueprint--The-Frobenius-endomorphism">The Frobenius endomorphism</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="The-Hasse-bound/#The-Hasse-Bound-___-Lean-blueprint--The-Hasse-bound">The Hasse bound</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Dependency-graph/#The-Hasse-Bound-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Dependency-Graph/#The-Hasse-Bound-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="numbered"><td class="num">5.</td><td><a href="Progress-summary/#The-Hasse-Bound-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="current unnumbered"><td class="num"><td><a href="Blueprint-Summary/#The-Hasse-Bound-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
+              <table><tr class="numbered"><td class="num">1.</td><td><a href="Point-counts-and-the-Frobenius-endomorphism/#The-Hasse-Bound-___-Lean-blueprint--Point-counts-and-the-Frobenius-endomorphism">Point counts and the Frobenius endomorphism</a></td></tr><tr class="numbered"><td class="num">2.</td><td><a href="The-degree-quadratic-form/#The-Hasse-Bound-___-Lean-blueprint--The-degree-quadratic-form">The degree quadratic form</a></td></tr><tr class="numbered"><td class="num">3.</td><td><a href="The-Hasse-bound/#The-Hasse-Bound-___-Lean-blueprint--The-Hasse-bound">The Hasse bound</a></td></tr><tr class="numbered"><td class="num">4.</td><td><a href="Dependency-graph/#The-Hasse-Bound-___-Lean-blueprint--Dependency-graph">Dependency graph</a></td></tr><tr class="unnumbered"><td class="num"><td><a href="Dependency-Graph/#The-Hasse-Bound-___-Lean-blueprint--Dependency-Graph">Dependency Graph</a></td></tr><tr class="numbered"><td class="num">5.</td><td><a href="Progress-summary/#The-Hasse-Bound-___-Lean-blueprint--Progress-summary">Progress summary</a></td></tr><tr class="current unnumbered"><td class="num"><td><a href="Blueprint-Summary/#The-Hasse-Bound-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></td></tr></table></div>
             <div class="split-toc">
               <div class="title">
                 <span class="no-toggle"></span><span class="unnumbered"></span><span class="current"><a href="Blueprint-Summary/#The-Hasse-Bound-___-Lean-blueprint--Blueprint-Summary">Blueprint Summary</a></span></div>
@@ -9247,39 +9247,49 @@ window.onload = () => {
                 <div class="bp_summary_preview_panel_body bp_preview_panel_body"></div>
                 </aside><details class="bp_summary_section" open="open"><summary>Overview</summary><div class="bp_summary_grid">
                   <div class="bp_summary_card">
-                    <span class="bp_summary_label">Total entries</span><span class="bp_summary_value">3</span><span class="bp_summary_status">completed: 3; deps incomplete: 0; sorries: 0; no proof: 0</span></div>
+                    <span class="bp_summary_label">Total entries</span><span class="bp_summary_value">6</span><span class="bp_summary_status">completed: 6; deps incomplete: 0; sorries: 0; no proof: 0</span></div>
                   <div class="bp_summary_card">
                     <span class="bp_summary_label">Ready now</span><span class="bp_summary_value">0</span><span class="bp_summary_status">Entries whose next formalization step is currently unblocked.</span></div>
                   <div class="bp_summary_card">
-                    <span class="bp_summary_label">Fully closed</span><span class="bp_summary_value">3</span><span class="bp_summary_status">Local code and prerequisite closure are both complete.</span></div>
+                    <span class="bp_summary_label">Fully closed</span><span class="bp_summary_value">6</span><span class="bp_summary_status">Local code and prerequisite closure are both complete.</span></div>
                   <div class="bp_summary_card">
                     <span class="bp_summary_label">Actionable priorities</span><span class="bp_summary_value">0</span><span class="bp_summary_status">Entries ready now and already unlocking downstream work.</span></div>
                   </div>
-                </details><details class="bp_summary_section"><summary>Entry index (3)</summary><div class="bp_summary_grid">
+                </details><details class="bp_summary_section"><summary>Entry index (6)</summary><div class="bp_summary_grid">
                   <div class="bp_summary_card">
                     <span class="bp_summary_label">Definitions</span><span class="bp_summary_value">2</span><span class="bp_summary_status">completed: 2; deps incomplete: 0; sorries: 0; no proof: 0</span></div>
                   <div class="bp_summary_card">
-                    <span class="bp_summary_label">Theorems</span><span class="bp_summary_value">1</span><span class="bp_summary_status">completed: 1; deps incomplete: 0; sorries: 0; no proof: 0</span></div>
+                    <span class="bp_summary_label">Theorems</span><span class="bp_summary_value">4</span><span class="bp_summary_status">completed: 4; deps incomplete: 0; sorries: 0; no proof: 0</span></div>
                   </div>
                 <details class="bp_summary_subsection"><summary>Definition Index (2)</summary><ul class="bp_summary_list">
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="The-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
-                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="The-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog-005Fpullback-005Fapply" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog_pullback_apply" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog_pullback_apply"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog_pullback_apply"><code>HasseWeil.frobeniusIsog_pullback_apply</code></a></span></li>
                           </ul>
                         </details></li>
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-over-finite-fields/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                       <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-over-finite-fields/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
                           </ul>
                         </details></li>
                     </ul>
-                  </details><details class="bp_summary_subsection"><summary>Theorem / Proposition / Lemma / Corollary Index (1)</summary><ul class="bp_summary_list">
+                  </details><details class="bp_summary_subsection"><summary>Theorem / Proposition / Lemma / Corollary Index (4)</summary><ul class="bp_summary_list">
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«trace-sq-le-four-q»" data-bp-preview-key="«trace-sq-le-four-q»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_trace-sq-le-four-q_FLQQ_--statement"><code>«trace-sq-le-four-q»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002Etrace-005Fsq-005Fle-005Ffour-005Fmul-005Fdeg" data-bp-preview-title="Lean declaration HasseWeil.trace_sq_le_four_mul_deg" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.trace_sq_le_four_mul_deg"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_trace-sq-le-four-q_FLQQ_-HasseWeil___trace_sq_le_four_mul_deg"><code>HasseWeil.trace_sq_le_four_mul_deg</code></a></span></li>
+                          </ul>
+                        </details></li>
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
                         <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«hasse-bound»" data-bp-preview-key="«hasse-bound»--statement"><a href="The-Hasse-bound/#--informal-preview-_FLQQ_hasse-bound_FLQQ_--statement"><code>«hasse-bound»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
@@ -9288,6 +9298,22 @@ window.onload = () => {
                             <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EWeilPairing-002Ehasse-005Fbound" data-bp-preview-title="Lean declaration HasseWeil.WeilPairing.hasse_bound" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.WeilPairing.hasse_bound"><a href="The-Hasse-bound/#--informal-external-decl-_FLQQ_hasse-bound_FLQQ_-HasseWeil___WeilPairing___hasse_bound"><code>HasseWeil.WeilPairing.hasse_bound</code></a></span></li>
                           <li>
                             <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EWeilPairing-002Ehasse-005Fbound-005Funconditional" data-bp-preview-title="Lean declaration HasseWeil.WeilPairing.hasse_bound_unconditional" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.WeilPairing.hasse_bound_unconditional"><a href="The-Hasse-bound/#--informal-external-decl-_FLQQ_hasse-bound_FLQQ_-HasseWeil___WeilPairing___hasse_bound_unconditional"><code>HasseWeil.WeilPairing.hasse_bound_unconditional</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«degree-quadratic-form»" data-bp-preview-key="«degree-quadratic-form»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_degree-quadratic-form_FLQQ_--statement"><code>«degree-quadratic-form»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EtraceOfFrobenius-005Fsq-005Fle-005Fof-005Fqf-005Fnonneg" data-bp-preview-title="Lean declaration HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_degree-quadratic-form_FLQQ_-HasseWeil___traceOfFrobenius_sq_le_of_qf_nonneg"><code>HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«sqrt-bound»" data-bp-preview-key="«sqrt-bound»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_sqrt-bound_FLQQ_--statement"><code>«sqrt-bound»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002Eabs-005Fle-005Ftwo-005Fsqrt-005Fof-005Fsq-005Fle" data-bp-preview-title="Lean declaration HasseWeil.abs_le_two_sqrt_of_sq_le" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.abs_le_two_sqrt_of_sq_le"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_sqrt-bound_FLQQ_-HasseWeil___abs_le_two_sqrt_of_sq_le"><code>HasseWeil.abs_le_two_sqrt_of_sq_le</code></a></span></li>
                           </ul>
                         </details></li>
                     </ul>
@@ -9295,77 +9321,129 @@ window.onload = () => {
                   <div class="bp_summary_card">
                     <span class="bp_summary_label">Statement-used entries</span><span class="bp_summary_value">2</span><span class="bp_summary_status">Entries reused in statement dependencies.</span></div>
                   <div class="bp_summary_card">
-                    <span class="bp_summary_label">Proof-used entries</span><span class="bp_summary_value">2</span><span class="bp_summary_status">Entries reused in proof-only dependencies.</span></div>
+                    <span class="bp_summary_label">Proof-used entries</span><span class="bp_summary_value">5</span><span class="bp_summary_status">Entries reused in proof-only dependencies.</span></div>
                   </div>
                 <details class="bp_summary_subsection"><summary>Most used in statements (2)</summary><ul class="bp_summary_list">
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-over-finite-fields/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                       <div class="bp_summary_item_body">
                         Reverse dependencies recorded in statement dependencies.</div>
                       <div class="bp_summary_badge_row">
-                        <span class="bp_summary_badge bp_summary_badge_warn">statement uses: 2</span><span class="bp_summary_badge">proof uses: 1</span><span class="bp_summary_badge">direct uses: 3</span><span class="bp_summary_badge">downstream unlocks: 2</span></div>
+                        <span class="bp_summary_badge bp_summary_badge_warn">statement uses: 1</span><span class="bp_summary_badge">proof uses: 1</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 3</span></div>
                       <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-over-finite-fields/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
                           </ul>
                         </details></li>
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="The-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                       <div class="bp_summary_item_body">
                         Reverse dependencies recorded in statement dependencies.</div>
                       <div class="bp_summary_badge_row">
-                        <span class="bp_summary_badge bp_summary_badge_warn">statement uses: 1</span><span class="bp_summary_badge">proof uses: 1</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
-                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                        <span class="bp_summary_badge bp_summary_badge_warn">statement uses: 1</span><span class="bp_summary_badge">proof uses: 1</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 2</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="The-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog-005Fpullback-005Fapply" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog_pullback_apply" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog_pullback_apply"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog_pullback_apply"><code>HasseWeil.frobeniusIsog_pullback_apply</code></a></span></li>
                           </ul>
                         </details></li>
                     </ul>
-                  </details><details class="bp_summary_subsection"><summary>Most used in proofs (2)</summary><ul class="bp_summary_list">
+                  </details><details class="bp_summary_subsection"><summary>Most used in proofs (5)</summary><ul class="bp_summary_list">
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-over-finite-fields/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«trace-sq-le-four-q»" data-bp-preview-key="«trace-sq-le-four-q»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_trace-sq-le-four-q_FLQQ_--statement"><code>«trace-sq-le-four-q»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
                       <div class="bp_summary_item_body">
                         Reverse dependencies recorded in proof dependencies.</div>
                       <div class="bp_summary_badge_row">
-                        <span class="bp_summary_badge bp_summary_badge_warn">proof uses: 1</span><span class="bp_summary_badge">statement uses: 2</span><span class="bp_summary_badge">direct uses: 3</span><span class="bp_summary_badge">downstream unlocks: 2</span></div>
+                        <span class="bp_summary_badge bp_summary_badge_warn">proof uses: 2</span><span class="bp_summary_badge">statement uses: 0</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 3</span></div>
                       <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-over-finite-fields/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002Etrace-005Fsq-005Fle-005Ffour-005Fmul-005Fdeg" data-bp-preview-title="Lean declaration HasseWeil.trace_sq_le_four_mul_deg" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.trace_sq_le_four_mul_deg"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_trace-sq-le-four-q_FLQQ_-HasseWeil___trace_sq_le_four_mul_deg"><code>HasseWeil.trace_sq_le_four_mul_deg</code></a></span></li>
                           </ul>
                         </details></li>
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="The-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                       <div class="bp_summary_item_body">
                         Reverse dependencies recorded in proof dependencies.</div>
                       <div class="bp_summary_badge_row">
-                        <span class="bp_summary_badge bp_summary_badge_warn">proof uses: 1</span><span class="bp_summary_badge">statement uses: 1</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
+                        <span class="bp_summary_badge bp_summary_badge_warn">proof uses: 1</span><span class="bp_summary_badge">statement uses: 1</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 3</span></div>
                       <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="The-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                      <div class="bp_summary_item_body">
+                        Reverse dependencies recorded in proof dependencies.</div>
+                      <div class="bp_summary_badge_row">
+                        <span class="bp_summary_badge bp_summary_badge_warn">proof uses: 1</span><span class="bp_summary_badge">statement uses: 1</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 2</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog-005Fpullback-005Fapply" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog_pullback_apply" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog_pullback_apply"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog_pullback_apply"><code>HasseWeil.frobeniusIsog_pullback_apply</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«degree-quadratic-form»" data-bp-preview-key="«degree-quadratic-form»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_degree-quadratic-form_FLQQ_--statement"><code>«degree-quadratic-form»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                      <div class="bp_summary_item_body">
+                        Reverse dependencies recorded in proof dependencies.</div>
+                      <div class="bp_summary_badge_row">
+                        <span class="bp_summary_badge bp_summary_badge_warn">proof uses: 1</span><span class="bp_summary_badge">statement uses: 0</span><span class="bp_summary_badge">direct uses: 1</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EtraceOfFrobenius-005Fsq-005Fle-005Fof-005Fqf-005Fnonneg" data-bp-preview-title="Lean declaration HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_degree-quadratic-form_FLQQ_-HasseWeil___traceOfFrobenius_sq_le_of_qf_nonneg"><code>HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«sqrt-bound»" data-bp-preview-key="«sqrt-bound»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_sqrt-bound_FLQQ_--statement"><code>«sqrt-bound»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                      <div class="bp_summary_item_body">
+                        Reverse dependencies recorded in proof dependencies.</div>
+                      <div class="bp_summary_badge_row">
+                        <span class="bp_summary_badge bp_summary_badge_warn">proof uses: 1</span><span class="bp_summary_badge">statement uses: 0</span><span class="bp_summary_badge">direct uses: 1</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002Eabs-005Fle-005Ftwo-005Fsqrt-005Fof-005Fsq-005Fle" data-bp-preview-title="Lean declaration HasseWeil.abs_le_two_sqrt_of_sq_le" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.abs_le_two_sqrt_of_sq_le"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_sqrt-bound_FLQQ_-HasseWeil___abs_le_two_sqrt_of_sq_le"><code>HasseWeil.abs_le_two_sqrt_of_sq_le</code></a></span></li>
                           </ul>
                         </details></li>
                     </ul>
                   </details></details><details class="bp_summary_section"><summary>Metadata</summary><details class="bp_summary_subsection bp_summary_subsection_warn"><summary>Metadata audit</summary><div class="bp_summary_grid">
                     <div class="bp_summary_card bp_summary_card_warn">
-                      <span class="bp_summary_label">Missing owner</span><span class="bp_summary_value">3</span></div>
+                      <span class="bp_summary_label">Missing owner</span><span class="bp_summary_value">6</span></div>
                     <div class="bp_summary_card bp_summary_card_warn">
-                      <span class="bp_summary_label">Missing effort</span><span class="bp_summary_value">3</span></div>
+                      <span class="bp_summary_label">Missing effort</span><span class="bp_summary_value">6</span></div>
                     <div class="bp_summary_card bp_summary_card_warn">
-                      <span class="bp_summary_label">Untagged</span><span class="bp_summary_value">3</span></div>
+                      <span class="bp_summary_label">Untagged</span><span class="bp_summary_value">6</span></div>
                     </div>
-                  <details class="bp_summary_nested"><summary>Missing owner (3)</summary><ul class="bp_summary_list">
+                  <details class="bp_summary_nested"><summary>Missing owner (6)</summary><ul class="bp_summary_list">
                       <li class="bp_summary_item">
                         <div class="bp_summary_item_top">
-                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="The-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«degree-quadratic-form»" data-bp-preview-key="«degree-quadratic-form»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_degree-quadratic-form_FLQQ_--statement"><code>«degree-quadratic-form»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
                         <div class="bp_summary_item_body">
                           Missing owner metadata.</div>
                         <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                             <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="The-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EtraceOfFrobenius-005Fsq-005Fle-005Fof-005Fqf-005Fnonneg" data-bp-preview-title="Lean declaration HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_degree-quadratic-form_FLQQ_-HasseWeil___traceOfFrobenius_sq_le_of_qf_nonneg"><code>HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing owner metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog-005Fpullback-005Fapply" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog_pullback_apply" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog_pullback_apply"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog_pullback_apply"><code>HasseWeil.frobeniusIsog_pullback_apply</code></a></span></li>
                             </ul>
                           </details></li>
                       <li class="bp_summary_item">
@@ -9382,24 +9460,56 @@ window.onload = () => {
                           </details></li>
                       <li class="bp_summary_item">
                         <div class="bp_summary_item_top">
-                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-over-finite-fields/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                         <div class="bp_summary_item_body">
                           Missing owner metadata.</div>
                         <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                             <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-over-finite-fields/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«sqrt-bound»" data-bp-preview-key="«sqrt-bound»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_sqrt-bound_FLQQ_--statement"><code>«sqrt-bound»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing owner metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002Eabs-005Fle-005Ftwo-005Fsqrt-005Fof-005Fsq-005Fle" data-bp-preview-title="Lean declaration HasseWeil.abs_le_two_sqrt_of_sq_le" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.abs_le_two_sqrt_of_sq_le"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_sqrt-bound_FLQQ_-HasseWeil___abs_le_two_sqrt_of_sq_le"><code>HasseWeil.abs_le_two_sqrt_of_sq_le</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«trace-sq-le-four-q»" data-bp-preview-key="«trace-sq-le-four-q»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_trace-sq-le-four-q_FLQQ_--statement"><code>«trace-sq-le-four-q»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing owner metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002Etrace-005Fsq-005Fle-005Ffour-005Fmul-005Fdeg" data-bp-preview-title="Lean declaration HasseWeil.trace_sq_le_four_mul_deg" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.trace_sq_le_four_mul_deg"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_trace-sq-le-four-q_FLQQ_-HasseWeil___trace_sq_le_four_mul_deg"><code>HasseWeil.trace_sq_le_four_mul_deg</code></a></span></li>
                             </ul>
                           </details></li>
                       </ul>
-                    </details><details class="bp_summary_nested"><summary>Missing effort (3)</summary><ul class="bp_summary_list">
+                    </details><details class="bp_summary_nested"><summary>Missing effort (6)</summary><ul class="bp_summary_list">
                       <li class="bp_summary_item">
                         <div class="bp_summary_item_top">
-                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="The-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«degree-quadratic-form»" data-bp-preview-key="«degree-quadratic-form»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_degree-quadratic-form_FLQQ_--statement"><code>«degree-quadratic-form»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
                         <div class="bp_summary_item_body">
                           Missing effort metadata.</div>
                         <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                             <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="The-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EtraceOfFrobenius-005Fsq-005Fle-005Fof-005Fqf-005Fnonneg" data-bp-preview-title="Lean declaration HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_degree-quadratic-form_FLQQ_-HasseWeil___traceOfFrobenius_sq_le_of_qf_nonneg"><code>HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing effort metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog-005Fpullback-005Fapply" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog_pullback_apply" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog_pullback_apply"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog_pullback_apply"><code>HasseWeil.frobeniusIsog_pullback_apply</code></a></span></li>
                             </ul>
                           </details></li>
                       <li class="bp_summary_item">
@@ -9416,24 +9526,56 @@ window.onload = () => {
                           </details></li>
                       <li class="bp_summary_item">
                         <div class="bp_summary_item_top">
-                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-over-finite-fields/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                         <div class="bp_summary_item_body">
                           Missing effort metadata.</div>
                         <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                             <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-over-finite-fields/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«sqrt-bound»" data-bp-preview-key="«sqrt-bound»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_sqrt-bound_FLQQ_--statement"><code>«sqrt-bound»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing effort metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002Eabs-005Fle-005Ftwo-005Fsqrt-005Fof-005Fsq-005Fle" data-bp-preview-title="Lean declaration HasseWeil.abs_le_two_sqrt_of_sq_le" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.abs_le_two_sqrt_of_sq_le"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_sqrt-bound_FLQQ_-HasseWeil___abs_le_two_sqrt_of_sq_le"><code>HasseWeil.abs_le_two_sqrt_of_sq_le</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«trace-sq-le-four-q»" data-bp-preview-key="«trace-sq-le-four-q»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_trace-sq-le-four-q_FLQQ_--statement"><code>«trace-sq-le-four-q»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing effort metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002Etrace-005Fsq-005Fle-005Ffour-005Fmul-005Fdeg" data-bp-preview-title="Lean declaration HasseWeil.trace_sq_le_four_mul_deg" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.trace_sq_le_four_mul_deg"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_trace-sq-le-four-q_FLQQ_-HasseWeil___trace_sq_le_four_mul_deg"><code>HasseWeil.trace_sq_le_four_mul_deg</code></a></span></li>
                             </ul>
                           </details></li>
                       </ul>
-                    </details><details class="bp_summary_nested"><summary>Untagged (3)</summary><ul class="bp_summary_list">
+                    </details><details class="bp_summary_nested"><summary>Untagged (6)</summary><ul class="bp_summary_list">
                       <li class="bp_summary_item">
                         <div class="bp_summary_item_top">
-                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="The-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«degree-quadratic-form»" data-bp-preview-key="«degree-quadratic-form»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_degree-quadratic-form_FLQQ_--statement"><code>«degree-quadratic-form»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
                         <div class="bp_summary_item_body">
                           Missing tag metadata.</div>
                         <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                             <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="The-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EtraceOfFrobenius-005Fsq-005Fle-005Fof-005Fqf-005Fnonneg" data-bp-preview-title="Lean declaration HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_degree-quadratic-form_FLQQ_-HasseWeil___traceOfFrobenius_sq_le_of_qf_nonneg"><code>HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing tag metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog-005Fpullback-005Fapply" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog_pullback_apply" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog_pullback_apply"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog_pullback_apply"><code>HasseWeil.frobeniusIsog_pullback_apply</code></a></span></li>
                             </ul>
                           </details></li>
                       <li class="bp_summary_item">
@@ -9450,27 +9592,47 @@ window.onload = () => {
                           </details></li>
                       <li class="bp_summary_item">
                         <div class="bp_summary_item_top">
-                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-over-finite-fields/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
                         <div class="bp_summary_item_body">
                           Missing tag metadata.</div>
                         <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                             <li>
-                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-over-finite-fields/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«sqrt-bound»" data-bp-preview-key="«sqrt-bound»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_sqrt-bound_FLQQ_--statement"><code>«sqrt-bound»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing tag metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002Eabs-005Fle-005Ftwo-005Fsqrt-005Fof-005Fsq-005Fle" data-bp-preview-title="Lean declaration HasseWeil.abs_le_two_sqrt_of_sq_le" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.abs_le_two_sqrt_of_sq_le"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_sqrt-bound_FLQQ_-HasseWeil___abs_le_two_sqrt_of_sq_le"><code>HasseWeil.abs_le_two_sqrt_of_sq_le</code></a></span></li>
+                            </ul>
+                          </details></li>
+                      <li class="bp_summary_item">
+                        <div class="bp_summary_item_top">
+                          <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«trace-sq-le-four-q»" data-bp-preview-key="«trace-sq-le-four-q»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_trace-sq-le-four-q_FLQQ_--statement"><code>«trace-sq-le-four-q»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                        <div class="bp_summary_item_body">
+                          Missing tag metadata.</div>
+                        <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                            <li>
+                              <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002Etrace-005Fsq-005Fle-005Ffour-005Fmul-005Fdeg" data-bp-preview-title="Lean declaration HasseWeil.trace_sq_le_four_mul_deg" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.trace_sq_le_four_mul_deg"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_trace-sq-le-four-q_FLQQ_-HasseWeil___trace_sq_le_four_mul_deg"><code>HasseWeil.trace_sq_le_four_mul_deg</code></a></span></li>
                             </ul>
                           </details></li>
                       </ul>
                     </details></details></details><details class="bp_summary_section"><summary>Structure and coverage</summary><div class="bp_summary_grid">
                   <div class="bp_summary_card">
-                    <span class="bp_summary_label">Fully closed</span><span class="bp_summary_value">3</span><span class="bp_summary_status">Local code and ancestor closure are both complete.</span></div>
+                    <span class="bp_summary_label">Fully closed</span><span class="bp_summary_value">6</span><span class="bp_summary_status">Local code and ancestor closure are both complete.</span></div>
                   </div>
-                <details class="bp_summary_subsection"><summary>Heaviest prerequisites (2)</summary><ul class="bp_summary_list">
+                <details class="bp_summary_subsection"><summary>Heaviest prerequisites (4)</summary><ul class="bp_summary_list">
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
                         <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«hasse-bound»" data-bp-preview-key="«hasse-bound»--statement"><a href="The-Hasse-bound/#--informal-preview-_FLQQ_hasse-bound_FLQQ_--statement"><code>«hasse-bound»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
                       <div class="bp_summary_item_body">
                         Prerequisite fan-in measured from the current statement/proof dependency graph.</div>
                       <div class="bp_summary_badge_row">
-                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 2</span><span class="bp_summary_badge">statement deps: 2</span><span class="bp_summary_badge">proof deps: 2</span><span class="bp_summary_badge">direct uses: 0</span><span class="bp_summary_badge">downstream unlocks: 0</span></div>
+                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 4</span><span class="bp_summary_badge">statement deps: 0</span><span class="bp_summary_badge">proof deps: 4</span><span class="bp_summary_badge">direct uses: 0</span><span class="bp_summary_badge">downstream unlocks: 0</span></div>
                       <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
                           <li>
                             <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EWeilPairing-002Ehasse-005Fbound" data-bp-preview-title="Lean declaration HasseWeil.WeilPairing.hasse_bound" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.WeilPairing.hasse_bound"><a href="The-Hasse-bound/#--informal-external-decl-_FLQQ_hasse-bound_FLQQ_-HasseWeil___WeilPairing___hasse_bound"><code>HasseWeil.WeilPairing.hasse_bound</code></a></span></li>
@@ -9480,24 +9642,58 @@ window.onload = () => {
                         </details></li>
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="The-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«degree-quadratic-form»" data-bp-preview-key="«degree-quadratic-form»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_degree-quadratic-form_FLQQ_--statement"><code>«degree-quadratic-form»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
                       <div class="bp_summary_item_body">
                         Prerequisite fan-in measured from the current statement/proof dependency graph.</div>
                       <div class="bp_summary_badge_row">
-                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 1</span><span class="bp_summary_badge">statement deps: 1</span><span class="bp_summary_badge">proof deps: 0</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
+                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 2</span><span class="bp_summary_badge">statement deps: 1</span><span class="bp_summary_badge">proof deps: 1</span><span class="bp_summary_badge">direct uses: 1</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
                       <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="The-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EtraceOfFrobenius-005Fsq-005Fle-005Fof-005Fqf-005Fnonneg" data-bp-preview-title="Lean declaration HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_degree-quadratic-form_FLQQ_-HasseWeil___traceOfFrobenius_sq_le_of_qf_nonneg"><code>HasseWeil.traceOfFrobenius_sq_le_of_qf_nonneg</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«sqrt-bound»" data-bp-preview-key="«sqrt-bound»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_sqrt-bound_FLQQ_--statement"><code>«sqrt-bound»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
+                      <div class="bp_summary_item_body">
+                        Prerequisite fan-in measured from the current statement/proof dependency graph.</div>
+                      <div class="bp_summary_badge_row">
+                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 1</span><span class="bp_summary_badge">statement deps: 0</span><span class="bp_summary_badge">proof deps: 1</span><span class="bp_summary_badge">direct uses: 1</span><span class="bp_summary_badge">downstream unlocks: 1</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002Eabs-005Fle-005Ftwo-005Fsqrt-005Fof-005Fsq-005Fle" data-bp-preview-title="Lean declaration HasseWeil.abs_le_two_sqrt_of_sq_le" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.abs_le_two_sqrt_of_sq_le"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_sqrt-bound_FLQQ_-HasseWeil___abs_le_two_sqrt_of_sq_le"><code>HasseWeil.abs_le_two_sqrt_of_sq_le</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«frobenius-isogeny»" data-bp-preview-key="«frobenius-isogeny»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_frobenius-isogeny_FLQQ_--statement"><code>«frobenius-isogeny»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                      <div class="bp_summary_item_body">
+                        Prerequisite fan-in measured from the current statement/proof dependency graph.</div>
+                      <div class="bp_summary_badge_row">
+                        <span class="bp_summary_badge bp_summary_badge_warn">total deps: 1</span><span class="bp_summary_badge">statement deps: 1</span><span class="bp_summary_badge">proof deps: 0</span><span class="bp_summary_badge">direct uses: 2</span><span class="bp_summary_badge">downstream unlocks: 2</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (2)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog"><code>HasseWeil.frobeniusIsog</code></a></span></li>
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EfrobeniusIsog-005Fpullback-005Fapply" data-bp-preview-title="Lean declaration HasseWeil.frobeniusIsog_pullback_apply" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.frobeniusIsog_pullback_apply"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_frobenius-isogeny_FLQQ_-HasseWeil___frobeniusIsog_pullback_apply"><code>HasseWeil.frobeniusIsog_pullback_apply</code></a></span></li>
                           </ul>
                         </details></li>
                     </ul>
-                  </details><details class="bp_summary_subsection"><summary>No prerequisites (1)</summary><ul class="bp_summary_list">
+                  </details><details class="bp_summary_subsection"><summary>No prerequisites (2)</summary><ul class="bp_summary_list">
                     <li class="bp_summary_item">
                       <div class="bp_summary_item_top">
-                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-over-finite-fields/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«trace-sq-le-four-q»" data-bp-preview-key="«trace-sq-le-four-q»--statement"><a href="The-degree-quadratic-form/#--informal-preview-_FLQQ_trace-sq-le-four-q_FLQQ_--statement"><code>«trace-sq-le-four-q»</code></a></span></span><span class="bp_summary_item_meta">(Theorem)</span></div>
                       <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
                           <li>
-                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-over-finite-fields/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002Etrace-005Fsq-005Fle-005Ffour-005Fmul-005Fdeg" data-bp-preview-title="Lean declaration HasseWeil.trace_sq_le_four_mul_deg" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.trace_sq_le_four_mul_deg"><a href="The-degree-quadratic-form/#--informal-external-decl-_FLQQ_trace-sq-le-four-q_FLQQ_-HasseWeil___trace_sq_le_four_mul_deg"><code>HasseWeil.trace_sq_le_four_mul_deg</code></a></span></li>
+                          </ul>
+                        </details></li>
+                    <li class="bp_summary_item">
+                      <div class="bp_summary_item_top">
+                        <span class="bp_summary_item_head"><span class="bp_summary_preview_wrap bp_summary_preview_wrap_active" data-bp-preview-label="«point-count»" data-bp-preview-key="«point-count»--statement"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-preview-_FLQQ_point-count_FLQQ_--statement"><code>«point-count»</code></a></span></span><span class="bp_summary_item_meta">(Definition)</span></div>
+                      <details class="bp_summary_decls"><summary>Associated lean decls (1)</summary><ul class="bp_summary_decl_list">
+                          <li>
+                            <span class="bp_inline_preview_ref" data-bp-preview-id="bp-lean-code-Informal-002ELeanCodePreview-002EHasseWeil-002EpointCount" data-bp-preview-title="Lean declaration HasseWeil.pointCount" data-bp-preview-key="Informal.LeanCodePreview.HasseWeil.pointCount"><a href="Point-counts-and-the-Frobenius-endomorphism/#--informal-external-decl-_FLQQ_point-count_FLQQ_-HasseWeil___pointCount"><code>HasseWeil.pointCount</code></a></span></li>
                           </ul>
                         </details></li>
                     </ul>
