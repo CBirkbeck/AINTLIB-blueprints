@@ -1,1 +1,0 @@
-window.docContents[91].resolve({"/Progress-summary/#The-Hasse-Bound-___-Lean-blueprint--Progress-summary":{"contents":"","context":"The Hasse Bound — Lean blueprint","header":"5. Progress summary","id":"/Progress-summary/#The-Hasse-Bound-___-Lean-blueprint--Progress-summary"}});

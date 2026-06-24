@@ -1,144 +1,300 @@
-{"9":
- "<code>MonoidHom.{u_10, u_11} (M : Type u_10) (N : Type u_11) [MulOne M] [MulOne N] : Type (max u_10 u_11)</code><span class=\"sep\"></span><code class=\"docstring\">`M →* N` is the type of functions `M → N` that preserve the `MulOne` structure.\n`MonoidHom` is used for both monoid and group homomorphisms.\n\nWhen possible, instead of parametrizing results over `(f : M →* N)`,\nyou should parametrize over `(F : Type*) [MonoidHomClass F M N] (f : F)`.\n\nWhen you extend this structure, make sure to extend `MonoidHomClass`.\n\n\n[Wikidata Q868169](https://www.wikidata.org/wiki/Q868169)</code>",
- "8":
- "<code>Units.{u} (α : Type u) [Monoid α] : Type u</code><span class=\"sep\"></span><code class=\"docstring\">Units of a `Monoid`, bundled version. Notation: `αˣ`.\n\nAn element of a `Monoid` is a unit if it has a two-sided inverse.\nThis version bundles the inverse element so that it can be computed.\nFor a predicate see `IsUnit`. </code>",
- "79": "<code>ℂ</code>",
- "78":
- "<code>HeckeRing.GL2.strongMultiplicityOne_constMul {N : ℕ} [NeZero N] {k : ℤ} (f : HeckeRing.GL2.Newform N k)\n  (g : HeckeRing.GL2.Eigenform N k) (χ : (ZMod N)ˣ →* ℂˣ) (hfχ : f.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ)\n  (hgχ : g.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ) (S : Finset ℕ)\n  (h_eig : ∀ (n : ℕ+), (↑n).Coprime N → ↑n ∉ S → f.eigenvalue n = g.eigenvalue n) : ∃ c, g.toCuspForm = c • f.toCuspForm</code><span class=\"sep\"></span><code class=\"docstring\">**Miyake Theorem 4.6.12 (Strong Multiplicity One, full constant-multiple form).**\nIf `f` is a normalised `Newform` at level `N` with Nebentypus `χ` and `g` is a common\n`T(n)`-eigenfunction in `S_k(Γ₁(N), χ)` sharing `f`'s eigenvalues off a finite set `S`,\nthen `g = c • f` for some `c ∈ ℂ`. </code>",
- "77":
- "<code>∀ (n : ℕ+), (↑n).Coprime N → ↑n ∉ S → f.eigenvalue n = g.eigenvalue n</code>",
- "76":
- "<code>HeckeRing.GL2.strongMultiplicityOne_axiom_clean {N : ℕ} [NeZero N] {k : ℤ} (f g : HeckeRing.GL2.Newform N k)\n  (χ : (ZMod N)ˣ →* ℂˣ) (hfχ : f.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ)\n  (hgχ : g.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ) (S : Finset ℕ)\n  (h_eig : ∀ (n : ℕ+), (↑n).Coprime N → ↑n ∉ S → f.eigenvalue n = g.eigenvalue n) : f.toCuspForm = g.toCuspForm</code><span class=\"sep\"></span><code class=\"docstring\">**Strong Multiplicity One for both newforms (DS 5.8.2.1).**\nTwo `Newform`s at level `N` in the same Nebentypus eigenspace with equal eigenvalues outside a\nfinite set `S` are equal.\n\nCorollary of `strongMultiplicityOne_constMul` (T014): the constant multiple it returns is forced\nto be `1` since both newforms are normalised (`a₁ = 1`). </code>",
- "75":
- "<code>HeckeRing.GL2.cuspFormsOldExtended (N : ℕ) [NeZero N] (k : ℤ) :\n  Submodule ℂ (CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">The classical oldform subspace `S_k^old(N)`: `cuspFormsOld N k` extended with\nthe trivial-inclusion oldform generators, spanning both the level-raise summands\n`LR_{N/M}(S_k(Γ₁(M)))` and the inclusions `S_k(Γ₁(M)) ↪ S_k(Γ₁(N))` for `M ∣ N`,\n`M &lt; N`. </code>",
- "74":
- "<code>Ne.{u} {α : Sort u} (a b : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`a ≠ b`, or `Ne a b` is defined as `¬ (a = b)` or `a = b → False`,\nand asserts that `a` and `b` are not equal.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≠` in identifiers is `ne`.</code>",
- "73": "<code>f.toCuspForm ≠ 0</code>",
- "72":
- "<code>HeckeRing.GL2.newform_notMem_cuspFormsOldExtended {N : ℕ} [NeZero N] {k : ℤ} (f : HeckeRing.GL2.Newform N k)\n  (hf0 : f.toCuspForm ≠ 0) : f.toCuspForm ∉ HeckeRing.GL2.cuspFormsOldExtended N k</code><span class=\"sep\"></span><code class=\"docstring\">A nonzero `Newform` at level `N` does not lie in the extended old space\n`cuspFormsOldExtended N k`. </code>",
- "71":
- "<code>HeckeRing.GL2.heckeT_n_cusp {N : ℕ} [NeZero N] (k : ℤ) (n : ℕ) [NeZero n]\n  (f : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k) :\n  CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k</code><span class=\"sep\"></span><code class=\"docstring\">`T_n` restricted to cusp forms. </code>",
- "70":
- "<code>∀ (n : ℕ+), (↑n).Coprime N → ↑n ∉ S → HeckeRing.GL2.heckeT_n_cusp k (↑n) g_old = f.eigenvalue n • g_old</code>",
- "7":
- "<code>ZMod : ℕ → Type</code><span class=\"sep\"></span><code class=\"docstring\">The integers modulo `n : ℕ`. </code>",
- "69":
- "<code>Finset.{u_4} (α : Type u_4) : Type u_4</code><span class=\"sep\"></span><code class=\"docstring\">`Finset α` is the type of finite sets of elements of `α`. It is implemented\nas a multiset (a list up to permutation) which has no duplicate elements. </code>",
- "68": "<code>Finset ℕ</code>",
- "67":
- "<code>HeckeRing.GL2.cuspFormCharSpace {N : ℕ} [NeZero N] (k : ℤ) (χ : (ZMod N)ˣ →* ℂˣ) :\n  Submodule ℂ (CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">The Nebentypus character space `S_k(Γ₁(N), χ)`: cusp forms on which every\ndiamond operator `⟨d⟩` acts by the scalar `χ(d)`. </code>",
- "66": "<code>g_old ∈ HeckeRing.GL2.cuspFormCharSpace k χ</code>",
- "65":
- "<code>HeckeRing.GL2.cuspFormsOldChar (N : ℕ) [NeZero N] (k : ℤ) (χ : (ZMod N)ˣ →* ℂˣ) (m_χ : ℕ) :\n  Submodule ℂ (CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">**Miyake's old space** `S_k^♭(N,χ)` (p. 162): the submodule of `cuspFormCharSpace k χ`\nspanned by `V_l`-images of the **new** subspaces at proper divisor levels `M` that are\nmultiples of the conductor `m_χ`.\n\nThis is the character-conductor-refined analogue of the project's `cuspFormsOld N k`;\nrelating the two is gap #4 (see `cuspFormsOldChar_le_cuspFormsOld`). </code>",
- "64": "<code>g_old ∈ HeckeRing.GL2.cuspFormsOldChar N k χ m_χ</code>",
- "63": "<code>f.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ</code>",
- "62":
- "<code>HeckeRing.GL2.Newform (N : ℕ) [NeZero N] (k : ℤ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">A **newform** of level Γ₁(N) and weight k: a cusp form that is\n1. an eigenform (common eigenfunction of all T_n with (n,N)=1)\n2. in the new subspace\n3. normalised: a_1(f) = 1\n\nBy Atkin-Lehner uniqueness (DS Theorem 5.8.2), newforms are uniquely determined\nby their Hecke eigenvalues away from the level. </code>",
- "61": "<code>HeckeRing.GL2.Newform N k</code>",
- "60":
- "<code>HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues {N : ℕ} [NeZero N] {k : ℤ} (f : HeckeRing.GL2.Newform N k)\n  (χ : (ZMod N)ˣ →* ℂˣ) (m_χ : ℕ) (hfχ : f.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ)\n  (g_old : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)\n  (hg_old : g_old ∈ HeckeRing.GL2.cuspFormsOldChar N k χ m_χ)\n  (hg_old_char : g_old ∈ HeckeRing.GL2.cuspFormCharSpace k χ) (S : Finset ℕ)\n  (h_eig : ∀ (n : ℕ+), (↑n).Coprime N → ↑n ∉ S → HeckeRing.GL2.heckeT_n_cusp k (↑n) g_old = f.eigenvalue n • g_old) :\n  g_old = 0</code><span class=\"sep\"></span><code class=\"docstring\">**Old-part vanishing** (Miyake 4.6.12, steps (i)+(ii), p. 164).  If `f` is a\nnonzero newform at level `N` and `g_old` is a common `T(n)`-eigenform in the χ-refined\nold space sharing `f`'s eigenvalues off a finite set `S`, then `g_old = 0`. </code>",
- "6": "<code>(ZMod N)ˣ →* ℂˣ</code>",
- "59":
- "<code>CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k</code>",
- "58":
- "<code>HeckeRing.GL2.oldPart {N : ℕ} [NeZero N] {k : ℤ}\n  (f : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k) :\n  CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k</code><span class=\"sep\"></span><code class=\"docstring\">**Oldform part.**  The image of `f` under the oldform projection.\nEquivalent to `cuspFormsOldProjection N k f`. </code>",
- "57":
- "<code>HeckeRing.GL2.cuspFormsNew (N : ℕ) [NeZero N] (k : ℤ) :\n  Submodule ℂ (CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">The **new subspace** `S_k(Γ₁(N))^new`: orthogonal complement of oldforms.\n\nDS (5.19): `S_k^new = (S_k^old)⊥`. </code>",
- "56":
- "<code>HeckeRing.GL2.cuspFormsOld (N : ℕ) [NeZero N] (k : ℤ) :\n  Submodule ℂ (CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">The **oldform subspace** `S_k(Γ₁(N))^old`: the submodule generated by all\n`levelRaise` images from proper divisors of N.\n\nDS (5.18): `S_k^old = ⊕_{M | N, M ≠ N} ι_{N/M}(S_k(Γ₁(M))^2)` (sum over divisors). </code>",
- "55":
- "<code>HMul.hMul.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HMul α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a * b` computes the product of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `*` in identifiers is `mul`.</code>",
- "54":
+{"99": "<code>HeckeRing.GL2.Newform N k</code>",
+ "98":
+ "<code>HeckeRing.GL2.Newform.eigenvalue_eq_coeff {N : ℕ} [NeZero N] {k : ℤ} (f : HeckeRing.GL2.Newform N k) (n : ℕ+)\n  (hn : (↑n).Coprime N) (χ : (ZMod N)ˣ →* ℂˣ) (hf_char : f.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ) :\n  f.eigenvalue n = (PowerSeries.coeff ↑n) (UpperHalfPlane.qExpansion 1 ⇑f.toCuspForm)</code><span class=\"sep\"></span><code class=\"docstring\">For a `Newform` f lying in a character eigenspace `modFormCharSpace k χ`,\nthe eigenvalue at `n` (coprime to `N`) equals the `n`-th **canonical\nFourier coefficient** of `f` (period `h = 1`).  The character hypothesis\n`hf_char` is required because `fourierCoeff_heckeT_n_period_one` is stated for\nforms living in a single Nebentypus eigenspace. </code>",
+ "97":
  "<code>HeckeRing.GL2.Eigenform.toCuspForm {N : ℕ} [NeZero N] {k : ℤ} (self : HeckeRing.GL2.Eigenform N k) :\n  CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k</code>",
- "53":
+ "96": "<code>(↑n).Coprime N</code>",
+ "95":
+ "<code>HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue {N : ℕ} [NeZero N] {k : ℤ} (g : HeckeRing.GL2.Eigenform N k)\n  (χ : (ZMod N)ˣ →* ℂˣ) (hgχ : g.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ) (n : ℕ+) (hn : (↑n).Coprime N) :\n  (PowerSeries.coeff ↑n) (UpperHalfPlane.qExpansion 1 ⇑g.toCuspForm) =\n    (PowerSeries.coeff 1) (UpperHalfPlane.qExpansion 1 ⇑g.toCuspForm) * g.eigenvalue n</code><span class=\"sep\"></span><code class=\"docstring\">**Miyake Lemma 4.5.15(1)** (un-normalised form, period 1).  For an `Eigenform g`\nlying in the Nebentypus space `χ` and `n` coprime to the level, the `n`-th Fourier\ncoefficient equals the leading coefficient times the classical Hecke eigenvalue:\n`aₙ(g) = a₁(g) · λₙ(g)`. </code>",
+ "94":
+ "<code>HeckeRing.GL2.fourierCoeff_heckeT_n_period_one {N : ℕ} [NeZero N] (k : ℤ) (n : ℕ) [NeZero n] (hn : n.Coprime N)\n  (χ : (ZMod N)ˣ →* ℂˣ)\n  {f : ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k}\n  (hf : f ∈ HeckeRing.GL2.modFormCharSpace k χ) (m : ℕ) :\n  (PowerSeries.coeff m) (UpperHalfPlane.qExpansion 1 ⇑((HeckeRing.GL2.heckeT_n k n) f)) =\n    ∑ d ∈ (m.gcd n).divisors,\n      if h : d.Coprime N then\n        ↑d ^ (k - 1) * ↑(χ (ZMod.unitOfCoprime d h)) *\n          (PowerSeries.coeff (m * n / (d * d))) (UpperHalfPlane.qExpansion 1 ⇑f)\n      else 0</code><span class=\"sep\"></span><code class=\"docstring\">**Period-1 general Fourier coefficient formula for `T_n`.** The same divisor-sum formula as\n`fourierCoeff_heckeT_n`, `a_m(T_n f) = Σ_{d | gcd(m, n)} d^{k-1} · χ(d) · a_{mn/d²}(f)`, with\nevery `coeff` taken at the canonical Fourier period `h = 1`. </code>",
+ "93":
+ "<code>HDiv.hDiv.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HDiv α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a / b` computes the result of dividing `a` by `b`.\nThe meaning of this notation is type-dependent.\n* For most types like `Nat`, `Int`, `Rat`, `Real`, `a / 0` is defined to be `0`.\n* For `Nat`, `a / b` rounds downwards.\n* For `Int`, `a / b` rounds downwards if `b` is positive or upwards if `b` is negative.\n  It is implemented as `Int.ediv`, the unique function satisfying\n  `a % b + b * (a / b) = a` and `0 ≤ a % b &lt; natAbs b` for `b ≠ 0`.\n  Other rounding conventions are available using the functions\n  `Int.fdiv` (floor rounding) and `Int.tdiv` (truncation rounding).\n* For `Float`, `a / 0` follows the IEEE 754 semantics for division,\n  usually resulting in `inf` or `nan`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `/` in identifiers is `div`.</code>",
+ "92": "<code>d.Coprime N</code>",
+ "91":
+ "<code>ZMod.unitOfCoprime {n : ℕ} (x : ℕ) (h : x.Coprime n) : (ZMod n)ˣ</code><span class=\"sep\"></span><code class=\"docstring\">`unitOfCoprime` makes an element of `(ZMod n)ˣ` given\na natural number `x` and a proof that `x` is coprime to `n` </code>",
+ "90":
+ "<code>HSub.hSub.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HSub α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a - b` computes the difference of `a` and `b`.\nThe meaning of this notation is type-dependent.\n* For natural numbers, this operator saturates at 0: `a - b = 0` when `a ≤ b`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `-` in identifiers is `sub` (when used as a binary operator).</code>",
+ "9":
+ "<code>Module.End.{u, v} (R : Type u) (M : Type v) [Semiring R] [AddCommMonoid M] [Module R M] : Type v</code><span class=\"sep\"></span><code class=\"docstring\">Linear endomorphisms of a module, with associated ring structure\n`Module.End.semiring` and algebra structure `Module.End.algebra`. </code>",
+ "89":
+ "<code>HPow.hPow.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HPow α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a ^ b` computes `a` to the power of `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `^` in identifiers is `pow`.</code>",
+ "88":
+ "<code>Nat.divisors (n : ℕ) : Finset ℕ</code><span class=\"sep\"></span><code class=\"docstring\">`divisors n` is the `Finset` of divisors of `n`. By convention, we set `divisors 0 = ∅`. </code>",
+ "87":
+ "<code>Nat.gcd (m n : ℕ) : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">Computes the greatest common divisor of two natural numbers. The GCD of two natural numbers is the\nlargest natural number that evenly divides both.\n\nIn particular, the GCD of a number and `0` is the number itself.\n\nThis reference implementation via the Euclidean algorithm is overridden in both the kernel and the\ncompiler to efficiently evaluate using arbitrary-precision arithmetic. The definition provided here\nis the logical model.\n\nExamples:\n* `Nat.gcd 10 15 = 5`\n* `Nat.gcd 0 5 = 5`\n* `Nat.gcd 7 0 = 7`\n</code>",
+ "86":
  "<code>UpperHalfPlane.qExpansion (h : ℝ) (f : UpperHalfPlane → ℂ) : PowerSeries ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The `q`-expansion of a function on the upper half plane with strict period `h`, bundled as a\n`PowerSeries`. The `m`-th coefficient is the Taylor coefficient of the `cuspFunction` at `q = 0`,\nwhere `q = exp(2πiτ/h)` is the local parameter at the cusp. </code>",
- "52":
+ "85":
  "<code>PowerSeries.coeff.{u_1} {R : Type u_1} [Semiring R] (n : ℕ) : PowerSeries R →ₗ[R] R</code><span class=\"sep\"></span><code class=\"docstring\">The `n`th coefficient of a formal power series. </code>",
- "51": "<code>(↑n).Coprime N</code>",
- "50": "<code>g.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ</code>",
+ "84":
+ "<code>HeckeRing.GL2.IsNormalisedEigenform_one {N : ℕ} [NeZero N] (k : ℤ)\n  (f : ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Period-1 normalised eigenform.**  A common eigenfunction `f` with canonical Fourier\nnormalisation `a_1 = (qExpansion (1 : ℝ) f).coeff 1 = 1`. This is the Miyake / Diamond–Shurman\n`a_1 = 1` normalisation and supersedes `IsNormalisedEigenform`, whose period-`N` condition is\nvacuous for `N &gt; 1`. </code>",
+ "83": "<code>HeckeRing.GL2.IsNormalisedEigenform_one k f</code>",
+ "82": "<code>(↑m).Coprime N</code>",
+ "81":
+ "<code>HeckeRing.GL2.eigenform_coeff_multiplicative_one {N : ℕ} [NeZero N] (k : ℤ) (m n : ℕ+) (hm : (↑m).Coprime N) :\n  (↑n).Coprime N →\n    ∀ (χ : (ZMod N)ˣ →* ℂˣ)\n      {f : ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k}\n      (hf_char : f ∈ HeckeRing.GL2.modFormCharSpace k χ) (hf_eigen : HeckeRing.GL2.IsNormalisedEigenform_one k f),\n      (PowerSeries.coeff ↑m) (UpperHalfPlane.qExpansion 1 ⇑f) *\n          (PowerSeries.coeff ↑n) (UpperHalfPlane.qExpansion 1 ⇑f) =\n        ∑ d ∈ ((↑m).gcd ↑n).divisors,\n          if h : d.Coprime N then\n            ↑d ^ (k - 1) * ↑(χ (ZMod.unitOfCoprime d h)) *\n              (PowerSeries.coeff (↑m * ↑n / (d * d))) (UpperHalfPlane.qExpansion 1 ⇑f)\n          else 0</code><span class=\"sep\"></span><code class=\"docstring\">**Period-1 Hecke multiplicativity relations** for Fourier coefficients of a normalised\neigenform: `a_m · a_n = Σ_{d | gcd(m, n)} d^{k-1} · χ(d) · a_{mn/d²}`. In particular\n`a_m · a_n = a_{mn}` when `gcd(m, n) = 1`. Period-1 analog of\n`eigenform_coeff_multiplicative`. </code>",
+ "80":
+ "<code>HeckeRing.GL2.IsEigenform {N : ℕ} [NeZero N] {k : ℤ}\n  (f : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A predicate version: a cusp form is an eigenform if it has eigenvalues. </code>",
+ "8":
+ "<code>MonoidHom.{u_10, u_11} (M : Type u_10) (N : Type u_11) [MulOne M] [MulOne N] : Type (max u_10 u_11)</code><span class=\"sep\"></span><code class=\"docstring\">`M →* N` is the type of functions `M → N` that preserve the `MulOne` structure.\n`MonoidHom` is used for both monoid and group homomorphisms.\n\nWhen possible, instead of parametrizing results over `(f : M →* N)`,\nyou should parametrize over `(F : Type*) [MonoidHomClass F M N] (f : F)`.\n\nWhen you extend this structure, make sure to extend `MonoidHomClass`.\n\n\n[Wikidata Q868169](https://www.wikidata.org/wiki/Q868169)</code>",
+ "79":
+ "<code>HeckeRing.GL2.cuspFormCharSpace {N : ℕ} [NeZero N] (k : ℤ) (χ : (ZMod N)ˣ →* ℂˣ) :\n  Submodule ℂ (CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">The Nebentypus character space `S_k(Γ₁(N), χ)`: cusp forms on which every\ndiamond operator `⟨d⟩` acts by the scalar `χ(d)`. </code>",
+ "78":
+ "<code>And (a b : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`And a b`, or `a ∧ b`, is the conjunction of propositions. It can be\nconstructed and destructed like a pair: if `ha : a` and `hb : b` then\n`⟨ha, hb⟩ : a ∧ b`, and if `h : a ∧ b` then `h.left : a` and `h.right : b`.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∧` in identifiers is `and`.</code>",
+ "77": "<code>ι</code>",
+ "76":
+ "<code>ι → CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k</code>",
+ "75": "<code>Fintype ι</code>",
+ "74": "<code>Type</code>",
+ "73": "<code>g.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ</code>",
+ "72":
+ "<code>HeckeRing.GL2.cuspFormsNew (N : ℕ) [NeZero N] (k : ℤ) :\n  Submodule ℂ (CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">The **new subspace** `S_k(Γ₁(N))^new`: orthogonal complement of oldforms.\n\nDS (5.19): `S_k^new = (S_k^old)⊥`. </code>",
+ "71": "<code>g ∈ HeckeRing.GL2.cuspFormsNew N k</code>",
+ "70":
+ "<code>HeckeRing.GL2.exists_eigenform_decomposition_mem_cuspFormsNew {N : ℕ} [NeZero N] {k : ℤ} (χ : (ZMod N)ˣ →* ℂˣ)\n  (g : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)\n  (hg_new : g ∈ HeckeRing.GL2.cuspFormsNew N k) (hgχ : g.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ) :\n  ∃ ι x h,\n    (∀ (i : ι), h i ∈ HeckeRing.GL2.cuspFormsNew N k) ∧\n      (∀ (i : ι), h i ∈ HeckeRing.GL2.cuspFormCharSpace k χ) ∧\n        (∀ (i : ι), HeckeRing.GL2.IsEigenform (h i)) ∧ g = ∑ i, h i</code><span class=\"sep\"></span><code class=\"docstring\">**New eigenbasis decomposition.**  A new cusp form `g ∈ S_k^♯(N)` whose underlying\nmodular form lies in the Nebentypus space `M_k(Γ₁(N),χ)` is a finite sum of common Hecke\neigenforms, each of which is again **new** (lies in `S_k^♯(N)`).\n\nProof: the new subspace is `T_n`-invariant (`heckeT_n_preserves_cuspFormsNew`), so the\nsimultaneous Hecke diagonalisation of `S_k(Γ₁(N),χ)`\n(`exists_eigenform_decomposition_of_invariant`) restricts to it, yielding eigenform\nsummands that remain new. </code>",
+ "7":
+ "<code>Units.{u} (α : Type u) [Monoid α] : Type u</code><span class=\"sep\"></span><code class=\"docstring\">Units of a `Monoid`, bundled version. Notation: `αˣ`.\n\nAn element of a `Monoid` is a unit if it has a two-sided inverse.\nThis version bundles the inverse element so that it can be computed.\nFor a predicate see `IsUnit`. </code>",
+ "69":
+ "<code>HeckeRing.GL2.Eigenform.eigenvalue {N : ℕ} [NeZero N] {k : ℤ} (f : HeckeRing.GL2.Eigenform N k) (n : ℕ+) : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The classical Hecke eigenvalue of an eigenform: the ring eigenvalue rescaled by the\ndiamond factor `χ(n)`, so that `T_n f = (eigenvalue n) • f` (`Eigenform.isEigen`).  For\n`n` not coprime to `N` the value is `0` (the classical `T_n` is not packaged here). </code>",
+ "68":
+ "<code class=\"docstring\">A type universe. `Type ≡ Type 0`, `Type u ≡ Sort (u + 1)`. </code>",
+ "67":
+ "<code>HeckeRing.GL2.Eigenform (N : ℕ) [NeZero N] (k : ℤ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">An **eigenform** of level Γ₁(N) and weight k: a cusp form `f` carrying a Nebentypus\ncharacter `χ` (so `↑f ∈ modFormCharSpace k χ`) that is a simultaneous eigenvector of the\ncanonical `Γ₀(N)` Hecke **ring** action `heckeRingHomCharSpace`.  The classical eigenvalue\n`T_n f = (eigenvalue n) • f` is a *derived* fact (`Eigenform.eigenvalue`, `Eigenform.isEigen`),\ndiffering from the ring eigenvalue by the diamond normalisation `χ(n)`.\nDS Definition 5.5.4 / Miyake §4.5. </code>",
+ "66":
+ "<code>Not (a : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Not p`, or `¬p`, is the negation of `p`. It is defined to be `p → False`,\nso if your goal is `¬p` you can use `intro h` to turn the goal into\n`h : p ⊢ False`, and if you have `hn : ¬p` and `h : p` then `hn h : False`\nand `(hn h).elim` will prove anything.\nFor more information: [Propositional Logic](https://lean-lang.org/theorem_proving_in_lean4/propositions_and_proofs.html#propositional-logic)\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `¬` in identifiers is `not`.</code>",
+ "65":
+ "<code>∀ (n : ℕ+), ¬(↑n).Coprime N → self.ringEigenvalue n = 0</code><span class=\"sep\"></span><code class=\"docstring\">At indices **not** coprime to `N` the ring action `heckeRingDn` is not packaged here\n(the bad-prime element lies in a disjoint double-coset class), so the ring eigenvalue is\npinned to the canonical constant `0`.  This removes a latent over-specification: without it,\nthe bad-prime values of `ringEigenvalue` would be free, giving infinitely many `Eigenform`\nterms over a single underlying `toCuspForm`.  With it, an `Eigenform` is determined by its\nunderlying form together with `χ` (see `Eigenform.ext_of_toCuspForm`). </code>",
+ "64":
+ "<code>HSMul.hSMul.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HSMul α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a • b` computes the product of `a` and `b`.\nThe meaning of this notation is type-dependent, but it is intended to be used for left actions. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `•` in identifiers is `smul`.</code>",
+ "63":
+ "<code>HeckeRing.GL2.Eigenform.ringEigenvalue {N : ℕ} [NeZero N] {k : ℤ} (self : HeckeRing.GL2.Eigenform N k) : ℕ+ → ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The eigenvalues for the canonical `Γ₀(N)` Hecke **ring** action. </code>",
+ "62":
+ "<code>Subtype.mk.{u} {α : Sort u} {p : α → Prop} (val : α) (property : p val) : Subtype p</code>",
+ "61":
+ "<code>HeckeRing.GL2.Unified.heckeRingDn {N : ℕ} [NeZero N] (n : ℕ) : HeckeRing.𝕋 (HeckeRing.GLn.Gamma0_pair N) ℤ</code><span class=\"sep\"></span><code class=\"docstring\">The composite ring element `D_n`, assembled by `minFac`-peeling over the prime\nfactorisation of `n` — with **genuine** factors at bad primes `p ∣ N`\n(`D_{p^v} = D_p^v`). `D_0 = D_1 = 1`. </code>",
+ "60":
+ "<code>HeckeRing.GL2.Unified.heckeRingHomCharSpace {N : ℕ} [NeZero N] {k : ℤ} {χ : (ZMod N)ˣ →* ℂˣ} :\n  HeckeRing.𝕋 (HeckeRing.GLn.Gamma0_pair N) ℤ →+* Module.End ℂ ↥(HeckeRing.GL2.modFormCharSpace k χ)</code><span class=\"sep\"></span><code class=\"docstring\">`Φ_χ`: the action of the `Γ₀(N)` Hecke ring on the nebentypus character space\n`modFormCharSpace k χ` as a ring homomorphism `𝕋(Γ₀(N)) →+* End_ℂ (Mₖ(Γ₁(N), χ))`. </code>",
+ "6":
+ "<code>ZMod : ℕ → Type</code><span class=\"sep\"></span><code class=\"docstring\">The integers modulo `n : ℕ`. </code>",
+ "59": "<code>ℕ+</code>",
+ "58":
+ "<code>∀ (n : ℕ+),\n  (↑n).Coprime N →\n    (HeckeRing.GL2.Unified.heckeRingHomCharSpace (HeckeRing.GL2.Unified.heckeRingDn ↑n)) ⟨self.toModularForm', ⋯⟩ =\n      self.ringEigenvalue n • ⟨self.toModularForm', ⋯⟩</code><span class=\"sep\"></span><code class=\"docstring\">For `n` coprime to `N`, the explicit ring element `heckeRingDn n` acts on the\ncoercion `↑f ∈ modFormCharSpace k χ` by the scalar `ringEigenvalue n`. </code>",
+ "57":
+ "<code>PNat : Type</code><span class=\"sep\"></span><code class=\"docstring\">`ℕ+` is the type of positive natural numbers. It is defined as a subtype,\nand the VM representation of `ℕ+` is the same as `ℕ` because the proof\nis not stored. </code>",
+ "56":
+ "<code>ℕ+ → ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The eigenvalues for the canonical `Γ₀(N)` Hecke **ring** action. </code>",
+ "55":
+ "<code>HeckeRing.GL2.Eigenform.χ {N : ℕ} [NeZero N] {k : ℤ} (self : HeckeRing.GL2.Eigenform N k) : (ZMod N)ˣ →* ℂˣ</code><span class=\"sep\"></span><code class=\"docstring\">The Nebentypus character of the eigenform. </code>",
+ "54":
+ "<code>CuspForm.toModularForm' {k : ℤ} {Γ : Subgroup (GL (Fin 2) ℝ)} (f : CuspForm Γ k) : ModularForm Γ k</code><span class=\"sep\"></span><code class=\"docstring\">Every cusp form is a modular form (zero at cusps implies bounded at cusps). </code>",
+ "53":
+ "<code>self.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k self.χ</code><span class=\"sep\"></span><code class=\"docstring\">The coercion of the cusp form lies in the `χ`-eigenspace `modFormCharSpace k χ`. </code>",
+ "52":
+ "<code>(ZMod N)ˣ →* ℂˣ</code><span class=\"sep\"></span><code class=\"docstring\">The Nebentypus character of the eigenform. </code>",
+ "51":
+ "<code>OnePoint.IsZeroAt (c : OnePoint ℝ) (f : UpperHalfPlane → ℂ) (k : ℤ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">We say `f` is zero at `c` if, for all `g` with `g • ∞ = c`, the function `f ∣[k] g` is\nzero at `∞`. </code>",
+ "50":
+ "<code>IsCusp (c : OnePoint ℝ) (𝒢 : Subgroup (GL (Fin 2) ℝ)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The *cusps* of a subgroup of `GL(2, ℝ)` are the fixed points of parabolic elements of `g`. </code>",
  "5":
  "<code>Int : Type</code><span class=\"sep\"></span><code class=\"docstring\">The integers.\n\nThis type is special-cased by the compiler and overridden with an efficient implementation. The\nruntime has a special representation for `Int` that stores “small” signed numbers directly, while\nlarger numbers use a fast arbitrary-precision arithmetic library (usually\n[GMP](https://gmplib.org/)). A “small number” is an integer that can be encoded with one fewer bits\nthan the platform's pointer size (i.e. 63 bits on 64-bit architectures and 31 bits on 32-bit\narchitectures).\n</code>",
  "49":
- "<code>HeckeRing.GL2.Eigenform.coeff_eq_coeff_one_mul_eigenvalue {N : ℕ} [NeZero N] {k : ℤ} (g : HeckeRing.GL2.Eigenform N k)\n  (χ : (ZMod N)ˣ →* ℂˣ) (hgχ : g.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ) (n : ℕ+) (hn : (↑n).Coprime N) :\n  (PowerSeries.coeff ↑n) (UpperHalfPlane.qExpansion 1 ⇑g.toCuspForm) =\n    (PowerSeries.coeff 1) (UpperHalfPlane.qExpansion 1 ⇑g.toCuspForm) * g.eigenvalue n</code><span class=\"sep\"></span><code class=\"docstring\">**Miyake Lemma 4.5.15(1)** (un-normalised form, period 1).  For an `Eigenform g`\nlying in the Nebentypus space `χ` and `n` coprime to the level, the `n`-th Fourier\ncoefficient equals the leading coefficient times the classical Hecke eigenvalue:\n`aₙ(g) = a₁(g) · λₙ(g)`. </code>",
- "48":
- "<code>HeckeRing.GL2.Eigenform.eigenvalue {N : ℕ} [NeZero N] {k : ℤ} (f : HeckeRing.GL2.Eigenform N k) (n : ℕ+) : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The classical Hecke eigenvalue of an eigenform: the ring eigenvalue rescaled by the\ndiamond factor `χ(n)`, so that `T_n f = (eigenvalue n) • f` (`Eigenform.isEigen`).  For\n`n` not coprime to `N` the value is `0` (the classical `T_n` is not packaged here). </code>",
+ "<code>OnePoint.{u_3} (X : Type u_3) : Type u_3</code><span class=\"sep\"></span><code class=\"docstring\">The one-point extension of an arbitrary topological space `X` </code>",
+ "48": "<code>OnePoint ℝ</code>",
  "47":
- "<code class=\"docstring\">A type universe. `Type ≡ Type 0`, `Type u ≡ Sort (u + 1)`. </code>",
+ "<code>CuspForm.toSlashInvariantForm {Γ : Subgroup (GL (Fin 2) ℝ)} {k : ℤ} (self : CuspForm Γ k) : SlashInvariantForm Γ k</code><span class=\"sep\"></span><code class=\"docstring\">The `SlashInvariantForm` associated to a `CuspForm`. </code>",
  "46":
- "<code>HeckeRing.GL2.Eigenform (N : ℕ) [NeZero N] (k : ℤ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">An **eigenform** of level Γ₁(N) and weight k: a cusp form `f` carrying a Nebentypus\ncharacter `χ` (so `↑f ∈ modFormCharSpace k χ`) that is a simultaneous eigenvector of the\ncanonical `Γ₀(N)` Hecke **ring** action `heckeRingHomCharSpace`.  The classical eigenvalue\n`T_n f = (eigenvalue n) • f` is a *derived* fact (`Eigenform.eigenvalue`, `Eigenform.isEigen`),\ndiffering from the ring eigenvalue by the diamond normalisation `χ(n)`.\nDS Definition 5.5.4 / Miyake §4.5. </code>",
- "45":
- "<code>CuspForm (Γ : Subgroup (GL (Fin 2) ℝ)) (k : ℤ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">These are `SlashInvariantForm`s that are holomorphic and zero at infinity. </code>",
+ "<code>SlashInvariantForm.toFun {Γ : outParam (Subgroup (GL (Fin 2) ℝ))} {k : outParam ℤ} (self : SlashInvariantForm Γ k) :\n  UpperHalfPlane → ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The underlying function `ℍ → ℂ`.\n\nDo NOT use directly. Use the coercion instead. </code>",
+ "45": "<code>HeckeRing.GL2.Eigenform N k</code>",
  "44":
- "<code>Not (a : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Not p`, or `¬p`, is the negation of `p`. It is defined to be `p → False`,\nso if your goal is `¬p` you can use `intro h` to turn the goal into\n`h : p ⊢ False`, and if you have `hn : ¬p` and `h : p` then `hn h : False`\nand `(hn h).elim` will prove anything.\nFor more information: [Propositional Logic](https://lean-lang.org/theorem_proving_in_lean4/propositions_and_proofs.html#propositional-logic)\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `¬` in identifiers is `not`.</code>",
- "43":
- "<code>∀ (n : ℕ+), ¬(↑n).Coprime N → self.ringEigenvalue n = 0</code><span class=\"sep\"></span><code class=\"docstring\">At indices **not** coprime to `N` the ring action `heckeRingDn` is not packaged here\n(the bad-prime element lies in a disjoint double-coset class), so the ring eigenvalue is\npinned to the canonical constant `0`.  This removes a latent over-specification: without it,\nthe bad-prime values of `ringEigenvalue` would be free, giving infinitely many `Eigenform`\nterms over a single underlying `toCuspForm`.  With it, an `Eigenform` is determined by its\nunderlying form together with `χ` (see `Eigenform.ext_of_toCuspForm`). </code>",
+ "<code>SlashAction.map.{u_1, u_2, u_3} {β : Type u_1} {G : Type u_2} {α : Type u_3} {inst✝ : Monoid G} {inst✝¹ : AddMonoid α}\n  [self : SlashAction β G α] : β → G → α → α</code>",
+ "43": "<code>GL (Fin 2) ℝ</code>",
  "42":
- "<code>HSMul.hSMul.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HSMul α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a • b` computes the product of `a` and `b`.\nThe meaning of this notation is type-dependent, but it is intended to be used for left actions. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `•` in identifiers is `smul`.</code>",
+ "<code>UpperHalfPlane : Type</code><span class=\"sep\"></span><code class=\"docstring\">The open upper half plane, denoted as `ℍ` within the `UpperHalfPlane` namespace </code>",
  "41":
- "<code>HeckeRing.GL2.Eigenform.ringEigenvalue {N : ℕ} [NeZero N] {k : ℤ} (self : HeckeRing.GL2.Eigenform N k) : ℕ+ → ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The eigenvalues for the canonical `Γ₀(N)` Hecke **ring** action. </code>",
- "40":
- "<code>Subtype.mk.{u} {α : Sort u} {p : α → Prop} (val : α) (property : p val) : Subtype p</code>",
+ "<code>Membership.mem.{u, v} {α : outParam (Type u)} {γ : Type v} [self : Membership α γ] : γ → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The membership relation `a ∈ s : Prop` where `a : α`, `s : γ`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∈` in identifiers is `mem`.</code>",
+ "40": "<code>f ∈ HeckeRing.GL2.modFormCharSpace k χ</code>",
  "4": "<code>ℤ</code>",
  "39":
- "<code>HeckeRing.GL2.Unified.heckeRingDn {N : ℕ} [NeZero N] (n : ℕ) : HeckeRing.𝕋 (HeckeRing.GLn.Gamma0_pair N) ℤ</code><span class=\"sep\"></span><code class=\"docstring\">The composite ring element `D_n`, assembled by `minFac`-peeling over the prime\nfactorisation of `n` — with **genuine** factors at bad primes `p ∣ N`\n(`D_{p^v} = D_p^v`). `D_0 = D_1 = 1`. </code>",
+ "<code>ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k</code>",
  "38":
- "<code>HeckeRing.GL2.Unified.heckeRingHomCharSpace {N : ℕ} [NeZero N] {k : ℤ} {χ : (ZMod N)ˣ →* ℂˣ} :\n  HeckeRing.𝕋 (HeckeRing.GLn.Gamma0_pair N) ℤ →+* Module.End ℂ ↥(HeckeRing.GL2.modFormCharSpace k χ)</code><span class=\"sep\"></span><code class=\"docstring\">`Φ_χ`: the action of the `Γ₀(N)` Hecke ring on the nebentypus character space\n`modFormCharSpace k χ` as a ring homomorphism `𝕋(Γ₀(N)) →+* End_ℂ (Mₖ(Γ₁(N), χ))`. </code>",
+ "<code>HeckeRing.GL2.heckeT_n_preserves_charSpace {N : ℕ} [NeZero N] (k : ℤ) (n : ℕ) [NeZero n] (_hn : n.Coprime N)\n  (χ : (ZMod N)ˣ →* ℂˣ)\n  {f : ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k}\n  (hf : f ∈ HeckeRing.GL2.modFormCharSpace k χ) : (HeckeRing.GL2.heckeT_n k n) f ∈ HeckeRing.GL2.modFormCharSpace k χ</code><span class=\"sep\"></span><code class=\"docstring\">`T_n` preserves the character space `M_k(Γ₁(N), χ)` for `n` coprime to `N`.\n\nA thin wrapper over the general `heckeT_n_preserves_modFormCharSpace_all` (which holds for\n**all** `n`); kept under its original name and signature for downstream consumers.\n\nReference: [DS] Prop 5.2.2(b) generalised. </code>",
  "37":
- "<code>Nat.Coprime (m n : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`m` and `n` are coprime, or relatively prime, if their `gcd` is 1. </code>",
- "36": "<code>ℕ+</code>",
+ "<code>HeckeRing.GL2.diamondOp {N : ℕ} [NeZero N] (k : ℤ) (d : (ZMod N)ˣ) :\n  ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k →ₗ[ℂ]\n    ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k</code><span class=\"sep\"></span><code class=\"docstring\">The diamond operator `⟨d⟩` on modular forms for `Gamma1(N)`, indexed by\n`d : (ZMod N)ˣ`. </code>",
+ "36": "<code>(ZMod N)ˣ</code>",
  "35":
- "<code>∀ (n : ℕ+),\n  (↑n).Coprime N →\n    (HeckeRing.GL2.Unified.heckeRingHomCharSpace (HeckeRing.GL2.Unified.heckeRingDn ↑n)) ⟨self.toModularForm', ⋯⟩ =\n      self.ringEigenvalue n • ⟨self.toModularForm', ⋯⟩</code><span class=\"sep\"></span><code class=\"docstring\">For `n` coprime to `N`, the explicit ring element `heckeRingDn n` acts on the\ncoercion `↑f ∈ modFormCharSpace k χ` by the scalar `ringEigenvalue n`. </code>",
- "34":
- "<code>PNat : Type</code><span class=\"sep\"></span><code class=\"docstring\">`ℕ+` is the type of positive natural numbers. It is defined as a subtype,\nand the VM representation of `ℕ+` is the same as `ℕ` because the proof\nis not stored. </code>",
+ "<code>HeckeRing.GL2.heckeT_n_comm_diamondOp {N : ℕ} [NeZero N] (k : ℤ) (n : ℕ) [NeZero n] (_hn : n.Coprime N)\n  (d : (ZMod N)ˣ) :\n  HeckeRing.GL2.diamondOp k d * HeckeRing.GL2.heckeT_n k n = HeckeRing.GL2.heckeT_n k n * HeckeRing.GL2.diamondOp k d</code><span class=\"sep\"></span><code class=\"docstring\">`T_n` commutes with the diamond operator `⟨d⟩` (for `n` coprime to the level `N`) —\non each character space the diamond acts by a scalar, so the identity glues from the\ncharacter decomposition. </code>",
+ "34": "<code>m.Coprime n</code>",
  "33":
- "<code>ℕ+ → ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The eigenvalues for the canonical `Γ₀(N)` Hecke **ring** action. </code>",
+ "<code>HeckeRing.GL2.heckeT_n_mul_coprime {N : ℕ} [NeZero N] (k : ℤ) (m n : ℕ) [NeZero m] [NeZero n] (hmn : m.Coprime n)\n  (hm : m.Coprime N) (hn : n.Coprime N) :\n  HeckeRing.GL2.heckeT_n k (m * n) = HeckeRing.GL2.heckeT_n k m * HeckeRing.GL2.heckeT_n k n</code><span class=\"sep\"></span><code class=\"docstring\">Coprime multiplicativity `T_{mn} = T_m T_n` (for `m, n` coprime to the level `N`) —\ntransported from the ring identity `heckeRingDn_mul_coprime`. </code>",
  "32":
- "<code>HeckeRing.GL2.Eigenform.χ {N : ℕ} [NeZero N] {k : ℤ} (self : HeckeRing.GL2.Eigenform N k) : (ZMod N)ˣ →* ℂˣ</code><span class=\"sep\"></span><code class=\"docstring\">The Nebentypus character of the eigenform. </code>",
- "31":
- "<code>Membership.mem.{u, v} {α : outParam (Type u)} {γ : Type v} [self : Membership α γ] : γ → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The membership relation `a ∈ s : Prop` where `a : α`, `s : γ`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∈` in identifiers is `mem`.</code>",
+ "<code>HMul.hMul.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HMul α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a * b` computes the product of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `*` in identifiers is `mul`.</code>",
+ "31": "<code>n.Coprime N</code>",
  "30":
- "<code>CuspForm.toModularForm' {k : ℤ} {Γ : Subgroup (GL (Fin 2) ℝ)} (f : CuspForm Γ k) : ModularForm Γ k</code><span class=\"sep\"></span><code class=\"docstring\">Every cusp form is a modular form (zero at cusps implies bounded at cusps). </code>",
+ "<code>Nat.Coprime (m n : ℕ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`m` and `n` are coprime, or relatively prime, if their `gcd` is 1. </code>",
  "3":
  "<code>NeZero.{u_1} {R : Type u_1} [Zero R] (n : R) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A type-class version of `n ≠ 0`.  </code>",
- "29":
- "<code>self.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k self.χ</code><span class=\"sep\"></span><code class=\"docstring\">The coercion of the cusp form lies in the `χ`-eigenspace `modFormCharSpace k χ`. </code>",
+ "29": "<code>m.Coprime N</code>",
  "28":
- "<code>(ZMod N)ˣ →* ℂˣ</code><span class=\"sep\"></span><code class=\"docstring\">The Nebentypus character of the eigenform. </code>",
+ "<code>HeckeRing.GL2.heckeT_n_comm {N : ℕ} [NeZero N] (k : ℤ) (m n : ℕ) [NeZero m] [NeZero n] (hm : m.Coprime N)\n  (hn : n.Coprime N) :\n  HeckeRing.GL2.heckeT_n k m * HeckeRing.GL2.heckeT_n k n = HeckeRing.GL2.heckeT_n k n * HeckeRing.GL2.heckeT_n k m</code><span class=\"sep\"></span><code class=\"docstring\">`T_m` and `T_n` commute (for `m, n` coprime to the level `N`) — transported from the\ncommutative Hecke ring `𝕋(Γ₀(N))`. </code>",
  "27":
- "<code>OnePoint.IsZeroAt (c : OnePoint ℝ) (f : UpperHalfPlane → ℂ) (k : ℤ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">We say `f` is zero at `c` if, for all `g` with `g • ∞ = c`, the function `f ∣[k] g` is\nzero at `∞`. </code>",
+ "<code>CuspForm (Γ : Subgroup (GL (Fin 2) ℝ)) (k : ℤ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">These are `SlashInvariantForm`s that are holomorphic and zero at infinity. </code>",
  "26":
- "<code>IsCusp (c : OnePoint ℝ) (𝒢 : Subgroup (GL (Fin 2) ℝ)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The *cusps* of a subgroup of `GL(2, ℝ)` are the fixed points of parabolic elements of `g`. </code>",
+ "<code>CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k</code>",
  "25":
- "<code>OnePoint.{u_3} (X : Type u_3) : Type u_3</code><span class=\"sep\"></span><code class=\"docstring\">The one-point extension of an arbitrary topological space `X` </code>",
- "24": "<code>OnePoint ℝ</code>",
+ "<code>HeckeRing.GL2.heckeT_n_cusp {N : ℕ} [NeZero N] (k : ℤ) (n : ℕ) [NeZero n]\n  (f : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k) :\n  CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k</code><span class=\"sep\"></span><code class=\"docstring\">`T_n` restricted to cusp forms. </code>",
+ "24":
+ "<code>HeckeRing.GL2.heckeT_n {N : ℕ} [NeZero N] (k : ℤ) (n : ℕ) [NeZero n] :\n  Module.End ℂ (ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">**Hecke operator `T_n`** on `M_k(Γ₁(N))` for general `n ∈ ℕ⁺`.\n\nDefined as the product of prime-power components:\n`T_n = ∏_{p^v ‖ n} T_{p^v}`, assembled by peeling off `minFac(n)`.\n\nThe key algebraic properties (`heckeT_n_mul_coprime`, `heckeT_n_comm`) ensure\nthis is independent of the factorisation order.\n\nReference: [DS] §5.3, [Miy] §4.5. </code>",
  "23":
- "<code>CuspForm.toSlashInvariantForm {Γ : Subgroup (GL (Fin 2) ℝ)} {k : ℤ} (self : CuspForm Γ k) : SlashInvariantForm Γ k</code><span class=\"sep\"></span><code class=\"docstring\">The `SlashInvariantForm` associated to a `CuspForm`. </code>",
+ "<code>iSupIndep.{u_5, u_6} {ι : Sort u_5} {α : Type u_6} [CompleteLattice α] (t : ι → α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An independent indexed family of elements in a complete lattice is one in which every element\nis disjoint from the `iSup` of the rest.\n\nExample: an indexed family of non-zero elements in a\nvector space is linearly independent iff the indexed family of subspaces they generate is\nindependent in this sense.\n\nExample: an indexed family of submodules of a module is independent in this sense if\nand only the natural map from the direct sum of the submodules to the module is injective. </code>",
  "22":
- "<code>Eq.{u_1} {α : Sort u_1} : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The equality relation. It has one introduction rule, `Eq.refl`.\nWe use `a = b` as notation for `Eq a b`.\nA fundamental property of equality is that it is an equivalence relation.\n```\nvariable (α : Type) (a b c d : α)\nvariable (hab : a = b) (hcb : c = b) (hcd : c = d)\n\nexample : a = d :=\n  Eq.trans (Eq.trans hab (Eq.symm hcb)) hcd\n```\nEquality is much more than an equivalence relation, however. It has the important property that every assertion\nrespects the equivalence, in the sense that we can substitute equal expressions without changing the truth value.\nThat is, given `h1 : a = b` and `h2 : p a`, we can construct a proof for `p b` using substitution: `Eq.subst h1 h2`.\nExample:\n```\nexample (α : Type) (a b : α) (p : α → Prop)\n        (h1 : a = b) (h2 : p a) : p b :=\n  Eq.subst h1 h2\n\nexample (α : Type) (a b : α) (p : α → Prop)\n    (h1 : a = b) (h2 : p a) : p b :=\n  h1 ▸ h2\n```\nThe triangle in the second presentation is a macro built on top of `Eq.subst` and `Eq.symm`, and you can enter it by typing `\\t`.\nFor more information: [Equality](https://lean-lang.org/theorem_proving_in_lean4/quantifiers_and_equality.html#equality)\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `=` in identifiers is `eq`.</code>",
+ "<code>HeckeRing.GL2.ModularForm_Gamma1_iSupIndep_charSpace {N : ℕ} [NeZero N] (k : ℤ) :\n  iSupIndep fun χ ↦ HeckeRing.GL2.modFormCharSpace k χ</code><span class=\"sep\"></span><code class=\"docstring\">**The character subspaces form an independent family.** </code>",
  "21":
- "<code>SlashInvariantForm.toFun {Γ : outParam (Subgroup (GL (Fin 2) ℝ))} {k : outParam ℤ} (self : SlashInvariantForm Γ k) :\n  UpperHalfPlane → ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The underlying function `ℍ → ℂ`.\n\nDo NOT use directly. Use the coercion instead. </code>",
- "20": "<code>HeckeRing.GL2.Eigenform N k</code>",
+ "<code>Top.top.{u_1} {α : Type u_1} [self : Top α] : α</code><span class=\"sep\"></span><code class=\"docstring\">The top (`⊤`, `\\top`) element \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⊤` in identifiers is `top`.</code>",
+ "20":
+ "<code>Eq.{u_1} {α : Sort u_1} : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The equality relation. It has one introduction rule, `Eq.refl`.\nWe use `a = b` as notation for `Eq a b`.\nA fundamental property of equality is that it is an equivalence relation.\n```\nvariable (α : Type) (a b c d : α)\nvariable (hab : a = b) (hcb : c = b) (hcd : c = d)\n\nexample : a = d :=\n  Eq.trans (Eq.trans hab (Eq.symm hcb)) hcd\n```\nEquality is much more than an equivalence relation, however. It has the important property that every assertion\nrespects the equivalence, in the sense that we can substitute equal expressions without changing the truth value.\nThat is, given `h1 : a = b` and `h2 : p a`, we can construct a proof for `p b` using substitution: `Eq.subst h1 h2`.\nExample:\n```\nexample (α : Type) (a b : α) (p : α → Prop)\n        (h1 : a = b) (h2 : p a) : p b :=\n  Eq.subst h1 h2\n\nexample (α : Type) (a b : α) (p : α → Prop)\n    (h1 : a = b) (h2 : p a) : p b :=\n  h1 ▸ h2\n```\nThe triangle in the second presentation is a macro built on top of `Eq.subst` and `Eq.symm`, and you can enter it by typing `\\t`.\nFor more information: [Equality](https://lean-lang.org/theorem_proving_in_lean4/quantifiers_and_equality.html#equality)\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `=` in identifiers is `eq`.</code>",
  "2":
  "<code>Nat : Type</code><span class=\"sep\"></span><code class=\"docstring\">The natural numbers, starting at zero.\n\nThis type is special-cased by both the kernel and the compiler, and overridden with an efficient\nimplementation. Both use a fast arbitrary-precision arithmetic library (usually\n[GMP](https://gmplib.org/)); at runtime, `Nat` values that are sufficiently small are unboxed.\n</code>",
  "19":
- "<code>SlashAction.map.{u_1, u_2, u_3} {β : Type u_1} {G : Type u_2} {α : Type u_3} {inst✝ : Monoid G} {inst✝¹ : AddMonoid α}\n  [self : SlashAction β G α] : β → G → α → α</code>",
- "18": "<code>GL (Fin 2) ℝ</code>",
- "17":
- "<code>UpperHalfPlane : Type</code><span class=\"sep\"></span><code class=\"docstring\">The open upper half plane, denoted as `ℍ` within the `UpperHalfPlane` namespace </code>",
- "16":
- "<code>CongruenceSubgroup.Gamma1 (N : ℕ) : Subgroup (Matrix.SpecialLinearGroup (Fin 2) ℤ)</code><span class=\"sep\"></span><code class=\"docstring\">The congruence subgroup `Gamma1` of `SL(2, ℤ)` consisting of matrices\nwhose bottom row is congruent to `(0,1)` modulo `N`. </code>",
- "15":
- "<code>Real : Type</code><span class=\"sep\"></span><code class=\"docstring\">The type `ℝ` of real numbers constructed as equivalence classes of Cauchy sequences of rational\nnumbers. </code>",
- "14":
- "<code>Matrix.SpecialLinearGroup.mapGL.{u, v, u_1} {n : Type u} [DecidableEq n] [Fintype n] {R : Type v} [CommRing R]\n  (S : Type u_1) [CommRing S] [Algebra R S] : Matrix.SpecialLinearGroup n R →* GL n S</code><span class=\"sep\"></span><code class=\"docstring\">`mapGL` is the map from the special linear group over `R` to the general linear group over\n`S`, where `S` is an `R`-algebra. </code>",
- "13":
- "<code>Subgroup.map.{u_1, u_5} {G : Type u_1} [Group G] {N : Type u_5} [Group N] (f : G →* N) (H : Subgroup G) : Subgroup N</code><span class=\"sep\"></span><code class=\"docstring\">The image of a subgroup along a monoid homomorphism is a subgroup. </code>",
- "12":
- "<code>ModularForm (Γ : Subgroup (GL (Fin 2) ℝ)) (k : ℤ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">These are `SlashInvariantForm`'s that are holomorphic and bounded at infinity. </code>",
- "11":
+ "<code>HeckeRing.GL2.ModularForm_Gamma1_iSup_charSpace {N : ℕ} [NeZero N] (k : ℤ) : ⨆ χ, HeckeRing.GL2.modFormCharSpace k χ = ⊤</code><span class=\"sep\"></span><code class=\"docstring\">**The character subspaces `modFormCharSpace k χ` span the whole space**:\nmodular forms for `Γ₁(N)` decompose into the span of Nebentypus character\nspaces, one for each character `(ZMod N)ˣ →* ℂˣ`. </code>",
+ "18":
  "<code>Submodule.{u, v} (R : Type u) (M : Type v) [Semiring R] [AddCommMonoid M] [Module R M] : Type v</code><span class=\"sep\"></span><code class=\"docstring\">A submodule of a module is one which is closed under vector operations.\nThis is a sufficient condition for the subset of vectors in the submodule\nto themselves form a module. </code>",
+ "173":
+ "<code>HeckeRing.GL2.strongMultiplicityOne_axiom_clean {N : ℕ} [NeZero N] {k : ℤ} (f g : HeckeRing.GL2.Newform N k)\n  (χ : (ZMod N)ˣ →* ℂˣ) (hfχ : f.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ)\n  (hgχ : g.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ) (S : Finset ℕ)\n  (h_eig : ∀ (n : ℕ+), (↑n).Coprime N → ↑n ∉ S → f.eigenvalue n = g.eigenvalue n) : f.toCuspForm = g.toCuspForm</code><span class=\"sep\"></span><code class=\"docstring\">**Strong Multiplicity One for both newforms (DS 5.8.2.1).**\nTwo `Newform`s at level `N` in the same Nebentypus eigenspace with equal eigenvalues outside a\nfinite set `S` are equal.\n\nCorollary of `strongMultiplicityOne_constMul` (T014): the constant multiple it returns is forced\nto be `1` since both newforms are normalised (`a₁ = 1`). </code>",
+ "172":
+ "<code>∀ (n : ℕ+), (↑n).Coprime N → ↑n ∉ S → f.eigenvalue n = g.eigenvalue n</code>",
+ "171":
+ "<code>HeckeRing.GL2.strongMultiplicityOne_constMul {N : ℕ} [NeZero N] {k : ℤ} (f : HeckeRing.GL2.Newform N k)\n  (g : HeckeRing.GL2.Eigenform N k) (χ : (ZMod N)ˣ →* ℂˣ) (hfχ : f.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ)\n  (hgχ : g.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ) (S : Finset ℕ)\n  (h_eig : ∀ (n : ℕ+), (↑n).Coprime N → ↑n ∉ S → f.eigenvalue n = g.eigenvalue n) : ∃ c, g.toCuspForm = c • f.toCuspForm</code><span class=\"sep\"></span><code class=\"docstring\">**Miyake Theorem 4.6.12 (Strong Multiplicity One, full constant-multiple form).**\nIf `f` is a normalised `Newform` at level `N` with Nebentypus `χ` and `g` is a common\n`T(n)`-eigenfunction in `S_k(Γ₁(N), χ)` sharing `f`'s eigenvalues off a finite set `S`,\nthen `g = c • f` for some `c ∈ ℂ`. </code>",
+ "170":
+ "<code>∀ (n : ℕ+), (↑n).Coprime N → ↑n ∉ S → HeckeRing.GL2.heckeT_n_cusp k (↑n) g_old = f.eigenvalue n • g_old</code>",
+ "17": "<code>(ZMod N)ˣ →* ℂˣ</code>",
+ "169": "<code>g_old ∈ HeckeRing.GL2.cuspFormCharSpace k χ</code>",
+ "168": "<code>g_old ∈ HeckeRing.GL2.cuspFormsOldChar N k χ m_χ</code>",
+ "167":
+ "<code>HeckeRing.GL2.oldPart_eq_zero_of_shared_eigenvalues {N : ℕ} [NeZero N] {k : ℤ} (f : HeckeRing.GL2.Newform N k)\n  (χ : (ZMod N)ˣ →* ℂˣ) (m_χ : ℕ) (hfχ : f.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ)\n  (g_old : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)\n  (hg_old : g_old ∈ HeckeRing.GL2.cuspFormsOldChar N k χ m_χ)\n  (hg_old_char : g_old ∈ HeckeRing.GL2.cuspFormCharSpace k χ) (S : Finset ℕ)\n  (h_eig : ∀ (n : ℕ+), (↑n).Coprime N → ↑n ∉ S → HeckeRing.GL2.heckeT_n_cusp k (↑n) g_old = f.eigenvalue n • g_old) :\n  g_old = 0</code><span class=\"sep\"></span><code class=\"docstring\">**Old-part vanishing** (Miyake 4.6.12, steps (i)+(ii), p. 164).  If `f` is a\nnonzero newform at level `N` and `g_old` is a common `T(n)`-eigenform in the χ-refined\nold space sharing `f`'s eigenvalues off a finite set `S`, then `g_old = 0`. </code>",
+ "166":
+ "<code>∀ (n : ℕ+), (↑n).Coprime N → ↑n ∉ S → f.eigenvalue n = g_new.eigenvalue n</code>",
+ "165":
+ "<code>Finset.{u_4} (α : Type u_4) : Type u_4</code><span class=\"sep\"></span><code class=\"docstring\">`Finset α` is the type of finite sets of elements of `α`. It is implemented\nas a multiset (a list up to permutation) which has no duplicate elements. </code>",
+ "164": "<code>Finset ℕ</code>",
+ "163": "<code>g_new.toCuspForm ∈ HeckeRing.GL2.cuspFormsNew N k</code>",
+ "162":
+ "<code>g_new.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ</code>",
+ "161":
+ "<code>HeckeRing.GL2.newPart_eq_smul_of_shared_eigenvalues {N : ℕ} [NeZero N] {k : ℤ} (f : HeckeRing.GL2.Newform N k)\n  (g_new : HeckeRing.GL2.Eigenform N k) (χ : (ZMod N)ˣ →* ℂˣ)\n  (hfχ : f.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ)\n  (hgχ : g_new.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ)\n  (hg_new : g_new.toCuspForm ∈ HeckeRing.GL2.cuspFormsNew N k) (S : Finset ℕ)\n  (h_eig : ∀ (n : ℕ+), (↑n).Coprime N → ↑n ∉ S → f.eigenvalue n = g_new.eigenvalue n) :\n  g_new.toCuspForm = (PowerSeries.coeff 1) (UpperHalfPlane.qExpansion 1 ⇑g_new.toCuspForm) • f.toCuspForm</code><span class=\"sep\"></span><code class=\"docstring\">**New-part identity** (Miyake 4.6.12, new part, p. 163).  If `f` is a normalised\n`Newform` and `g_new` is a common eigenfunction in the new subspace sharing `f`'s\neigenvalues off a finite set `S`, then `g_new = a₁(g_new) • f`. </code>",
+ "160":
+ "<code>HeckeRing.GL2.cuspFormsOldExtended (N : ℕ) [NeZero N] (k : ℤ) :\n  Submodule ℂ (CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">The classical oldform subspace `S_k^old(N)`: `cuspFormsOld N k` extended with\nthe trivial-inclusion oldform generators, spanning both the level-raise summands\n`LR_{N/M}(S_k(Γ₁(M)))` and the inclusions `S_k(Γ₁(M)) ↪ S_k(Γ₁(N))` for `M ∣ N`,\n`M &lt; N`. </code>",
+ "16":
+ "<code>HeckeRing.GL2.modFormCharSpace {N : ℕ} [NeZero N] (k : ℤ) (χ : (ZMod N)ˣ →* ℂˣ) :\n  Submodule ℂ (ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">The modular-form Nebentypus character space `M_k(Γ₁(N), χ)`. </code>",
+ "159": "<code>f.toCuspForm ≠ 0</code>",
+ "158":
+ "<code>HeckeRing.GL2.newform_notMem_cuspFormsOldExtended {N : ℕ} [NeZero N] {k : ℤ} (f : HeckeRing.GL2.Newform N k)\n  (hf0 : f.toCuspForm ≠ 0) : f.toCuspForm ∉ HeckeRing.GL2.cuspFormsOldExtended N k</code><span class=\"sep\"></span><code class=\"docstring\">A nonzero `Newform` at level `N` does not lie in the extended old space\n`cuspFormsOldExtended N k`. </code>",
+ "157":
+ "<code>(PowerSeries.coeff 1) (UpperHalfPlane.qExpansion 1 ⇑self.toCuspForm) = 1</code><span class=\"sep\"></span><code class=\"docstring\">Normalisation at the **canonical Fourier period** (`h = 1`): the first\nFourier coefficient is `1`, i.e. `a₁ = 1` (the Diamond–Shurman / Miyake\nnormalisation). </code>",
+ "156":
+ "<code>HeckeRing.GL2.cuspFormsNewExtended (N : ℕ) [NeZero N] (k : ℤ) :\n  Submodule ℂ (CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">The **extended new subspace**: cusp forms `petN`-orthogonal to every form in\nthe extended oldspace `cuspFormsOldExtended N k`. It is a submodule of the\nclassical newspace (`cuspFormsNewExtended ⊆ cuspFormsNew`), and is the correct\nobject at bad primes, where classical `cuspFormsNew` is not preserved by `T_p`\n(e.g. at `N = p²`). </code>",
+ "155":
+ "<code>self.toCuspForm ∈ HeckeRing.GL2.cuspFormsNewExtended N k</code><span class=\"sep\"></span><code class=\"docstring\">The form is in the new subspace. </code>",
+ "154":
+ "<code>∀ (n : ℕ), n.Coprime N → (PowerSeries.coeff n) (UpperHalfPlane.qExpansion 1 ⇑f) = 0</code>",
+ "153":
+ "<code>HeckeRing.GL2.mainLemma_charSpace_routeB {N : ℕ} [NeZero N] {k : ℤ} (χ : (ZMod N)ˣ →* ℂˣ)\n  (f : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)\n  (hfχ : f ∈ HeckeRing.GL2.cuspFormCharSpace k χ)\n  (h_vanish : ∀ (n : ℕ), n.Coprime N → (PowerSeries.coeff n) (UpperHalfPlane.qExpansion 1 ⇑f) = 0) :\n  f ∈ HeckeRing.GL2.cuspFormsOld N k</code><span class=\"sep\"></span><code class=\"docstring\">**Per-character unconditional Miyake 4.6.8 (route B).**  A cusp form\n`f ∈ S_k(Γ_1(N), χ)` whose period-1 `q`-expansion vanishes at every index coprime to\n`N` is an oldform.  This is `mainLemma_charSpace_routeB` with the `h_chi_factor`\nhypothesis **removed**: the per-prime character factorisation needed by the\nsame-level divisor decomposition is supplied internally by Miyake's dichotomy 4.6.4\n(`coprimeSieve_admits_squarefree_decomposition_in_charSpace`). </code>",
+ "152":
+ "<code>HeckeRing.GL2.cuspFormsOldChar_le_cuspFormsOld {N : ℕ} [NeZero N] {k : ℤ} (χ : (ZMod N)ˣ →* ℂˣ) (m_χ : ℕ) :\n  HeckeRing.GL2.cuspFormsOldChar N k χ m_χ ≤ HeckeRing.GL2.cuspFormsOld N k</code><span class=\"sep\"></span><code class=\"docstring\">**Gap #4 bridge.**  The χ-refined old space is contained in the project's\ncharacter-agnostic `cuspFormsOld N k`.  This lets the new-part argument and the\nfinal contradiction in 4.6.12 reuse the existing `cuspFormsOld_disjoint_cuspFormsNew`\nand route-B Main Lemma without re-deriving them for `cuspFormsOldChar`.\n\n(One inclusion suffices for the proof of 4.6.12; the reverse inclusion — that every\nproject-oldform in the χ-space is a Miyake-oldform — is NOT needed and is harder.) </code>",
+ "151":
+ "<code>DirichletCharacter.conductor.{u_1} {R : Type u_1} [CommMonoidWithZero R] {n : ℕ} (χ : DirichletCharacter R n) : ℕ</code><span class=\"sep\"></span><code class=\"docstring\">The minimum natural number level `n` through which `χ` factors. </code>",
+ "150":
+ "<code>MulChar.toUnitHom.{u_1, u_2} {R : Type u_1} [CommMonoid R] {R' : Type u_2} [CommMonoidWithZero R'] (χ : MulChar R R') :\n  Rˣ →* R'ˣ</code><span class=\"sep\"></span><code class=\"docstring\">Turn a `MulChar` into a homomorphism between the unit groups. </code>",
+ "15":
+ "<code>CongruenceSubgroup.Gamma1 (N : ℕ) : Subgroup (Matrix.SpecialLinearGroup (Fin 2) ℤ)</code><span class=\"sep\"></span><code class=\"docstring\">The congruence subgroup `Gamma1` of `SL(2, ℤ)` consisting of matrices\nwhose bottom row is congruent to `(0,1)` modulo `N`. </code>",
+ "149":
+ "<code>DirichletCharacter.{u_1} (R : Type u_1) [CommMonoidWithZero R] (n : ℕ) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">The type of Dirichlet characters of level `n`. </code>",
+ "148": "<code>DirichletCharacter ℂ N</code>",
+ "147":
+ "<code>HeckeRing.GL2.cuspFormsOld_inf_charSpace_le_cuspFormsOldChar {N : ℕ} [NeZero N] {k : ℤ} (χ : DirichletCharacter ℂ N) :\n  HeckeRing.GL2.cuspFormsOld N k ⊓ HeckeRing.GL2.cuspFormCharSpace k (MulChar.toUnitHom χ) ≤\n    HeckeRing.GL2.cuspFormsOldChar N k (MulChar.toUnitHom χ) χ.conductor</code><span class=\"sep\"></span><code class=\"docstring\">**Gap #4, reverse inclusion (Miyake 4.6.12, T012).**  Every project-oldform in the\n`χ`-Nebentypus space is a Miyake `χ`-oldform.  This is the reverse of the proven forward\n`cuspFormsOldChar_le_cuspFormsOld`; together they identify the two old spaces on the\n`χ`-isotypic part, making `strongMultiplicityOne_constMul` (Theorem 4.6.12) **unconditional**.\n\nProof: Phase 1 (`cuspFormsOld_le_oldNewGenSpan`, the Diamond–Shurman recursive normal form via\nlevel-raise associativity) ∘ generator refinement (`oldNewGenSpan_le_oldNewGenCharSpan`) ∘\nPhase 2 (`oldNewGenCharSpan_inf_charSpace_le_cuspFormsOldChar`, the isotypic collapse with the\nconductor divisibility from Miyake 4.6.4). </code>",
+ "146": "<code>(i : ι) → (ZMod (M i))ˣ →* ℂˣ</code>",
+ "145":
+ "<code>(i : ι) → CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 (M i))) k</code>",
+ "144": "<code>∀ (i : ι), l i * M i = N</code>",
+ "143": "<code>∀ (i : ι), NeZero (l i)</code>",
+ "142": "<code>∀ (i : ι), NeZero (M i)</code>",
+ "141": "<code>ι → ℕ</code>",
+ "140":
+ "<code>HeckeRing.GL2.cuspFormsOldChar (N : ℕ) [NeZero N] (k : ℤ) (χ : (ZMod N)ˣ →* ℂˣ) (m_χ : ℕ) :\n  Submodule ℂ (CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">**Miyake's old space** `S_k^♭(N,χ)` (p. 162): the submodule of `cuspFormCharSpace k χ`\nspanned by `V_l`-images of the **new** subspaces at proper divisor levels `M` that are\nmultiples of the conductor `m_χ`.\n\nThis is the character-conductor-refined analogue of the project's `cuspFormsOld N k`;\nrelating the two is gap #4 (see `cuspFormsOldChar_le_cuspFormsOld`). </code>",
+ "14":
+ "<code>Real : Type</code><span class=\"sep\"></span><code class=\"docstring\">The type `ℝ` of real numbers constructed as equivalence classes of Cauchy sequences of rational\nnumbers. </code>",
+ "139": "<code>f ∈ HeckeRing.GL2.cuspFormsOldChar N k χ m_χ</code>",
+ "138":
+ "<code>HeckeRing.GL2.exists_levelRaise_eigen_decomposition_of_mem_cuspFormsOldChar {N : ℕ} [NeZero N] {k : ℤ}\n  (χ : (ZMod N)ˣ →* ℂˣ) (m_χ : ℕ)\n  (f : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)\n  (hf : f ∈ HeckeRing.GL2.cuspFormsOldChar N k χ m_χ) :\n  ∃ ι x M l,\n    ∃ (x_1 : ∀ (i : ι), NeZero (M i)) (x_2 : ∀ (i : ι), NeZero (l i)) (_ : ∀ (i : ι), m_χ ∣ M i) (_ :\n      ∀ (i : ι), M i ≠ N) (heq : ∀ (i : ι), l i * M i = N),\n      ∃ h χM,\n        (∀ (i : ι), h i ∈ HeckeRing.GL2.cuspFormsNew (M i) k) ∧\n          (∀ (i : ι), HeckeRing.GL2.IsEigenform (h i)) ∧\n            (∀ (i : ι), h i ∈ HeckeRing.GL2.cuspFormCharSpace k (χM i)) ∧\n              f = ∑ i, ⋯ ▸ (HeckeRing.GL2.levelRaise (M i) (l i) k) (h i)</code><span class=\"sep\"></span><code class=\"docstring\">**Miyake Lemma 4.6.9(3) (generation)**: every element of the χ-refined old space is a\nfinite sum of `V_l`-images of **eigenforms** in new spaces at proper divisor levels that\nare multiples of `m_χ`.  This is the descent normal form used in step (i) of 4.6.12.\n\nEach summand `hᵢ` additionally carries its level-`Mᵢ` Nebentypus character `χM i`\n(`hᵢ ∈ cuspFormCharSpace k (χM i)`); this character-tracking is consumed by\n4.6.12 step (i) (the `χ`-isotypic collapse of the orthogonality argument, via the level-`N`\npullback `(χM i)∘unitsMap`). </code>",
+ "137":
+ "<code>HeckeRing.GL2.oldPart_isEigen_of_eigenform {N : ℕ} [NeZero N] {k : ℤ} (g : HeckeRing.GL2.Eigenform N k) (n : ℕ+)\n  (hn : (↑n).Coprime N) :\n  HeckeRing.GL2.heckeT_n_cusp k (↑n) (HeckeRing.GL2.oldPart g.toCuspForm) =\n    g.eigenvalue n • HeckeRing.GL2.oldPart g.toCuspForm</code><span class=\"sep\"></span><code class=\"docstring\">The old projection of an `Eigenform` `g` is a `T(n)`-eigenform with `g`'s eigenvalues for\n`(n,N)=1` (Miyake 4.6.10). </code>",
+ "136":
+ "<code>HeckeRing.GL2.oldPart_heckeT_n_cusp_comm {N : ℕ} [NeZero N] {k : ℤ} (n : ℕ) [NeZero n] (hn : n.Coprime N)\n  (x : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k) :\n  HeckeRing.GL2.oldPart (HeckeRing.GL2.heckeT_n_cusp k n x) = HeckeRing.GL2.heckeT_n_cusp k n (HeckeRing.GL2.oldPart x)</code><span class=\"sep\"></span><code class=\"docstring\">The old projection commutes with `T(n)` for `(n,N)=1` (Miyake 4.6.10). </code>",
+ "135":
+ "<code>IsCompl.{u_1} {α : Type u_1} [PartialOrder α] [BoundedOrder α] (x y : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Two elements `x` and `y` are complements of each other if `x ⊔ y = ⊤` and `x ⊓ y = ⊥`. </code>",
+ "134":
+ "<code>HeckeRing.GL2.cuspFormsOld_isCompl_cuspFormsNew {N : ℕ} [NeZero N] {k : ℤ} :\n  IsCompl (HeckeRing.GL2.cuspFormsOld N k) (HeckeRing.GL2.cuspFormsNew N k)</code><span class=\"sep\"></span><code class=\"docstring\">DS (5.20): `S_k(Γ₁(N)) = S_k^old ⊕ S_k^new` as inner product spaces.  `Disjoint` is\n`cuspFormsOld_disjoint_cuspFormsNew`; `Codisjoint` comes from applying Mathlib's\n`BilinForm.isCompl_orthogonal_iff_disjoint` to the reflexive form `petN_realBilin` over the\nfinite-dimensional ℝ-space, using `cuspFormsNew = (cuspFormsOld)^⊥`. </code>",
+ "133":
+ "<code>Disjoint.{u_1} {α : Type u_1} [PartialOrder α] [OrderBot α] (a b : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Two elements of a lattice are disjoint if their inf is the bottom element.\n  (This generalizes disjoint sets, viewed as members of the subset lattice.)\n\nNote that we define this without reference to `⊓`, as this allows us to talk about orders where\nthe infimum is not unique, or where implementing `Inf` would require additional `Decidable`\narguments. </code>",
+ "132":
+ "<code>HeckeRing.GL2.cuspFormsOld_disjoint_cuspFormsNew {N : ℕ} [NeZero N] {k : ℤ} :\n  Disjoint (HeckeRing.GL2.cuspFormsOld N k) (HeckeRing.GL2.cuspFormsNew N k)</code><span class=\"sep\"></span><code class=\"docstring\">The intersection of `cuspFormsOld` and `cuspFormsNew` is trivial: applying orthogonality\nof `f ∈ cuspFormsNew` to `g = f ∈ cuspFormsOld` gives `petN f f = 0`, so `f = 0` by\n`petN_definite`. </code>",
+ "131":
+ "<code>HeckeRing.GL2.newPart {N : ℕ} [NeZero N] {k : ℤ}\n  (f : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k) :\n  CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k</code><span class=\"sep\"></span><code class=\"docstring\">**Newform part.** </code>",
+ "130":
+ "<code>HeckeRing.GL2.oldPart {N : ℕ} [NeZero N] {k : ℤ}\n  (f : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k) :\n  CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k</code><span class=\"sep\"></span><code class=\"docstring\">**Oldform part.**  The image of `f` under the oldform projection.\nEquivalent to `cuspFormsOldProjection N k f`. </code>",
+ "13":
+ "<code>Matrix.SpecialLinearGroup.mapGL.{u, v, u_1} {n : Type u} [DecidableEq n] [Fintype n] {R : Type v} [CommRing R]\n  (S : Type u_1) [CommRing S] [Algebra R S] : Matrix.SpecialLinearGroup n R →* GL n S</code><span class=\"sep\"></span><code class=\"docstring\">`mapGL` is the map from the special linear group over `R` to the general linear group over\n`S`, where `S` is an `R`-algebra. </code>",
+ "129": "<code>a ≠ b</code>",
+ "128": "<code>HeckeRing.GL2.heckeT_n_cusp k n g = b • g</code>",
+ "127": "<code>HeckeRing.GL2.heckeT_n_cusp k n f = a • f</code>",
+ "126": "<code>g ≠ 0</code>",
+ "125": "<code>f ≠ 0</code>",
+ "124": "<code>g ∈ HeckeRing.GL2.cuspFormCharSpace k χ</code>",
+ "123": "<code>f ∈ HeckeRing.GL2.cuspFormCharSpace k χ</code>",
+ "122":
+ "<code>HeckeRing.GL2.eigenforms_orthogonal_of_ne_eigenvalues {k : ℤ} {N : ℕ} [NeZero N] (χ : (ZMod N)ˣ →* ℂˣ)\n  {f g : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k}\n  (hf_char : f ∈ HeckeRing.GL2.cuspFormCharSpace k χ) (hg_char : g ∈ HeckeRing.GL2.cuspFormCharSpace k χ)\n  (hf_ne : f ≠ 0) (_hg_ne : g ≠ 0) {n : ℕ} [NeZero n] (hn : n.Coprime N) {a b : ℂ}\n  (hf_eig : HeckeRing.GL2.heckeT_n_cusp k n f = a • f) (hg_eig : HeckeRing.GL2.heckeT_n_cusp k n g = b • g)\n  (h_diff_ab : a ≠ b) : petN f g = 0</code>",
+ "121":
+ "<code>Complex.re (self : ℂ) : ℝ</code><span class=\"sep\"></span><code class=\"docstring\">The real part of a complex number. </code>",
+ "120":
+ "<code>petN {N : ℕ} [NeZero N] {k : ℤ}\n  (f g : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k) : ℂ</code><span class=\"sep\"></span><code class=\"docstring\">The level-N Petersson inner product on `S_k(Γ₁(N))`, defined as\n`petN f g = Σ_{[δ] ∈ SL₂(ℤ)/Γ₁(N)} ∫_fd petersson k (f∣δ⁻¹) (g∣δ⁻¹) dμ`. </code>",
+ "12":
+ "<code>Subgroup.map.{u_1, u_5} {G : Type u_1} [Group G] {N : Type u_5} [Group N] (f : G →* N) (H : Subgroup G) : Subgroup N</code><span class=\"sep\"></span><code class=\"docstring\">The image of a subgroup along a monoid homomorphism is a subgroup. </code>",
+ "119":
+ "<code>LE.le.{u} {α : Type u} [self : LE α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The less-equal relation: `x ≤ y` \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≤` in identifiers is `le`.</code>",
+ "118":
+ "<code>HeckeRing.GL2.petN_self_re_nonneg {k : ℤ} {N : ℕ} [NeZero N]\n  (f : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k) : 0 ≤ (petN f f).re</code><span class=\"sep\"></span><code class=\"docstring\">`petN f f` has non-negative real part. </code>",
+ "117":
+ "<code>HeckeRing.GL2.cuspFormsOld (N : ℕ) [NeZero N] (k : ℤ) :\n  Submodule ℂ (CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">The **oldform subspace** `S_k(Γ₁(N))^old`: the submodule generated by all\n`levelRaise` images from proper divisors of N.\n\nDS (5.18): `S_k^old = ⊕_{M | N, M ≠ N} ι_{N/M}(S_k(Γ₁(M))^2)` (sum over divisors). </code>",
+ "116":
+ "<code>Eq.rec.{u, u_1} {α : Sort u_1} {a✝ : α} {motive : (a : α) → a✝ = a → Sort u} (refl : motive a✝ ⋯) {a✝¹ : α}\n  (t : a✝ = a✝¹) : motive a✝¹ t</code>",
+ "115": "<code>HeckeRing.GL2.heckeT_n_cusp k n h = lam • h</code>",
+ "114": "<code>ℂ</code>",
+ "113":
+ "<code>CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 M)) k</code>",
+ "112": "<code>l * M = N</code>",
+ "111":
+ "<code>HeckeRing.GL2.heckeT_n_levelRaise_eigen {N : ℕ} [NeZero N] {k : ℤ} {M : ℕ} [NeZero M] {l : ℕ} [NeZero l]\n  (heq : l * M = N) (n : ℕ) [NeZero n] (hn : n.Coprime N)\n  (h : CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 M)) k) (lam : ℂ)\n  (h_eig : HeckeRing.GL2.heckeT_n_cusp k n h = lam • h) :\n  HeckeRing.GL2.heckeT_n_cusp k n (heq ▸ (HeckeRing.GL2.levelRaise M l k) h) =\n    lam • heq ▸ (HeckeRing.GL2.levelRaise M l k) h</code><span class=\"sep\"></span><code class=\"docstring\">**Miyake Lemma 4.6.2** (eigenvalue-preservation form).  If `h` is a `T_n`-eigenform\nat level `M` with eigenvalue `λ` for some `(n, l*M) = 1`, then its level-raise\n`V_l h = h(l·)` is a `T_n`-eigenform at level `l*M` with the same eigenvalue. </code>",
+ "110":
+ "<code>Dvd.dvd.{u_1} {α : Type u_1} [self : Dvd α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">Divisibility. `a ∣ b` (typed as `\\|`) means that there is some `c` such that `b = a * c`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∣` in identifiers is `dvd`.</code>",
+ "11":
+ "<code>ModularForm (Γ : Subgroup (GL (Fin 2) ℝ)) (k : ℤ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">These are `SlashInvariantForm`'s that are holomorphic and bounded at infinity. </code>",
+ "109": "<code>M ∣ N</code>",
+ "108":
+ "<code>HeckeRing.GL2.levelInclude_cusp {M N : ℕ} [NeZero M] [NeZero N] (hMN : M ∣ N) (k : ℤ) :\n  CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 M)) k →ₗ[ℂ]\n    CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k</code><span class=\"sep\"></span><code class=\"docstring\">Trivial-inclusion CuspForm map: for `M ∣ N`, a `Γ₁(M)`-cusp form is\nautomatically `Γ₁(N)`-invariant, so this lifts it to a `Γ₁(N)`-cusp form\nwith the same underlying function. </code>",
+ "107":
+ "<code>LinearMap.{u_14, u_15, u_16, u_17} {R : Type u_14} {S : Type u_15} [Semiring R] [Semiring S] (σ : R →+* S)\n  (M : Type u_16) (M₂ : Type u_17) [AddCommMonoid M] [AddCommMonoid M₂] [Module R M] [Module S M₂] :\n  Type (max u_16 u_17)</code><span class=\"sep\"></span><code class=\"docstring\">A map `f` between an `R`-module and an `S`-module over a ring homomorphism `σ : R →+* S`\nis semilinear if it satisfies the two properties `f (x + y) = f x + f y` and\n`f (c • x) = (σ c) • f x`. Elements of `LinearMap σ M M₂` (available under the notation\n`M →ₛₗ[σ] M₂`) are bundled versions of such maps. For plain linear maps (i.e. for which\n`σ = RingHom.id R`), the notation `M →ₗ[R] M₂` is available. An unbundled version of plain linear\nmaps is available with the predicate `IsLinearMap`, but it should be avoided most of the time. </code>",
+ "106":
+ "<code>HeckeRing.GL2.levelRaise (M : ℕ) [NeZero M] (d : ℕ) [NeZero d] (k : ℤ) :\n  CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 M)) k →ₗ[ℂ]\n    CuspForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 (d * M))) k</code><span class=\"sep\"></span><code class=\"docstring\">The level-raising operator `ι_d : S_k(Γ₁(M)) → S_k(Γ₁(d*M))`, defined as\n`(ι_d f)(τ) = f(d·τ)`, equivalently `d^{1-k} · (f ∣[k] [[d,0],[0,1]])`\n(DS (5.16); Miyake §4.6 Lemma 4.6.1). </code>",
+ "105":
+ "<code>Ne.{u} {α : Sort u} (a b : α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`a ≠ b`, or `Ne a b` is defined as `¬ (a = b)` or `a = b → False`,\nand asserts that `a` and `b` are not equal.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≠` in identifiers is `ne`.</code>",
+ "104": "<code>g.toCuspForm ≠ 0</code>",
+ "103": "<code>g.toCuspForm ∈ HeckeRing.GL2.cuspFormsNew N k</code>",
+ "102":
+ "<code>HeckeRing.GL2.coeff_one_ne_zero_of_mem_cuspFormsNew_of_eigen {N : ℕ} [NeZero N] {k : ℤ}\n  (g : HeckeRing.GL2.Eigenform N k) (χ : (ZMod N)ˣ →* ℂˣ) (hgχ : g.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ)\n  (hg_new : g.toCuspForm ∈ HeckeRing.GL2.cuspFormsNew N k) (hg_ne : g.toCuspForm ≠ 0) :\n  (PowerSeries.coeff 1) (UpperHalfPlane.qExpansion 1 ⇑g.toCuspForm) ≠ 0</code><span class=\"sep\"></span><code class=\"docstring\">**Miyake Lemma 4.6.11** (`Eigenform`/`cuspFormsNew` form).  A nonzero common\neigenfunction in the new subspace has nonvanishing leading Fourier coefficient.\n\nProof: if `a₁(g) = 0` then `aₙ(g) = 0` for all `(n,N)=1` (Lemma 4.5.15(1)),\nso `g ∈ cuspFormsOld N k`; being also new and nonzero, this contradicts\n`cuspFormsOld_disjoint_cuspFormsNew`. </code>",
+ "101": "<code>f.toModularForm' ∈ HeckeRing.GL2.modFormCharSpace k χ</code>",
+ "100":
+ "<code>HeckeRing.GL2.Newform (N : ℕ) [NeZero N] (k : ℤ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">A **newform** of level Γ₁(N) and weight k: a cusp form that is\n1. an eigenform (common eigenfunction of all T_n with (n,N)=1)\n2. in the new subspace\n3. normalised: a_1(f) = 1\n\nBy Atkin-Lehner uniqueness (DS Theorem 5.8.2), newforms are uniquely determined\nby their Hecke eigenvalues away from the level. </code>",
  "10":
  "<code>Complex : Type</code><span class=\"sep\"></span><code class=\"docstring\">Complex numbers consist of two `Real`s: a real part `re` and an imaginary part `im`. </code>",
  "1": "<code>ℕ</code>",
  "0":
- "<code>HeckeRing.GL2.modFormCharSpace {N : ℕ} [NeZero N] (k : ℤ) (χ : (ZMod N)ˣ →* ℂˣ) :\n  Submodule ℂ (ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">The modular-form Nebentypus character space `M_k(Γ₁(N), χ)`. </code>"}
+ "<code>HeckeRing.GL2.diamondOpHom {N : ℕ} [NeZero N] (k : ℤ) :\n  (ZMod N)ˣ →*\n    Module.End ℂ (ModularForm (Subgroup.map (Matrix.SpecialLinearGroup.mapGL ℝ) (CongruenceSubgroup.Gamma1 N)) k)</code><span class=\"sep\"></span><code class=\"docstring\">The diamond operator as a monoid homomorphism `(ZMod N)ˣ →* Module.End ℂ (...)`. </code>"}

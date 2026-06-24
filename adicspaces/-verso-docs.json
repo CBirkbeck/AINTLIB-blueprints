@@ -1,93 +1,133 @@
-{"9":
+{"99": "<code>Type u_3</code>",
+ "98":
+ "<code>ValuationSpectrum.comap.{u_2, u_3} {A : Type u_2} {B : Type u_3} [CommRing A] [CommRing B] (φ : A →+* B) (v : Spv B) :\n  Spv A</code><span class=\"sep\"></span><code class=\"docstring\">Contravariant map `Spv B → Spv A` induced by `φ : A →+* B` (Remark 4.3 of Wedhorn). </code>",
+ "97": "<code>Spv A</code>",
+ "96":
+ "<code>ValuationSpectrum.supp.{u_1} {A : Type u_1} [CommRing A] (v : Spv A) : Ideal A</code><span class=\"sep\"></span><code class=\"docstring\">The support prime ideal `{ a ∈ A | v(a) = 0 }` of a point `v ∈ Spv A`. </code>",
+ "95":
+ "<code>ValuationSpectrum.basicOpen.{u_1} {A : Type u_1} [CommRing A] (f s : A) : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">The basic open subset `Spv(A)(f/s) = { v ∈ Spv A | v(f) ≤ v(s) ∧ v(s) ≠ 0 }`. </code>",
+ "94":
+ "<code>ValuationSpectrum.{u_1} (A : Type u_1) [CommRing A] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">The *valuation spectrum* `Spv A` of a commutative ring `A` (Definition 4.1 of Wedhorn). </code>",
+ "93":
+ "<code>ValuativeRel.{u_1} (R : Type u_1) [Semiring R] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">The class `[ValuativeRel R]` class introduces an operator `x ≤ᵥ y : Prop` for `x y : R`\nwhich is the natural relation arising from (the equivalence class of) a valuation on `R` when `R`\nis a ring. More precisely, if `v` is a valuation on `R` then the associated relation is\n`x ≤ᵥ y ↔ v x ≤ v y`. Use this class to talk about the case where `R` is equipped\nwith an equivalence class of valuations. </code>",
+ "92":
+ "<code>Not (a : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Not p`, or `¬p`, is the negation of `p`. It is defined to be `p → False`,\nso if your goal is `¬p` you can use `intro h` to turn the goal into\n`h : p ⊢ False`, and if you have `hn : ¬p` and `h : p` then `hn h : False`\nand `(hn h).elim` will prove anything.\nFor more information: [Propositional Logic](https://lean-lang.org/theorem_proving_in_lean4/propositions_and_proofs.html#propositional-logic)\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `¬` in identifiers is `not`.</code>",
+ "91":
+ "<code>Or (a b : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Or a b`, or `a ∨ b`, is the disjunction of propositions. There are two\nconstructors for `Or`, called `Or.inl : a → a ∨ b` and `Or.inr : b → a ∨ b`,\nand you can use `match` or `cases` to destruct an `Or` assumption into the\ntwo cases.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∨` in identifiers is `or`.</code>",
+ "90":
+ "<code>ValuativeRel.vle.{u_1} {R : Type u_1} {inst✝ : Semiring R} [self : ValuativeRel R] : R → R → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The valuation less-equal operator arising from `ValuativeRel`. </code>",
+ "9":
  "<code>self.I.FG</code><span class=\"sep\"></span><code class=\"docstring\">`I` is finitely generated. </code>",
+ "89":
+ "<code>Valuation.imageGeOne.{u_1, u_2} {A : Type u_1} [CommRing A] {Γ₀ : Type u_2} [LinearOrderedCommGroupWithZero Γ₀]\n  (v : Valuation A Γ₀) : Set Γ₀</code><span class=\"sep\"></span><code class=\"docstring\">The set `Γ_{v,≥1} ∩ im(v)` from Wedhorn 4.13 — values `≥ 1` that\nare reached by `v`. </code>",
+ "88": "<code>Valuation A Γ₀</code>",
+ "87":
+ "<code>LinearOrderedCommGroupWithZero.{u_3} (α : Type u_3) : Type u_3</code><span class=\"sep\"></span><code class=\"docstring\">A linearly ordered commutative group with a zero element. </code>",
+ "86":
+ "<code>Valuation.cGammaIdeal.{u_1, u_2} {A : Type u_1} [CommRing A] {Γ₀ : Type u_2} [LinearOrderedCommGroupWithZero Γ₀]\n  (v : Valuation A Γ₀) (I : Ideal A) : ConvexSubgroup Γ₀ˣ</code><span class=\"sep\"></span><code class=\"docstring\">**Wedhorn 7.3: the convex subgroup `cΓ_v(I)`.** This is the smallest\nconvex subgroup of `Γ₀ˣ` containing the generators of `cGammaIdealUnits v I`,\nconstructed via `ConvexSubgroup.minContain`.\n\nBy construction:\n* Every element of `cGammaIdealUnits v I` lies in `cGammaIdeal v I`\n  (`subset_minContain`).\n* `cGammaIdeal v I` is the smallest convex subgroup with this property\n  (`minContain_le`).\n\nPer Wedhorn 7.3, this captures \"the convex subgroup making `v` continuous\nin `Spv(A, I)`\". </code>",
+ "85":
+ "<code>ConvexSubgroup.toSubgroup.{u_1} {Γ : Type u_1} [CommGroup Γ] [LinearOrder Γ] (self : ConvexSubgroup Γ) : Subgroup Γ</code>",
+ "84":
+ "<code>HasQuotient.Quotient.{u, v} (A : outParam (Type u)) {B : Type v} [self : HasQuotient A B] : B → Type (max u v)</code><span class=\"sep\"></span><code class=\"docstring\">`HasQuotient.Quotient A b` (denoted as `A ⧸ b`) is the quotient of the type `A` by `b`. </code>",
+ "83":
+ "<code>WithZero.{u_1} (α : Type u_1) : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">Add an extra element `0` to a type </code>",
+ "82":
+ "<code>Valuation.{u_3, u_4} (R : Type u_3) (Γ₀ : Type u_4) [LinearOrderedCommMonoidWithZero Γ₀] [Ring R] : Type (max u_3 u_4)</code><span class=\"sep\"></span><code class=\"docstring\">The type of `Γ₀`-valued valuations on `R`.\n\nWhen you extend this structure, make sure to extend `ValuationClass`. </code>",
+ "81": "<code>Valuation R (WithZero Γ)</code>",
+ "80":
+ "<code>IsOrderedMonoid.{u_2} (α : Type u_2) [CommMonoid α] [Preorder α] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An ordered monoid is a monoid with a preorder such that multiplication is monotone. </code>",
  "8":
  "<code>IsOpen.{u} {X : Type u} [TopologicalSpace X] : Set X → Prop</code><span class=\"sep\"></span><code class=\"docstring\">`IsOpen s` means that `s` is open in the ambient topological space on `X` </code>",
+ "79":
+ "<code>Valuation.coarsen.{u_1, u_2} {R : Type u_1} [CommRing R] {Γ : Type u_2} [CommGroup Γ] [LinearOrder Γ]\n  [IsOrderedMonoid Γ] (v : Valuation R (WithZero Γ)) (H : ConvexSubgroup Γ) : Valuation R (WithZero (Γ ⧸ H.toSubgroup))</code><span class=\"sep\"></span><code class=\"docstring\">**Coarsening** of a valuation by a convex subgroup `H` of its value group.\nThe coarsened valuation is the composition `R →ᵥ Γ₀ →π (Γ/H)₀` where `π` is the\nquotient projection (§7.1 of Wedhorn). </code>",
+ "78": "<code>Set Γ</code>",
+ "77":
+ "<code>ConvexSubgroup.minContain.{u_1} {Γ : Type u_1} [CommGroup Γ] [LinearOrder Γ] (S : Set Γ) : ConvexSubgroup Γ</code><span class=\"sep\"></span><code class=\"docstring\">**Convex subgroup generated by a set.** The smallest convex subgroup of `Γ`\ncontaining every element of `S`. Defined as the intersection of all convex\nsubgroups containing `S`.\n\nThis is the universal \"containing\" construction dual to `maxAvoid` (which is\nthe largest convex subgroup *avoiding* a single element). For our use, this\nunderwrites `cΓ_v(I)` from Wedhorn 7.3: the smallest convex subgroup\ngenerated by `{v(a) : v(a) ≥ 1, a ∈ A} ∪ {v(b)⁻¹ : b ∈ I, v(b) &gt; 0}`. </code>",
  "76":
- "<code>Fin (n : ℕ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">Natural numbers less than some upper bound.\n\nIn particular, a `Fin n` is a natural number `i` with the constraint that `i &lt; n`. It is the\ncanonical type with `n` elements.\n</code>",
+ "<code>LinearOrder.{u_2} (α : Type u_2) : Type u_2</code><span class=\"sep\"></span><code class=\"docstring\">A linear order is reflexive, transitive, antisymmetric and total relation `≤`.\nWe assume that every linear ordered type has decidable `(≤)`, `(&lt;)`, and `(=)`. </code>",
  "75":
- "<code>MvPowerSeries.{u_1, u_2} (σ : Type u_1) (R : Type u_2) : Type (max u_2 u_1)</code><span class=\"sep\"></span><code class=\"docstring\">Multivariate formal power series, where `σ` is the index set of the variables\nand `R` is the coefficient ring. </code>",
+ "<code>CommGroup.{u} (G : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A commutative group is a group with commutative `(*)`. </code>",
  "74":
- "<code>NonarchimedeanRing.{u_1} (R : Type u_1) [Ring R] [TopologicalSpace R] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological ring is nonarchimedean if its underlying topological additive\ngroup is nonarchimedean. </code>",
- "73": "<code>Type u</code>",
+ "<code>ConvexSubgroup.{u_1} (Γ : Type u_1) [CommGroup Γ] [LinearOrder Γ] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A **convex subgroup** of a linearly ordered commutative group `Γ` is a subgroup\nthat is order-convex: if `a ≤ x ≤ b` and `a, b ∈ H`, then `x ∈ H`. </code>",
+ "73":
+ "<code>Subgroup.{u_3} (G : Type u_3) [Group G] : Type u_3</code><span class=\"sep\"></span><code class=\"docstring\">A subgroup of a group `G` is a subset containing 1, closed under multiplication\nand closed under multiplicative inverse. \n\n[Wikidata Q466109](https://www.wikidata.org/wiki/Q466109)</code>",
  "72":
- "<code>TateAlgebra.{u} (A : Type u) [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] :\n  Subring (MvPowerSeries (Fin 1) A)</code><span class=\"sep\"></span><code class=\"docstring\">The univariate Tate algebra `A⟨X⟩`, the ring of restricted power series in one variable.\nThis is `restrictedMvPowerSeriesSubring 1 A`, specialized to the univariate case.\nSee Wedhorn, Definition 6.9. </code>",
+ "<code>∀ {a b x : Γ}, a ∈ self.carrier → b ∈ self.carrier → a ≤ x → x ≤ b → x ∈ self.carrier</code>",
  "71":
- "<code>ValuationSpectrum.IsTateRing.isAnalytic.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] [IsTateRing A]\n  (v : Spv A) : v.IsAnalytic</code><span class=\"sep\"></span><code class=\"docstring\">**Proposition 8.36 of Wedhorn.** If `A` is a Tate ring, every point of `Spv A` is analytic. </code>",
+ "<code>Inv.inv.{u} {α : Type u} [self : Inv α] : α → α</code><span class=\"sep\"></span><code class=\"docstring\">`a⁻¹` computes the inverse of `a`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⁻¹` in identifiers is `inv`.</code>",
  "70":
- "<code>ValuationSpectrum.IsAnalytic.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (v : Spv A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A point `v : Spv A` is *analytic* if its support `supp(v)` is not an open ideal\n(Definition 8.35 of Wedhorn). </code>",
+ "<code>Subsemigroup.carrier.{u_3} {M : Type u_3} [Mul M] (self : Subsemigroup M) : Set M</code><span class=\"sep\"></span><code class=\"docstring\">The carrier of a subsemigroup. </code>",
  "7":
  "<code>IsOpen ↑self.A₀</code><span class=\"sep\"></span><code class=\"docstring\">`A₀` is open in `A`. </code>",
- "69":
- "<code>Inter.inter.{u} {α : Type u} [self : Inter α] : α → α → α</code><span class=\"sep\"></span><code class=\"docstring\">`a ∩ b` is the intersection of `a` and `b`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∩` in identifiers is `inter`.</code>",
- "68": "<code>ValuationSpectrum.IsRationalSubset V</code>",
- "67": "<code>ValuationSpectrum.IsRationalSubset U</code>",
+ "69": "<code>ConvexSubgroup Γ</code>",
+ "68":
+ "<code>Membership.mem.{u, v} {α : outParam (Type u)} {γ : Type v} [self : Membership α γ] : γ → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The membership relation `a ∈ s : Prop` where `a : α`, `s : γ`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∈` in identifiers is `mem`.</code>",
+ "67": "<code>Γ</code>",
  "66":
- "<code>ValuationSpectrum.IsRationalSubset.inter.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] {U V : Set (Spv A)} (hU : ValuationSpectrum.IsRationalSubset U)\n  (hV : ValuationSpectrum.IsRationalSubset V) : ValuationSpectrum.IsRationalSubset (U ∩ V)</code><span class=\"sep\"></span><code class=\"docstring\">The intersection of two rational subsets is rational (Theorem 7.35(2)). </code>",
- "65": "<code>Set (Spv A)</code>",
+ "<code>Ideal.radical.{u} {R : Type u} [CommSemiring R] (I : Ideal R) : Ideal R</code><span class=\"sep\"></span><code class=\"docstring\">The radical of an ideal `I` consists of the elements `r` such that `r ^ n ∈ I` for some `n`. </code>",
+ "65":
+ "<code>Iff (a b : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">If and only if, or logical bi-implication. `a ↔ b` means that `a` implies `b` and vice versa.\nBy `propext`, this implies that `a` and `b` are equal and hence any expression involving `a`\nis equivalent to the corresponding expression with `b` instead.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `↔` in identifiers is `iff`.\n\n * The recommended spelling of `&lt;-&gt;` in identifiers is `iff` (prefer `↔` over `&lt;-&gt;`).</code>",
  "64":
- "<code>ValuationSpectrum.IsRationalSubset.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] (U : Set (Spv A)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A rational subset is one of the form `rationalOpen T s` (Definition 7.29). </code>",
+ "<code>LE.le.{u} {α : Type u} [self : LE α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The less-equal relation: `x ≤ y` \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `≤` in identifiers is `le`.</code>",
  "63":
- "<code>Finset.{u_4} (α : Type u_4) : Type u_4</code><span class=\"sep\"></span><code class=\"docstring\">`Finset α` is the type of finite sets of elements of `α`. It is implemented\nas a multiset (a list up to permutation) which has no duplicate elements. </code>",
- "62": "<code>Finset A</code>",
+ "<code>And (a b : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`And a b`, or `a ∧ b`, is the conjunction of propositions. It can be\nconstructed and destructed like a pair: if `ha : a` and `hb : b` then\n`⟨ha, hb⟩ : a ∧ b`, and if `h : a ∧ b` then `h.left : a` and `h.right : b`.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∧` in identifiers is `and`.</code>",
+ "62": "<code>Ideal A</code>",
  "61":
- "<code>ValuationSpectrum.rationalOpen.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] [ValuationSpectrum.PlusSubring A]\n  (T : Finset A) (s : A) : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">A rational subset `R(T/s)` of `Spa(A, A⁺)` (Definition 7.29). </code>",
+ "<code>∃ J, J.FG ∧ J ≤ topologicalNilradical A ∧ ∀ (n : ℕ), IsOpen ↑(J ^ n)</code>",
  "60":
- "<code>Subring A</code><span class=\"sep\"></span><code class=\"docstring\">The subring of integral elements `A⁺`. </code>",
+ "<code>ContinuousAdd.{u_1} (M : Type u_1) [TopologicalSpace M] [Add M] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Basic hypothesis to talk about a topological additive monoid or a topological additive\nsemigroup. A topological additive monoid over `M`, for example, is obtained by requiring both the\ninstances `AddMonoid M` and `ContinuousAdd M`.\n\nContinuity in each argument separately can be stated using `SeparatelyContinuousAdd α`. If one wants\nonly continuity in either the left or right argument, but not both one can use\n`ContinuousConstVAdd α α`/`ContinuousConstVAdd αᵐᵒᵖ α`. </code>",
  "6":
  "<code>PairOfDefinition.A₀.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (self : PairOfDefinition A) : Subring A</code><span class=\"sep\"></span><code class=\"docstring\">The ring of definition `A₀`, an open subring of `A`. </code>",
  "59":
- "<code>ValuationSpectrum.Spa.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] (Aplus : Subring A) : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">The *adic spectrum* `Spa(A, A⁺)` (Definition 7.23 of Wedhorn). </code>",
+ "<code>ideal_isOpen_iff_topologicalNilradical_le_radical.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [IsLinearTopology A A] [ContinuousAdd A] (hJ : ∃ J, J.FG ∧ J ≤ topologicalNilradical A ∧ ∀ (n : ℕ), IsOpen ↑(J ^ n))\n  (𝔞 : Ideal A) : IsOpen ↑𝔞 ↔ topologicalNilradical A ≤ 𝔞.radical</code><span class=\"sep\"></span><code class=\"docstring\">An ideal is open iff the topological nilradical is in its radical (Lemma 6.6). </code>",
  "58":
- "<code>ValuationSpectrum.PlusSubring.{u_1} (A : Type u_1) [CommRing A] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A commutative ring equipped with a designated subring `A⁺`. </code>",
- "57":
- "<code>ValuationSpectrum.IsAffinoidRing.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`(A, A⁺)` is an affinoid ring if `A⁺` is a ring of integral elements (Definition 7.14). </code>",
- "56":
- "<code>ValuationSpectrum.IsRingOfIntegralElements.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (B : Subring A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A ring of integral elements (Definition 7.14(1)): open, integrally closed, and in `A°`.\n\nA `class` (not a bare `structure`) so it can be required as `[IsRingOfIntegralElements (A⁺)]`\non `Spa`-level theorems — the faithful affinoid-ring interface (expert-review 2026-06-18,\nreviewer Q1). The bare `PlusSubring` carrier stays low-level; this records the three\nDefinition-7.14 axioms (open, integrally closed, `⊆ A°`) that make `(A, A⁺)` an affinoid ring. </code>",
- "55":
- "<code>TopologicalRing.powerBoundedSubring.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] : Set A</code><span class=\"sep\"></span><code class=\"docstring\">The set `A°` of all power-bounded elements. </code>",
- "54":
- "<code>HasSubset.Subset.{u} {α : Type u} [self : HasSubset α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">Subset relation: `a ⊆ b`  \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⊆` in identifiers is `subset`.</code>",
- "53":
- "<code>↑B ⊆ TopologicalRing.powerBoundedSubring A</code><span class=\"sep\"></span><code class=\"docstring\">`B ⊆ A°`. </code>",
- "52":
- "<code>Membership.mem.{u, v} {α : outParam (Type u)} {γ : Type v} [self : Membership α γ] : γ → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The membership relation `a ∈ s : Prop` where `a : α`, `s : γ`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∈` in identifiers is `mem`.</code>",
- "51":
  "<code>IsIntegral.{u_1, u_3} (R : Type u_1) {A : Type u_3} [CommRing R] [Ring A] [Algebra R A] (x : A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An element `x` of an algebra `A` over a commutative ring `R` is said to be *integral*,\nif it is a root of some monic polynomial `p : R[X]`.\nEquivalently, the element is integral over `R` with respect to the induced `algebraMap` </code>",
+ "57": "<code>IsIntegral (↥B) a</code>",
+ "56": "<code>TopologicalRing.IsBounded ↑B</code>",
+ "55": "<code>Subring A</code>",
+ "54":
+ "<code>TopologicalRing.IsBounded.isPowerBounded_of_isIntegral.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [IsTopologicalRing A] {B : Subring A} (hB : TopologicalRing.IsBounded ↑B) {a : A} (ha : IsIntegral (↥B) a) :\n  TopologicalRing.IsPowerBounded a</code><span class=\"sep\"></span><code class=\"docstring\">`A°` is integrally closed: integral over bounded implies power-bounded (Prop 5.30(4)). </code>",
+ "53": "<code>TopologicalRing.IsPowerBounded b</code>",
+ "52":
+ "<code>TopologicalRing.IsPowerBounded.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (a : A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An element is power-bounded if `{aⁿ | n}` is bounded (Definition 5.27). </code>",
+ "51": "<code>TopologicalRing.IsPowerBounded a</code>",
  "50":
- "<code>∀ (a : A), IsIntegral (↥B) a → a ∈ B</code><span class=\"sep\"></span><code class=\"docstring\">`B` is integrally closed in `A`. </code>",
+ "<code>NonarchimedeanAddGroup.{u_1} (G : Type u_1) [AddGroup G] [TopologicalSpace G] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological additive group is nonarchimedean if every neighborhood of 0\ncontains an open subgroup. </code>",
  "5": "<code>PairOfDefinition A</code>",
- "49": "<code>Subring A</code>",
+ "49":
+ "<code>TopologicalRing.isPowerBounded_add.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] [IsTopologicalRing A]\n  [NonarchimedeanAddGroup A] {a b : A} (ha : TopologicalRing.IsPowerBounded a) (hb : TopologicalRing.IsPowerBounded b) :\n  TopologicalRing.IsPowerBounded (a + b)</code><span class=\"sep\"></span><code class=\"docstring\">Sum of two power-bounded elements is power-bounded in a nonarchimedean ring (Prop 5.30(3)). </code>",
  "48":
- "<code>IsOpen ↑B</code><span class=\"sep\"></span><code class=\"docstring\">`B` is open in `A`. </code>",
+ "<code>TopologicalRing.topologicallyNilpotentElements.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] : Set A</code><span class=\"sep\"></span><code class=\"docstring\">The set `A°°` of all topologically nilpotent elements (Definition 5.25). </code>",
  "47":
- "<code>ValuationSpectrum.Cont.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">The set `Cont(A)` of continuous valuations in `Spv(A)` (Definition 7.7 of Wedhorn). </code>",
+ "<code>Set.{u} (α : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A set is a collection of elements of some type `α`.\n\nAlthough `Set` is defined as `α → Prop`, this is an implementation detail which should not be\nrelied on. Instead, `setOf` and membership of a set (`∈`) should be used to convert between sets\nand predicates.\n</code>",
  "46":
- "<code>Valuation.{u_3, u_4} (R : Type u_3) (Γ₀ : Type u_4) [LinearOrderedCommMonoidWithZero Γ₀] [Ring R] : Type (max u_3 u_4)</code><span class=\"sep\"></span><code class=\"docstring\">The type of `Γ₀`-valued valuations on `R`.\n\nWhen you extend this structure, make sure to extend `ValuationClass`. </code>",
- "45": "<code>Valuation A Γ₀</code>",
+ "<code>TopologicalRing.powerBoundedSubring.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] : Set A</code><span class=\"sep\"></span><code class=\"docstring\">The set `A°` of all power-bounded elements. </code>",
+ "45":
+ "<code>topologicalNilradical.{u_1} (R : Type u_1) [TopologicalSpace R] [CommRing R] [IsLinearTopology R R] : Ideal R</code><span class=\"sep\"></span><code class=\"docstring\">The topological nilradical of a ring with a linear topology </code>",
  "44":
- "<code>LinearOrderedCommGroupWithZero.{u_3} (α : Type u_3) : Type u_3</code><span class=\"sep\"></span><code class=\"docstring\">A linearly ordered commutative group with a zero element. </code>",
- "43": "<code>Type u_2</code>",
+ "<code>IsLinearTopology.{u_1, u_3} (R : Type u_1) (M : Type u_3) [Ring R] [AddCommGroup M] [Module R M] [TopologicalSpace M] :\n  Prop</code><span class=\"sep\"></span><code class=\"docstring\">Consider a (left-)module `M` over a ring `R`. A topology on `M` is *`R`-linear*\nif the open sub-`R`-modules of `M` form a basis of neighborhoods of zero.\n\nTypically one would also that the topology is invariant by translation (`ContinuousConstVAdd M M`),\nor equivalently that `M` is a topological group, but we do not assume it for the definition.\n\nIn particular, we say that a topology on the ring `R` is *linear* if it is both\n`R`-linear and `Rᵐᵒᵖ`-linear for the obvious module structures. To spell this in Lean,\nsimply use `[IsLinearTopology R R] [IsLinearTopology Rᵐᵒᵖ R]`. </code>",
+ "43":
+ "<code>IsTateRing.isOpen_topologicalNilradical.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] [IsTateRing A]\n  [IsLinearTopology A A] : IsOpen ↑(topologicalNilradical A)</code><span class=\"sep\"></span><code class=\"docstring\">In a Tate ring with linear topology, the topological nilradical `A°°` is open\n(Proposition 6.13(1) of Wedhorn). </code>",
  "42":
- "<code>Valuation.IsContinuous.{u_1, u_2} {A : Type u_1} [CommRing A] {Γ₀ : Type u_2} [LinearOrderedCommGroupWithZero Γ₀]\n  [TopologicalSpace A] (v : Valuation A Γ₀) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A valuation `v` on a topological ring `A` is *continuous* if `{ a | v(a) &lt; γ }` is open\nfor all `γ` (Definition 7.7 of Wedhorn). </code>",
- "41": "<code>Spv A</code>",
+ "<code>TopologicalRing.IsBounded.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (S : Set A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A subset is bounded if for every nhd `U` of `0`, some nhd `V` satisfies `S * V ⊆ U`. </code>",
+ "41":
+ "<code>PairOfDefinition.isBounded_A₀.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] [IsTopologicalRing A]\n  (P : PairOfDefinition A) : TopologicalRing.IsBounded ↑P.A₀</code><span class=\"sep\"></span><code class=\"docstring\">The ring of definition `A₀` is bounded (Corollary 6.4(2) of Wedhorn). </code>",
  "40":
- "<code>ValuationSpectrum.supp.{u_1} {A : Type u_1} [CommRing A] (v : Spv A) : Ideal A</code><span class=\"sep\"></span><code class=\"docstring\">The support prime ideal `{ a ∈ A | v(a) = 0 }` of a point `v ∈ Spv A`. </code>",
+ "<code>HPow.hPow.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HPow α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a ^ b` computes `a` to the power of `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `^` in identifiers is `pow`.</code>",
  "4":
  "<code>Ideal.{u} (R : Type u) [Semiring R] : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A (left) ideal in a semiring `R` is an additive submonoid `s` such that\n`a * b ∈ s` whenever `b ∈ s`. If `R` is a ring, then `s` is an additive subgroup. </code>",
  "39":
- "<code>Set.{u} (α : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A set is a collection of elements of some type `α`.\n\nAlthough `Set` is defined as `α → Prop`, this is an implementation detail which should not be\nrelied on. Instead, `setOf` and membership of a set (`∈`) should be used to convert between sets\nand predicates.\n</code>",
- "38":
- "<code>ValuationSpectrum.basicOpen.{u_1} {A : Type u_1} [CommRing A] (f s : A) : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">The basic open subset `Spv(A)(f/s) = { v ∈ Spv A | v(f) ≤ v(s) ∧ v(s) ≠ 0 }`. </code>",
+ "<code>Nat : Type</code><span class=\"sep\"></span><code class=\"docstring\">The natural numbers, starting at zero.\n\nThis type is special-cased by both the kernel and the compiler, and overridden with an efficient\nimplementation. Both use a fast arbitrary-precision arithmetic library (usually\n[GMP](https://gmplib.org/)); at runtime, `Nat` values that are sufficiently small are unboxed.\n</code>",
+ "38": "<code>ℕ</code>",
  "37":
- "<code>ValuationSpectrum.{u_1} (A : Type u_1) [CommRing A] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">The *valuation spectrum* `Spv A` of a commutative ring `A` (Definition 4.1 of Wedhorn). </code>",
- "36":
- "<code>ValuativeRel.{u_1} (R : Type u_1) [Semiring R] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">The class `[ValuativeRel R]` class introduces an operator `x ≤ᵥ y : Prop` for `x y : R`\nwhich is the natural relation arising from (the equivalence class of) a valuation on `R` when `R`\nis a ring. More precisely, if `v` is a valuation on `R` then the associated relation is\n`x ≤ᵥ y ↔ v x ≤ v y`. Use this class to talk about the case where `R` is equipped\nwith an equivalence class of valuations. </code>",
+ "<code>PairOfDefinition.pow_isOpen.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] [IsTopologicalRing A]\n  (P : PairOfDefinition A) (n : ℕ) : IsOpen ↑(P.I ^ n)</code><span class=\"sep\"></span><code class=\"docstring\">Each power `Iⁿ` is open in `A₀` (in the subspace topology). </code>",
+ "36": "<code>Type u_2</code>",
  "35":
- "<code>Not (a : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Not p`, or `¬p`, is the negation of `p`. It is defined to be `p → False`,\nso if your goal is `¬p` you can use `intro h` to turn the goal into\n`h : p ⊢ False`, and if you have `hn : ¬p` and `h : p` then `hn h : False`\nand `(hn h).elim` will prove anything.\nFor more information: [Propositional Logic](https://lean-lang.org/theorem_proving_in_lean4/propositions_and_proofs.html#propositional-logic)\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `¬` in identifiers is `not`.</code>",
+ "<code>PseudoUniformizer.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] : Type u_2</code><span class=\"sep\"></span><code class=\"docstring\">The type of pseudo-uniformizers of a topological ring `A`. </code>",
  "34":
- "<code>Or (a b : Prop) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Or a b`, or `a ∨ b`, is the disjunction of propositions. There are two\nconstructors for `Or`, called `Or.inl : a → a ∨ b` and `Or.inr : b → a ∨ b`,\nand you can use `match` or `cases` to destruct an `Or` assumption into the\ntwo cases.\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∨` in identifiers is `or`.</code>",
+ "<code>Units.{u} (α : Type u) [Monoid α] : Type u</code><span class=\"sep\"></span><code class=\"docstring\">Units of a `Monoid`, bundled version. Notation: `αˣ`.\n\nAn element of a `Monoid` is a unit if it has a two-sided inverse.\nThis version bundles the inverse element so that it can be computed.\nFor a predicate see `IsUnit`. </code>",
  "33":
- "<code>ValuativeRel.vle.{u_1} {R : Type u_1} {inst✝ : Semiring R} [self : ValuativeRel R] : R → R → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The valuation less-equal operator arising from `ValuativeRel`. </code>",
+ "<code>IsPseudoUniformizer.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (w : Aˣ) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A unit `w : Aˣ` is a **pseudo-uniformizer** if it is topologically nilpotent\n(Definition 6.10 of Wedhorn). </code>",
  "32":
  "<code>IsTateRing.{u_1} (A : Type u_1) [CommRing A] [TopologicalSpace A] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A Huber ring is a **Tate ring** if it contains a topologically nilpotent unit\n(Definition 6.10 of Wedhorn). </code>",
  "31":
@@ -99,39 +139,349 @@
  "<code>∃ u, IsTopologicallyNilpotent ↑u</code><span class=\"sep\"></span><code class=\"docstring\">There exists a topologically nilpotent unit. </code>",
  "28":
  "<code class=\"docstring\">The universe of propositions. `Prop ≡ Sort 0`.\n\nEvery proposition is propositionally equal to either `True` or `False`. </code>",
+ "277":
+ "<code>TopCat.Presheaf.IsSheaf.{w, v, u} {C : Type u} [CategoryTheory.Category.{v, u} C] {X : TopCat}\n  (F : TopCat.Presheaf C X) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The sheaf condition has several different equivalent formulations.\nThe official definition chosen here is in terms of Grothendieck topologies so that the results on\nsites could be applied here easily, and this condition does not require additional constraints on\nthe value category.\nThe equivalent formulations of the sheaf condition on `presheaf C X` are as follows :\n\n1. `TopCat.Presheaf.IsSheaf`: (the official definition)\n  It is a sheaf with respect to the Grothendieck topology on `opens X`, which is to say:\n  For each open cover `{ Uᵢ }` of `U`, and a family of compatible functions `A ⟶ F(Uᵢ)` for an\n  `A : X`, there exists a unique gluing `A ⟶ F(U)` compatible with the restriction.\n\n2. `TopCat.Presheaf.IsSheafEqualizerProducts`: (requires `C` to have all products)\n  For each open cover `{ Uᵢ }` of `U`, `F(U) ⟶ ∏ᶜ F(Uᵢ)` is the equalizer of the two morphisms\n  `∏ᶜ F(Uᵢ) ⟶ ∏ᶜ F(Uᵢ ∩ Uⱼ)`.\n  See `TopCat.Presheaf.isSheaf_iff_isSheafEqualizerProducts`.\n\n3. `TopCat.Presheaf.IsSheafOpensLeCover`:\n  For each open cover `{ Uᵢ }` of `U`, `F(U)` is the limit of the diagram consisting of arrows\n  `F(V₁) ⟶ F(V₂)` for every pair of open sets `V₁ ⊇ V₂` that are contained in some `Uᵢ`.\n  See `TopCat.Presheaf.isSheaf_iff_isSheafOpensLeCover`.\n\n4. `TopCat.Presheaf.IsSheafPairwiseIntersections`:\n  For each open cover `{ Uᵢ }` of `U`, `F(U)` is the limit of the diagram consisting of arrows\n  from `F(Uᵢ)` and `F(Uⱼ)` to `F(Uᵢ ∩ Uⱼ)` for each pair `(i, j)`.\n  See `TopCat.Presheaf.isSheaf_iff_isSheafPairwiseIntersections`.\n\nThe following requires `C` to be concrete and complete, and `forget C` to reflect isomorphisms and\npreserve limits. This applies to most \"algebraic\" categories, e.g. groups, abelian groups and rings.\n\n5. `TopCat.Presheaf.IsSheafUniqueGluing`:\n  (requires `C` to be concrete and complete; `forget C` to reflect isomorphisms and preserve limits)\n  For each open cover `{ Uᵢ }` of `U`, and a compatible family of elements `x : F(Uᵢ)`, there exists\n  a unique gluing `x : F(U)` that restricts to the given elements.\n  See `TopCat.Presheaf.isSheaf_iff_isSheafUniqueGluing`.\n\n6. The underlying sheaf of types is a sheaf.\n  See `TopCat.Presheaf.isSheaf_iff_isSheaf_comp` and\n  `CategoryTheory.Presheaf.isSheaf_iff_isSheaf_forget`.\n</code>",
+ "276":
+ "<code>TopCat.LocalPredicate.toPrelocalPredicate.{u_1, u_2} {X : TopCat} {T : ↑X → Type u_1} (self : TopCat.LocalPredicate T) :\n  TopCat.PrelocalPredicate T</code>",
+ "275":
+ "<code>ValuationSpectrum.StructureSheaf.isLocallyFraction.{u} {A : Type u} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] : TopCat.LocalPredicate fun x ↦ ValuationSpectrum.StructureSheaf.Localizations x</code><span class=\"sep\"></span><code class=\"docstring\">A section is *locally a fraction* if it is a fraction near each point. </code>",
+ "274":
+ "<code>TopCat.subpresheafToTypes.{u_1, u_2} {X : TopCat} {T : ↑X → Type u_1} (P : TopCat.PrelocalPredicate T) :\n  TopCat.Presheaf (Type (max u_1 u_2)) X</code><span class=\"sep\"></span><code class=\"docstring\">The subpresheaf of dependent functions on `X` satisfying the \"pre-local\" predicate `P`.\n</code>",
+ "273":
+ "<code>ValuationSpectrum.structurePresheaf_typeLevel_isSheaf.{u} (A : Type u) [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] [IsHuberRing A] :\n  (TopCat.subpresheafToTypes ValuationSpectrum.StructureSheaf.isLocallyFraction.toPrelocalPredicate).IsSheaf</code><span class=\"sep\"></span><code class=\"docstring\">**Sub-lemma — type-level sheaf condition for the locally-fraction subpresheaf.**\n\nThis is the *type-level* sheaf condition on `subpresheafToTypes\nisLocallyFraction.toPrelocalPredicate`, which is precisely the underlying\ntype-presheaf of `structurePresheaf A` (modulo bundling into\n`CompleteTopCommRingCat`). The proof is a direct application of Mathlib's\n`subpresheafToTypes.isSheaf` for any `LocalPredicate`. Used by\n`structurePresheaf_isSheaf` below as the type-level input to the (still-pending)\n`CompleteTopCommRingCat`-to-types infrastructure transfer.\n\nPer CLAUDE.md sub-lemma policy: this fully discharges the type-level half\nof `structurePresheaf_isSheaf`, isolating the remaining obligation to the\nforgetful-functor / concrete-category infrastructure for\n`CompleteTopCommRingCat`. </code>",
+ "272":
+ "<code>ValuationSpectrum.suppSpa.{u} (A : Type u) [CommRing A] [TopologicalSpace A] [ValuationSpectrum.PlusSubring A] :\n  C(↑(ValuationSpectrum.SpaTop A), PrimeSpectrum A)</code><span class=\"sep\"></span><code class=\"docstring\">The continuous support map `Spa(A, A⁺) → Spec A` (Remark 4.6 of Wedhorn). </code>",
+ "271":
+ "<code>TopCat.{u} : Type (u + 1)</code><span class=\"sep\"></span><code class=\"docstring\">The category of topological spaces. </code>",
+ "270":
+ "<code>ValuationSpectrum.SpaTop.{u} (A : Type u) [CommRing A] [TopologicalSpace A] [ValuationSpectrum.PlusSubring A] : TopCat</code><span class=\"sep\"></span><code class=\"docstring\">The adic spectrum `Spa(A, A⁺)` as an object of `TopCat`. </code>",
  "27":
  "<code>IsHuberRing.{u_1} (A : Type u_1) [CommRing A] [TopologicalSpace A] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological ring `A` is a **Huber ring** (or **f-adic ring**) if it admits a\npair of definition (Definition 6.1 of Wedhorn). </code>",
+ "269":
+ "<code>IsClosed.{u} {X : Type u} [TopologicalSpace X] (s : Set X) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A set is closed if its complement is open </code>",
+ "268":
+ "<code>Wedhorn.isClosed_ideal_of_noetherian.{u_1} {A : Type u_1} [CommRing A] [UniformSpace A] [IsUniformAddGroup A]\n  [IsTopologicalRing A] [T2Space A] [CompleteSpace A] [IsTateRing A] (P : PairOfDefinition A) [IsNoetherianRing ↥P.A₀]\n  (J : Ideal A) : IsClosed ↑J</code><span class=\"sep\"></span><code class=\"docstring\">**Wedhorn Proposition 6.17 (ideal form):** Every ideal in a complete Tate\nring `A` with a noetherian ring of definition `P.A₀` is closed.\n\nThe statement requires a pair of definition `P = (A₀, I)` such that `A₀` is\nnoetherian. This is automatic for **strongly noetherian** Tate rings (the\nsetting of Huber's theory, Wedhorn Def 6.9), and downstream callers can\ndischarge the `IsNoetherianRing P.A₀` hypothesis from a strongly-noetherian\nstructure.\n\n**Proof sketch (Krull intersection on the ring of definition).**\n\n1. `A₀ = P.A₀` is an open, hence closed (open subgroup of a topological\n   group), subring of `A`. It inherits `CompleteSpace`, `T2Space`, and its\n   subspace topology is the `I`-adic topology by `P.isAdic`.\n2. `J₀ := J.comap P.A₀.subtype`, the pullback of `J` to `A₀`, is closed in\n   `A₀` by the abstract helper\n   `isClosed_ideal_of_adicComplete_noetherian` applied to the noetherian\n   complete T₂ adic ring `A₀`.\n3. `closure_A(J) ∩ A₀ = J₀`: for `x ∈ A₀`, membership in `closure_A(J)` is\n   characterised by the `A`-neighborhood basis `{x + Subtype.val '' I^n}`,\n   which equals the `A₀`-basis `{x + I^n}` under the inclusion. So\n   `x ∈ closure_A(J) ↔ x ∈ closure_{A₀}(J₀)`, and the latter equals `J₀`\n   since `J₀` is closed in `A₀`.\n4. To close the argument for a general `x ∈ closure_A(J)`, we use that `P`\n   can be chosen as a **principal pair** (via\n   `IsTateRing.exists_principal_pairOfDefinition`) with generator `π` a\n   topologically nilpotent unit in `A`. Then some power `π^k · x` lands in\n   `A₀` (because `π^k → 0` and `A₀` is an open neighborhood of `0`), and\n   `π^k · x ∈ closure_A(J) ∩ A₀ = J₀ ⊆ J`, so `x = π^(-k) · (π^k · x) ∈ J`.\n\nBecause the signature of the theorem takes an **arbitrary** pair `P`, not\nnecessarily principal, step 4 uses `IsTateRing.exists_principal_pairOfDefinition`\nto produce a principal pair `P'` and argues via `P'` whose `A₀'`-inclusion\nfactors through `P.A₀`'s closure — this only needs the *abstract* existence of a\ntopologically nilpotent unit and `P.A₀` being open. </code>",
+ "267": "<code>Function.Surjective ⇑g</code>",
+ "266": "<code>M₂ →ₗ[A] M₃</code>",
+ "265": "<code>M₁ →ₗ[A] M₂</code>",
+ "264":
+ "<code>IsModuleTopology.strictExact.{u_1, u_2, u_3, u_4} {A : Type u_1} [CommRing A] [TopologicalSpace A] {M₁ : Type u_2}\n  {M₂ : Type u_3} {M₃ : Type u_4} [AddCommGroup M₁] [Module A M₁] [TopologicalSpace M₁] [AddCommGroup M₂] [Module A M₂]\n  [TopologicalSpace M₂] [AddCommGroup M₃] [Module A M₃] [TopologicalSpace M₃] [IsModuleTopology A M₁]\n  [IsModuleTopology A M₂] [IsModuleTopology A M₃] (f : M₁ →ₗ[A] M₂) (g : M₂ →ₗ[A] M₃)\n  (hg_surj : Function.Surjective ⇑g) : IsOpenMap ⇑g ∧ Continuous ⇑f</code><span class=\"sep\"></span><code class=\"docstring\">A short exact sequence `0 → M₁ → M₂ → M₃ → 0` of modules with module topology\nis **strict exact**: `g` is an open map and `f` is continuous.\nThis is a consequence of Prop 6.18(2) (open mapping theorem). </code>",
+ "263":
+ "<code>IsOpenMap.{u, v} {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A map `f : X → Y` is said to be an *open map*,\nif the image of any open `U : Set X` is open in `Y`. </code>",
+ "262": "<code>Function.Surjective ⇑f</code>",
+ "261":
+ "<code>LinearMap.{u_14, u_15, u_16, u_17} {R : Type u_14} {S : Type u_15} [Semiring R] [Semiring S] (σ : R →+* S)\n  (M : Type u_16) (M₂ : Type u_17) [AddCommMonoid M] [AddCommMonoid M₂] [Module R M] [Module S M₂] :\n  Type (max u_16 u_17)</code><span class=\"sep\"></span><code class=\"docstring\">A map `f` between an `R`-module and an `S`-module over a ring homomorphism `σ : R →+* S`\nis semilinear if it satisfies the two properties `f (x + y) = f x + f y` and\n`f (c • x) = (σ c) • f x`. Elements of `LinearMap σ M M₂` (available under the notation\n`M →ₛₗ[σ] M₂`) are bundled versions of such maps. For plain linear maps (i.e. for which\n`σ = RingHom.id R`), the notation `M →ₗ[R] M₂` is available. An unbundled version of plain linear\nmaps is available with the predicate `IsLinearMap`, but it should be avoided most of the time. </code>",
+ "260": "<code>M →ₗ[A] N</code>",
  "26":
  "<code>IsTopologicalRing.{u_1} (R : Type u_1) [TopologicalSpace R] [NonUnitalNonAssocRing R] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological ring is a ring `R` where addition, multiplication and negation are continuous.\n\nIf `R` is a (unital) ring, then continuity of negation can be derived from continuity of\nmultiplication as it is multiplication with `-1`. (See `IsTopologicalSemiring.continuousNeg_of_mul`\nand `IsTopologicalSemiring.toIsTopologicalRing`) </code>",
+ "259":
+ "<code>IsModuleTopology.{u_1, u_2} (R : Type u_1) [TopologicalSpace R] (A : Type u_2) [Add A] [SMul R A]\n  [τA : TopologicalSpace A] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A class asserting that the topology on a module over a topological ring `R` is\nthe module topology. See `moduleTopology` for more discussion of the module topology. </code>",
+ "258":
+ "<code>Module.{u, v} (R : Type u) (M : Type v) [Semiring R] [AddCommMonoid M] : Type (max u v)</code><span class=\"sep\"></span><code class=\"docstring\">A module is a generalization of vector spaces to a scalar semiring.\nIt consists of a scalar semiring `R` and an additive monoid of \"vectors\" `M`,\nconnected by a \"scalar multiplication\" operation `r • x : M`\n(where `r : R` and `x : M`) with some natural associativity and\ndistributivity axioms similar to those on a ring. </code>",
+ "257":
+ "<code>AddCommGroup.{u} (G : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">An additive commutative group is an additive group with commutative `(+)`. </code>",
+ "256":
+ "<code>IsModuleTopology.isOpenMap_of_surjective_of_finite.{u_1, u_2, u_3} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  {M : Type u_2} [AddCommGroup M] [Module A M] [TopologicalSpace M] {N : Type u_3} [AddCommGroup N] [Module A N]\n  [TopologicalSpace N] [IsModuleTopology A M] [IsModuleTopology A N] (f : M →ₗ[A] N) (hf : Function.Surjective ⇑f) :\n  IsOpenMap ⇑f</code><span class=\"sep\"></span><code class=\"docstring\">Every surjective `A`-linear map between modules with module topology is open.\nThis is the **open mapping theorem** for module topologies (Prop 6.18(2) of Wedhorn). </code>",
+ "255":
+ "<code>LaurentTateAlgebra.zetaInv_mul_zeta.{u} {A : Type u} [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] :\n  LaurentTateAlgebra.zetaInv * LaurentTateAlgebra.zeta = 1</code><span class=\"sep\"></span><code class=\"docstring\">The defining relation: `ζ⁻¹ · ζ = 1` in `A⟨ζ, ζ⁻¹⟩`. </code>",
+ "254":
+ "<code>LaurentTateAlgebra.zetaInv.{u} {A : Type u} [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] :\n  LaurentTateAlgebra A</code><span class=\"sep\"></span><code class=\"docstring\">The image of `Y` in the Laurent algebra, representing `ζ⁻¹`. </code>",
+ "253":
+ "<code>LaurentTateAlgebra.zeta.{u} {A : Type u} [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] : LaurentTateAlgebra A</code><span class=\"sep\"></span><code class=\"docstring\">The image of `X` in the Laurent algebra, representing `ζ`. </code>",
+ "252":
+ "<code>LaurentTateAlgebra.zeta_mul_zetaInv.{u} {A : Type u} [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] :\n  LaurentTateAlgebra.zeta * LaurentTateAlgebra.zetaInv = 1</code><span class=\"sep\"></span><code class=\"docstring\">The defining relation: `ζ · ζ⁻¹ = 1` in `A⟨ζ, ζ⁻¹⟩`. </code>",
+ "251":
+ "<code>Function.Surjective.{u_1, u_2} {α : Sort u_1} {β : Sort u_2} (f : α → β) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function `f : α → β` is called surjective if every `b : β` is equal to `f a`\nfor some `a : α`. </code>",
+ "250":
+ "<code>TateAlgebra.evalZeroHom_surjective.{u} {A : Type u} [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] :\n  Function.Surjective ⇑TateAlgebra.evalZeroHom</code><span class=\"sep\"></span><code class=\"docstring\">The evaluation-at-zero map is surjective: every `a : A` is the constant term of the\nconstant power series `algebraMap A _ a`. </code>",
  "25":
  "<code>Nonempty.{u} (α : Sort u) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`Nonempty α` is a typeclass that says that `α` is not an empty type,\nthat is, there exists an element in the type. It differs from `Inhabited α`\nin that `Nonempty α` is a `Prop`, which means that it does not actually carry\nan element of `α`, only a proof that *there exists* such an element.\nGiven `Nonempty α`, you can construct an element of `α` *nonconstructively*\nusing `Classical.choice`.\n</code>",
+ "249":
+ "<code>TateAlgebra.evalZeroHom.{u} {A : Type u} [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] :\n  ↥(TateAlgebra A) →+* A</code><span class=\"sep\"></span><code class=\"docstring\">The constant term (evaluation at zero) is a ring homomorphism `A⟨X⟩ →+* A`. </code>",
+ "248":
+ "<code>LaurentTateAlgebra.{u} (A : Type u) [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] : Type u</code><span class=\"sep\"></span><code class=\"docstring\">The Laurent Tate algebra `A⟨ζ, ζ⁻¹⟩`, defined as the quotient of the bivariate\nrestricted power series ring `A⟨X, Y⟩` by the ideal `(XY - 1)`.\n\nThis models the ring of bilateral restricted power series\n`∑_{n ∈ ℤ} aₙ ζⁿ` with `aₙ → 0` as `|n| → ∞`.\n\nSee Wedhorn, §8.29–8.33 (Definition 8.27). </code>",
+ "247":
+ "<code>TateAlgebra.{u} (A : Type u) [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] :\n  Subring (MvPowerSeries (Fin 1) A)</code><span class=\"sep\"></span><code class=\"docstring\">The univariate Tate algebra `A⟨X⟩`, the ring of restricted power series in one variable.\nThis is `restrictedMvPowerSeriesSubring 1 A`, specialized to the univariate case.\nSee Wedhorn, Definition 6.9. </code>",
+ "246":
+ "<code>IsStronglyNoetherian.{u_1} (A : Type u_1) [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological ring `A` is **strongly noetherian** if the ring of restricted power series\n`A⟨T₁, …, Tₖ⟩` is noetherian for all `k ≥ 0` (Definition 6.9 of Wedhorn).\n\nThis is a fundamental finiteness condition in nonarchimedean geometry, introduced by\nHuber. For a noetherian Tate ring, being strongly noetherian is equivalent to saying\nthat the theory of formal models is well-behaved. </code>",
+ "245":
+ "<code>IsNoetherianRing.{u_1} (R : Type u_1) [Semiring R] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A (semi)ring is Noetherian if it is Noetherian as a module over itself,\ni.e. all its ideals are finitely generated. </code>",
+ "244":
+ "<code>∀ (k : ℕ), IsNoetherianRing ↥(restrictedMvPowerSeriesSubring k A)</code><span class=\"sep\"></span><code class=\"docstring\">The restricted power series ring in `k` variables is noetherian for all `k`. </code>",
+ "243":
+ "<code>NonarchimedeanRing.{u_1} (R : Type u_1) [Ring R] [TopologicalSpace R] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological ring is nonarchimedean if its underlying topological additive\ngroup is nonarchimedean. </code>",
+ "242":
+ "<code>restrictedMvPowerSeriesSubring.{u_1} (k : ℕ) (A : Type u_1) [CommRing A] [TopologicalSpace A] [NonarchimedeanRing A] :\n  Subring (MvPowerSeries (Fin k) A)</code><span class=\"sep\"></span><code class=\"docstring\">The set of restricted power series forms a subring of `MvPowerSeries (Fin k) A`.\n\nThe closure under multiplication (convolution of tendsto-0 coefficient sequences)\nrequires that `A` is a nonarchimedean topological ring (so that finite sums of elements in an\nopen additive subgroup remain in the subgroup). This is the canonical definition of\n`A⟨T₁, …, Tₖ⟩` (Wedhorn, §6.9). </code>",
+ "241":
+ "<code>Fin (n : ℕ) : Type</code><span class=\"sep\"></span><code class=\"docstring\">Natural numbers less than some upper bound.\n\nIn particular, a `Fin n` is a natural number `i` with the constraint that `i &lt; n`. It is the\ncanonical type with `n` elements.\n</code>",
+ "240":
+ "<code>MvPowerSeries.{u_1, u_2} (σ : Type u_1) (R : Type u_2) : Type (max u_2 u_1)</code><span class=\"sep\"></span><code class=\"docstring\">Multivariate formal power series, where `σ` is the index set of the variables\nand `R` is the coefficient ring. </code>",
  "24":
  "<code>Nonempty (PairOfDefinition A)</code><span class=\"sep\"></span><code class=\"docstring\">There exists a pair of definition. </code>",
+ "239": "<code>MvPowerSeries (Fin k) A</code>",
+ "238":
+ "<code>MvPowerSeries.IsRestricted.{u_1} {k : ℕ} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  (f : MvPowerSeries (Fin k) A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An element `f` of the multivariate power series ring `A⦃X₁, …, Xₖ⦄` is **restricted**\nif its coefficients converge to `0` along the cofinite filter on multi-indices. That is,\nfor every open neighborhood `U` of `0` in `A`, all but finitely many coefficients of `f`\nlie in `U`. This is the defining property of elements of `A⟨T₁, …, Tₖ⟩`.\n\nSee Wedhorn, §6.9. </code>",
+ "237": "<code>¬P.I ≤ 𝔭₀</code>",
+ "236":
+ "<code>PairOfDefinition.not_isMaximal_of_I_not_le.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  (P : PairOfDefinition A) [IsAdicComplete P.I ↥P.A₀] {𝔭₀ : Ideal ↥P.A₀} (h : ¬P.I ≤ 𝔭₀) : ¬𝔭₀.IsMaximal</code><span class=\"sep\"></span><code class=\"docstring\">If `A₀` is `I`-adically complete and `I ⊄ 𝔭₀`, then `𝔭₀` is not maximal. </code>",
+ "235": "<code>𝔪.IsMaximal</code>",
+ "234": "<code>Ideal ↥P.A₀</code>",
+ "233":
+ "<code>PairOfDefinition.I_le_maximal_of_isAdicComplete.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  (P : PairOfDefinition A) [IsAdicComplete P.I ↥P.A₀] {𝔪 : Ideal ↥P.A₀} (h𝔪 : 𝔪.IsMaximal) : P.I ≤ 𝔪</code><span class=\"sep\"></span><code class=\"docstring\">If `A₀` is `I`-adically complete, then `I ≤ 𝔪` for every maximal `𝔪`. </code>",
+ "232":
+ "<code>ValuationSpectrum.IsTateRing.isAnalytic.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] [IsTateRing A]\n  (v : Spv A) : v.IsAnalytic</code><span class=\"sep\"></span><code class=\"docstring\">**Proposition 8.36 of Wedhorn.** If `A` is a Tate ring, every point of `Spv A` is analytic. </code>",
+ "231":
+ "<code>ValuationSpectrum.SpaIsAnalytic.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">The adic spectrum `Spa(A, A⁺)` is **analytic** if it contains no trivial valuation\npoints. This is the condition appearing in Scottish Book Problem 10\n(cf. Definition 8.35, Proposition 8.36 of Wedhorn). </code>",
+ "230":
+ "<code>ValuationSpectrum.IsTrivialValuation.{u_1} {A : Type u_1} [CommRing A] (v : Spv A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A point `v : Spv A` has a **trivial valuation** if all elements outside the support are\n`v`-equivalent: `v(a) ≤ v(b)` whenever `a ∉ supp(v)` and `b ∉ supp(v)`. This corresponds\nto the induced valuation on `A / supp(v)` being the trivial (rank-zero) valuation. </code>",
  "23":
  "<code>Neg.neg.{u} {α : Type u} [self : Neg α] : α → α</code><span class=\"sep\"></span><code class=\"docstring\">`-a` computes the negative or opposite of `a`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `-` in identifiers is `neg` (when used as a unary operator).</code>",
+ "229":
+ "<code>ValuationSpectrum.IsAnalytic.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (v : Spv A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A point `v : Spv A` is *analytic* if its support `supp(v)` is not an open ideal\n(Definition 8.35 of Wedhorn). </code>",
+ "228":
+ "<code>ValuationSpectrum.rationalOpen_isOpen.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] (T : Finset A) (s : A) : IsOpen (Subtype.val ⁻¹' ValuationSpectrum.rationalOpen T s)</code><span class=\"sep\"></span><code class=\"docstring\">Rational subsets are open in `Spa(A, A⁺)` (Theorem 7.35(2)). </code>",
+ "227":
+ "<code>Subtype.val.{u} {α : Sort u} {p : α → Prop} (self : Subtype p) : α</code><span class=\"sep\"></span><code class=\"docstring\">The value in the underlying type that satisfies the predicate.\n</code>",
+ "226":
+ "<code>Set.preimage.{u, v} {α : Type u} {β : Type v} (f : α → β) (s : Set β) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">The preimage of `s : Set β` by `f : α → β`, written `f ⁻¹' s`,\nis the set of `x : α` such that `f x ∈ s`. </code>",
+ "225":
+ "<code>ValuationSpectrum.IsRationalSubset.isOpen.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] {U : Set (Spv A)} (hU : ValuationSpectrum.IsRationalSubset U) :\n  IsOpen (Subtype.val ⁻¹' U)</code><span class=\"sep\"></span><code class=\"docstring\">A rational subset is open in `Spa(A, A⁺)`. </code>",
+ "224": "<code>s₂ ∈ T₂</code>",
+ "223": "<code>s₁ ∈ T₁</code>",
+ "222":
+ "<code>DecidableEq.{u} (α : Sort u) : Sort (max 1 u)</code><span class=\"sep\"></span><code class=\"docstring\">Propositional equality is `Decidable` for all elements of a type.\n\nIn other words, an instance of `DecidableEq α` is a means of deciding the proposition `a = b` is\nfor all `a b : α`.\n</code>",
+ "221":
+ "<code>ValuationSpectrum.rationalOpen_inter.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] [DecidableEq A] (T₁ T₂ : Finset A) (s₁ s₂ : A) (hs₁ : s₁ ∈ T₁) (hs₂ : s₂ ∈ T₂) :\n  ValuationSpectrum.rationalOpen T₁ s₁ ∩ ValuationSpectrum.rationalOpen T₂ s₂ =\n    ValuationSpectrum.rationalOpen (T₁ * T₂) (s₁ * s₂)</code><span class=\"sep\"></span><code class=\"docstring\">`R(T₁/s₁) ∩ R(T₂/s₂) = R(T₁·T₂ / s₁·s₂)` (Remark 7.30(5)). </code>",
+ "220":
+ "<code>Inter.inter.{u} {α : Type u} [self : Inter α] : α → α → α</code><span class=\"sep\"></span><code class=\"docstring\">`a ∩ b` is the intersection of `a` and `b`. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `∩` in identifiers is `inter`.</code>",
  "22": "<code>A</code>",
+ "219": "<code>ValuationSpectrum.IsRationalSubset V</code>",
+ "218": "<code>ValuationSpectrum.IsRationalSubset U</code>",
+ "217":
+ "<code>ValuationSpectrum.IsRationalSubset.inter.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] {U V : Set (Spv A)} (hU : ValuationSpectrum.IsRationalSubset U)\n  (hV : ValuationSpectrum.IsRationalSubset V) : ValuationSpectrum.IsRationalSubset (U ∩ V)</code><span class=\"sep\"></span><code class=\"docstring\">The intersection of two rational subsets is rational (Theorem 7.35(2)). </code>",
+ "216":
+ "<code>ValuationSpectrum.IsRationalSubset.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] (U : Set (Spv A)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A rational subset is one of the form `rationalOpen T s` (Definition 7.29). </code>",
+ "215":
+ "<code>ValuationSpectrum.rationalOpen.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] [ValuationSpectrum.PlusSubring A]\n  (T : Finset A) (s : A) : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">A rational subset `R(T/s)` of `Spa(A, A⁺)` (Definition 7.29). </code>",
+ "214":
+ "<code>∀ v ∈ ValuationSpectrum.Spa A (ValuationSpectrum.ringPlus A), ∃ t ∈ T, ¬t ≤ᵥ 0</code>",
+ "213":
+ "<code>Finset.{u_4} (α : Type u_4) : Type u_4</code><span class=\"sep\"></span><code class=\"docstring\">`Finset α` is the type of finite sets of elements of `α`. It is implemented\nas a multiset (a list up to permutation) which has no duplicate elements. </code>",
+ "212": "<code>Finset A</code>",
+ "211":
+ "<code>ValuationSpectrum.exists_dominating_unit.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] [IsTopologicalRing A]\n  [ValuationSpectrum.PlusSubring A] (P : PairOfDefinition A) (hA₀_le : P.A₀ ≤ ValuationSpectrum.ringPlus A) (π : ↥P.A₀)\n  (hI : P.I = Ideal.span {π}) (hπ_tn : IsTopologicallyNilpotent (P.A₀.subtype π)) (hπ_unit : IsUnit (P.A₀.subtype π))\n  (hArch : ∀ (v : Spv A), MulArchimedean (ValuativeRel.ValueGroupWithZero A)) (T : Finset A)\n  (hT : ∀ v ∈ ValuationSpectrum.Spa A (ValuationSpectrum.ringPlus A), ∃ t ∈ T, ¬t ≤ᵥ 0) :\n  ∃ s, ∀ v ∈ ValuationSpectrum.Spa A (ValuationSpectrum.ringPlus A), ∃ t ∈ T, ↑s ≤ᵥ t ∧ ¬t ≤ᵥ ↑s</code><span class=\"sep\"></span><code class=\"docstring\">**Wedhorn Corollary 7.32 (Tate version).**\n\nFor a Tate ring `A` with the hypotheses ensuring quasi-compactness of\n`Spa(A, A⁺)` — pair of definition `P` with `P.A₀ ⊆ A⁺`, principal ideal\n`P.I = (π)` with `π` a topologically nilpotent unit of `A`, and\nMulArchimedean value groups — and a finite family `T ⊆ A` with no common\nzero on `Spa(A, A⁺)`, there exists a unit `s ∈ Aˣ` such that for every\n`v ∈ Spa(A, A⁺)`, some `t ∈ T` satisfies `v(s) &lt; v(t)`.\n\nConcretely, `s = π^(N+1)` for `N` extracted from the finite subcover by\n`exists_dominatedBy_cover`. </code>",
+ "210":
+ "<code>PairOfDefinition.idealOfDefinition.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (P : PairOfDefinition A) :\n  Ideal A</code><span class=\"sep\"></span><code class=\"docstring\">The ideal of `A` generated by the ideal of definition `I ⊆ A₀`. </code>",
  "21":
  "<code>HMul.hMul.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HMul α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a * b` computes the product of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `*` in identifiers is `mul`.</code>",
+ "209": "<code>↑(ValuationSpectrum.ringPlus A) ⊆ ↑P.A₀</code>",
+ "208": "<code>¬IsOpen ↑𝔭</code>",
+ "207":
+ "<code>Ideal.IsPrime.{u} {α : Type u} [Semiring α] (I : Ideal α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An ideal `P` of a ring `R` is prime if `P ≠ R` and `xy ∈ P → x ∈ P ∨ y ∈ P` </code>",
+ "206":
+ "<code>IsAdicComplete.{u_1, u_4} {R : Type u_1} [CommRing R] (I : Ideal R) (M : Type u_4) [AddCommGroup M] [Module R M] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A module `M` is `I`-adically complete if it is Hausdorff and precomplete. </code>",
+ "205":
+ "<code>PairOfDefinition.exists_mem_spa_supp_ge_of_nonOpen_prime.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [IsTopologicalRing A] (P : PairOfDefinition A) [IsAdicComplete P.I ↥P.A₀] [ValuationSpectrum.PlusSubring A]\n  {𝔭 : Ideal A} [𝔭.IsPrime] (h𝔭 : ¬IsOpen ↑𝔭) (hAplus_le_A₀ : ↑(ValuationSpectrum.ringPlus A) ⊆ ↑P.A₀) :\n  ∃ v ∈ ValuationSpectrum.Spa A (ValuationSpectrum.ringPlus A), 𝔭 ≤ v.supp ∧ ¬P.idealOfDefinition ≤ v.supp</code><span class=\"sep\"></span><code class=\"docstring\">**Lemma 7.45 of Wedhorn.** Non-open primes are supports in `Spa`.\n\nGiven a complete affinoid ring `(A, A⁺)` with pair of definition `(A₀, I)` and\na non-open prime `𝔭` of `A`, there exists `v ∈ Spa(A, A⁺)` with `supp(v) ⊇ 𝔭`.\n\nNote: Wedhorn's Lemma 7.45 gives `supp ⊇ 𝔭` (not `= 𝔭`) in the general case.\nThe exact equality `supp = 𝔭` requires the rank-1 domination theorem (Bourbaki)\nor the discrete topology case (already proved in `AdicSpectrum.lean`).\n\nThe proof uses `restrictToConvex` with `convexGenerated` to produce a continuous\nvaluation. The cofinal property of `convexGenerated` gives continuity directly,\navoiding the `MulArchimedean` intermediate.\n\nReferences: Wedhorn, Adic Spaces, Lemma 7.45. </code>",
+ "204":
+ "<code>ValuationSpectrum.exists_mem_spa_supp_eq_of_isOpen_topologicallyNilpotent.{u_1} {A : Type u_1} [CommRing A]\n  [UniformSpace A] [T2Space A] [CompleteSpace A] [IsTopologicalRing A] [IsUniformAddGroup A] [NonarchimedeanAddGroup A]\n  [IsLinearTopology A A] [ValuationSpectrum.PlusSubring A] (hopen : IsOpen {a | IsTopologicallyNilpotent a})\n  (𝔪 : Ideal A) [𝔪.IsMaximal] : ∃ v ∈ ValuationSpectrum.Spa A (ValuationSpectrum.ringPlus A), v.supp = 𝔪</code><span class=\"sep\"></span><code class=\"docstring\">Prop 7.51 with f-adic hypotheses. </code>",
+ "203": "<code>IsOpen ↑𝔪</code>",
+ "202":
+ "<code>ValuationSpectrum.exists_mem_spa_supp_eq.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] (𝔪 : Ideal A) [𝔪.IsMaximal] (h𝔪 : IsOpen ↑𝔪) :\n  ∃ v ∈ ValuationSpectrum.Spa A (ValuationSpectrum.ringPlus A), v.supp = 𝔪</code><span class=\"sep\"></span><code class=\"docstring\">The trivial valuation on `A/𝔪` gives a point of `Spa(A, A⁺)`\nwith support `𝔪` (Prop 7.51). </code>",
+ "201": "<code>IsOpen {a | IsTopologicallyNilpotent a}</code>",
+ "200":
+ "<code>isOpen_of_isMaximal_of_isOpen_topologicallyNilpotent.{u_1} {A : Type u_1} [CommRing A] [UniformSpace A] [T2Space A]\n  [CompleteSpace A] [IsTopologicalRing A] [IsUniformAddGroup A] [NonarchimedeanAddGroup A] [IsLinearTopology A A]\n  (hopen : IsOpen {a | IsTopologicallyNilpotent a}) (𝔪 : Ideal A) [𝔪.IsMaximal] : IsOpen ↑𝔪</code><span class=\"sep\"></span><code class=\"docstring\">Every maximal ideal is open when `A°°` is open. </code>",
  "20":
  "<code>HAdd.hAdd.{u, v, w} {α : Type u} {β : Type v} {γ : outParam (Type w)} [self : HAdd α β γ] : α → β → γ</code><span class=\"sep\"></span><code class=\"docstring\">`a + b` computes the sum of `a` and `b`.\nThe meaning of this notation is type-dependent. \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `+` in identifiers is `add`.</code>",
  "2": "<code>Type u_1</code>",
+ "199":
+ "<code>Ideal.IsMaximal.{u} {α : Type u} [Semiring α] (I : Ideal α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An ideal is maximal if it is maximal in the collection of proper ideals. </code>",
+ "198": "<code>IsTopologicallyNilpotent a</code>",
+ "197":
+ "<code>IsUniformAddGroup.{u_3} (α : Type u_3) [UniformSpace α] [AddGroup α] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A uniform additive group is an additive group in which addition and negation are\nuniformly continuous.\n\n`IsUniformAddGroup G` is equivalent to the fact that `G` is a topological additive group, and the\nuniformity coincides with **both** the associated left and right uniformities\n(see `IsUniformAddGroup.isRightUniformAddGroup`, `IsUniformAddGroup.isLeftUniformAddGroup` and\n`IsUniformAddGroup.of_left_right`).\n\nSince there are topological groups where these two uniformities do **not** coincide,\nnot all topological groups admit a uniform group structure in this sense. This is however the\ncase for commutative groups, which are the main motivation for the existence of this\ntypeclass. </code>",
+ "196":
+ "<code>CompleteSpace.{u} (α : Type u) [UniformSpace α] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A complete space is defined here using uniformities. A uniform space\nis complete if every Cauchy filter converges. </code>",
+ "195":
+ "<code>T2Space.{u} (X : Type u) [TopologicalSpace X] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A T₂ space, also known as a Hausdorff space, is one in which for every\n`x ≠ y` there exists disjoint open sets around `x` and `y`. This is\nthe most widely used of the separation axioms. </code>",
+ "194":
+ "<code>UniformSpace.{u} (α : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A uniform space is a generalization of the \"uniform\" topological aspects of a\nmetric space. It consists of a filter on `α × α` called the \"uniformity\", which\nsatisfies properties analogous to the reflexivity, symmetry, and triangle properties\nof a metric.\n\nA metric space has a natural uniformity, and a uniform space has a natural topology.\nA topological group also has a natural uniformity, even when it is not metrizable. </code>",
+ "193":
+ "<code>IsTopologicallyNilpotent.mem_of_isMaximal.{u_1} {A : Type u_1} [CommRing A] [UniformSpace A] [T2Space A]\n  [CompleteSpace A] [IsTopologicalRing A] [IsUniformAddGroup A] [NonarchimedeanAddGroup A] [IsLinearTopology A A]\n  {a : A} (ha : IsTopologicallyNilpotent a) (𝔪 : Ideal A) [𝔪.IsMaximal] : a ∈ 𝔪</code><span class=\"sep\"></span><code class=\"docstring\">Topologically nilpotent elements lie in every maximal ideal. </code>",
+ "192":
+ "<code>DiscreteTopology.{u_2} (α : Type u_2) [t : TopologicalSpace α] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological space is discrete if every set is open, that is,\nits topology equals the discrete topology `⊥`. </code>",
+ "191":
+ "<code>ValuationSpectrum.instCompactSpace_spa.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] [DiscreteTopology A] :\n  CompactSpace ↑(ValuationSpectrum.Spa A (ValuationSpectrum.ringPlus A))</code><span class=\"sep\"></span><code class=\"docstring\">**T-NULL-0c capstone: `CompactSpace ↥(Spa(A, A⁺))` (discrete case).**\n\nThe adic spectrum `Spa(A, A⁺)` of a commutative ring `A` with the discrete\ntopology and a choice of integral subring `A⁺` is a compact topological space.\n\nThis is the discrete specialisation of Wedhorn Theorem 7.30. Together with\n`ValuationSpectrum.instCompactSpace` (quasi-compactness of `Spv A`) it unblocks\nthe Nullstellensatz refinement / Cor 7.32 route to the dominating-unit lemma\n(see `docs/plans/2026-04-16-s3-nullstellensatz-plan.md`, T-NULL-0c). </code>",
+ "190":
+ "<code>IsCompact.{u_1} {X : Type u_1} [TopologicalSpace X] (s : Set X) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A set `s` is compact if for every nontrivial filter `f` that contains `s`,\nthere exists `a ∈ s` such that every set of `f` meets every neighborhood of `a`. </code>",
  "19": "<code>A × A</code>",
+ "189":
+ "<code>ValuativeRel.ValueGroupWithZero.{u_1} (R : Type u_1) [Semiring R] [ValuativeRel R] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">The \"canonical\" value group-with-zero of a ring with a valuative relation. </code>",
+ "188":
+ "<code>MulArchimedean.{u_2} (R : Type u_2) [CommMonoid R] [PartialOrder R] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An ordered commutative monoid is called `MulArchimedean` if for any two elements `x`, `y`\nsuch that `1 &lt; y`, there exists a natural number `n` such that `x ≤ y ^ n`. </code>",
+ "187":
+ "<code>∀ (v : Spv A), MulArchimedean (ValuativeRel.ValueGroupWithZero A)</code>",
+ "186":
+ "<code>IsUnit.{u_1} {M : Type u_1} [Monoid M] (a : M) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An element `a : M` of a `Monoid` is a unit if it has a two-sided inverse.\nThe actual definition says that `a` is equal to some `u : Mˣ`, where\n`Mˣ` is a bundled version of `IsUnit`. </code>",
+ "185": "<code>IsUnit (P.A₀.subtype π)</code>",
+ "184": "<code>IsTopologicallyNilpotent (P.A₀.subtype π)</code>",
+ "183":
+ "<code>Singleton.singleton.{u, v} {α : outParam (Type u)} {β : Type v} [self : Singleton α β] : α → β</code><span class=\"sep\"></span><code class=\"docstring\">`singleton x` is a collection with the single element `x` (notation: `{x}`). \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `{x}` in identifiers is `singleton`.</code>",
+ "182":
+ "<code>Ideal.span.{u} {α : Type u} [Semiring α] (s : Set α) : Ideal α</code><span class=\"sep\"></span><code class=\"docstring\">The ideal generated by a subset of a ring </code>",
+ "181": "<code>P.I = Ideal.span {π}</code>",
+ "180": "<code>P.A₀ ≤ ValuationSpectrum.ringPlus A</code>",
  "18":
  "<code>Continuous.{u, v} {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y] (f : X → Y) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function between topological spaces is continuous if the preimage\nof every open set is open. Registered as a structure to make sure it is not unfolded by Lean. </code>",
+ "179":
+ "<code>ValuationSpectrum.isCompact_spa_of_tate_pseudouniformizer.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [IsTopologicalRing A] [ValuationSpectrum.PlusSubring A] (P : PairOfDefinition A)\n  (hA₀_le : P.A₀ ≤ ValuationSpectrum.ringPlus A) (π : ↥P.A₀) (hI : P.I = Ideal.span {π})\n  (hπ_tn : IsTopologicallyNilpotent (P.A₀.subtype π)) (hπ_unit : IsUnit (P.A₀.subtype π))\n  (hArch : ∀ (v : Spv A), MulArchimedean (ValuativeRel.ValueGroupWithZero A)) :\n  IsCompact (ValuationSpectrum.Spa A (ValuationSpectrum.ringPlus A))</code><span class=\"sep\"></span><code class=\"docstring\">**Compactness of `Spa A A⁺` for Tate rings with a pseudo-uniformizer**\n(Wedhorn Theorem 7.30, Tate case). Under the hypotheses:\n\n* a pair of definition `P` with `P.A₀ ⊆ A⁺`,\n* `π ∈ P.A₀` is a topologically nilpotent unit in `A` (a pseudo-uniformizer),\n* `P.I = (π)` (principal ideal of definition),\n* MulArchimedean on the ValueGroup of every `v : Spv A`,\n\nthe adic spectrum `Spa(A, A⁺)` is quasi-compact in `Spv A`. </code>",
+ "178":
+ "<code>v ∈ ValuationSpectrum.Spa B (ValuationSpectrum.ringPlus B)</code>",
+ "177":
+ "<code>ValuationSpectrum.comap_mem_spa.{u_1, u_2} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] {B : Type u_2} [CommRing B] [TopologicalSpace B] [ValuationSpectrum.PlusSubring B]\n  {φ : A →+* B} (hφ : Continuous ⇑φ)\n  (hAB : ValuationSpectrum.ringPlus A ≤ Subring.comap φ (ValuationSpectrum.ringPlus B)) {v : Spv B}\n  (hv : v ∈ ValuationSpectrum.Spa B (ValuationSpectrum.ringPlus B)) :\n  ValuationSpectrum.comap φ v ∈ ValuationSpectrum.Spa A (ValuationSpectrum.ringPlus A)</code><span class=\"sep\"></span><code class=\"docstring\">`Spa(φ)` via `comap` (Remark 7.28). </code>",
+ "176":
+ "<code>ContinuousMap.{u_1, u_2} (X : Type u_1) (Y : Type u_2) [TopologicalSpace X] [TopologicalSpace Y] : Type (max u_1 u_2)</code><span class=\"sep\"></span><code class=\"docstring\">The type of continuous maps from `X` to `Y`.\n\nWhen possible, instead of parametrizing results over `(f : C(X, Y))`,\nyou should parametrize over `{F : Type*} [ContinuousMapClass F X Y] (f : F)`.\n\nWhen you extend this structure, make sure to extend `ContinuousMapClass`. </code>",
+ "175":
+ "<code>Subring.comap.{u, v} {R : Type u} {S : Type v} [NonAssocRing R] [NonAssocRing S] (f : R →+* S) (s : Subring S) :\n  Subring R</code><span class=\"sep\"></span><code class=\"docstring\">The preimage of a subring along a ring homomorphism is a subring. </code>",
+ "174":
+ "<code>ValuationSpectrum.ringPlus.{u_1} (A : Type u_1) [CommRing A] [ValuationSpectrum.PlusSubring A] : Subring A</code><span class=\"sep\"></span><code class=\"docstring\">The subring `A⁺` of integral elements. </code>",
+ "173":
+ "<code>ValuationSpectrum.ringPlus A ≤ Subring.comap φ (ValuationSpectrum.ringPlus B)</code>",
+ "172": "<code>Continuous ⇑φ</code>",
+ "171":
+ "<code>ValuationSpectrum.spaComap.{u_1, u_2} {A : Type u_1} [CommRing A] [TopologicalSpace A] [ValuationSpectrum.PlusSubring A]\n  {B : Type u_2} [CommRing B] [TopologicalSpace B] [ValuationSpectrum.PlusSubring B] {φ : A →+* B} (hφ : Continuous ⇑φ)\n  (hAB : ValuationSpectrum.ringPlus A ≤ Subring.comap φ (ValuationSpectrum.ringPlus B)) :\n  C(↑(ValuationSpectrum.Spa B (ValuationSpectrum.ringPlus B)),\n    ↑(ValuationSpectrum.Spa A (ValuationSpectrum.ringPlus A)))</code><span class=\"sep\"></span><code class=\"docstring\">The continuous map `Spa(φ)` (Remark 7.28). </code>",
+ "170":
+ "<code>Subring A</code><span class=\"sep\"></span><code class=\"docstring\">The subring of integral elements `A⁺`. </code>",
  "17":
  "<code>TopologicalSpace.{u} (X : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A topology on `X`. </code>",
+ "169":
+ "<code>ValuationSpectrum.Spa.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] (Aplus : Subring A) : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">The *adic spectrum* `Spa(A, A⁺)` (Definition 7.23 of Wedhorn). </code>",
+ "168":
+ "<code>TopologicalRing.IsStablyUniform.{u} (A : Type u) [CommRing A] [TopologicalSpace A] [IsTopologicalRing A]\n  [ValuationSpectrum.PlusSubring A] [IsHuberRing A] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A Huber pair `(A, A⁺)` is **stably uniform** if for every rational localization\n`(A, A⁺) → (B, B⁺)`, the localization ring `B` (with the localization topology) is\nuniform (Definition 7.37 of Wedhorn). </code>",
+ "167":
+ "<code>ValuationSpectrum.presheafValue.{u_2} {A : Type u_2} [CommRing A] [TopologicalSpace A] [IsTopologicalRing A]\n  (D : ValuationSpectrum.RationalLocData A) : Type u_2</code><span class=\"sep\"></span><code class=\"docstring\">The presheaf value `𝒪_X(R(T/s)) := A⟨T/s⟩`, the completion of\n`Localization.Away s` with the localization topology\n(§8.1, eq. 8.1.1 of Wedhorn). </code>",
+ "166":
+ "<code>ValuationSpectrum.RationalLocData.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] [IsTopologicalRing A] :\n  Type u_2</code><span class=\"sep\"></span><code class=\"docstring\">A *rational localization datum* packages a pair of definition, finite set\n`T`, element `s`, and openness condition for the localization topology on\n`Aₛ` (Wedhorn §8.1). </code>",
+ "165": "<code>ValuationSpectrum.RationalLocData A</code>",
+ "164":
+ "<code>∀ (D : ValuationSpectrum.RationalLocData A),\n  TopologicalRing.IsBounded (TopologicalRing.powerBoundedSubring (ValuationSpectrum.presheafValue D))</code><span class=\"sep\"></span><code class=\"docstring\">The presheaf value (= completion of the localization) is uniform for every\nrational localization datum `D`. </code>",
+ "163":
+ "<code>TopologicalRing.IsUniform.{u} (A : Type u) [CommRing A] [TopologicalSpace A] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A topological ring `A` is **uniform** if the set `A°` of power-bounded elements is\nbounded (Definition 7.36 of Wedhorn). </code>",
+ "162": "<code>Type u</code>",
+ "161":
+ "<code>TopologicalRing.IsBounded (TopologicalRing.powerBoundedSubring A)</code><span class=\"sep\"></span><code class=\"docstring\">The set `A°` of power-bounded elements is bounded. </code>",
+ "160":
+ "<code>ValuationSpectrum.IsRingOfIntegralElements.topologicallyNilpotentElements_subset.{u_1} {A : Type u_1} [CommRing A]\n  [TopologicalSpace A] {B : Subring A} (hB : ValuationSpectrum.IsRingOfIntegralElements B) :\n  TopologicalRing.topologicallyNilpotentElements A ⊆ ↑B</code><span class=\"sep\"></span><code class=\"docstring\">A ring of integral elements contains all topologically nilpotent elements. </code>",
  "16":
  "<code>CommRing.{u} (α : Type u) : Type u</code><span class=\"sep\"></span><code class=\"docstring\">A commutative ring is a ring with commutative multiplication. </code>",
+ "159": "<code>ValuationSpectrum.IsRingOfIntegralElements B</code>",
+ "158":
+ "<code>ValuationSpectrum.IsRingOfIntegralElements.le_powerBoundedSubring.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  {B : Subring A} (hB : ValuationSpectrum.IsRingOfIntegralElements B) : ↑B ⊆ TopologicalRing.powerBoundedSubring A</code><span class=\"sep\"></span><code class=\"docstring\">Any ring of integral elements is contained in `A°` (Remark 7.15(1)). </code>",
+ "157":
+ "<code>ValuationSpectrum.PlusSubring.{u_1} (A : Type u_1) [CommRing A] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A commutative ring equipped with a designated subring `A⁺`. </code>",
+ "156":
+ "<code>ValuationSpectrum.IsAffinoidRing.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A]\n  [ValuationSpectrum.PlusSubring A] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`(A, A⁺)` is an affinoid ring if `A⁺` is a ring of integral elements (Definition 7.14). </code>",
+ "155":
+ "<code>ValuationSpectrum.IsRingOfIntegralElements.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (B : Subring A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A ring of integral elements (Definition 7.14(1)): open, integrally closed, and in `A°`.\n\nA `class` (not a bare `structure`) so it can be required as `[IsRingOfIntegralElements (A⁺)]`\non `Spa`-level theorems — the faithful affinoid-ring interface (expert-review 2026-06-18,\nreviewer Q1). The bare `PlusSubring` carrier stays low-level; this records the three\nDefinition-7.14 axioms (open, integrally closed, `⊆ A°`) that make `(A, A⁺)` an affinoid ring. </code>",
+ "154":
+ "<code>HasSubset.Subset.{u} {α : Type u} [self : HasSubset α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">Subset relation: `a ⊆ b`  \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `⊆` in identifiers is `subset`.</code>",
+ "153":
+ "<code>↑B ⊆ TopologicalRing.powerBoundedSubring A</code><span class=\"sep\"></span><code class=\"docstring\">`B ⊆ A°`. </code>",
+ "152":
+ "<code>∀ (a : A), IsIntegral (↥B) a → a ∈ B</code><span class=\"sep\"></span><code class=\"docstring\">`B` is integrally closed in `A`. </code>",
+ "151":
+ "<code>IsOpen ↑B</code><span class=\"sep\"></span><code class=\"docstring\">`B` is open in `A`. </code>",
+ "150":
+ "<code>Valuation.CofinalValue.{u_1, u_2} {A : Type u_1} [CommRing A] {Γ₀ : Type u_2} [LinearOrderedCommGroupWithZero Γ₀]\n  (v : Valuation A Γ₀) (a : A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Cofinality of `v(a)` in `Γ_v` (algebraic form, Wedhorn 7.4 prep).**\nA value `v(a)` is *cofinal* if for every `γ : Γ₀` with `γ &gt; 0`, some\npower `v(a)^n` is strictly less than `γ`.\n\nThis is the algebraic predicate that Wedhorn 7.10's reverse direction\nuses: combined with `v(a) &lt; 1` it gives continuity of `v` (in the\n`f`-adic / Tate setting). </code>",
  "15":
  "<code class=\"docstring\">A type universe. `Type ≡ Type 0`, `Type u ≡ Sort (u + 1)`. </code>",
+ "149":
+ "<code>ValuationSpectrum.Spv.IsInSpvAI.{u_1} {A : Type u_1} [CommRing A] (v : Spv A) (I : Ideal A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">**`v ∈ Spv(A, I)` (Wedhorn 7.4 disjunction).** For `v : Spv A` and\n`I : Ideal A`, `v` is *in `Spv(A, I)`* if either\n- every `a ∈ I` has `v(a)` cofinal in `Γ_v`, or\n- `v` is **microbial** (`Γ_v = c Γ_v` in Wedhorn 4.13 notation): every\n  positive value of `v` is bounded by some `(v t)^±1` with `v t ≥ 1`.\n\nThis is the disjunctive characterisation per Wedhorn Lemma 7.4(ii). </code>",
+ "148":
+ "<code>ValuationSpectrum.comap φ v = ValuationSpectrum.comap φ w</code>",
+ "147":
+ "<code>ValuationSpectrum.IsContinuous.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (v : Spv A) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A point `v` of `Spv A` is *continuous* if the canonical valuation is continuous\n(Definition 7.7 of Wedhorn). </code>",
+ "146": "<code>Spv S</code>",
+ "145":
+ "<code>ValuationSpectrum.eq_of_isContinuous_of_comap_eq_of_denseRange.{u_1, u_2} {R : Type u_1} {S : Type u_2} [CommRing R]\n  [CommRing S] [TopologicalSpace S] [IsTopologicalRing S] {φ : R →+* S} (hdense : DenseRange ⇑φ) {v w : Spv S}\n  (hv : v.IsContinuous) (hw : w.IsContinuous) (h : ValuationSpectrum.comap φ v = ValuationSpectrum.comap φ w) : v = w</code><span class=\"sep\"></span><code class=\"docstring\">**The point of `Spv S` is determined by a dense subring** (the injectivity content of\nWedhorn Proposition 7.48 = Huber [Hu2] Prop. 3.9). If `φ : R →+* S` has dense image and two\ncontinuous points `v, w ∈ Spv S` have the same pullback `comap φ v = comap φ w`, then `v = w`.\nThis is the elementary uniqueness half of the Spa–completion comparison; it is the keystone\nthe completion Spa-injectivity (`comap_coeRingHom_injOn_spa`) reduces to. </code>",
+ "144":
+ "<code>Valuation.IsEquiv.{u_3, u_4, u_5} {R : Type u_3} {Γ₀ : Type u_4} {Γ'₀ : Type u_5} [Ring R]\n  [LinearOrderedCommMonoidWithZero Γ₀] [LinearOrderedCommMonoidWithZero Γ'₀] (v₁ : Valuation R Γ₀)\n  (v₂ : Valuation R Γ'₀) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Two valuations on `R` are defined to be equivalent if they induce the same preorder on `R`. </code>",
+ "143": "<code>∀ (a b : R), v (φ a) ≤ v (φ b) ↔ w (φ a) ≤ w (φ b)</code>",
+ "142": "<code>w.IsContinuous</code>",
+ "141": "<code>v.IsContinuous</code>",
+ "140": "<code>Valuation S Γw</code>",
  "14":
  "<code>PairOfDefinition.{u_1} (A : Type u_1) [CommRing A] [TopologicalSpace A] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">A **pair of definition** `(A₀, I)` for a topological ring `A` consists of an\nopen subring `A₀ ⊆ A` and a finitely generated ideal `I ⊆ A₀` such that the subspace\ntopology on `A₀` equals the `I`-adic topology (Definition 6.1 of Wedhorn). </code>",
+ "139": "<code>Valuation S Γv</code>",
+ "138":
+ "<code>DenseRange.{u, u_1} {X : Type u} [TopologicalSpace X] {α : Type u_1} (f : α → X) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">`f : α → X` has dense range if its range (image) is a dense subset of `X`. </code>",
+ "137": "<code>DenseRange ⇑φ</code>",
+ "136": "<code>R →+* S</code>",
+ "135": "<code>Type u_4</code>",
+ "134":
+ "<code>Valuation.isEquiv_of_isContinuous_of_denseRange.{u_1, u_2, u_3, u_4} {S : Type u_1} [CommRing S] [TopologicalSpace S]\n  [IsTopologicalRing S] {R : Type u_2} [CommRing R] {Γv : Type u_3} {Γw : Type u_4} [LinearOrderedCommGroupWithZero Γv]\n  [LinearOrderedCommGroupWithZero Γw] {φ : R →+* S} (hdense : DenseRange ⇑φ) {v : Valuation S Γv} {w : Valuation S Γw}\n  (hv : v.IsContinuous) (hw : w.IsContinuous) (h : ∀ (a b : R), v (φ a) ≤ v (φ b) ↔ w (φ a) ≤ w (φ b)) : v.IsEquiv w</code><span class=\"sep\"></span><code class=\"docstring\">**Continuous valuations are determined by a dense subring** (the injectivity content of\nWedhorn Proposition 7.48 = Huber [Hu2] Prop. 3.9). If `φ : R →+* S` has dense image and two\ncontinuous valuations `v`, `w` on `S` induce the same preorder on `φ(R)`, then `v` and `w`\nare equivalent. </code>",
+ "133":
+ "<code>LT.lt.{u} {α : Type u} [self : LT α] : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The less-than relation: `x &lt; y` \n\nConventions for notations in identifiers:\n\n * The recommended spelling of `&lt;` in identifiers is `lt`.</code>",
+ "132": "<code>↥P.A₀</code>",
+ "131":
+ "<code>Subring.subtype.{u} {R : Type u} [NonAssocRing R] (s : Subring R) : ↥s →+* R</code><span class=\"sep\"></span><code class=\"docstring\">The natural ring hom from a subring of ring `R` to `R`. </code>",
+ "130":
+ "<code>Set.image.{u, v} {α : Type u} {β : Type v} (f : α → β) (s : Set α) : Set β</code><span class=\"sep\"></span><code class=\"docstring\">The image of `s : Set α` by `f : α → β`, written `f '' s`, is the set of `b : β` such that\n`f a = b` for some `a ∈ s`. </code>",
  "13":
  "<code>IsAdic.{u_1} {R : Type u_1} [CommRing R] [H : TopologicalSpace R] (J : Ideal R) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Given a topology on a ring `R` and an ideal `J`, `IsAdic J` means the topology is the\n`J`-adic one. </code>",
+ "129": "<code>Γ₀</code>",
+ "128":
+ "<code>∀ (γ : Γ₀), IsOpen (⇑P.A₀.subtype '' {a | v (P.A₀.subtype a) &lt; γ})</code>",
+ "127":
+ "<code>PairOfDefinition.isContinuous_of_restriction_isContinuous.{u_1, u_2} {A : Type u_1} [CommRing A] [TopologicalSpace A]\n  [IsTopologicalRing A] (P : PairOfDefinition A) {Γ₀ : Type u_2} [LinearOrderedCommGroupWithZero Γ₀]\n  (v : Valuation A Γ₀) (h_res : ∀ (γ : Γ₀), IsOpen (⇑P.A₀.subtype '' {a | v (P.A₀.subtype a) &lt; γ})) : v.IsContinuous</code><span class=\"sep\"></span><code class=\"docstring\">**Continuity transfer from open subring.** If `v` is a valuation on `A`,\n`A₀` is an open subring, and `v|_{A₀}` (the restriction) is continuous\n(in the subspace topology on `A₀`), then `v` is continuous on `A`.\n\nThis is Wedhorn's Lemma 7.44(2). The proof uses: for any `γ`, the set\n`{a ∈ A | v(a) &lt; γ}` is an additive subgroup containing the open set\n`A₀.subtype '' {a ∈ A₀ | v(a) &lt; γ}`, hence is open. </code>",
+ "126": "<code>R</code>",
+ "125": "<code>∀ (r : R), v r ≤ 1</code>",
+ "124": "<code>ConvexSubgroup Γ₀ˣ</code>",
+ "123": "<code>Valuation R Γ₀</code>",
+ "122":
+ "<code>Valuation.restrictToConvex.{u_1, u_2} {R : Type u_1} [CommRing R] {Γ₀ : Type u_2} [LinearOrderedCommGroupWithZero Γ₀]\n  (v : Valuation R Γ₀) (H : ConvexSubgroup Γ₀ˣ) (hle : ∀ (r : R), v r ≤ 1) : Valuation R (WithZero ↥H.toSubgroup)</code><span class=\"sep\"></span><code class=\"docstring\">**Restriction of a valuation to a convex subgroup** (Wedhorn 7.1.2).\nThe restricted valuation keeps values whose unit part is in `H` and zeros out the rest.\nRequires `∀ r, v r ≤ 1` for multiplicativity. </code>",
+ "121":
+ "<code>ValuationSpectrum.Cont.{u_2} (A : Type u_2) [CommRing A] [TopologicalSpace A] : Set (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">The set `Cont(A)` of continuous valuations in `Spv(A)` (Definition 7.7 of Wedhorn). </code>",
+ "120":
+ "<code>Valuation.IsContinuous.{u_1, u_2} {A : Type u_1} [CommRing A] {Γ₀ : Type u_2} [LinearOrderedCommGroupWithZero Γ₀]\n  [TopologicalSpace A] (v : Valuation A Γ₀) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A valuation `v` on a topological ring `A` is *continuous* if `{ a | v(a) &lt; γ }` is open\nfor all `γ` (Definition 7.7 of Wedhorn). </code>",
  "12":
  "<code>IsAdic self.I</code><span class=\"sep\"></span><code class=\"docstring\">The subspace topology on `A₀` is the `I`-adic topology. </code>",
+ "119":
+ "<code>CompactSpace.{u_1} (X : Type u_1) [TopologicalSpace X] : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Type class for compact spaces. Separation is sometimes included in the definition, especially\nin the French literature, but we do not include it here. </code>",
+ "118":
+ "<code>Set.Finite.{u} {α : Type u} (s : Set α) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A set is finite if the corresponding `Subtype` is finite,\ni.e., if there exists a natural `n : ℕ` and an equivalence `s ≃ Fin n`. </code>",
+ "117":
+ "<code>Set.univ.{u} {α : Type u} : Set α</code><span class=\"sep\"></span><code class=\"docstring\">The universal set on a type `α` is the set containing all elements of `α`.\n\nThis is conceptually the \"same as\" `α` (in set theory, it is actually the same), but type theory\nmakes the distinction that `α` is a type while `Set.univ` is a term of type `Set α`. `Set.univ` can\nitself be coerced to a type `↥Set.univ` which is in bijection with (but distinct from) `α`. </code>",
+ "116":
+ "<code>Eq.{u_1} {α : Sort u_1} : α → α → Prop</code><span class=\"sep\"></span><code class=\"docstring\">The equality relation. It has one introduction rule, `Eq.refl`.\nWe use `a = b` as notation for `Eq a b`.\nA fundamental property of equality is that it is an equivalence relation.\n```\nvariable (α : Type) (a b c d : α)\nvariable (hab : a = b) (hcb : c = b) (hcd : c = d)\n\nexample : a = d :=\n  Eq.trans (Eq.trans hab (Eq.symm hcb)) hcd\n```\nEquality is much more than an equivalence relation, however. It has the important property that every assertion\nrespects the equivalence, in the sense that we can substitute equal expressions without changing the truth value.\nThat is, given `h1 : a = b` and `h2 : p a`, we can construct a proof for `p b` using substitution: `Eq.subst h1 h2`.\nExample:\n```\nexample (α : Type) (a b : α) (p : α → Prop)\n        (h1 : a = b) (h2 : p a) : p b :=\n  Eq.subst h1 h2\n\nexample (α : Type) (a b : α) (p : α → Prop)\n    (h1 : a = b) (h2 : p a) : p b :=\n  h1 ▸ h2\n```\nThe triangle in the second presentation is a macro built on top of `Eq.subst` and `Eq.symm`, and you can enter it by typing `\\t`.\nFor more information: [Equality](https://lean-lang.org/theorem_proving_in_lean4/quantifiers_and_equality.html#equality)\n\n\nConventions for notations in identifiers:\n\n * The recommended spelling of `=` in identifiers is `eq`.</code>",
+ "115":
+ "<code>Set.sUnion.{u} {α : Type u} (S : Set (Set α)) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">Union of a set of sets. </code>",
+ "114":
+ "<code>ValuationSpectrum.IsSubbasicOpen.{u_1} {A : Type u_1} [CommRing A] (U : Set (Spv A)) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">Membership in the Spv sub-basis: `U` is a sub-basic open iff `U = basicOpen f s`\nfor some `f s : A`. This is a restatement of the defining set of\n`ValuationSpectrum.instTopologicalSpace`. </code>",
+ "113": "<code>Set (Spv A)</code>",
+ "112":
+ "<code>setOf.{u} {α : Type u} (p : α → Prop) : Set α</code><span class=\"sep\"></span><code class=\"docstring\">Turn a predicate `p : α → Prop` into a set, also written as `{x | p x}` </code>",
+ "111": "<code>Set (Set (Spv A))</code>",
+ "110":
+ "<code>∀ P ⊆ {U | ValuationSpectrum.IsSubbasicOpen U}, ⋃₀ P = Set.univ → ∃ Q ⊆ P, Q.Finite ∧ ⋃₀ Q = Set.univ</code>",
  "11":
  "<code>Ideal.FG.{u_1} {R : Type u_1} [Semiring R] (I : Ideal R) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">An ideal of `R` is finitely generated if it is the span of a finite subset of `R`.\n\nThis is defeq to `Submodule.FG`, but unfolds more nicely. </code>",
+ "109":
+ "<code>ValuationSpectrum.compactSpace_of_subbasic_subcover.{u_1} {A : Type u_1} [CommRing A]\n  (h : ∀ P ⊆ {U | ValuationSpectrum.IsSubbasicOpen U}, ⋃₀ P = Set.univ → ∃ Q ⊆ P, Q.Finite ∧ ⋃₀ Q = Set.univ) :\n  CompactSpace (Spv A)</code><span class=\"sep\"></span><code class=\"docstring\">**Alexander sub-basis theorem, applied to `Spv A`.** If every cover of `Spv A`\nby sub-basic opens (basic opens `basicOpen f s`) admits a finite subcover, then\n`Spv A` is compact.\n\nThis is the direct content of Wedhorn Theorem 4.9 / Huber, *Continuous valuations*\n(1993), reformulated purely as a statement about covers of the underlying type by\nbasic opens. </code>",
+ "108":
+ "<code>ValuationSpectrum.ιSpv.{u_1} {A : Type u_1} [CommRing A] (v : Spv A) : A × A → Prop</code><span class=\"sep\"></span><code class=\"docstring\">**Huber embedding.** Send a point `v ∈ Spv A` to the characteristic function of its\nbasic opens: `(f, s) ↦ v ∈ basicOpen f s`, unfolded as `v.vle f s ∧ ¬ v.vle s 0`.\n\nWith `Prop` carrying the Sierpinski topology and `A × A → Prop` the product topology, the\nsub-basic open set `{r | r (f, s)}` pulls back to `basicOpen f s`, which is precisely one\nof the generating opens of the topology on `Spv A`. Hence the induced topology agrees with\nthe given topology on `Spv A` (see `ιSpv_isInducing`). </code>",
+ "107":
+ "<code>Topology.IsEmbedding.{u_1, u_2} {X : Type u_1} {Y : Type u_2} [tX : TopologicalSpace X] [tY : TopologicalSpace Y]\n  (f : X → Y) : Prop</code><span class=\"sep\"></span><code class=\"docstring\">A function between topological spaces is an embedding if it is injective,\nand for all `s : Set X`, `s` is open iff it is the preimage of an open set. </code>",
+ "106":
+ "<code>ValuationSpectrum.ιSpv_isEmbedding.{u_1} {A : Type u_1} [CommRing A] : Topology.IsEmbedding ValuationSpectrum.ιSpv</code><span class=\"sep\"></span><code class=\"docstring\">**Huber embedding — Phase 1 main result.** The map `ιSpv : Spv A → (A × A → Prop)`\nis a topological embedding (injective + induced topology agrees).\n\nThis is the content of the topological half of Wedhorn's Theorem 4.9 / Huber 1993, Lemma\n2.1. The compactness conclusion additionally requires closedness of the image, which is\ndeferred to Phase 2. </code>",
+ "105":
+ "<code>ValuationSpectrum.suppFun_continuous.{u_1} {A : Type u_1} [CommRing A] : Continuous ValuationSpectrum.suppFun</code><span class=\"sep\"></span><code class=\"docstring\">`suppFun` is continuous (Remark 4.6 of Wedhorn). </code>",
+ "104":
+ "<code>PrimeSpectrum.{u_1} (R : Type u_1) [CommSemiring R] : Type u_1</code><span class=\"sep\"></span><code class=\"docstring\">The prime spectrum of a commutative (semi)ring `R` is the type of all prime ideals of `R`.\n\nIt is naturally endowed with a topology (the Zariski topology),\nand a sheaf of commutative rings (see `Mathlib/AlgebraicGeometry/StructureSheaf.lean`).\nIt is a fundamental building block in algebraic geometry. </code>",
+ "103":
+ "<code>ValuationSpectrum.suppFun.{u_1} {A : Type u_1} [CommRing A] : Spv A → PrimeSpectrum A</code><span class=\"sep\"></span><code class=\"docstring\">The support map `Spv A → Spec A` (Remark 4.6 of Wedhorn). </code>",
+ "102": "<code>Spv B</code>",
+ "101":
+ "<code>RingHom.{u_5, u_6} (α : Type u_5) (β : Type u_6) [NonAssocSemiring α] [NonAssocSemiring β] : Type (max u_5 u_6)</code><span class=\"sep\"></span><code class=\"docstring\">Bundled semiring homomorphisms; use this for bundled ring homomorphisms too.\n\nThis extends from both `MonoidHom` and `MonoidWithZeroHom` in order to put the fields in a\nsensible order, even though `MonoidWithZeroHom` already extends `MonoidHom`. </code>",
+ "100": "<code>A →+* B</code>",
  "10":
  "<code>PairOfDefinition.I.{u_1} {A : Type u_1} [CommRing A] [TopologicalSpace A] (self : PairOfDefinition A) : Ideal ↥self.A₀</code><span class=\"sep\"></span><code class=\"docstring\">The ideal of definition `I`, an ideal of `A₀`. </code>",
  "1":
